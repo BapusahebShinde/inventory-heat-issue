@@ -84,6 +84,13 @@ The diagnostic CSV should now include `callback_avg_ms` and `callback_max_ms` so
 ## Signed APK Stability Follow-up
 
 The Chainway/C5 callback wrapper was rolled back to match the previously working signed APK path. CPU diagnostics remain available in the CSV, while Chainway callback timing should be reintroduced only after a signed APK smoke test confirms stability.
-## Signed APK Crash Hardening
 
-The Chainway/C5 RFID callback is now wrapped with a top-level `Throwable` guard that writes reader logs and still records callback timing in `finally`. This keeps diagnostics from allowing an unexpected callback exception to terminate the signed APK during prolonged inventory testing.
+## Callback Hot-Path Overhead Follow-up
+
+Callback duration tracking now avoids the shared inventory performance lock by using atomic counters for total and max duration. CPU, memory, thermal, GC, and thread sampling remain in the five-second diagnostic logger thread rather than the RFID callback path.
+
+## UHF Module Visibility Follow-up
+
+The diagnostic CSV now separates Android OS temperature from RFID module diagnostics. `battery_temp_c` still comes from Android battery telemetry, while `uhf_module_temp_c` is sampled from the reader SDK when supported. Chainway/C5 diagnostics use the SDK `getTemperature()` API on the active UART/BLE reader instance and sample it only from the five-second diagnostic snapshot path, not from the per-tag callback.
+
+Additional five-second fields were added for RF power, reader connection/antenna state, SDK error/warning counters, callback queue depth, RSSI min/avg/max, duplicate percentage, battery voltage/current, screen brightness, and placeholders for known-unread tag test counts. The per-tag callback remains limited to counters/timing/RSSI aggregation and does not perform per-tag file I/O.

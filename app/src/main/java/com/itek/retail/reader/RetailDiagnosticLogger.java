@@ -9,6 +9,7 @@ import android.os.Debug;
 import android.os.PowerManager;
 import android.os.Process;
 import android.os.SystemClock;
+import android.provider.Settings;
 import android.util.Log;
 
 import com.itek.retail.BuildConfig;
@@ -38,7 +39,7 @@ public final class RetailDiagnosticLogger {
   private static final long MEMORY_LOW_MB = 64L;
   private static final AtomicLong UI_UPDATE_COUNT = new AtomicLong(0L);
   private static final AtomicLong LAST_UI_UPDATE_MS = new AtomicLong(0L);
-  public static final String CSV_HEADER = "row_type,session_id,timestamp,elapsed_seconds,battery_temp_c,battery_level,charging_status,total_raw_callbacks,total_duplicate_callbacks,total_unique_epcs,raw_callbacks_per_sec,unique_epcs_per_sec,db_pending_queue_size,last_db_batch_flush_ms,ui_update_count,last_ui_update_timestamp,app_memory_used_mb,app_memory_free_mb,reader_inventory_running,warnings,thermal_status,thermal_throttling_level,thermal_warning,cpu_usage_percent,cpu_frequency_khz,gc_count,gc_time_ms,process_thread_count,callback_avg_ms,callback_max_ms";
+  public static final String CSV_HEADER = "row_type,session_id,timestamp,elapsed_seconds,battery_temp_c,battery_level,charging_status,total_raw_callbacks,total_duplicate_callbacks,total_unique_epcs,raw_callbacks_per_sec,unique_epcs_per_sec,duplicate_percent,db_pending_queue_size,last_db_batch_flush_ms,ui_update_count,last_ui_update_timestamp,app_memory_used_mb,app_memory_free_mb,reader_inventory_running,warnings,thermal_status,thermal_throttling_level,thermal_warning,cpu_usage_percent,cpu_frequency_khz,gc_count,gc_time_ms,process_thread_count,callback_avg_ms,callback_max_ms,uhf_module_temp_c,rf_power_dbm,inventory_session,inventory_target,q_value,dynamic_q_enabled,antenna_state,reader_connected,sdk_error_count,sdk_last_error,sdk_warning_count,sdk_last_warning,callback_queue_depth,avg_rssi,min_rssi,max_rssi,battery_voltage_mv,battery_current_ma,screen_brightness,known_unread_expected,known_unread_found";
 
   private final Context appContext;
   private final String sessionId;
@@ -84,6 +85,24 @@ public final class RetailDiagnosticLogger {
     public final boolean readerInventoryRunning;
     public final double callbackAverageMs;
     public final double callbackMaxMs;
+    public final double uhfModuleTempC;
+    public final int rfPowerDbm;
+    public final String inventorySession;
+    public final String inventoryTarget;
+    public final String qValue;
+    public final String dynamicQEnabled;
+    public final String antennaState;
+    public final boolean readerConnected;
+    public final long sdkErrorCount;
+    public final String sdkLastError;
+    public final long sdkWarningCount;
+    public final String sdkLastWarning;
+    public final int callbackQueueDepth;
+    public final double avgRssi;
+    public final double minRssi;
+    public final double maxRssi;
+    public final int knownUnreadExpected;
+    public final int knownUnreadFound;
 
     public InventorySnapshot(
         final String sessionId,
@@ -95,7 +114,25 @@ public final class RetailDiagnosticLogger {
         final long lastDbBatchFlushDurationMs,
         final boolean readerInventoryRunning,
         final double callbackAverageMs,
-        final double callbackMaxMs) {
+        final double callbackMaxMs,
+        final double uhfModuleTempC,
+        final int rfPowerDbm,
+        final String inventorySession,
+        final String inventoryTarget,
+        final String qValue,
+        final String dynamicQEnabled,
+        final String antennaState,
+        final boolean readerConnected,
+        final long sdkErrorCount,
+        final String sdkLastError,
+        final long sdkWarningCount,
+        final String sdkLastWarning,
+        final int callbackQueueDepth,
+        final double avgRssi,
+        final double minRssi,
+        final double maxRssi,
+        final int knownUnreadExpected,
+        final int knownUnreadFound) {
       this.sessionId = sessionId;
       this.elapsedSeconds = elapsedSeconds;
       this.totalRawCallbacks = totalRawCallbacks;
@@ -106,6 +143,24 @@ public final class RetailDiagnosticLogger {
       this.readerInventoryRunning = readerInventoryRunning;
       this.callbackAverageMs = callbackAverageMs;
       this.callbackMaxMs = callbackMaxMs;
+      this.uhfModuleTempC = uhfModuleTempC;
+      this.rfPowerDbm = rfPowerDbm;
+      this.inventorySession = inventorySession;
+      this.inventoryTarget = inventoryTarget;
+      this.qValue = qValue;
+      this.dynamicQEnabled = dynamicQEnabled;
+      this.antennaState = antennaState;
+      this.readerConnected = readerConnected;
+      this.sdkErrorCount = sdkErrorCount;
+      this.sdkLastError = sdkLastError;
+      this.sdkWarningCount = sdkWarningCount;
+      this.sdkLastWarning = sdkLastWarning;
+      this.callbackQueueDepth = callbackQueueDepth;
+      this.avgRssi = avgRssi;
+      this.minRssi = minRssi;
+      this.maxRssi = maxRssi;
+      this.knownUnreadExpected = knownUnreadExpected;
+      this.knownUnreadFound = knownUnreadFound;
     }
   }
 
@@ -113,11 +168,15 @@ public final class RetailDiagnosticLogger {
     final double tempC;
     final int levelPercent;
     final String chargingStatus;
+    final int voltageMv;
+    final double currentMa;
 
-    BatterySnapshot(final double tempC, final int levelPercent, final String chargingStatus) {
+    BatterySnapshot(final double tempC, final int levelPercent, final String chargingStatus, final int voltageMv, final double currentMa) {
       this.tempC = tempC;
       this.levelPercent = levelPercent;
       this.chargingStatus = chargingStatus;
+      this.voltageMv = voltageMv;
+      this.currentMa = currentMa;
     }
   }
 
@@ -251,6 +310,7 @@ public final class RetailDiagnosticLogger {
           String.valueOf(snapshot.totalUniqueEpcs),
           formatDouble(rawRate),
           formatDouble(uniqueRate),
+          formatDouble(snapshot.totalRawCallbacks > 0L ? (snapshot.totalDuplicateCallbacks * 100.0d) / snapshot.totalRawCallbacks : Double.NaN),
           String.valueOf(snapshot.dbPendingQueueSize),
           String.valueOf(snapshot.lastDbBatchFlushDurationMs),
           String.valueOf(Math.max(0L, UI_UPDATE_COUNT.get() - startUiUpdateCount)),
@@ -268,7 +328,28 @@ public final class RetailDiagnosticLogger {
           gc.timeMs >= 0L ? String.valueOf(gc.timeMs) : "",
           threadCount >= 0 ? String.valueOf(threadCount) : "",
           formatDouble(snapshot.callbackAverageMs),
-          formatDouble(snapshot.callbackMaxMs)));
+          formatDouble(snapshot.callbackMaxMs),
+          formatDouble(snapshot.uhfModuleTempC),
+          snapshot.rfPowerDbm >= 0 ? String.valueOf(snapshot.rfPowerDbm) : "",
+          snapshot.inventorySession,
+          snapshot.inventoryTarget,
+          snapshot.qValue,
+          snapshot.dynamicQEnabled,
+          snapshot.antennaState,
+          String.valueOf(snapshot.readerConnected),
+          String.valueOf(snapshot.sdkErrorCount),
+          snapshot.sdkLastError,
+          String.valueOf(snapshot.sdkWarningCount),
+          snapshot.sdkLastWarning,
+          snapshot.callbackQueueDepth >= 0 ? String.valueOf(snapshot.callbackQueueDepth) : "",
+          formatDouble(snapshot.avgRssi),
+          formatDouble(snapshot.minRssi),
+          formatDouble(snapshot.maxRssi),
+          battery.voltageMv >= 0 ? String.valueOf(battery.voltageMv) : "",
+          formatDouble(battery.currentMa),
+          readScreenBrightness(),
+          snapshot.knownUnreadExpected >= 0 ? String.valueOf(snapshot.knownUnreadExpected) : "",
+          snapshot.knownUnreadFound >= 0 ? String.valueOf(snapshot.knownUnreadFound) : ""));
       writer.newLine();
       writer.flush();
       lastSampleMs = now;
@@ -291,7 +372,8 @@ public final class RetailDiagnosticLogger {
     catch (Throwable ignored) {
       // Keep diagnostics side-band; never interrupt inventory.
     }
-    return new InventorySnapshot(sessionId, Math.max(0L, (now - startTimeMs) / 1000L), 0L, 0L, 0L, 0, 0L, false, Double.NaN, Double.NaN);
+    return new InventorySnapshot(sessionId, Math.max(0L, (now - startTimeMs) / 1000L), 0L, 0L, 0L, 0, 0L, false, Double.NaN, Double.NaN,
+        Double.NaN, -1, "", "", "", "", "", false, 0L, "", 0L, "", -1, Double.NaN, Double.NaN, Double.NaN, -1, -1);
   }
 
   private void updateSummaryStats(final InventorySnapshot snapshot, final BatterySnapshot battery, final double rawRate, final double uniqueRate, final String timestamp) {
@@ -379,17 +461,32 @@ public final class RetailDiagnosticLogger {
   private BatterySnapshot readBatterySnapshot() {
     try {
       final Intent intent = appContext.registerReceiver(null, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
-      if (intent == null) return new BatterySnapshot(Double.NaN, -1, "");
+      if (intent == null) return new BatterySnapshot(Double.NaN, -1, "", -1, Double.NaN);
       final int tempTenths = intent.getIntExtra(BatteryManager.EXTRA_TEMPERATURE, Integer.MIN_VALUE);
       final double tempC = tempTenths == Integer.MIN_VALUE ? Double.NaN : tempTenths / 10.0d;
       final int level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
       final int scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
       final int levelPercent = level >= 0 && scale > 0 ? Math.round((level * 100.0f) / scale) : -1;
       final int status = intent.getIntExtra(BatteryManager.EXTRA_STATUS, -1);
-      return new BatterySnapshot(tempC, levelPercent, chargingStatus(status));
+      final int voltageMv = intent.getIntExtra(BatteryManager.EXTRA_VOLTAGE, -1);
+      return new BatterySnapshot(tempC, levelPercent, chargingStatus(status), voltageMv, readBatteryCurrentMa());
     }
     catch (Throwable t) {
-      return new BatterySnapshot(Double.NaN, -1, "");
+      return new BatterySnapshot(Double.NaN, -1, "", -1, Double.NaN);
+    }
+  }
+
+  private double readBatteryCurrentMa() {
+    try {
+      if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) return Double.NaN;
+      final BatteryManager batteryManager = (BatteryManager) appContext.getSystemService(Context.BATTERY_SERVICE);
+      if (batteryManager == null) return Double.NaN;
+      final int currentMicroAmps = batteryManager.getIntProperty(BatteryManager.BATTERY_PROPERTY_CURRENT_NOW);
+      if (currentMicroAmps == Integer.MIN_VALUE) return Double.NaN;
+      return currentMicroAmps / 1000.0d;
+    }
+    catch (Throwable ignored) {
+      return Double.NaN;
     }
   }
 
@@ -561,6 +658,15 @@ public final class RetailDiagnosticLogger {
       closeQuietly(reader);
     }
     return -1;
+  }
+
+  private String readScreenBrightness() {
+    try {
+      return String.valueOf(Settings.System.getInt(appContext.getContentResolver(), Settings.System.SCREEN_BRIGHTNESS));
+    }
+    catch (Throwable ignored) {
+      return "";
+    }
   }
 
   private File getDiagnosticsDir() {
