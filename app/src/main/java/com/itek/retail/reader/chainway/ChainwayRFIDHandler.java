@@ -99,6 +99,10 @@ public class ChainwayRFIDHandler extends RFIDHandler{
   private Boolean loopFlag = false;
   private RFIDWithUHFUART mReader = null;
   private RFIDWithUHFBLE reader = null;
+  private volatile String diagnosticInventorySession = "";
+  private volatile String diagnosticInventoryTarget = "";
+  private volatile String diagnosticQValue = "";
+  private volatile String diagnosticDynamicQEnabled = "";
   private boolean isConnected = false;
   private Handler handler;
   private BluetoothAdapter mBluetoothAdapter = null;
@@ -625,6 +629,10 @@ public class ChainwayRFIDHandler extends RFIDHandler{
       gen2Entity.setQueryTarget(inventoried);
       gen2Entity.setQuerySession(seesionid);
       if(setGen2(gen2Entity)){
+        diagnosticInventorySession = session;
+        diagnosticInventoryTarget = invType;
+        diagnosticQValue = String.valueOf(gen2Entity.getQ());
+        diagnosticDynamicQEnabled = gen2Entity.getMinQ() != gen2Entity.getMaxQ() ? "true" : "false";
         showLog(TAG + " SET_SESSION_" + session + "_INV_TYPE_" + invType, "SET");
       }
       else{
@@ -1215,6 +1223,47 @@ public class ChainwayRFIDHandler extends RFIDHandler{
     int result =  reader != null ? reader.getPower() : mReader != null ? mReader.getPower() : -1;
     AppCommonMethods.writeReaderLog(context,"CHAINWAY","CHAINWAY_RFID",FILE_TAG_LOG,"getPower -> "+result);
     return result;
+  }
+
+  @Override
+  protected double readUhfModuleTemperatureCForDiagnostics(){
+    try{
+      final int temperature = reader != null ? reader.getTemperature() : mReader != null ? mReader.getTemperature() : Integer.MIN_VALUE;
+      return temperature == Integer.MIN_VALUE ? Double.NaN : temperature;
+    }
+    catch(Throwable ignored){
+      return Double.NaN;
+    }
+  }
+
+  @Override
+  protected int readRfPowerDbmForDiagnostics(){
+    try{
+      return getPower();
+    }
+    catch(Throwable ignored){
+      return super.readRfPowerDbmForDiagnostics();
+    }
+  }
+
+  @Override
+  protected String readInventoryTargetForDiagnostics(){
+    return diagnosticInventoryTarget;
+  }
+
+  @Override
+  protected String readQValueForDiagnostics(){
+    return diagnosticQValue;
+  }
+
+  @Override
+  protected String readDynamicQEnabledForDiagnostics(){
+    return diagnosticDynamicQEnabled;
+  }
+
+  @Override
+  protected String readInventorySessionForDiagnostics(){
+    return diagnosticInventorySession;
   }
   
   private boolean setPower(int power){
@@ -2499,12 +2548,16 @@ public class ChainwayRFIDHandler extends RFIDHandler{
       catch(Throwable e){
         showLog("_err", e.getMessage());
         e.printStackTrace();
+        recordInventorySdkErrorForDiagnostics(e.getMessage());
         AppCommonMethods.writeReaderLog(context,"CHAINWAY","CHAINWAY_RFID",FILE_TAG_LOG,e.getMessage());
       }
       if(uhftagInfo != null && isNonEmpty(uhftagInfo.getEPC())){
         final String epc = uhftagInfo != null ? chkNull(uhftagInfo.getEPC(), "") : "";
         final String tid = readTid ? chkNull(uhftagInfo.getTid(), "") : "";
-        if(sessionAction == AppCommonMethods.SessionAction.INVENTORY) recordInventoryRawCallbackForDiagnostics();
+        if(sessionAction == AppCommonMethods.SessionAction.INVENTORY){
+          recordInventoryRawCallbackForDiagnostics();
+          recordInventoryRssiForDiagnostics(uhftagInfo.getRssi());
+        }
         //updateFoundWrittenTag(epc,tid);
         //showLog("1epc_tid",epc+"_"+tid);
         if(!isValidItekTag(epc,tid)) return;

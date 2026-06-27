@@ -14,8 +14,8 @@ android {
         //applicationId "com.itek.dcretail"
         minSdkVersion 21
         targetSdkVersion 33
-        versionCode 187
-        versionName "26.06.24.187-diag"
+        versionCode 188
+        versionName "26.06.24.188-diag"
         buildConfigField "boolean", "IS_DIAGNOSTIC_BUILD", "true"
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled = true
