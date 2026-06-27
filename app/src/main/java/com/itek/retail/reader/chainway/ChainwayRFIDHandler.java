@@ -2483,6 +2483,8 @@ public class ChainwayRFIDHandler extends RFIDHandler{
   }
   
   private void processUHFData(final UHFTAGInfo uhftagInfo){
+    final long callbackStartNs = System.nanoTime();
+    try{
     if(loopFlag){
       try{
         if(uhftagInfo == null){
@@ -2659,6 +2661,10 @@ public class ChainwayRFIDHandler extends RFIDHandler{
           else if(!rejectKnownInventoryDuplicate(epc, tid) && validateTagInfoForInventory(epc)) storeInventoryData(uhftagInfo);
         }
       }
+    }
+    }
+    finally{
+      if(sessionAction == AppCommonMethods.SessionAction.INVENTORY) recordInventoryCallbackDuration(System.nanoTime() - callbackStartNs);
     }
   }
   

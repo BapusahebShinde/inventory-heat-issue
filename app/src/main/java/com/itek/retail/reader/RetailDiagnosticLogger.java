@@ -7,6 +7,8 @@ import android.os.BatteryManager;
 import android.os.Build;
 import android.os.Debug;
 import android.os.PowerManager;
+import android.os.Process;
+import android.os.SystemClock;
 import android.util.Log;
 
 import com.itek.retail.BuildConfig;
@@ -36,7 +38,7 @@ public final class RetailDiagnosticLogger {
   private static final long MEMORY_LOW_MB = 64L;
   private static final AtomicLong UI_UPDATE_COUNT = new AtomicLong(0L);
   private static final AtomicLong LAST_UI_UPDATE_MS = new AtomicLong(0L);
-  public static final String CSV_HEADER = "row_type,session_id,timestamp,elapsed_seconds,battery_temp_c,battery_level,charging_status,total_raw_callbacks,total_duplicate_callbacks,total_unique_epcs,raw_callbacks_per_sec,unique_epcs_per_sec,db_pending_queue_size,last_db_batch_flush_ms,ui_update_count,last_ui_update_timestamp,app_memory_used_mb,app_memory_free_mb,reader_inventory_running,warnings,thermal_status,thermal_throttling_level,thermal_warning,cpu_usage_percent,cpu_frequency_khz,gc_count,gc_time_ms,process_thread_count";
+  public static final String CSV_HEADER = "row_type,session_id,timestamp,elapsed_seconds,battery_temp_c,battery_level,charging_status,total_raw_callbacks,total_duplicate_callbacks,total_unique_epcs,raw_callbacks_per_sec,unique_epcs_per_sec,db_pending_queue_size,last_db_batch_flush_ms,ui_update_count,last_ui_update_timestamp,app_memory_used_mb,app_memory_free_mb,reader_inventory_running,warnings,thermal_status,thermal_throttling_level,thermal_warning,cpu_usage_percent,cpu_frequency_khz,gc_count,gc_time_ms,process_thread_count,callback_avg_ms,callback_max_ms";
 
   private final Context appContext;
   private final String sessionId;
@@ -64,6 +66,8 @@ public final class RetailDiagnosticLogger {
   private double lowestUniqueReadsPerSecondAfterFiveMinutes = Double.NaN;
   private long lastProcessCpuJiffies = -1L;
   private long lastTotalCpuJiffies = -1L;
+  private long lastElapsedCpuTimeMs = -1L;
+  private long lastElapsedCpuWallMs = -1L;
 
   public interface SnapshotProvider {
     InventorySnapshot getInventorySnapshot();
@@ -78,6 +82,8 @@ public final class RetailDiagnosticLogger {
     public final int dbPendingQueueSize;
     public final long lastDbBatchFlushDurationMs;
     public final boolean readerInventoryRunning;
+    public final double callbackAverageMs;
+    public final double callbackMaxMs;
 
     public InventorySnapshot(
         final String sessionId,
@@ -87,7 +93,9 @@ public final class RetailDiagnosticLogger {
         final long totalUniqueEpcs,
         final int dbPendingQueueSize,
         final long lastDbBatchFlushDurationMs,
-        final boolean readerInventoryRunning) {
+        final boolean readerInventoryRunning,
+        final double callbackAverageMs,
+        final double callbackMaxMs) {
       this.sessionId = sessionId;
       this.elapsedSeconds = elapsedSeconds;
       this.totalRawCallbacks = totalRawCallbacks;
@@ -96,6 +104,8 @@ public final class RetailDiagnosticLogger {
       this.dbPendingQueueSize = dbPendingQueueSize;
       this.lastDbBatchFlushDurationMs = lastDbBatchFlushDurationMs;
       this.readerInventoryRunning = readerInventoryRunning;
+      this.callbackAverageMs = callbackAverageMs;
+      this.callbackMaxMs = callbackMaxMs;
     }
   }
 
@@ -256,7 +266,9 @@ public final class RetailDiagnosticLogger {
           cpu.frequencyKhz,
           gc.count >= 0L ? String.valueOf(gc.count) : "",
           gc.timeMs >= 0L ? String.valueOf(gc.timeMs) : "",
-          threadCount >= 0 ? String.valueOf(threadCount) : ""));
+          threadCount >= 0 ? String.valueOf(threadCount) : "",
+          formatDouble(snapshot.callbackAverageMs),
+          formatDouble(snapshot.callbackMaxMs)));
       writer.newLine();
       writer.flush();
       lastSampleMs = now;
@@ -279,7 +291,7 @@ public final class RetailDiagnosticLogger {
     catch (Throwable ignored) {
       // Keep diagnostics side-band; never interrupt inventory.
     }
-    return new InventorySnapshot(sessionId, Math.max(0L, (now - startTimeMs) / 1000L), 0L, 0L, 0L, 0, 0L, false);
+    return new InventorySnapshot(sessionId, Math.max(0L, (now - startTimeMs) / 1000L), 0L, 0L, 0L, 0, 0L, false, Double.NaN, Double.NaN);
   }
 
   private void updateSummaryStats(final InventorySnapshot snapshot, final BatterySnapshot battery, final double rawRate, final double uniqueRate, final String timestamp) {
@@ -414,6 +426,8 @@ public final class RetailDiagnosticLogger {
         lastProcessCpuJiffies = process;
         lastTotalCpuJiffies = total;
       }
+      lastElapsedCpuTimeMs = Process.getElapsedCpuTime();
+      lastElapsedCpuWallMs = SystemClock.elapsedRealtime();
     }
     catch (Throwable ignored) {
       // CPU diagnostics are optional.
@@ -436,7 +450,27 @@ public final class RetailDiagnosticLogger {
     catch (Throwable ignored) {
       // CPU diagnostics are optional.
     }
+    if (Double.isNaN(usagePercent)) usagePercent = readElapsedProcessCpuPercent();
     return new CpuSnapshot(usagePercent, readCpuFrequencyKhz());
+  }
+
+  private double readElapsedProcessCpuPercent() {
+    try {
+      final long processCpuMs = Process.getElapsedCpuTime();
+      final long wallMs = SystemClock.elapsedRealtime();
+      double usagePercent = Double.NaN;
+      if (lastElapsedCpuTimeMs >= 0L && lastElapsedCpuWallMs > 0L) {
+        final long processDeltaMs = Math.max(0L, processCpuMs - lastElapsedCpuTimeMs);
+        final long wallDeltaMs = Math.max(0L, wallMs - lastElapsedCpuWallMs);
+        if (wallDeltaMs > 0L) usagePercent = (processDeltaMs * 100.0d) / wallDeltaMs;
+      }
+      lastElapsedCpuTimeMs = processCpuMs;
+      lastElapsedCpuWallMs = wallMs;
+      return usagePercent;
+    }
+    catch (Throwable ignored) {
+      return Double.NaN;
+    }
   }
 
   private long readProcessCpuJiffies() {
