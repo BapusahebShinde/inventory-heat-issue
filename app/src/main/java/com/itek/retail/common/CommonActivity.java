@@ -167,6 +167,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
+import java.util.Enumeration;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ExecutorService;
@@ -779,7 +780,9 @@ public class CommonActivity extends AppCompatActivity{
     try{
       macAddress = SharedPrefManager.getMACAddress();
       if(macAddress.length() > 0) return macAddress;
-      List<NetworkInterface> all = Collections.list(NetworkInterface.getNetworkInterfaces());
+      final Enumeration<NetworkInterface> networkInterfaces = NetworkInterface.getNetworkInterfaces();
+      if(networkInterfaces == null) return "";
+      List<NetworkInterface> all = Collections.list(networkInterfaces);
       for(NetworkInterface nif : all){
         if(!nif.getName().equalsIgnoreCase("wlan0")) continue;
         
