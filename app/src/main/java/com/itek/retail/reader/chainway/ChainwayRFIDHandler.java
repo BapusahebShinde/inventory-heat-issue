@@ -2663,6 +2663,11 @@ public class ChainwayRFIDHandler extends RFIDHandler{
       }
     }
     }
+    catch(Throwable e){
+      showLog("_err", e.getMessage());
+      e.printStackTrace();
+      AppCommonMethods.writeReaderLog(context,"CHAINWAY","CHAINWAY_RFID",FILE_TAG_LOG,e.getMessage());
+    }
     finally{
       if(sessionAction == AppCommonMethods.SessionAction.INVENTORY) recordInventoryCallbackDuration(System.nanoTime() - callbackStartNs);
     }

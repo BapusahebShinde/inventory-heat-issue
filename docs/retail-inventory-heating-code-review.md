@@ -79,3 +79,8 @@ Based on the current code review and diagnostic summary, the diagnostic CSV writ
 ## Implemented Diagnostic Code Changes
 
 The diagnostic CSV should now include `callback_avg_ms` and `callback_max_ms` so long-running field sessions can show whether application callback processing time increases before the RFID read-rate drop. CPU reporting also now has a fallback path using Android process elapsed CPU time when `/proc/stat` or `/proc/self/stat` is unavailable or restricted on the handheld.
+
+
+## Signed APK Crash Hardening
+
+The Chainway/C5 RFID callback is now wrapped with a top-level `Throwable` guard that writes reader logs and still records callback timing in `finally`. This keeps diagnostics from allowing an unexpected callback exception to terminate the signed APK during prolonged inventory testing.
