@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="colorPrimaryDef">#FFFEFEFE</color>
+  <color name="colorPrimaryDarkDef">#FF962A27</color>
+  <color name="colorAccentDef">#FF962A27</color>
+
+  <!--<color name="colorPrimary">?attr/colorPrimary</color>-->
+  <!--<color name="colorPrimaryDark">?attr/colorPrimaryDark</color>-->
+  <!--<color name="colorAccent">?attr/colorAccent</color>-->
+
+  <color name="purple_200">#FFBB86FC</color>
+  <color name="purple_500">#FF6200EE</color>
+  <color name="purple_700">#FF3700B3</color>
+  <color name="teal_200">#FF03DAC5</color>
+  <color name="teal_700">#FF018786</color>
+
+  <color name="transparent">#00000000</color>
+  <color name="black">#FF000000</color>
+  <color name="white">#FFFFFFFF</color>
+  <color name="grey">#FF3A3A3A</color>
+  <color name="green">#FF20AA26</color>
+  <color name="light_green">#FF90EE90</color>
+  <color name="greenlight">#22008000</color>
+  <color name="red_bg">#77770000</color>
+  <color name="red">#FF962A27</color>
+  <color name="yellow">#FFFFFF00</color>
+  <color name="orange">#FFF2B229</color>
+  <color name="colorDark">#751714</color>
+  <color name="graywhite">#F5F5F5</color>
+  <color name="gold">#FFD700</color>
+
+  <color name="err_red">@color/colorPrimaryDarkDef</color>
+
+  <color name="icon_grey">#FF656565</color>
+  <color name="icon_light_grey">#FFBEBEBE</color>
+  <color name="icon_green">#FF039E00</color>
+  <color name="icon_green_bright">#FF09E405</color>
+
+  <color name="itek_launcher_background">@color/white</color>
+
+  <color name="colorDisabled">#FFDEDEDE</color>
+  <color name="bgListAlternet">#FFF5F5F5</color>
+
+  <color name="highlight">#22DA6E6B</color>
+  <color name="hyperlink">#FF0645AD</color>
+  <color name="bgSemiTransBlack">#77000000</color>
+  <!--<color name="txtDarkGray">#202020</color>-->
+  <color name="txtDarkGray">#FF4C4C4C</color>
+  <color name="txtGray">#FF707070</color>
+  <color name="txtLightGray">#FF949494</color>
+  <color name="txtLighterGray">#FFBDBDBD</color>
+  <color name="txtExtraLighterGray">#FFEDEDED</color>
+  <color name="txtSuperExtraLighterGray">#FFFCFCFC</color>
+  <color name="gaugeviewstroke">#FFEFEFEF</color>
+
+  <color name="txt_number">#FF4C4C4C</color>
+  <color name="txt_header">@color/txt_number</color>
+  <color name="txt_sub_header">@color/txt_header</color>
+  <color name="txt_sub_sub_header">@color/txt_header</color>
+  <color name="txt_regular">#FF686868</color>
+  <color name="txt_small">@color/txt_regular</color>
+  <color name="txt_light">@color/icon_light_grey</color>
+
+  <color name="bg_txt_config_btn_header">@color/bgListAlternet</color>
+  <color name="txt_button">@color/white</color>
+  <color name="bg_button_non_select">@color/bgListAlternet</color>
+  <color name="txt_button_non_select">@color/txt_header</color>
+  <color name="txt_button_invert">?attr/colorPrimaryDark</color>
+
+  <color name="seek_track">@color/icon_light_grey</color>
+  <color name="seek_secondary_track_enabled">?attr/colorAccent</color>
+  <color name="seek_secondary_track_disabled">@color/seek_track</color>
+
+  <color name="txtRed">#FFCC0000</color>
+  <color name="txtGreen">#FF00CC00</color>
+  <color name="txtBlue">#FF0000CC</color>
+  <color name="txtOrange">#FFF2B229</color>
+  <color name="viewline">#FFCDCDCD</color>
+
+  <color name="bg_quick_action">#F1F1F1</color>
+  <color name="txt_quick_action">@color/txt_number</color>
+  <color name="shadow_quick_action">@color/viewline</color>
+  <!--<color name="quick_action_shadow_color">#64000000</color>-->
+
+  <color name="lblTotalQtyCircle">#FFAB0010</color>
+  <color name="lblFoundQtyCircle">#FFF2B229</color>
+  <color name="lblDecodedQtyCircle">#FF039E00</color>
+
+  <!-- SwipeBtn -->
+  <color name="proswipebtn_translucent_white">@color/white</color>
+  <color name="proswipebtn_red">@color/colorPrimaryDarkDef</color>
+  <color name="proswipebtn_disabled_grey">@color/white</color>
+</resources>

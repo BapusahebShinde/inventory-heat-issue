@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:bind="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/white"
+  android:clickable="true"
+  app:layout_behavior="@string/appbar_scrolling_view_behavior"
+  bind:context=".ui.actionmenu.ActionMenuCompareFragment">
+
+  <include
+    android:id="@+id/header"
+    layout="@layout/header_title_layout" />
+
+  <com.itek.retail.ui.customviews.ScanCodesInputAndKeypadView
+    android:id="@+id/scan_encoding_verify_barcode"
+    android:layout_width="@dimen/dp_0"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/dp_5"
+    android:layout_marginRight="@dimen/dp_2_half"
+    android:hint="@string/hint_product"
+    app:isRFIDScan="true"
+    app:layout_constrainedWidth="true"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toLeftOf="@id/scan_encoding_verify_rfid"
+    app:layout_constraintTop_toBottomOf="@+id/header"
+    app:layout_constraintWidth_default="percent"
+    app:layout_constraintWidth_percent="0.49" />
+
+  <com.itek.retail.ui.customviews.ProductDetailsView
+    android:id="@+id/pdv_encoding_verify_barcode"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_0"
+    android:layout_marginLeft="@dimen/dp_5"
+    android:layout_marginRight="@dimen/dp_5"
+    app:layout_constrainedWidth="true"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toLeftOf="@id/pdv_encoding_verify_rfid"
+    app:layout_constraintTop_toBottomOf="@id/scan_encoding_verify_barcode"
+    app:layout_constraintWidth_default="percent"
+    app:layout_constraintWidth_percent="0.49" />
+
+  <com.itek.retail.ui.customviews.ScanCodesInputAndKeypadView
+    android:id="@+id/scan_encoding_verify_rfid"
+    android:layout_width="@dimen/dp_0"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/dp_2_half"
+    android:layout_marginRight="@dimen/dp_5"
+    android:hint="@string/hint_product"
+    android:visibility="gone"
+    app:isRFIDScan="true"
+    app:layout_constrainedWidth="true"
+    app:layout_constraintLeft_toRightOf="@id/scan_encoding_verify_barcode"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/header"
+    app:layout_constraintWidth_default="percent"
+    app:layout_constraintWidth_percent="0.49" />
+
+  <com.itek.retail.ui.customviews.ProductDetailsView
+    android:id="@+id/pdv_encoding_verify_rfid"
+    android:layout_width="@dimen/dp_0"
+    android:layout_height="@dimen/dp_0"
+    android:layout_marginLeft="@dimen/dp_5"
+    android:layout_marginRight="@dimen/dp_5"
+    app:layout_constrainedWidth="true"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintLeft_toRightOf="@id/pdv_encoding_verify_barcode"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/scan_encoding_verify_rfid"
+    app:layout_constraintWidth_default="percent"
+    app:layout_constraintWidth_percent="0.49" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

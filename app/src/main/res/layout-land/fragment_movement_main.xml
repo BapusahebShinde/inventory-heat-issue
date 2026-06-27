@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:bind="http://schemas.android.com/tools"
+  android:id="@+id/swipeLayout"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:background="@color/white"
+  android:clickable="true">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    bind:context=".ui.movement.MovementMainViewModel">
+
+    <include
+      android:id="@+id/header"
+      layout="@layout/header_title_layout" />
+
+    <include
+      android:id="@+id/ll_sub_header"
+      layout="@layout/header_subtitle_layout"
+      app:layout_constraintTop_toBottomOf="@id/header" />
+
+    <TextView
+      android:id="@+id/txt_replenishment"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/dp_15"
+      android:layout_marginBottom="@dimen/dp_15"
+      android:gravity="center"
+      android:text="@string/replenishment"
+      android:textAppearance="@style/TextStyleSubHeader"
+      app:layout_constraintBottom_toTopOf="@id/rgReplenishmentType"
+      app:layout_constraintTop_toBottomOf="@id/ll_sub_header" />
+
+    <RadioGroup
+      android:id="@+id/rgReplenishmentType"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      app:layout_constraintTop_toBottomOf="@id/txt_replenishment">
+
+      <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+      <RadioButton
+        android:id="@+id/rb_dynamic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_5"
+        android:layout_weight="1"
+        android:checked="true"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="true"
+        android:tag="@string/replenish_type_dynamic"
+        android:text="@string/replenish_type_dynamic" />
+
+      <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+      <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+      <RadioButton
+        android:id="@+id/rb_static"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_5"
+        android:layout_weight="1"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="true"
+        android:tag="@string/replenish_type_static"
+        android:text="@string/replenish_type_static" />
+
+      <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+    </RadioGroup>
+
+    <LinearLayout
+      android:id="@+id/llDashboardMov"
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/dp_0"
+      android:orientation="horizontal"
+      app:layout_constraintBottom_toTopOf="@id/lbl_refresh"
+      app:layout_constraintTop_toBottomOf="@id/rgReplenishmentType">
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.25"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.itek.retail.ui.customviews.DashboardDataView
+          android:id="@+id/move_total_item"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_gravity="center_vertical"
+          android:layout_weight="1"
+          android:background="@drawable/border_bottom"
+          android:orientation="vertical"
+          android:text="100"
+          android:visibility="invisible"
+          app:isUpwardArrow="true"
+          app:label="@string/lbl_mov_total_items"
+          app:percent="10" />
+
+        <com.itek.retail.ui.customviews.DashboardDataView
+          android:id="@+id/move_completed_ean_qty"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_gravity="center"
+          android:layout_weight="1"
+          android:text=""
+          app:isUpwardArrow="true"
+          app:label="@string/lbl_mov_completed"
+          app:labelColor="@color/txtGreen"
+          app:percent="" />
+
+        <androidx.recyclerview.widget.RecyclerView
+          android:id="@+id/listTimeRecordsCompleted"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          android:scrollbars="vertical"
+          android:visibility="gone"
+          app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        <View
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          android:visibility="visible" />
+
+      </LinearLayout>
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/txtSuperExtraLighterGray"
+        android:orientation="vertical">
+
+        <com.itek.retail.ui.customviews.DashboardDataView
+          android:id="@+id/move_pending_ean_qty"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_weight="1.3"
+          android:orientation="vertical"
+          android:text="-"
+          app:isUpwardArrow="false"
+          app:label="@string/lbl_mov_pending"
+          app:labelColor="@color/txtRed"
+          app:percent="05"
+          app:percentColor="@color/txtGreen" />
+
+        <androidx.recyclerview.widget.RecyclerView
+          android:id="@+id/listTimeRecordsPending"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          android:scrollbars="vertical"
+          app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+      </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+      android:id="@+id/lbl_refresh"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/dp_15"
+      android:background="@drawable/border_bottom"
+      android:gravity="center"
+      android:paddingBottom="@dimen/dp_5"
+      android:text="@string/msg_refresh_dashboard"
+      android:textAppearance="@style/TextStyleSubSubHeader"
+      android:visibility="visible"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/llDashboardMov" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

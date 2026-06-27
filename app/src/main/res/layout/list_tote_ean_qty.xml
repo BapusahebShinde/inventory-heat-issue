@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <data>
+
+    <variable
+      name="storeTripDetailsData"
+      type="com.itek.retail.ui.inward.grn.StoreTripDetailsData" />
+  </data>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/graywhite"
+    android:orientation="horizontal"
+    android:padding="@dimen/dp_5"
+    android:visibility="visible"
+    app:layout_constraintTop_toBottomOf="@id/ll_grn_trip_header_val">
+
+    <TextView
+      android:id="@+id/textScanEanNo"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:text="@string/lbl_article_no"
+      android:textAppearance="@style/TextStyleSubSubHeader" />
+
+    <TextView
+      android:id="@+id/textScanQty"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:text="@string/lbl_scan_qty"
+      android:textAppearance="@style/TextStyleSubSubHeader" />
+
+    <TextView
+      android:id="@+id/textScanEanQty"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:text="@string/lbl_ean_qty"
+      android:textAppearance="@style/TextStyleSubSubHeader"
+      android:visibility="visible" />
+
+    <ImageView
+      android:id="@+id/imgeanInfo"
+      android:layout_width="@dimen/dp_30"
+      android:layout_height="@dimen/dp_30"
+      android:layout_gravity="center"
+      android:layout_marginLeft="@dimen/dp_5"
+      android:layout_marginRight="@dimen/dp_5"
+      android:gravity="center"
+      android:visibility="visible"
+      app:srcCompat="@drawable/dummy_white_background" />
+
+  </LinearLayout>
+
+</layout>

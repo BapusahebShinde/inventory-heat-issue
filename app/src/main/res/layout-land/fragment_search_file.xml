@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:bind="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/white"
+  android:clickable="true"
+  bind:context=".ui.search.filesearch.SearchFileBasedFragment">
+
+  <include
+    android:id="@+id/header"
+    layout="@layout/header_title_layout" />
+
+  <com.itek.retail.ui.customviews.PowerView
+    android:id="@+id/llSeekbarPower"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:visibility="gone"
+    app:layout_constraintBottom_toTopOf="@id/btn_upload_file"
+    app:layout_constraintTop_toBottomOf="@id/header"
+    app:pv_max="30"
+    app:pv_min="5" />
+
+  <Button
+      android:id="@+id/btn_upload_file"
+      style="@style/Button"
+      android:layout_width="@dimen/dp_0"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_margin="@dimen/dp_10"
+      android:text="@string/btn_select_file"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/llSeekbarPower"
+      app:layout_constraintWidth_default="percent"
+      app:layout_constraintWidth_percent="0.333" />
+
+  <LinearLayout
+    android:id="@+id/ll_unencoded_search_found_total"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/dp_15"
+    android:layout_marginRight="@dimen/dp_15"
+    android:layout_marginBottom="@dimen/dp_15"
+    android:orientation="horizontal"
+    android:visibility="gone"
+    app:layout_constraintBottom_toTopOf="@id/list_search_unencoded"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/btn_upload_file">
+
+    <com.itek.retail.ui.customviews.DashboardDataView
+      android:id="@+id/ddv_unencoded_search_total_found"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:padding="@dimen/dp_0"
+      android:text="0/0"
+      android:textSize="@dimen/sp_28"
+      app:isShowPercent="false"
+      app:isUseSplitLabels="true"
+      app:isUseSplitViews="false"
+      app:label="@string/lbl_found_total"
+      app:layout_constraintBottom_toTopOf="@id/list_search_unencoded"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/spin_location" />
+
+    <com.itek.retail.ui.customviews.BtnStartStopView
+      android:id="@+id/llBtnStart"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:orientation="vertical" />
+
+  </LinearLayout>
+
+  <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/list_search_unencoded"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_0"
+    android:layout_marginLeft="@dimen/dp_15"
+    android:layout_marginRight="@dimen/dp_15"
+    android:layout_marginBottom="@dimen/dp_5"
+    android:scrollbars="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/ll_unencoded_search_found_total" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

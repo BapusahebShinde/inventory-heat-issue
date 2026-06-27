@@ -1,0 +1,139 @@
+{
+  "clientName": null,
+  "clientID": null,
+  "userName": null,
+  "userProfileImg": null,
+  "storeId": "102",
+  "storeName": "Bamuni Maidan",
+  "storeCode": "TW61",
+  "deviceType": "ZEBRA",
+  "deviceModel": "TC210K",
+  "deviceKeyCodes": "139, 280, 293",
+  "isDeviceBluetoothDependent": true,
+  "zones": [
+    {
+      "zoneId": 3,
+      "zoneName": "BOH",
+      "isDefault": true,
+      "zoneType": "BOH"
+    },
+    {
+      "zoneId": 4,
+      "zoneName": "Ground Floor",
+      "isDefault": true,
+      "zoneType": "FOH"
+    },
+    {
+      "zoneId": 5,
+      "zoneName": "First Floor",
+      "isDefault": false,
+      "zoneType": "FOH"
+    }
+  ],
+  "menus": [
+    {
+      "menuName": "Encoding",
+      "menuId": "ENC",
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": true,
+      "sequence": 1,
+      "imageUrl": null
+    },
+    {
+      "menuName": "Inventory",
+      "menuId": "INV",
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": true,
+      "sequence": 2,
+      "imageUrl": null
+    },
+    {
+      "menuName": "Search",
+      "menuId": "SER",
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": true,
+      "sequence": 3,
+      "imageUrl": null
+    },
+    {
+      "menuName": "Inward",
+      "menuId": "INW",
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": true,
+      "sequence": 4,
+      "imageUrl": null
+    },
+    {
+      "menuName": "Movement",
+      "menuId": "MOV",
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": true,
+      "sequence": 5,
+      "imageUrl": null
+    },
+    {
+      "menuName": "Outward",
+      "menuId": "OTW",
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": true,
+      "sequence": 6,
+      "imageUrl": null
+    },
+    {
+      "menuName": "Verify Encoding",
+      "menuId": "ENC_VERIFY",
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "sequence": 11,
+      "imageUrl": null
+    },
+    {
+      "menuName": "Encoding",
+      "menuId": "ENC_START",
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "sequence": 12,
+      "imageUrl": null
+    },
+    {
+      "menuName": "Inventory",
+      "menuId": "INV_START",
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "sequence": 21,
+      "imageUrl": null
+    },
+    {
+      "menuName": "Stock Correction",
+      "menuId": "INV_STOCK_CORRECT",
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "sequence": 22,
+      "imageUrl": null
+    },
+    {
+      "menuName": "Product Search",
+      "menuId": "SER_PROD",
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "sequence": 31,
+      "imageUrl": null
+    },
+    {
+      "menuName": "Omnichannel",
+      "menuId": "SER_OMNI",
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "sequence": 32,
+      "imageUrl": null
+    },
+    {
+      "menuName": "Omnichannel",
+      "menuId": "SER_OMNI_START",
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "sequence": 321,
+      "imageUrl": null
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "tripNum": "1648811642",
+  "whNum": "1234",
+  "type": "IN",
+  "huNumbers": 2,
+  "tripType": "dc_to_store",
+  "verifiedHus": 0,
+  "restrictUnverifiedHu": false,
+  "allowBarcodeScanning": true,
+  "allowMixTagType": true,
+  "lowerTolerance": 100,
+  "upperTolerance": 1000,
+  "delvNum": "1648811642",
+  "huNum": "00000000016488116421",
+  "huStatus": "P",
+  "fromVendor": false,
+  "isHuVerified": false,
+  "apperalBarcodeBased": false,
+  "articleData": [
+    {
+      "articleCode": "440866332016",
+      "packQty": 2,
+      "skus": "8901326038345,8907167838097,8907796773663"
+    },
+    {
+      "articleCode": "440585116039",
+      "packQty": 2,
+      "skus": "8907167838045,8907167838058,8907675736901"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "labelConfig": {
+    "labelTrip": "Trip",
+    "labelHu": "Carton",
+    "labelArticle": "Article",
+    "labelSkuId": "Ean"
+  },
+  "settingConfig": {
+    "isAllowManualTripEntry": true,
+    "isTripDeviceLock": false,
+    "isHuDeviceLock": false,
+    "isAPIBasedRejectHU": true,
+    "restrictUnverifiedHu": false,
+    "allowBarcodeScanning": false,
+    "allowMixTagType": true,
+    "lowerTolerance": 0,
+    "upperTolerance": 0
+  }
+}

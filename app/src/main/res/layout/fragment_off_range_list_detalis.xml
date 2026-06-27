@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:id="@+id/cl_root"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/white"
+  android:clickable="true"
+  android:orientation="vertical">
+
+  <include
+    android:id="@+id/header"
+    layout="@layout/header_title_layout" />
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/clCarton"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/dp_2_half"
+    android:layout_marginRight="@dimen/dp_2_half"
+    android:orientation="horizontal"
+    android:padding="@dimen/dp_5"
+    app:layout_constraintTop_toBottomOf="@+id/header">
+
+    <com.itek.retail.ui.customviews.PowerView
+      android:id="@+id/llSeekbarPower"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:gravity="center"
+      android:visibility="gone"
+      app:layout_constraintTop_toTopOf="parent"
+      app:pv_max="30"
+      app:pv_min="5" />
+
+    <TextView
+      android:id="@+id/txt_carton_no"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="@dimen/dp_2_half"
+      android:layout_marginRight="@dimen/dp_2_half"
+      android:ellipsize="marquee"
+      android:fadingEdge="horizontal"
+      android:gravity="center_vertical"
+      android:marqueeRepeatLimit="marquee_forever"
+      android:paddingBottom="@dimen/dp_2_half"
+      android:scrollHorizontally="true"
+      android:singleLine="true"
+      android:text="@string/txt_hu"
+      android:textAppearance="@style/TextStyleSubHeader"
+      app:layout_constraintRight_toLeftOf="@id/llBtnStart"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/llSeekbarPower" />
+
+    <com.itek.retail.ui.customviews.BtnStartStopView
+      android:id="@+id/llBtnStart"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="@dimen/dp_2_half"
+      android:layout_marginRight="@dimen/dp_2_half"
+      android:gravity="center"
+      app:isHideBottomPadding="true"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/llSeekbarPower" />
+
+    <Button
+      android:id="@+id/btnComplete"
+      style="@style/Button"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="@dimen/dp_2_half"
+      android:layout_marginRight="@dimen/dp_2_half"
+      android:maxLines="2"
+      android:text="@string/complete_carton"
+      android:visibility="gone"
+      app:layout_constraintLeft_toRightOf="@id/llBtnStart"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/llSeekbarPower" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/clInventory"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/clCarton">
+
+    <LinearLayout
+      android:id="@+id/ll_brand_category"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="@dimen/dp_10"
+      android:layout_marginRight="@dimen/dp_10"
+      android:background="@drawable/border_top_bottom"
+      android:orientation="horizontal"
+      app:layout_constraintTop_toTopOf="parent">
+
+      <com.itek.retail.ui.customviews.HeaderSpinner
+        android:id="@+id/spin_brand"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:background="@drawable/border_right"
+        app:isMultiSelect="true"
+        app:label="@string/lbl_brand" />
+
+      <com.itek.retail.ui.customviews.HeaderSpinner
+        android:id="@+id/spin_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        app:isMultiSelect="true"
+        app:label="@string/lbl_category" />
+
+    </LinearLayout>
+
+    <EditText
+      android:id="@+id/edt_replenishment_name_search"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_vertical"
+      android:layout_marginLeft="@dimen/dp_15"
+      android:layout_marginTop="@dimen/dp_5"
+      android:layout_marginRight="@dimen/dp_15"
+      android:layout_marginBottom="@dimen/dp_5"
+      android:background="@drawable/edit_text_border"
+      android:digits="@string/onlyPasswordDigits"
+      android:hint="@string/hint_search_by_name_ean"
+      android:imeOptions="actionSearch"
+      android:inputType="text"
+      android:maxLength="50"
+      android:maxLines="1"
+      android:padding="@dimen/dp_5"
+      android:singleLine="true"
+      android:textAppearance="@style/TextStyleRegular"
+      app:drawableRightCompat="@drawable/ic_act_ser"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toLeftOf="@id/tb_list_pick"
+      app:layout_constraintBottom_toTopOf="@id/txt_carton_found"
+      app:layout_constraintTop_toBottomOf="@id/ll_brand_category" />
+
+    <androidx.appcompat.widget.SwitchCompat
+      android:id="@+id/tb_list_pick"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:textOn="@string/lbl_on"
+      android:textOff="@string/lbl_off"
+      android:text="@string/lbl_random_picking"
+      app:showText="true"
+      android:checked="false"
+      app:thumbTextPadding="@dimen/dp_2"
+      app:switchTextAppearance="@style/TextStyleExtraSmall"
+      android:textAppearance="@style/TextStyleSubHeader"
+      app:layout_constraintBottom_toTopOf="@id/txt_carton_found"
+      app:layout_constraintLeft_toRightOf="@id/edt_replenishment_name_search"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/ll_brand_category"/>
+
+    <TextView
+      android:id="@+id/txt_carton_found"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="@dimen/dp_2_half"
+      android:layout_marginRight="@dimen/dp_2_half"
+      android:ellipsize="marquee"
+      android:fadingEdge="horizontal"
+      android:gravity="center_vertical"
+      android:marqueeRepeatLimit="marquee_forever"
+      android:paddingBottom="@dimen/dp_2_half"
+      android:scrollHorizontally="true"
+      android:singleLine="true"
+      android:visibility="gone"
+      android:text="@string/txt_picked_qty"
+      android:textAppearance="@style/TextStyleSubHeader"
+      app:layout_constraintBottom_toTopOf="@id/list_products"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/edt_replenishment_name_search" />
+
+    <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/list_products"
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/dp_0"
+      android:layout_marginLeft="@dimen/dp_15"
+      android:layout_marginRight="@dimen/dp_15"
+      android:layout_marginBottom="@dimen/dp_5"
+      android:scrollbars="vertical"
+      app:layout_behavior="@string/appbar_scrolling_view_behavior"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/txt_carton_found" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/clSearchPick"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:visibility="gone"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/clCarton">
+
+    <com.itek.retail.ui.customviews.ProductDetailsView
+      android:id="@+id/pdv_outward_start"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:visibility="visible"
+      app:layout_constrainedHeight="true"
+      app:layout_constraintHeight_max="wrap"
+      app:layout_constraintHeight_percent="0.3"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+      android:id="@+id/rgPickSearchType"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/dp_0"
+      android:background="@drawable/border_bottom"
+      android:orientation="horizontal"
+      app:layout_constraintTop_toBottomOf="@id/pdv_outward_start">
+
+      <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.3" />
+
+      <RadioButton
+        android:id="@+id/rbSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_5"
+        android:layout_weight="1"
+        android:checked="true"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="true"
+        android:text="@string/search" />
+
+      <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.1" />
+
+      <RadioButton
+        android:id="@+id/rbPick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_5"
+        android:layout_weight="1"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="true"
+        android:text="@string/pick" />
+
+      <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.3" />
+    </RadioGroup>
+
+    <TextView
+      android:id="@+id/txt_picked"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="@dimen/dp_15"
+      android:layout_marginTop="@dimen/dp_5"
+      android:layout_marginRight="@dimen/dp_15"
+      android:layout_marginBottom="@dimen/dp_5"
+      android:gravity="left"
+      android:textAppearance="@style/TextStyleSubHeader"
+      android:visibility="visible"
+      app:layout_constraintTop_toBottomOf="@id/rgPickSearchType" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/llCircle"
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/dp_0"
+      android:orientation="vertical"
+      app:layout_constraintBottom_toTopOf="@id/llBtnStartPick"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/txt_picked">
+
+      <ImageView
+        android:id="@+id/imgSearchDir"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:scaleType="fitCenter"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent="0.52"
+        app:srcCompat="@drawable/top_green1" />
+
+      <com.itek.retail.ui.customviews.speedviewlib.PointerSpeedometer
+        android:id="@+id/clOutwardSearch"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
+        android:layout_marginTop="@dimen/dp_5"
+        android:layout_marginBottom="@dimen/dp_5"
+        android:elevation="2dp"
+        app:layout_constraintBottom_toTopOf="@id/imgSearchDir"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgSearchDir"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent="0.38" />
+
+      <com.itek.retail.ui.customviews.CountTotalView
+          android:id="@+id/ctw_inventory_start"
+          android:layout_width="@dimen/dp_0"
+          android:layout_height="@dimen/dp_0"
+          android:layout_gravity="center"
+          android:orientation="vertical"
+          android:visibility="gone"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintDimensionRatio="1:1"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintRight_toRightOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintWidth_default="percent"
+          app:layout_constraintWidth_percent="0.45"
+          app:score="0"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.itek.retail.ui.customviews.BtnStartStopView
+      android:id="@+id/llBtnStartPick"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/llCircle" />
+
+    <com.itek.retail.ui.customviews.BtnSwipeUploadView
+      android:id="@+id/btnUpload"
+      android:layout_width="wrap_content"
+      android:layout_height="@dimen/dp_0"
+      android:visibility="gone"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintRight_toRightOf="parent"/>
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

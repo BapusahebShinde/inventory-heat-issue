@@ -1,0 +1,42 @@
+{
+  "operationType": "IN",
+  "labelArticle": "ArticleCode",
+  "labelSkuId": "SkuId",
+  "isHuDeviceLock": false,
+  "tripNum": "",
+  "referenceTripNum": "",
+  "huNum": "",
+  "huStatus": "P",
+  "data": [
+    {
+      "packQty": 2,
+      "articleCode": "440866332016",
+      "eans": [
+        "8901326038345,8907167838097,8907796773663"
+      ],
+      "rfids1": [{"epc":"30361F78F8138B174876E815","serial": "abdfe"},{"epc":"30361F78F8138B174876E815","serial": "fefv"}]
+    },
+    {
+      "articleCode": "440866332017",
+      "packQty": 2,
+      "eans": [
+        "8907675736901,8907167838090,8907796773668"
+      ],
+      "rfids1": [{"epc":"30361F795C1D96C03FFC7A5D","serial": "fefkl"},{"epc":"30361F795C1D96C03FFCF7CA","serial": "fefv"}]
+    }
+  ],
+  "data1": [
+    {
+      "articleCode": null,
+      "eans": ["8904279302990"],
+      "rfids1": [{"epc":"30361F78F8138B174876E815","serial": "abc"},{"epc":"30361F795C1D96C03FFCF7CA","serial": "fefv"}],
+      "Qty": 2
+    },
+    {
+      "articleCode": null,
+      "eans": ["978020137962"],
+      "rfids1": [{"epc":"30343BB1900D79003FFE0969","serial": "fdfegg"}],
+      "Qty": 1
+    }
+  ]
+}

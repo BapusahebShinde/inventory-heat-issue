@@ -1,0 +1,29 @@
+{
+  "isMultiSelect": true,
+  "isCascade": true,
+  "category": [
+    "Men",
+    "Women",
+    "Other"
+  ],
+  "brands": [
+    "Allen Solly",
+    "Levi’s",
+    "Provogue",
+    "Van Husen",
+    "Park Avenue"
+  ],
+  "sub-category": [
+    "Kids",
+    "Teen",
+    "Adult"
+  ],
+  "size": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL",
+    "XXXL"
+  ]
+}

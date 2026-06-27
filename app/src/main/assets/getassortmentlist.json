@@ -1,0 +1,80 @@
+{
+  "Success": "true",
+  "Error": null,
+  "Data": [
+    {
+      "code": "030523110409303",
+      "priority": 1,
+      "items": [
+        {
+          "skuid": "8905391819236",
+          "totalqty": 5,
+          "fohqty": 2,
+          "bohqty": 3,
+          "zones": [
+            {
+              "zoneid": 3,
+              "qty": 1,
+              "zone": null,
+              "zonetype": null
+            },{
+              "zoneid": 4,
+              "qty": 1,
+              "zone": null,
+              "zonetype": null
+            }
+          ],
+          "name": "SP20R-WERM-KURTA-CA-RC216, M, LIME",
+          "branddesc": "RANGMANCH",
+          "category": "Women",
+          "color": "LIME",
+          "styleCode": "RC219",
+          "size": "WOMEN'S TOP WR M",
+          "image": ""
+        },
+        {
+          "skuid": "8901198204053",
+          "totalqty": 1,
+          "fohqty": 0,
+          "bohqty": 1,
+          "zones": [
+            {
+              "zoneid": 3,
+              "qty": 1,
+              "zone": null,
+              "zonetype": null
+            }
+          ],
+          "name": "TOP WITH LACE PATCH, GREEN, L",
+          "branddesc": "TF18FWFIG5637",
+          "category": "Women",
+          "color": "GREEN",
+          "styleCode": "GREEN",
+          "size": "L",
+          "image": ""
+        },
+        {
+          "skuid": "8901030174841",
+          "totalqty": 1,
+          "fohqty": 0,
+          "bohqty": 1,
+          "zones": [
+            {
+              "zoneid": 3,
+              "qty": 1,
+              "zone": null,
+              "zonetype": null
+            }
+          ],
+          "name": "TOP WITH LACE PATCH, GREEN, XL",
+          "branddesc": "TF18FWFIG5637",
+          "category": "Women",
+          "color": "GREEN",
+          "styleCode": "GREEN",
+          "size": "XL",
+          "image": ""
+        }
+      ]
+    }
+  ]
+}

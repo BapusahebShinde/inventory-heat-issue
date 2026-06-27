@@ -1,0 +1,31 @@
+{
+  "tripsData": [
+    {
+      "tripNum": "1048811642",
+      "type": "OUT",
+      "tripType": "store_to_vendor",
+      "whNum": "1234",
+      "deliveryNum": "1048811642",
+      "huNums": 7,
+      "verifiedHus": 0
+    },
+    {
+      "tripNum": "1048811644",
+      "type": "OUT",
+      "tripType": "store_to_dc",
+      "whNum": "1234",
+      "deliveryNum": "1048811644",
+      "huNums": 7,
+      "verifiedHus": 0
+    },
+    {
+      "tripNum": "1048811654",
+      "type": "OUT",
+      "tripType": "store_to_store",
+      "whNum": "1234",
+      "deliveryNum": "1048811654",
+      "huNums": 7,
+      "verifiedHus": 0
+    }
+  ]
+}

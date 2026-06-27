@@ -1,0 +1,39 @@
+{
+  "isMultiSelect": true,
+  "category": [
+    "Men",
+    "Women",
+    "Other"
+  ],
+  "season": [
+    "Summer-wear",
+    "Winter-wear",
+    "Mansoon-wear"
+  ],
+  "sub-type": [
+    "Shirt",
+    "T-shirt",
+    "Kurta",
+    "Jacket",
+    "Gloves"
+  ],
+  "sub-category": [
+    "Kids",
+    "Teen",
+    "Adult"
+  ],
+  "color": [
+    "Red",
+    "Blue",
+    "Green",
+    "Orange"
+  ],
+  "size": [
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL",
+    "XXXL"
+  ]
+}

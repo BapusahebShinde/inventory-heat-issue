@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <bool name="isTablet">true</bool>
+  <attr name="label" format="string" />
+  <attr name="minLength" format="integer" />
+  <attr name="isHideLabel" format="boolean" />
+  <attr name="validationRegex" format="string" />
+  <attr name="inputRegex" format="string" />
+  <attr name="unit" format="string" />
+
+  <declare-styleable name="HeaderSpinner">
+    <attr name="label" />
+    <attr name="isMultiSelect" format="boolean" />
+    <attr name="isSetOptionAll" format="boolean" />
+    <attr name="android:entries" />
+  </declare-styleable>
+
+  <declare-styleable name="ScanKeypadView">
+    <attr name="minLength" />
+    <attr name="label" />
+    <attr name="isShowKeyboard" format="boolean" />
+    <attr name="isRFIDScan" format="boolean" />
+    <attr name="isHUField" format="boolean" />
+    <attr name="isSimpleScanField" format="boolean" />
+    <attr name="isShowRfidLogo" format="boolean" />
+    <attr name="isShowClearLogo" format="boolean" />
+    <attr name="validationRegex" />
+    <attr name="inputRegex" />
+    <attr name="unit" />
+    <attr name="android:drawable" />
+    <attr name="android:hint" />
+    <attr name="android:text" />
+    <attr name="android:maxLength" />
+    <attr name="android:digits" />
+    <attr name="android:inputType" />
+    <attr name="android:textColor" />
+    <attr name="android:textStyle" />
+    <attr name="android:textSize" />
+    <attr name="android:imeOptions" />
+  </declare-styleable>
+
+  <declare-styleable name="DateInputView">
+    <attr name="label" />
+    <attr name="isTodayDefaultDate" format="boolean" />
+    <attr name="android:drawable" />
+    <attr name="android:hint" />
+    <attr name="android:text" />
+    <attr name="android:textColor" />
+    <attr name="android:textStyle" />
+    <attr name="android:textSize" />
+  </declare-styleable>
+
+  <declare-styleable name="BtnStartStopView">
+    <attr name="isHideBottomPadding" format="boolean" />
+  </declare-styleable>
+
+  <declare-styleable name="InputView">
+    <attr name="minLength" />
+    <attr name="label" />
+    <attr name="isHideLabel"/>
+    <attr name="isAutoCompleteView" format="boolean"/>
+    <attr name="validationRegex" />
+    <attr name="inputRegex" />
+    <attr name="unit" />
+    <attr name="android:drawable" />
+    <attr name="android:hint" />
+    <attr name="android:maxLength" />
+    <attr name="android:digits" />
+    <attr name="android:inputType" />
+    <attr name="android:imeOptions" />
+    <attr name="android:text" />
+    <attr name="android:textAppearance" />
+    <attr name="android:textColor" />
+    <attr name="android:textStyle" />
+    <attr name="android:textSize" />
+  </declare-styleable>
+
+  <declare-styleable name="InputTextView">
+    <attr name="label" />
+    <attr name="isHideLabel" />
+    <attr name="android:drawable" />
+    <attr name="android:hint" />
+    <attr name="android:text" />
+    <attr name="android:textAppearance" />
+    <attr name="android:textColor" />
+    <attr name="android:textStyle" />
+    <attr name="android:textSize" />
+  </declare-styleable>
+
+  <declare-styleable name="SortHeaderView">
+    <attr name="android:text" />
+    <attr name="sortColumn" format="string" />
+    <attr name="isShowIcon" format="boolean" />
+  </declare-styleable>
+
+  <declare-styleable name="DashboardDataView">
+    <attr name="header" format="string" />
+    <attr name="headerSize" format="dimension" />
+    <attr name="headerColor" format="reference" />
+    <attr name="label" />
+    <attr name="labelSize" format="dimension" />
+    <attr name="labelColor" format="reference" />
+    <attr name="percentColor" format="reference" />
+    <attr name="percent" format="string" />
+    <attr name="isUpwardArrow" format="boolean" />
+    <attr name="isShowPercent" format="boolean" />
+    <attr name="isUseSplitLabels" format="boolean" />
+    <attr name="isShowGapsInSpiltLabels" format="boolean" />
+    <attr name="isUseSplitViews" format="boolean" />
+    <attr name="isShowGapsInSpiltValues" format="boolean" />
+    <attr name="android:text" />
+    <attr name="android:textSize" />
+    <attr name="android:textColor" />
+    <attr name="android:textStyle" />
+  </declare-styleable>
+
+  <declare-styleable name="ProductDetailsView">
+    <attr name="isVerticalView" format="boolean" />
+    <attr name="img_weight" format="float" />
+    <attr name="lbl_weight" format="float" />
+    <attr name="is_data_list" format="boolean" />
+  </declare-styleable>
+
+  <declare-styleable name="SearchView">
+
+  </declare-styleable>
+
+  <declare-styleable name="CustomGauge">
+    <attr name="gaugePointSize" format="integer" />
+    <attr name="gaugePointStartColor" format="color" />
+    <attr name="gaugePointEndColor" format="color" />
+    <attr name="gaugeStrokeColor" format="color" />
+    <attr name="gaugeStrokeWidth" format="dimension" />
+    <attr name="gaugeStrokeCap" format="string" />
+    <attr name="gaugeStartAngle" format="integer" />
+    <attr name="gaugeSweepAngle" format="integer" />
+    <attr name="gaugeStartValue" format="integer" />
+    <attr name="gaugeEndValue" format="integer" />
+    <attr name="gaugeDividerSize" format="integer" />
+    <attr name="gaugeDividerColor" format="color" />
+    <attr name="gaugeDividerStep" format="integer" />
+    <attr name="gaugeDividerDrawFirst" format="boolean" />
+    <attr name="gaugeDividerDrawLast" format="boolean" />
+  </declare-styleable>
+
+  <declare-styleable name="PowerView">
+    <attr name="pv_min" format="float|reference" /> <!--min < max, default: 0.0f-->
+    <attr name="pv_max" format="float|reference" /> <!--min < max, default: 30.0f-->
+    <attr name="pv_pow" format="float|reference" /> <!--min < max, default: 30.0f-->
+  </declare-styleable>
+
+  <declare-styleable name="BubbleSeekBar">
+    <attr name="bsb_min" format="float|reference" /> <!--min < max, default: 0.0f-->
+    <attr name="bsb_max" format="float|reference" /> <!--min < max, default: 100.0f-->
+    <attr name="bsb_progress" format="float|reference" /> <!--real time progress value, default: min-->
+    <attr name="bsb_is_float_type" format="boolean" /> <!--support for float type-->
+    <attr name="bsb_track_size" format="dimension|reference" /> <!--height of right-track(on the right of thumb), default: 2dp-->
+    <!--height of left-track(on the left of thumb), default: 2dp higher than right-track's height-->
+    <attr name="bsb_second_track_size" format="dimension|reference" />
+    <attr name="bsb_thumb_radius" format="dimension|reference" /> <!--radius of thumb, default: 2dp higher than left-track's height-->
+    <!--radius of thumb when be dragging, default: 2 times of left-track's height-->
+    <attr name="bsb_thumb_radius_on_dragging" format="dimension|reference" />
+    <attr name="bsb_track_color" format="color|reference" /> <!--color of right-track, default: R.color.colorPrimary-->
+    <attr name="bsb_second_track_color" format="color|reference" /> <!--color of left-track, default: R.color.colorAccent-->
+    <attr name="bsb_thumb_color" format="color|reference" /> <!--color of thumb, default: same as left-track's color-->
+    <attr name="bsb_section_count" format="integer|reference" /> <!--shares of whole progress(max - min), default: 10-->
+    <attr name="bsb_show_section_mark" format="boolean" /> <!--show demarcation points or not, default: false-->
+    <attr name="bsb_auto_adjust_section_mark" format="boolean" /> <!--auto scroll to the nearest section_mark or not, default: false-->
+    <attr name="bsb_show_section_text" format="boolean" /> <!--show section-text or not, default: false-->
+    <attr name="bsb_section_text_size" format="dimension|reference" /> <!--text size of section-text, default: 14sp-->
+    <attr name="bsb_section_text_color" format="color|reference" /> <!--text color of section-text, default: same as right-track's color-->
+    <!--text position of section-text relative to track, sides, bottom_sides, below_section_mark, default: sides-->
+    <attr name="bsb_section_text_position">
+      <enum name="sides" value="0" />
+      <enum name="bottom_sides" value="1" />
+      <enum name="below_section_mark" value="2" />
+    </attr>
+    <attr name="bsb_section_text_interval" format="integer" /> <!--the interval of two section-text, default: 1-->
+    <attr name="bsb_show_thumb_text" format="boolean" /> <!--show real time progress-text under thumb or not, default: false-->
+    <attr name="bsb_thumb_text_size" format="dimension|reference" /> <!--text size of progress-text, default: 14sp-->
+    <attr name="bsb_thumb_text_color" format="color|reference" /> <!--text color of progress-text, default: same as left-track's color-->
+    <attr name="bsb_show_progress_in_float" format="boolean" /> <!--show bubble-progress in float or not, default: false-->
+    <attr name="bsb_show_progress_in_percent" format="boolean" /> <!--show bubble-progress in float or not, default: false-->
+    <attr name="bsb_touch_to_seek" format="boolean" /> <!--touch anywhere on track to quickly seek, default: false-->
+    <attr name="bsb_seek_step_section" format="boolean" /> <!--seek one step by one section, the progress is discrete, default: false-->
+    <attr name="bsb_seek_by_section" format="boolean" /> <!--seek by section, the progress may not be linear, default: false-->
+    <attr name="bsb_bubble_color" format="color|reference" /> <!--color of bubble, default: same as left-track's color-->
+    <attr name="bsb_bubble_text_size" format="dimension|reference" /> <!--text size of bubble-progress, default: 14sp-->
+    <attr name="bsb_bubble_text_color" format="color|reference" /> <!--text color of bubble-progress, default: #ffffffff-->
+    <attr name="bsb_anim_duration" format="integer" /> <!--duration of animation, default: 200ms-->
+    <attr name="bsb_always_show_bubble" format="boolean" /> <!--bubble shows all time, default: false-->
+    <attr name="bsb_always_show_bubble_delay" format="integer" /> <!--the delay duration before bubble shows all the time, default: 200ms-->
+    <attr name="bsb_hide_bubble" format="boolean" /> <!--hide bubble, default: false-->
+    <attr name="bsb_rtl" format="boolean" /> <!--right to left, default: false-->
+    <attr name="android:enabled" />
+  </declare-styleable>
+
+  <declare-styleable name="CircularProgressBar">
+    <attr name="cpb_progress" format="integer" />
+    <attr name="cpb_progress_max" format="integer" />
+    <attr name="cpb_indeterminate_mode" format="boolean" />
+    <attr name="cpb_progressbar_color" format="color" />
+    <attr name="cpb_progressbar_color_start" format="color" />
+    <attr name="cpb_progressbar_color_end" format="color" />
+    <attr name="cpb_progressbar_color_direction">
+      <flag name="left_to_right" value="1" />
+      <flag name="right_to_left" value="2" />
+      <flag name="top_to_bottom" value="3" />
+      <flag name="bottom_to_top" value="4" />
+    </attr>
+    <attr name="cpb_background_progressbar_color" format="color" />
+    <attr name="cpb_background_progressbar_color_start" format="color" />
+    <attr name="cpb_background_progressbar_color_end" format="color" />
+    <attr name="cpb_background_progressbar_color_direction">
+      <flag name="left_to_right" value="1" />
+      <flag name="right_to_left" value="2" />
+      <flag name="top_to_bottom" value="3" />
+      <flag name="bottom_to_top" value="4" />
+    </attr>
+    <attr name="cpb_progressbar_width" format="dimension" />
+    <attr name="cpb_background_progressbar_width" format="dimension" />
+    <attr name="cpb_round_border" format="boolean" />
+    <attr name="cpb_start_angle" format="float" />
+    <attr name="cpb_progress_direction">
+      <flag name="to_right" value="1" />
+      <flag name="to_left" value="2" />
+    </attr>
+    <attr name="cpb_percent_shape" format="reference" />
+    <attr name="cpb_percent_text_view_id" format="reference" />
+    <attr name="cpb_percent_shape_size" format="dimension" />
+    <attr name="cpb_percent_shape_enabled" format="boolean" />
+  </declare-styleable>
+
+  <declare-styleable name="CircleImageView">
+    <attr name="civ_border_width" format="dimension" />
+    <attr name="civ_border_color" format="color" />
+    <attr name="civ_border_overlay" format="boolean" />
+    <attr name="civ_circle_background_color" format="color" />
+  </declare-styleable>
+
+  <declare-styleable name="ProSwipeButton">
+    <attr name="btn_text" format="string" />
+    <attr name="text_color" format="color" />
+    <attr name="bg_color" format="color" />
+    <attr name="arrow_color" format="color" />
+    <attr name="btn_radius" format="float" />
+    <attr name="text_size" format="dimension" />
+  </declare-styleable>
+
+  <attr name="sv_speedometerColor" format="color" />
+  <attr name="sv_speedometerBackColor" format="color" />
+  <attr name="sv_centerCircleColor" format="color" />
+  <attr name="sv_centerCircleRadius" format="dimension" />
+
+  <attr name="sv_speedBackgroundColor" format="color" />
+  <attr name="sv_withEffects" format="boolean" />
+
+  <attr name="sv_orientation" format="enum">
+    <enum name="HORIZONTAL" value="0" />
+    <enum name="VERTICAL" value="1" />
+  </attr>
+
+  <attr name="sv_sectionStyle" format="enum">
+    <enum name="ROUND" value="0" />
+    <enum name="BUTT" value="1" />
+  </attr>
+
+  <attr name="sv_image" format="reference" />
+
+  <declare-styleable name="Gauge">
+    <attr name="sv_speedometerWidth" format="dimension" />
+    <attr name="sv_textColor" format="color" />
+    <attr name="sv_speedTextColor" format="color" />
+    <attr name="sv_unitTextColor" format="color" />
+    <attr name="sv_withTremble" format="boolean" />
+    <attr name="sv_speedTextSize" format="dimension" />
+    <attr name="sv_textSize" format="dimension" />
+    <attr name="sv_unit" format="string" />
+
+    <attr name="sv_unitTextSize" format="dimension" />
+    <attr name="sv_trembleDegree" format="float" />
+    <attr name="sv_trembleDuration" format="integer" />
+    <attr name="sv_textRightToLeft" format="boolean" />
+
+    <attr name="sv_minSpeed" format="float" />
+    <attr name="sv_maxSpeed" format="float" />
+
+    <attr name="sv_accelerate" format="float" />
+    <attr name="sv_decelerate" format="float" />
+
+    <attr name="sv_speedTextTypeface" format="string" />
+    <attr name="sv_textTypeface" format="string" />
+
+    <attr name="sv_speedTextPosition" format="enum">
+      <enum name="TOP_LEFT" value="0" />
+      <enum name="TOP_CENTER" value="1" />
+      <enum name="TOP_RIGHT" value="2" />
+      <enum name="LEFT" value="3" />
+      <enum name="CENTER" value="4" />
+      <enum name="RIGHT" value="5" />
+      <enum name="BOTTOM_LEFT" value="6" />
+      <enum name="BOTTOM_CENTER" value="7" />
+      <enum name="BOTTOM_RIGHT" value="8" />
+    </attr>
+    <attr name="sv_unitUnderSpeedText" format="boolean" />
+    <attr name="sv_unitSpeedInterval" format="dimension" />
+    <attr name="sv_speedTextPadding" format="dimension" />
+    <attr name="sv_speedTextFormat" format="enum">
+      <enum name="INTEGER" value="0" />
+      <enum name="FLOAT" value="1" />
+    </attr>
+
+  </declare-styleable>
+
+  <declare-styleable name="Speedometer" parent="Gauge">
+    <attr name="sv_indicatorColor" format="color" />
+    <attr name="sv_withIndicatorLight" format="boolean" />
+    <attr name="sv_indicatorLightColor" format="color" />
+    <attr name="sv_backgroundCircleColor" format="color" />
+
+    <attr name="sv_startDegree" format="integer" />
+    <attr name="sv_endDegree" format="integer" />
+
+    <attr name="sv_indicatorWidth" format="dimension" />
+
+    <attr name="sv_marksNumber" format="integer" />
+    <attr name="sv_marksPadding" format="dimension" />
+    <attr name="sv_markHeight" format="dimension" />
+    <attr name="sv_markWidth" format="dimension" />
+    <attr name="sv_markColor" format="color" />
+    <attr name="sv_markStyle" format="enum">
+      <enum name="ROUND" value="0" />
+      <enum name="BUTT" value="1" />
+    </attr>
+
+    <attr name="sv_indicator" format="enum">
+      <enum name="NoIndicator" value="0" />
+      <enum name="NormalIndicator" value="1" />
+      <enum name="NormalSmallIndicator" value="2" />
+      <enum name="TriangleIndicator" value="3" />
+      <enum name="SpindleIndicator" value="4" />
+      <enum name="LineIndicator" value="5" />
+      <enum name="HalfLineIndicator" value="6" />
+      <enum name="QuarterLineIndicator" value="7" />
+      <enum name="KiteIndicator" value="8" />
+      <enum name="NeedleIndicator" value="9" />
+    </attr>
+
+    <attr name="sv_speedometerMode" format="enum">
+      <enum name="NORMAL" value="0" />
+      <enum name="LEFT" value="1" />
+      <enum name="TOP" value="2" />
+      <enum name="RIGHT" value="3" />
+      <enum name="BOTTOM" value="4" />
+      <enum name="TOP_LEFT" value="5" />
+      <enum name="TOP_RIGHT" value="6" />
+      <enum name="BOTTOM_RIGHT" value="7" />
+      <enum name="BOTTOM_LEFT" value="8" />
+    </attr>
+
+    <attr name="sv_cutPadding" format="dimension" />
+
+    <attr name="sv_tickNumber" format="integer" />
+    <attr name="sv_tickRotation" format="boolean" />
+    <attr name="sv_tickPadding" format="dimension" />
+    <attr name="sv_tickTextFormat" format="enum">
+      <enum name="INTEGER" value="0" />
+      <enum name="FLOAT" value="1" />
+    </attr>
+  </declare-styleable>
+
+  <declare-styleable name="SpeedView" parent="Speedometer">
+    <attr name="sv_centerCircleColor" />
+    <attr name="sv_centerCircleRadius" />
+    <attr name="sv_sectionStyle" />
+  </declare-styleable>
+
+  <declare-styleable name="DeluxeSpeedView" parent="Speedometer">
+    <attr name="sv_centerCircleColor" />
+    <attr name="sv_centerCircleRadius" />
+    <attr name="sv_speedBackgroundColor" />
+    <attr name="sv_sectionStyle" />
+    <attr name="sv_withEffects" />
+  </declare-styleable>
+
+  <declare-styleable name="AwesomeSpeedometer" parent="Speedometer">
+    <attr name="sv_speedometerColor" />
+    <attr name="sv_trianglesColor" format="color" />
+  </declare-styleable>
+
+  <declare-styleable name="RaySpeedometer" parent="Speedometer">
+    <attr name="sv_speedBackgroundColor" />
+    <attr name="sv_withEffects" />
+    <attr name="sv_rayColor" format="color" />
+    <attr name="sv_degreeBetweenMark" format="integer" />
+    <attr name="sv_rayMarkWidth" format="dimension" />
+  </declare-styleable>
+
+  <declare-styleable name="PointerSpeedometer" parent="Speedometer">
+    <attr name="sv_centerCircleColor" />
+    <attr name="sv_centerCircleRadius" />
+    <attr name="sv_speedometerColor" />
+    <attr name="sv_pointerColor" format="color" />
+    <attr name="sv_withPointer" format="boolean" />
+  </declare-styleable>
+
+  <declare-styleable name="TubeSpeedometer" parent="Speedometer">
+    <attr name="sv_speedometerBackColor" />
+  </declare-styleable>
+
+  <declare-styleable name="ImageSpeedometer" parent="Speedometer">
+    <attr name="sv_image" />
+  </declare-styleable>
+
+  <declare-styleable name="LinearGauge" parent="Gauge">
+    <attr name="sv_orientation" />
+    <attr name="sv_speedometerColor" />
+    <attr name="sv_speedometerBackColor" />
+  </declare-styleable>
+
+  <declare-styleable name="ImageLinearGauge" parent="LinearGauge">
+    <attr name="sv_speedometerBackColor" />
+    <attr name="sv_image" />
+  </declare-styleable>
+
+</resources>

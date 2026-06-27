@@ -1,0 +1,1845 @@
+{
+  "lastInventoryTakenTime": "30-Apr-2023 13:00:00",
+  "brandInventoryCounts": [
+    {
+      "brandName": "Allen Solly",
+      "categories": [
+        {
+          "categoryName": "Men",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 5,
+              "shortage": 0
+            }
+          ]
+        },
+        {
+          "categoryName": "Women",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 5,
+              "shortage": 0
+            }
+          ]
+        },
+        {
+          "categoryName": "Kids",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 20,
+              "shortage": 2
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 2,
+              "shortage": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brandName": "Levi’s",
+      "categories": [
+        {
+          "categoryName": "Men",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 95,
+              "shortage": 9
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 5,
+              "shortage": 0
+            }
+          ]
+        },
+        {
+          "categoryName": "Women",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 95,
+              "shortage": 9
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 5,
+              "shortage": 0
+            }
+          ]
+        },
+        {
+          "categoryName": "Kids",
+          "zones": [
+          {
+            "zoneId": 3,
+            "zoneName": "BOH",
+            "isDefault": true,
+            "zoneType": "BOH",
+            "inventoryCount": 95,
+            "shortage": 9
+          },
+          {
+            "zoneId": 4,
+            "zoneName": "Ground Floor",
+            "isDefault": true,
+            "zoneType": "FOH",
+            "inventoryCount": 50,
+            "shortage": 5
+          },
+          {
+            "zoneId": 5,
+            "zoneName": "First Floor",
+            "isDefault": false,
+            "zoneType": "FOH",
+            "inventoryCount": 5,
+            "shortage": 0
+          }
+        ]
+        }
+      ]
+    },
+    {
+      "brandName": "Provogue clothing brands in India",
+      "categories": [
+        {
+          "categoryName": "Men",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 90,
+              "shortage": 9
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 15,
+              "shortage": 1
+            }
+          ]
+        },
+        {
+          "categoryName": "Women",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 90,
+              "shortage": 9
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 15,
+              "shortage": 1
+            }
+          ]
+        },
+        {
+          "categoryName": "Kids",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 45,
+              "shortage": 4
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 25,
+              "shortage": 2
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 7,
+              "shortage": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brandName": "Van Heusen",
+      "categories": [
+        {
+          "categoryName": "Men",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 85,
+              "shortage": 8
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 20,
+              "shortage": 2
+            }
+          ]
+        },
+        {
+          "categoryName": "Women",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 85,
+              "shortage": 8
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 20,
+              "shortage": 2
+            }
+          ]
+        },
+        {
+          "categoryName": "Kids",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 42,
+              "shortage": 4
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 25,
+              "shortage": 2
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 10,
+              "shortage": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brandName": "Park Avenue",
+      "categories": [
+        {
+          "categoryName": "Men",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 80,
+              "shortage": 8
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 50
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 25,
+              "shortage": 2
+            }
+          ]
+        },
+        {
+          "categoryName": "Women",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 80,
+              "shortage": 8
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 50
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 25,
+              "shortage": 2
+            }
+          ]
+        },
+        {
+          "categoryName": "Kids",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 40,
+              "shortage": 4
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 25,
+              "shortage": 2
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 12,
+              "shortage": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brandName": "Mufti",
+      "categories": [
+        {
+          "categoryName": "Men",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 75,
+              "shortage": 7
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 30,
+              "shortage": 3
+            }
+          ]
+        },
+        {
+          "categoryName": "Women",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 75,
+              "shortage": 7
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 30,
+              "shortage": 3
+            }
+          ]
+        },
+        {
+          "categoryName": "Kids",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 35,
+              "shortage": 3
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 25,
+              "shortage": 2
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 15,
+              "shortage": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brandName": "Pepe Jeans",
+      "categories": [
+        {
+          "categoryName": "Men",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 70,
+              "shortage": 7
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 35,
+              "shortage": 3
+            }
+          ]
+        },
+        {
+          "categoryName": "Women",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 70,
+              "shortage": 7
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 35,
+              "shortage": 3
+            }
+          ]
+        },
+        {
+          "categoryName": "Kids",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 35,
+              "shortage": 3
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 25,
+              "shortage": 2
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 17,
+              "shortage": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brandName": "Wrangler",
+      "categories": [
+        {
+          "categoryName": "Men",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 65,
+              "shortage": 6
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 40,
+              "shortage": 4
+            }
+          ]
+        },
+        {
+          "categoryName": "Women",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 65,
+              "shortage": 6
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 40,
+              "shortage": 4
+            }
+          ]
+        },
+        {
+          "categoryName": "Kids",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 65,
+              "shortage": 6
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 40,
+              "shortage": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brandName": "Numero Uno",
+      "categories": [
+        {
+          "categoryName": "Men",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 60,
+              "shortage": 6
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 45,
+              "shortage": 4
+            }
+          ]
+        },
+        {
+          "categoryName": "Women",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 60,
+              "shortage": 6
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 45,
+              "shortage": 4
+            }
+          ]
+        },
+        {
+          "categoryName": "Kids",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 30,
+              "shortage": 3
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 25,
+              "shortage": 2
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 22,
+              "shortage": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brandName": "Monte Carlo",
+      "categories": [
+        {
+          "categoryName": "Men",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 52,
+              "shortage": 5
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            }
+          ]
+        },
+        {
+          "categoryName": "Women",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 52,
+              "shortage": 5
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            }
+          ]
+        },
+        {
+          "categoryName": "Kids",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 26,
+              "shortage": 2
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 25,
+              "shortage": 2
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 25,
+              "shortage": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brandName": "Peter England",
+      "categories": [
+        {
+          "categoryName": "Men",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 52,
+              "shortage": 5
+            }
+          ]
+        },
+        {
+          "categoryName": "Women",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 52,
+              "shortage": 5
+            }
+          ]
+        },
+        {
+          "categoryName": "Kids",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 25,
+              "shortage": 2
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 25,
+              "shortage": 2
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 26,
+              "shortage": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brandName": "Louis Philippe",
+      "categories": [
+        {
+          "categoryName": "Men",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 45,
+              "shortage": 4
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 60,
+              "shortage": 6
+            }
+          ]
+        },
+        {
+          "categoryName": "Women",
+          "zones": [
+          {
+            "zoneId": 3,
+            "zoneName": "BOH",
+            "isDefault": true,
+            "zoneType": "BOH",
+            "inventoryCount": 45,
+            "shortage": 4
+          },
+          {
+            "zoneId": 4,
+            "zoneName": "Ground Floor",
+            "isDefault": true,
+            "zoneType": "FOH",
+            "inventoryCount": 50,
+            "shortage": 5
+          },
+          {
+            "zoneId": 5,
+            "zoneName": "First Floor",
+            "isDefault": false,
+            "zoneType": "FOH",
+            "inventoryCount": 60,
+            "shortage": 6
+          }
+        ]
+        },
+        {
+          "categoryName": "Kids",
+          "zones": [
+          {
+            "zoneId": 3,
+            "zoneName": "BOH",
+            "isDefault": true,
+            "zoneType": "BOH",
+            "inventoryCount": 22,
+            "shortage": 2
+          },
+          {
+            "zoneId": 4,
+            "zoneName": "Ground Floor",
+            "isDefault": true,
+            "zoneType": "FOH",
+            "inventoryCount": 25,
+            "shortage": 2
+          },
+          {
+            "zoneId": 5,
+            "zoneName": "First Floor",
+            "isDefault": false,
+            "zoneType": "FOH",
+            "inventoryCount": 30,
+            "shortage": 3
+          }
+        ]
+        }
+      ]
+    },
+    {
+      "brandName": "Fabindia",
+      "categories": [
+        {
+          "categoryName": "Men",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 40,
+              "shortage": 4
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 65,
+              "shortage": 6
+            }
+          ]
+        },
+        {
+          "categoryName": "Women",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 40,
+              "shortage": 4
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 65,
+              "shortage": 6
+            }
+          ]
+        },
+        {
+          "categoryName": "Kids",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 20,
+              "shortage": 2
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 25,
+              "shortage": 2
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 32,
+              "shortage": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brandName": "Biba",
+      "categories": [
+        {
+          "categoryName": "Men",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 35,
+              "shortage": 3
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 70,
+              "shortage": 7
+            }
+          ]
+        },
+        {
+          "categoryName": "Women",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 35,
+              "shortage": 3
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 70,
+              "shortage": 7
+            }
+          ]
+        },
+        {
+          "categoryName": "Kids",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 17,
+              "shortage": 1
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 25,
+              "shortage": 2
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 35,
+              "shortage": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brandName": "Flying Machine",
+      "categories": [
+        {
+          "categoryName": "Men",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 30,
+              "shortage": 3
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 75,
+              "shortage": 7
+            }
+          ]
+        },
+        {
+          "categoryName": "Women",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 30,
+              "shortage": 3
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 75,
+              "shortage": 7
+            }
+          ]
+        },
+        {
+          "categoryName": "Kids",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 15,
+              "shortage": 1
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 25,
+              "shortage": 2
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 37,
+              "shortage": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brandName": "Zodiac",
+      "categories": [
+        {
+          "categoryName": "Men",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 25,
+              "shortage": 2
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 80,
+              "shortage": 8
+            }
+          ]
+        },
+        {
+          "categoryName": "Women",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 25,
+              "shortage": 2
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 80,
+              "shortage": 8
+            }
+          ]
+        },
+        {
+          "categoryName": "Kids",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 12,
+              "shortage": 1
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 25,
+              "shortage": 2
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 40,
+              "shortage": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brandName": "Raymond clothing brands in India",
+      "categories": [
+        {
+          "categoryName": "Men",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 20,
+              "shortage": 2
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 85,
+              "shortage": 8
+            }
+          ]
+        },
+        {
+          "categoryName": "Women",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 20,
+              "shortage": 2
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 85,
+              "shortage": 8
+            }
+          ]
+        },
+        {
+          "categoryName": "Kids",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 10,
+              "shortage": 1
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 25,
+              "shortage": 2
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 42,
+              "shortage": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brandName": "Adidas",
+      "categories": [
+        {
+          "categoryName": "Men",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 15,
+              "shortage": 1
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 90,
+              "shortage": 9
+            }
+          ]
+        },
+        {
+          "categoryName": "Women",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 15,
+              "shortage": 1
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 90,
+              "shortage": 9
+            }
+          ]
+        },
+        {
+          "categoryName": "Kids",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 7,
+              "shortage": 0
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 25,
+              "shortage": 2
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 45,
+              "shortage": 4
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brandName": "Nike",
+      "categories": [
+        {
+          "categoryName": "Men",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 10,
+              "shortage": 1
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 95,
+              "shortage": 9
+            }
+          ]
+        },
+        {
+          "categoryName": "Women",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 10,
+              "shortage": 1
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 95,
+              "shortage": 9
+            }
+          ]
+        },
+        {
+          "categoryName": "Kids",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 10,
+              "shortage": 1
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 95,
+              "shortage": 9
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "brandName": "GINI & JONY",
+      "categories": [
+        {
+          "categoryName": "Men",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 5,
+              "shortage": 0
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            }
+          ]
+        },
+        {
+          "categoryName": "Women",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 5,
+              "shortage": 0
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            }
+          ]
+        },
+        {
+          "categoryName": "Kids",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 2,
+              "shortage": 0
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 25,
+              "shortage": 2
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

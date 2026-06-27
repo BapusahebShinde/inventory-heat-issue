@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <data>
+
+    <variable
+      name="menuFavoritesItemViewModel"
+      type="com.itek.retail.model.MenuModel" />
+  </data>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="horizontal"
+    android:padding="@dimen/dp_5">
+
+    <TextView
+      android:id="@+id/txt_item_title"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_margin="@dimen/dp_5"
+      android:layout_weight="1"
+      android:ellipsize="marquee"
+      android:marqueeRepeatLimit="marquee_forever"
+      android:singleLine="true"
+      android:textAppearance="@style/TextStyleRegular" />
+
+    <TextView
+      android:id="@+id/txt_item_action"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_margin="@dimen/dp_5"
+      android:layout_weight="2"
+      android:gravity="center"
+      android:maxLines="1"
+      android:singleLine="true"
+      android:text="@string/action_favorites_add"
+      android:textAppearance="@style/TextStyleSubHeader" />
+  </LinearLayout>
+</layout>

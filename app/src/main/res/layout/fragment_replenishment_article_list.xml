@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools"
+    android:id="@+id/swipeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:clickable="true">-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:bind="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:clickable="true"
+        bind:context=".ui.movement.replenishment.ReplenishmentListFragment">
+
+        <include
+            android:id="@+id/header"
+            layout="@layout/header_title_layout" />
+
+        <LinearLayout
+            android:id="@+id/ll_replenishment_zones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_marginRight="@dimen/dp_15"
+            android:background="@drawable/border_bottom"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/header">
+
+            <com.itek.retail.ui.customviews.HeaderSpinner
+                android:id="@+id/spin_source_zone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:background="@drawable/border_right"
+                app:label="@string/lbl_source_loc" />
+
+            <com.itek.retail.ui.customviews.HeaderSpinner
+                android:id="@+id/spin_destination_zone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                app:label="@string/lbl_destination_loc" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_replenishment_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_marginRight="@dimen/dp_15"
+            android:background="@drawable/border_bottom"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/ll_replenishment_zones">
+
+            <com.itek.retail.ui.customviews.HeaderSpinner
+                android:id="@+id/spin_category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                app:isMultiSelect="true"
+                android:tag="category"
+                app:label="@string/lbl_category" />
+
+            <com.itek.retail.ui.customviews.HeaderSpinner
+              android:id="@+id/spin_matkl"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:layout_weight="1"
+              android:background="@drawable/border_right"
+              app:isMultiSelect="true"
+              android:tag="matkl"
+              app:label="@string/lbl_matkl" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_replenishment_products"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_marginRight="@dimen/dp_15"
+            android:layout_marginBottom="@dimen/dp_5"
+            android:scrollbars="vertical"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_replenishment_details" />
+
+        <TextView
+            android:id="@+id/textNoData"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/msg_no_list_available"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_replenishment_zones" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+<!--</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>-->

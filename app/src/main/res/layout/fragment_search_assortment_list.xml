@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:bind="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/white"
+  android:clickable="true"
+  bind:context=".ui.search.assortment.SearchAssortMainFragment">
+
+  <include
+    android:id="@+id/header"
+    layout="@layout/header_title_layout" />
+
+  <LinearLayout
+    android:id="@+id/ll_spin_header"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/dp_15"
+    android:layout_marginRight="@dimen/dp_15"
+    android:background="@drawable/border_bottom"
+    android:orientation="horizontal"
+    app:layout_constraintTop_toBottomOf="@id/header">
+
+    <com.itek.retail.ui.customviews.HeaderSpinner
+      android:id="@+id/spin_brand"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_weight="1"
+      android:background="@drawable/border_right"
+      app:isMultiSelect="true"
+      app:label="@string/lbl_brand" />
+
+    <com.itek.retail.ui.customviews.HeaderSpinner
+      android:id="@+id/spin_category"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_weight="1"
+      app:isMultiSelect="true"
+      app:label="@string/lbl_category" />
+
+  </LinearLayout>
+
+  <EditText
+    android:id="@+id/edt_search_name"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:layout_marginLeft="@dimen/dp_15"
+    android:layout_marginTop="@dimen/dp_5"
+    android:layout_marginRight="@dimen/dp_15"
+    android:layout_marginBottom="@dimen/dp_5"
+    android:background="@drawable/edit_text_border"
+    android:digits="@string/onlyPasswordDigits"
+    android:hint="@string/hint_search_by_name_ean"
+    android:imeOptions="actionSearch"
+    android:inputType="text"
+    android:maxLength="50"
+    android:maxLines="1"
+    android:padding="@dimen/dp_5"
+    android:singleLine="true"
+    android:textAppearance="@style/TextStyleRegular"
+    app:drawableRightCompat="@drawable/ic_act_ser"
+    app:layout_constraintBottom_toTopOf="@id/txt_total"
+    app:layout_constraintTop_toBottomOf="@id/ll_spin_header" />
+
+  <TextView
+    android:id="@+id/txt_total"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/dp_15"
+    android:layout_marginTop="@dimen/dp_5"
+    android:layout_marginRight="@dimen/dp_15"
+    android:layout_marginBottom="@dimen/dp_5"
+    android:gravity="center"
+    android:textAppearance="@style/TextStyleHeader"
+    android:visibility="gone"
+    app:layout_constraintBottom_toTopOf="@id/list_search_products"
+    app:layout_constraintTop_toBottomOf="@id/edt_search_name" />
+
+  <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/list_search_products"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_0"
+    android:layout_marginLeft="@dimen/dp_15"
+    android:layout_marginRight="@dimen/dp_15"
+    android:layout_marginBottom="@dimen/dp_5"
+    android:scrollbars="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/txt_total" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

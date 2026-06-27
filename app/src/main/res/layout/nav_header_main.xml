@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:layout_marginTop="@dimen/dp_15"
+  android:background="@drawable/border_bottom_red"
+  android:gravity="center"
+  android:orientation="vertical"
+  android:padding="@dimen/dp_15"
+  android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+  <com.itek.retail.ui.customviews.CircleImageView
+    android:id="@+id/imgNavUser"
+    android:layout_width="@dimen/dp_0"
+    android:layout_height="@dimen/dp_0"
+    app:civ_border_color="?attr/colorPrimaryDark"
+    app:civ_border_width="@dimen/dp_1"
+    app:layout_constraintDimensionRatio="1:1"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintWidth_default="percent"
+    app:layout_constraintWidth_percent="0.25"
+    app:srcCompat="@drawable/ic_temp_person" />
+
+  <TextView
+    android:id="@+id/txtNavUserName"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dp_5"
+    android:ellipsize="end"
+    android:maxLines="1"
+    android:singleLine="true"
+    android:textAppearance="@style/TextStyleSubHeader"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/imgNavUser" />
+
+  <TextView
+    android:id="@+id/txtNavStoreId"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAppearance="@style/TextStyleSubSubHeader"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/txtNavUserName" />
+
+  <TextView
+    android:id="@+id/txtNavStoreName"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAppearance="@style/TextStyleSubSubHeader"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/txtNavStoreId" />
+</androidx.constraintlayout.widget.ConstraintLayout>

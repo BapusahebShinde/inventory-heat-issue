@@ -1,0 +1,30 @@
+{
+  "eanProduct": {
+    "imageUrl": [],
+    "title": "T-Shirt",
+    "status": "",
+    "orderNo": "",
+    "ean": "12345678901230",
+    "category": "Men",
+    "brand": "Levi's",
+    "zone": "FOH",
+    "articleNo": "123451",
+    "colorCode": "#CC0000",
+    "size": "XL",
+    "qty": "3"
+  },
+  "rfidProduct": {
+    "imageUrl": [],
+    "title": "T-Shirt",
+    "status": "",
+    "orderNo": "",
+    "ean": "12345678901231",
+    "category": "Women",
+    "brand": "Fabindia",
+    "zone": "BOH",
+    "articleNo": "123452",
+    "colorCode": "#0000CC",
+    "size": "M",
+    "qty": "3"
+  }
+}

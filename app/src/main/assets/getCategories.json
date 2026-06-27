@@ -1,0 +1,23 @@
+{
+  "activeUsers": 3,
+  "sessionValidTill": 48,
+  "label": "Category",
+  "categories": [
+    {
+      "categoryId": 1,
+      "categoryName": "Men"
+    },
+    {
+      "categoryId": 2,
+      "categoryName": "Women"
+    },
+    {
+      "categoryId": 3,
+      "categoryName": "Kids"
+    },
+    {
+      "categoryId": 4,
+      "categoryName": "Other"
+    }
+  ]
+}

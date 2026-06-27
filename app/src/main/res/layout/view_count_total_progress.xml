@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cl_count_total_progress"
+    android:layout_width="@dimen/dp_0"
+    android:layout_height="@dimen/dp_0"
+    android:layout_gravity="center"
+    android:background="@drawable/circular_shape"
+    android:orientation="vertical"
+    app:layout_constraintDimensionRatio="1:1"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent">
+
+<TextView
+    android:id="@+id/txt_score"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:layout_gravity="center_vertical"
+    android:gravity="center"
+    android:text="0"
+    android:textAppearance="@style/TextStyleNumber"
+    app:layout_constraintBottom_toTopOf="@id/div_score"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent" />
+
+<View
+    android:id="@+id/div_score"
+    android:layout_width="@dimen/dp_0"
+    android:layout_height="@dimen/dp_1"
+    android:layout_gravity="center"
+    android:background="@color/txtExtraLighterGray"
+    android:visibility="visible"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintWidth_default="percent"
+    app:layout_constraintWidth_percent="0.6" />
+
+<TextView
+    android:id="@+id/txt_total"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:layout_gravity="center_vertical"
+    android:gravity="center"
+    android:textAppearance="@style/TextStyleNumber"
+    android:visibility="visible"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/div_score" />
+
+<com.itek.retail.ui.customviews.custprogress.CircularProgressBar
+    android:id="@+id/progress_count_total"
+    style="?android:attr/progressBarStyleHorizontal"
+    android:layout_width="@dimen/dp_0"
+    android:layout_height="@dimen/dp_0"
+    android:layout_gravity="center"
+    android:visibility="visible"
+    app:cpb_background_progressbar_color="@color/transparent"
+    app:cpb_background_progressbar_width="@dimen/progress_width"
+    app:cpb_percent_shape="@layout/custom_progress"
+    app:cpb_percent_shape_enabled="true"
+    app:cpb_percent_shape_size="@dimen/dp_25"
+    app:cpb_percent_text_view_id="@id/txt_progress"
+    app:cpb_progress="0"
+    app:cpb_progress_direction="to_right"
+    app:cpb_progressbar_color="?attr/colorAccent"
+    app:cpb_progressbar_width="@dimen/progress_width"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/bgSemiTransBlack"
+  android:clickable="true"
+  tools:context=".ui.actionmenu.ActionMenuSearchFragment">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/txtExtraLighterGray"
+    android:paddingLeft="@dimen/dp_15"
+    android:paddingTop="@dimen/dp_5"
+    android:paddingRight="@dimen/dp_15"
+    android:paddingBottom="@dimen/dp_15"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <RadioGroup
+      android:id="@+id/rgSearchType"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+      <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+      <RadioButton
+        android:id="@+id/rbBarcode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_5"
+        android:layout_weight="1"
+        android:background="@drawable/border"
+        android:checked="true"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="true"
+        android:text="@string/lbl_barcode" />
+
+      <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+      <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+      <RadioButton
+        android:id="@+id/rbRfid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_5"
+        android:layout_weight="1"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="true"
+        android:text="@string/lbl_rfid" />
+
+      <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+    </RadioGroup>
+
+    <com.itek.retail.ui.customviews.ScanCodesInputAndKeypadView
+      android:id="@+id/search_product"
+      android:layout_width="@dimen/dp_0"
+      android:layout_height="wrap_content"
+      android:hint="@string/hint_barcode"
+      android:padding="@dimen/dp_15"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/rgSearchType"
+      app:layout_constraintWidth_default="percent"
+      app:layout_constraintWidth_percent="0.75" />
+
+    <Button
+      android:id="@+id/btn_go"
+      style="@style/Button"
+      android:layout_width="@dimen/dp_0"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:text="@string/btn_go"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/search_product"
+      app:layout_constraintWidth_default="percent"
+      app:layout_constraintWidth_percent="0.25" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,27 @@
+{
+  "accessPassword": {
+    "currentAccessPassword": "12345678",
+    "oldAccessPasswords": [
+      {
+        "srno": 1,
+        "accesspwd": "88888888"
+      },
+      {
+        "srno": 2,
+        "accesspwd": "12341234"
+      },
+      {
+        "srno": 3,
+        "accesspwd": "12121212"
+      },
+      {
+        "srno": 4,
+        "accesspwd": "11111111"
+      },
+      {
+        "srno": 5,
+        "accesspwd": "ABCD1234"
+      }
+    ]
+  }
+}

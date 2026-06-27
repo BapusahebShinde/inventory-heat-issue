@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:bind="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  bind:context=".ui.inward1.HuCreationFragment">
+
+  <include
+    android:id="@+id/header"
+    layout="@layout/header_title_layout" />
+
+  <com.itek.retail.ui.customviews.InputView
+    android:id="@+id/ivTripNo"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:label="@string/lbl__no"
+    android:hint="@string/hint__no"
+    app:isHideLabel="false"
+    app:validationRegex="[0-9A-Za-z]{1,}"
+    app:inputRegex="[0-9A-Za-z]{0,}"
+    app:minLength="1"
+    android:maxLength="20"
+    android:layout_margin="@dimen/dp_15"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/header"/>
+
+  <com.itek.retail.ui.customviews.HeaderSpinner
+    android:id="@+id/spin_trip_src_loc_type"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="@dimen/dp_15"
+    android:layout_weight="1"
+    app:label="@string/lbl_location"
+    app:layout_constraintTop_toBottomOf="@id/ivTripNo" />
+
+  <com.itek.retail.ui.customviews.InputView
+    android:id="@+id/iv_src_code"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    android:layout_margin="@dimen/dp_15"
+    app:minLength="2"
+    android:maxLength="8"
+    app:label="@string/lbl_src_loc"
+    android:hint="@string/hint_src_loc"
+    app:isHideLabel="false"
+    app:validationRegex="[0-9A-Za-z-_]{2,}"
+    app:inputRegex="[0-9A-Za-z-_]{0,}"
+    app:layout_constraintTop_toBottomOf="@id/spin_trip_src_loc_type" />
+
+  <com.itek.retail.ui.customviews.HeaderSpinner
+    android:id="@+id/spin_trip_dest_loc_type"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="@dimen/dp_15"
+    android:layout_marginRight="@dimen/dp_15"
+    android:layout_weight="1"
+    app:label="@string/lbl_location"
+    app:layout_constraintTop_toBottomOf="@id/iv_src_code" />
+
+  <com.itek.retail.ui.customviews.InputView
+    android:id="@+id/iv_dest_code"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    android:layout_margin="@dimen/dp_15"
+    app:minLength="2"
+    android:maxLength="8"
+    app:label="@string/lbl_dest_loc"
+    android:hint="@string/hint_dest_loc"
+    app:isHideLabel="false"
+    app:validationRegex="[0-9A-Za-z-_]{2,}"
+    app:inputRegex="[0-9A-Za-z-_]{0,}"
+    app:layout_constraintTop_toBottomOf="@id/spin_trip_dest_loc_type" />
+
+  <!--<com.itek.retail.ui.customviews.BtnStartStopView
+    android:id="@+id/btnGo"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dp_15"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/iv_dest_code" />-->
+
+  <ImageButton
+    android:id="@+id/btnGo"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_gravity="center"
+    android:layout_margin="@dimen/dp_15"
+    android:background="@drawable/button_round_red"
+    android:padding="@dimen/dp_10"
+    android:text="@string/btn_proceed"
+    android:textColor="@color/white"
+    app:layout_constraintDimensionRatio="1:1"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintWidth_default="percent"
+    app:layout_constraintWidth_percent="0.16"
+    app:layout_constraintTop_toBottomOf="@id/iv_dest_code"
+    app:srcCompat="@drawable/ic_landing_proceed_arrow" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,60 @@
+{
+  "batchId": "2255b77cea0a432fa6f38f502dcc013c",
+  "data": [
+    {
+      "article": "3000125296",
+      "category": "Category123",
+      "matkl": "matkl12345",
+      "description" : "ABCD JDSFJDF ABCDEFGHIJKLMN ABCDEFGHIJKLMN",
+      "color": "Color",
+      "size": "Size",
+      "totalQty": 3,
+      "seqNumber": 1,
+      "pickQty": 3,
+      "eans": [
+        {
+          "ean": "10000001252962345",
+          "pickQty": 3
+        }
+      ]
+    },
+    {
+      "article": "3000664326",
+      "category": "Category3456789012345",
+      "matkl": "matkl123456789",
+      "description" : "ABCDEFGHIJKLMN ABCDEFGHIJKLMN ABCDEFGHIJKLMN",
+      "color": "Color",
+      "size": "Size",
+      "totalQty": 20,
+      "seqNumber": 1,
+      "pickQty": 12,
+      "eans": [
+        {
+          "ean": "801252967667",
+          "pickQty": 8
+        },
+        {
+          "ean": "1000003352934117",
+          "pickQty": 4
+        }
+      ]
+    },
+    {
+      "article": "3000225293",
+      "category": "Category345",
+      "matkl": "matkl345",
+      "description" : "ABCDEFGHIJKLMN ABCDEFGHIJKLMN ABCDEFGHIJKLMN",
+      "color": "Color",
+      "size": "Size",
+      "totalQty": 5,
+      "seqNumber": 1,
+      "pickQty": 1,
+      "eans": [
+        {
+          "ean": "80001252962345",
+          "pickQty": 1
+        }
+      ]
+    }
+  ]
+}

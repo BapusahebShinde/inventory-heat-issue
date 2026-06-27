@@ -1,0 +1,848 @@
+{
+  "clientName": null,
+  "clientID": null,
+  "userName": null,
+  "userProfileImg": null,
+  "storeId": "102",
+  "storeName": "Bamuni Maidan",
+  "storeCode": "TW61",
+  "storeType": "Store",
+  "deviceType": "ZEBRA",
+  "deviceKeyCodes": "139, 280, 293",
+  "isEANMappingEnabled": false,
+  "replenishmentType": "both",
+  "omnichannelType": "both",
+  "unencodedSearchType": "offline",
+  "alienSearchType": "offline",
+  "defaultTagType": "soft",
+  "eanType": "both",
+  "dashboardUrl": "/dashBoard/index/",
+  "isTidBasedCountForEncode": false,
+  "showFIFODateForEncode": true,
+  "showFifoChart": true,
+  "isShowCheckAvailabilityBtnForProductDetails": true,
+  "isSerialNumberMandatory": true,
+  "isAllowBulkEncoding": true,
+  "epcHeaderValidationRegexStd": "(30|35)",
+  "epcSerialLengthValidationRegexStd": "(11|12)",
+  "epcHeaderValidationRegexNonStd": "(BC|bc)",
+  "epcSerialLengthValidationRegexNonStd": "(7|8)",
+  "isGID": false,
+  "encodeAlgorithmStd": "SGTIN",
+  "encodeAlgorithmNonStd": "BC_ALPHA_NUM",
+  "showUnencodedAndAlienCountsInInventory": false,
+  "showUnencodedCountInInv": false,
+  "showAlienCountInInv": true,
+  "useReferenceId": false,
+  "labelZones": "Location",
+  "zones": [
+    {
+      "zoneId": 2,
+      "zoneName": "FOH",
+      "isDefault": true,
+      "zoneType": "FOH",
+      "isDisplayMapping": false
+    },
+    {
+      "zoneId": 3,
+      "zoneName": "BOH",
+      "isDefault": true,
+      "zoneType": "BOH",
+      "isDisplayMapping": false
+    }
+  ],
+  "isDisplayMappingForActualTags": false,
+  "labelCategories": "Category",
+  "categories": [
+    {
+      "categoryId": 1,
+      "categoryName": "Men"
+    },
+    {
+      "categoryId": 2,
+      "categoryName": "Women"
+    },
+    {
+      "categoryId": 3,
+      "categoryName": "Kids"
+    },
+    {
+      "categoryId": 4,
+      "categoryName": "Other"
+    }
+  ],
+  "labelBrands": "Brand",
+  "brands": [
+    {
+      "brandId": 1,
+      "brandName": "Allen Solly"
+    },
+    {
+      "brandId": 2,
+      "brandName": "Levi’s"
+    },
+    {
+      "brandId": 3,
+      "brandName": "Provogue"
+    },
+    {
+      "brandId": 4,
+      "brandName": "Van Husen"
+    },
+    {
+      "brandId": 5,
+      "brandName": "Park Avenue"
+    },
+    {
+      "brandId": 6,
+      "brandName": "Mufti"
+    },
+    {
+      "brandId": 7,
+      "brandName": "Pepe Jeans"
+    },
+    {
+      "brandId": 8,
+      "brandName": "Wrangler"
+    },
+    {
+      "brandId": 9,
+      "brandName": "Numero Uno"
+    },
+    {
+      "brandId": 10,
+      "brandName": "Monte Carlo"
+    },
+    {
+      "brandId": 11,
+      "brandName": "Peter England"
+    },
+    {
+      "brandId": 12,
+      "brandName": "Louis Philippe"
+    },
+    {
+      "brandId": 13,
+      "brandName": "Fabindia"
+    },
+    {
+      "brandId": 14,
+      "brandName": "Biba"
+    },
+    {
+      "brandId": 15,
+      "brandName": "Flying Machine"
+    },
+    {
+      "brandId": 16,
+      "brandName": "Zodiac"
+    },
+    {
+      "brandId": 17,
+      "brandName": "Raymond"
+    },
+    {
+      "brandId": 18,
+      "brandName": "Adidas"
+    },
+    {
+      "brandId": 19,
+      "brandName": "Nike"
+    },
+    {
+      "brandId": 20,
+      "brandName": "GINI & JONY"
+    }
+  ],
+  "maxSelectionBrands": 5,
+  "productLabels": {
+    "branddesc": "Brand",
+    "category": "Category",
+    "labelZones": "Section",
+    "skuid": "EAN",
+    "prouctId": "Type",
+    "size": "Size",
+    "colorname": "Color",
+    "rfId": "",
+    "labelTID": "",
+    "name": "Name",
+    "description": "Description",
+    "family_name": "MATKL",
+    "code": "DO"
+  },
+  "decodeTypes": [
+    {
+      "name": "Shrinkage",
+      "type": "D"
+    },
+    {
+      "name": "Omnichannel Fulfillment",
+      "type": "O"
+    },
+    {
+      "name": "GRDC/IST",
+      "type": "G"
+    },
+    {
+      "name": "Other",
+      "type": "T"
+    }
+  ],
+  "menus": [
+    {
+      "menuId": 1,
+      "menuCode": "ENC",
+      "menuName": "Encoding",
+      "parentId": 0,
+      "imageUrl": null,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": true,
+      "isEnabledOnFavScreen": false,
+      "isSubscribeForNotification": false,
+      "sequence": 1
+    },
+    {
+      "menuId": 2,
+      "menuCode": "INV",
+      "menuName": "Inventory",
+      "parentId": 0,
+      "imageUrl": null,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": true,
+      "isEnabledOnFavScreen": false,
+      "isSubscribeForNotification": false,
+      "sequence": 2
+    },
+    {
+      "menuId": 3,
+      "menuCode": "SER",
+      "menuName": "Search",
+      "parentId": 0,
+      "imageUrl": null,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": true,
+      "isEnabledOnFavScreen": false,
+      "isSubscribeForNotification": false,
+      "sequence": 3
+    },
+    {
+      "menuId": 4,
+      "menuCode": "INW",
+      "menuName": "Inward",
+      "parentId": 0,
+      "imageUrl": null,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": true,
+      "isEnabledOnFavScreen": false,
+      "isSubscribeForNotification": false,
+      "sequence": 4
+    },
+    {
+      "menuId": 5,
+      "menuCode": "MOV",
+      "menuName": "Movement",
+      "imageUrl": null,
+      "parentId": 0,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": true,
+      "isEnabledOnFavScreen": false,
+      "isSubscribeForNotification": false,
+      "sequence": 5
+    },
+    {
+      "menuId": 6,
+      "menuCode": "OTW",
+      "menuName": "Outward",
+      "parentId": 0,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": true,
+      "isEnabledOnFavScreen": false,
+      "isSubscribeForNotification": false,
+      "sequence": 6,
+      "imageUrl": null
+    },
+    {
+      "menuId": 7,
+      "menuCode": "OTW_TOTE",
+      "menuName": "Empty Tote Outward",
+      "parentId": 0,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": true,
+      "isEnabledOnFavScreen": false,
+      "isSubscribeForNotification": false,
+      "sequence": 7,
+      "imageUrl": null
+    },
+    {
+      "menuId": 8,
+      "menuCode": "OFF_RANGE",
+      "menuName": "Off Range",
+      "parentId": 0,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": true,
+      "isEnabledOnFavScreen": false,
+      "isSubscribeForNotification": false,
+      "sequence": 8,
+      "imageUrl": null
+    },
+    {
+      "menuId": 9,
+      "menuCode": "DEC",
+      "menuName": "Decoding",
+      "parentId": 0,
+      "imageUrl": null,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": true,
+      "isEnabledOnFavScreen": false,
+      "isSubscribeForNotification": false,
+      "sequence": 9
+    },
+    {
+      "menuId": 10,
+      "menuCode": "THAN",
+      "menuName": "Than Tracking",
+      "parentId": 0,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": true,
+      "isEnabledOnFavScreen": false,
+      "isSubscribeForNotification": false,
+      "sequence": 10,
+      "imageUrl": null
+    },
+    {
+      "menuId": 11,
+      "menuCode": "INW1",
+      "menuName": "Inward",
+      "parentId": 0,
+      "imageUrl": null,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": true,
+      "isEnabledOnFavScreen": false,
+      "isSubscribeForNotification": false,
+      "sequence": 11
+    },
+    {
+      "menuId": 12,
+      "menuCode": "OTW1",
+      "menuName": "Outward",
+      "parentId": 0,
+      "imageUrl": null,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": true,
+      "isEnabledOnFavScreen": false,
+      "isSubscribeForNotification": false,
+      "sequence": 12
+    },
+    {
+      "menuId": 13,
+      "menuCode": "REPLENISH_DEMAND",
+      "menuName": "On Demand Replenishment",
+      "screenMenuName": "Replenishment",
+      "parentId": 0,
+      "imageUrl": null,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": true,
+      "isEnabledOnFavScreen": false,
+      "isSubscribeForNotification": false,
+      "sequence": 13
+    },
+    {
+      "menuId": 14,
+      "menuCode": "REPLENISH_EOSS",
+      "menuName": "EOSS Pick List Replenishment",
+      "screenMenuName": "Replenishment",
+      "parentId": 0,
+      "imageUrl": null,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": true,
+      "isEnabledOnFavScreen": false,
+      "isSubscribeForNotification": false,
+      "sequence": 14
+    },
+    {
+      "menuId": 15,
+      "menuCode": "MOV_DISPLAY",
+      "menuName": "Move to Display",
+      "imageUrl": null,
+      "parentId": 0,
+      "isSubscribeForNotification": false,
+      "sequence": 15,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": true,
+      "isEnabledOnFavScreen": false
+    },
+    {
+      "menuId": 16,
+      "menuCode": "INW_SERIAL",
+      "menuName": "Inward with Serial",
+      "parentId": 0,
+      "imageUrl": null,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": true,
+      "isEnabledOnFavScreen": false,
+      "isSubscribeForNotification": false,
+      "sequence": 16
+    },
+    {
+      "menuId": 101,
+      "menuName": "Achievements",
+      "menuCode": "ENC_ACHIEVE",
+      "imageUrl": null,
+      "parentId": 1,
+      "favMenuCode": "ENC_ACHIEVE",
+      "favMenuName": "Encoding Achievements",
+      "screenMenuCode": "ENC_ACHIEVE",
+      "screenMenuName": "Achievements",
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": true,
+      "isSubscribeForNotification": false,
+      "sequence": 1
+    },
+    {
+      "menuId": 102,
+      "menuCode": "ENC_VERIFY",
+      "menuName": "Verify Encoding",
+      "imageUrl": null,
+      "parentId": 1,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": true,
+      "isSubscribeForNotification": false,
+      "sequence": 2
+    },
+    {
+      "menuId": 103,
+      "menuCode": "ENC_START",
+      "menuName": "Start",
+      "imageUrl": null,
+      "favMenuCode": "ENC_START",
+      "favMenuName": "Encoding Start",
+      "favImageUrl": null,
+      "screenMenuCode": "ENC",
+      "screenMenuName": "Encoding",
+      "screenImageUrl": null,
+      "parentId": 1,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": false,
+      "isSubscribeForNotification": false,
+      "sequence": 3
+    },
+    {
+      "menuId": 104,
+      "menuCode": "ENC_SSW",
+      "menuName": "Scan Scan Write",
+      "imageUrl": null,
+      "favMenuCode": "ENC_SSW",
+      "favMenuName": "Encoding Scan Scan Write",
+      "favImageUrl": null,
+      "screenMenuCode": "ENC_SSW",
+      "screenMenuName": "Scan Scan Write",
+      "screenImageUrl": null,
+      "parentId": 1,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": false,
+      "isSubscribeForNotification": false,
+      "sequence": 4
+    },
+    {
+      "menuId": 201,
+      "menuCode": "INV_START",
+      "menuName": "Start",
+      "imageUrl": null,
+      "parentId": 2,
+      "isSubscribeForNotification": false,
+      "sequence": 1,
+      "favMenuCode": "INV_START",
+      "favMenuName": "Inventory Start",
+      "favImageUrl": null,
+      "screenMenuCode": "INV",
+      "screenMenuName": "Inventory",
+      "screenImageUrl": null,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": false
+    },
+    {
+      "menuId": 202,
+      "menuCode": "INV_ADD",
+      "menuName": "Add to Inventory",
+      "imageUrl": null,
+      "parentId": 2,
+      "isSubscribeForNotification": false,
+      "sequence": 2,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": false
+    },
+    {
+      "menuId": 203,
+      "menuCode": "INV_BRAND",
+      "menuName": "Brand Inventory",
+      "imageUrl": null,
+      "parentId": 2,
+      "isSubscribeForNotification": false,
+      "sequence": 3,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": false
+    },
+    {
+      "menuId": 204,
+      "menuCode": "INV_FILTER",
+      "menuName": "Category Inventory",
+      "imageUrl": null,
+      "parentId": 2,
+      "isSubscribeForNotification": false,
+      "sequence": 4,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": false
+    },
+    {
+      "menuId": 205,
+      "menuCode": "STOCK_CORRECT",
+      "menuName": "Stock Correction",
+      "imageUrl": null,
+      "parentId": 2,
+      "isSubscribeForNotification": false,
+      "sequence": 5,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": true
+    },
+    {
+      "menuId": 301,
+      "menuName": "Product Search",
+      "menuCode": "SER_PROD",
+      "imageUrl": null,
+      "parentId": 3,
+      "isSubscribeForNotification": false,
+      "sequence": 1,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": true
+    },
+    {
+      "menuId": 302,
+      "menuName": "Omnichannel",
+      "menuCode": "SER_OMNI",
+      "imageUrl": null,
+      "parentId": 3,
+      "isSubscribeForNotification": false,
+      "sequence": 2,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": true
+    },
+    {
+      "menuId": 30201,
+      "menuName": "Order Stats",
+      "menuCode": "SER_OMNI_ACHIEVE",
+      "imageUrl": null,
+      "parentId": 302,
+      "isSubscribeForNotification": false,
+      "sequence": 2,
+      "favMenuName": "Omnichannel Order Stats",
+      "favMenuCode": "SER_OMNI_ACHIEVE",
+      "screenMenuName": "Omnichannel",
+      "screenMenuCode": "SER_OMNI",
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": true
+    },
+    {
+      "menuId": 30202,
+      "menuCode": "SER_OMNI_START",
+      "menuName": "Start",
+      "imageUrl": null,
+      "parentId": 302,
+      "isEnabled": true,
+      "isSubscribeForNotification": false,
+      "sequence": 3,
+      "favMenuCode": "SER_OMNI_START",
+      "favMenuName": "Omnichannel Start",
+      "screenMenuCode": "SER_OMNI",
+      "screenMenuName": "Omnichannel",
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": false
+    },
+    {
+      "menuId": 303,
+      "menuName": "List based Search",
+      "menuCode": "SER_LIST",
+      "imageUrl": null,
+      "parentId": 3,
+      "isSubscribeForNotification": false,
+      "sequence": 3,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": true
+    },
+    {
+      "menuId": 304,
+      "menuName": "Unencoded Search",
+      "menuCode": "SER_UNENCODED",
+      "imageUrl": null,
+      "parentId": 3,
+      "isSubscribeForNotification": false,
+      "sequence": 4,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": true
+    },
+    {
+      "menuId": 305,
+      "menuName": "Alien Search",
+      "menuCode": "SER_ALIEN",
+      "imageUrl": null,
+      "parentId": 3,
+      "isSubscribeForNotification": false,
+      "sequence": 5,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": true
+    },
+    {
+      "menuId": 306,
+      "menuName": "Ageing Stock Search",
+      "menuCode": "SER_AGE",
+      "imageUrl": null,
+      "parentId": 3,
+      "isSubscribeForNotification": false,
+      "sequence": 6,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": true
+    },
+    {
+      "menuId": 307,
+      "menuName": "Assortment Search",
+      "menuCode": "SER_ASSORT",
+      "imageUrl": null,
+      "parentId": 3,
+      "isSubscribeForNotification": false,
+      "sequence": 7,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": true
+    },
+    {
+      "menuId": 308,
+      "menuName": "FIFO Search",
+      "menuCode": "SER_FIFO",
+      "imageUrl": null,
+      "parentId": 3,
+      "isSubscribeForNotification": false,
+      "sequence": 8,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": true
+    },
+    {
+      "menuId": 309,
+      "menuName": "File Based Search",
+      "menuCode": "SER_FILE",
+      "imageUrl": null,
+      "parentId": 3,
+      "isSubscribeForNotification": false,
+      "sequence": 9,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": true
+    },
+    {
+      "menuId": 310,
+      "menuName": "Excel Based Search",
+      "menuCode": "SER_EXCEL",
+      "imageUrl": null,
+      "parentId": 3,
+      "isSubscribeForNotification": false,
+      "sequence": 10,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": true
+    },
+    {
+      "menuId": 501,
+      "menuCode": "REPLENISH",
+      "menuName": "Replenishment",
+      "imageUrl": null,
+      "parentId": 5,
+      "isEnabled": true,
+      "isSubscribeForNotification": false,
+      "sequence": 1,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": true
+    },
+    {
+      "menuId": 502,
+      "menuCode": "MOV_START",
+      "menuName": "Start",
+      "imageUrl": null,
+      "parentId": 5,
+      "isSubscribeForNotification": false,
+      "sequence": 2,
+      "isEnabled": true,
+      "favMenuCode": "MOV_START",
+      "favMenuName": "Movement Start",
+      "screenMenuName": "Movement",
+      "screenMenuCode": "MOV",
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": false
+    },
+    {
+      "menuId": 401,
+      "menuCode": "INW_HU",
+      "menuName": "Hu Verification",
+      "imageUrl": null,
+      "parentId": 4,
+      "isSubscribeForNotification": false,
+      "sequence": 2,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": false
+    },
+    {
+      "menuId": 402,
+      "menuCode": "INW_GRN",
+      "menuName": "GRN",
+      "parentId": 4,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": false,
+      "isSubscribeForNotification": false,
+      "sequence": 1,
+      "imageUrl": null
+    },
+    {
+      "menuId": 602,
+      "menuCode": "OTW_HU",
+      "menuName": "HU Verification",
+      "imageUrl": null,
+      "parentId": 6,
+      "isSubscribeForNotification": false,
+      "sequence": 2,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": false
+    },
+    {
+      "menuId": 601,
+      "menuCode": "OTW_PICK",
+      "menuName": "Picking",
+      "parentId": 6,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": false,
+      "isSubscribeForNotification": false,
+      "sequence": 1,
+      "imageUrl": null
+    },
+    {
+      "menuId": 1001,
+      "menuCode": "THAN_ENC",
+      "menuName": "Than Encoding",
+      "parentId": 10,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": false,
+      "isSubscribeForNotification": false,
+      "sequence": 1,
+      "imageUrl": null
+    },
+    {
+      "menuId": 1002,
+      "menuCode": "THAN_CUTTING",
+      "menuName": "Than Cutting",
+      "parentId": 10,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": false,
+      "isSubscribeForNotification": false,
+      "sequence": 2,
+      "imageUrl": null
+    },
+    {
+      "menuId": 1003,
+      "menuCode": "THAN_CLOSURE",
+      "menuName": "Than Closure",
+      "parentId": 10,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": false,
+      "isSubscribeForNotification": false,
+      "sequence": 3,
+      "imageUrl": null
+    }
+  ],
+  "actionMenus": [
+    {
+      "menuId": 11001,
+      "menuCode": "ACT_SER",
+      "menuName": "Search",
+      "imageUrl": null,
+      "parentId": null,
+      "sequence": 1,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": false
+    },
+    {
+      "menuId": 11003,
+      "menuCode": "ACT_NOTIFY",
+      "menuName": "Notifications",
+      "imageUrl": "",
+      "parentId": null,
+      "sequence": 3,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": false
+    },
+    {
+      "menuId": 11004,
+      "menuCode": "ACT_COMPARE",
+      "menuName": "Product Comparison",
+      "imageUrl": "",
+      "parentId": null,
+      "sequence": 4,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": false
+    }
+  ],
+  "navMenus": [
+    {
+      "menuId": 21001,
+      "menuCode": "NAV_APP_INFO",
+      "menuName": "App Info",
+      "imageUrl": null,
+      "parentId": null,
+      "sequence": 1,
+      "isEnabled": true,
+      "screenMenuCode": "APP_LOGO",
+      "screenMenuName": "i-TEK Retail",
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": false
+    },
+    {
+      "menuId": 21002,
+      "menuCode": "NAV_CHANGE_PASS",
+      "menuName": "Change Password",
+      "imageUrl": null,
+      "parentId": null,
+      "sequence": 2,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": false
+    }
+  ],
+  "theme": {
+    "color": "#962A27",
+    "colorPrimaryDark": "#962A27",
+    "colorPrimary": "#FEFEFE",
+    "colorAccent": "#962A27"
+  }
+}

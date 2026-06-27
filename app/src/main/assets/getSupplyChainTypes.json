@@ -1,0 +1,12 @@
+{
+  "supplyChainTypeMasterList": {
+    "1": "Store",
+    "2": "DC",
+    "3": "Vendor"
+  },
+  "storeList": {
+    "1": ["5731", "234", "ABS"],
+    "2": ["AB12"],
+    "3": ["TDS8", "121"]
+  }
+}

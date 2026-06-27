@@ -1,0 +1,24 @@
+{
+  "ean": "8901198204053",
+  "mappedEan": "ABCD4053",
+  "accessPassword": {
+    "currentAccessPassword": "12345678",
+    "oldAccessPasswords": [
+      {
+        "srno": 5,
+        "accesspwd": "88888888"
+      },
+      {
+        "srno": 5,
+        "accesspwd": "12341234"
+      }
+    ]
+  },
+  "sgtins": [
+    {
+      "tid": "E20034120133010001C52870",
+      "epc": "30361F493813ED574876E807",
+      "hardtag": true
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "products": [
+    {
+      "imageUrl": [
+        "8907796297375_1.png",
+        "8907796297375_2.png"
+      ],
+      "title": "Divya Sarang Earrings",
+      "ean": "8907796297375",
+      "type": "Earrings",
+      "category": "Alekhya",
+      "subCategory": "Gold Jewellery",
+      "brand": "Zoya",
+      "color": "22.00",
+      "size": "14.23 g",
+      "zone": "BOH",
+      "eanQty": "5"
+    },
+    {
+      "imageUrl": [
+        "8907796297376_1.png",
+        "8907796297376_2.png"
+      ],
+      "title": "Flamboyant Drop Earrings",
+      "ean": "8907796297376",
+      "type": "Earrings",
+      "category": "Alekhya",
+      "subCategory": "Gold Jewellery",
+      "brand": "Zoya",
+      "color": "22.00",
+      "size": "15.37 g",
+      "zone": "BOH",
+      "eanQty": "7"
+    },
+    {
+      "imageUrl": [
+        "8907796297378_1.png",
+        "8907796297378_2.png"
+      ],
+      "title": "Traditional Cluster Diamond Stud Earrings",
+      "ean": "8907796297382",
+      "type": "Earrings",
+      "category": "Solitaire",
+      "subCategory": "Gold and Diamond Jewellery",
+      "brand": "Zoya",
+      "color": "18",
+      "size": "1.93 g",
+      "zone": "BOH",
+      "eanQty": "3"
+    },
+    {
+      "imageUrl": [
+        "8907796297379_1.png",
+        "8907796297379_2.png"
+      ],
+      "title": "Glamorous Diamond Solitaire Stud Earrings",
+      "ean": "8907796297383",
+      "type": "Earrings",
+      "category": "Solitaire",
+      "subCategory": "Gold and Diamond Jewellery",
+      "brand": "Zoya",
+      "color": "18",
+      "size": "3.20 g",
+      "zone": "BOH",
+      "eanQty": "2"
+    }
+  ]
+}

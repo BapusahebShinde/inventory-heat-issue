@@ -1,0 +1,56 @@
+{
+  "omnichannelType": "ean",
+  "items": [
+    {
+      "type": "total",
+      "label": "Total",
+      "count": "100",
+      "percent": "10 %",
+      "percentLabel": "<font color=\"#00CC00\">10 % \u2191</font>"
+    },
+    {
+      "type": "completed",
+      "label": "<font color=\"#00CC00\">Completed</font>",
+      "count": "20/100",
+      "percent": "07 %</font>",
+      "percentLabel": "<font color=\"#00CC00\">07 % \u2191</font>",
+      "stats": [
+        {
+          "label": "< 8 <small><font color=\"#CC0000\"> Hrs</font></small>",
+          "count": "60"
+        },
+        {
+          "label": "8-24 <small><font color=\"#CC0000\"> Hrs</font></small>",
+          "count": "15"
+        },
+        {
+          "label": "> 24 <small><font color=\"#CC0000\"> Hrs</font></small>",
+          "count": "05"
+        }
+      ]
+    },
+    {
+      "type": "pending",
+      "label": "<font color=\"#CC0000\">Pending</font>,<font color=\"#949494\">(In-Process)</font>",
+      "count": "80,10",
+      "percent": "05 %",
+      "percentLabel": "<font color=\"#00CC00\">05 % \u2193</font>",
+      "stats": [
+        {
+          "label": "< 8",
+          "count": "60"
+        },
+        {
+          "label": "8-24",
+          "count": "15"
+        },
+        {
+          "label": "> 24",
+          "count": "05"
+        }
+      ]
+    }
+  ],
+  "activeUsers": 2
+}
+

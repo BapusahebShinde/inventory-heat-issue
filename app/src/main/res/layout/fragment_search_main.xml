@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/white"
+  android:clickable="true"
+  tools:context=".ui.encoding.EncodingMainFragment">
+
+  <include
+    android:id="@+id/header"
+    layout="@layout/header_title_layout" />
+
+  <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/grid_menus_search"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_0"
+    android:layout_margin="@dimen/dp_5"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/header" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

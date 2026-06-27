@@ -1,0 +1,102 @@
+{
+  "outwardProducts": [
+    {
+      "imageUrl": [],
+      "title": "T-Shirt",
+      "status": "",
+      "orderNo": "",
+      "ean": "8901198204053",
+      "category": "Men",
+      "brand": "Levi's",
+      "zone": "FOH",
+      "articleNo": "123451",
+      "color": "#CC0000",
+      "size": "XL",
+      "eanQty": "3"
+    },
+    {
+      "imageUrl": [],
+      "title": "T-Shirt",
+      "status": "",
+      "orderNo": "",
+      "ean": "8907167838045",
+      "category": "Women",
+      "brand": "Fabindia",
+      "zone": "BOH",
+      "articleNo": "123452",
+      "color": "#0000CC",
+      "size": "M",
+      "eanQty": "3"
+    },
+    {
+      "imageUrl": [],
+      "title": "T-Shirt",
+      "status": "",
+      "orderNo": "",
+      "ean": "9780670095414",
+      "category": "Kids",
+      "brand": "Levi's",
+      "zone": "FOH",
+      "articleNo": "123453",
+      "color": "#00CC00",
+      "size": "S",
+      "eanQty": "1"
+    },
+    {
+      "imageUrl": [],
+      "title": "T-Shirt",
+      "status": "",
+      "orderNo": "",
+      "ean": "8907820189713",
+      "category": "Men",
+      "brand": "Numero Uno",
+      "zone": "BOH",
+      "articleNo": "123454",
+      "color": "#00CCCC",
+      "size": "L",
+      "eanQty": "4"
+    },
+    {
+      "imageUrl": [],
+      "title": "T-Shirt",
+      "status": "",
+      "orderNo": "",
+      "ean": "8907820189712",
+      "category": "Women",
+      "brand": "Numero Uno",
+      "zone": "FOH",
+      "articleNo": "123455",
+      "color": "#CCCC00",
+      "size": "M",
+      "eanQty": "2"
+    },
+    {
+      "imageUrl": [],
+      "title": "T-Shirt",
+      "status": "",
+      "orderNo": "",
+      "ean": "8907796297375",
+      "category": "Kids",
+      "brand": "Biba",
+      "zone": "BOH",
+      "articleNo": "123456",
+      "color": "#CCCCCC",
+      "size": "S",
+      "eanQty": "6"
+    },
+    {
+      "imageUrl": [],
+      "title": "Shirt",
+      "status": "",
+      "orderNo": "",
+      "ean": "8907796297374",
+      "category": "Men",
+      "brand": "Cotton King",
+      "zone": "FOH",
+      "articleNo": "123457",
+      "color": "#CC0000",
+      "size": "XL",
+      "eanQty": "3"
+    }
+  ]
+}

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/white"
+  android:clickable="true"
+  tools:context=".ui.encoding.EncodingConfigFragment">
+
+  <include
+    android:id="@+id/header"
+    layout="@layout/header_title_layout" />
+
+  <SeekBar
+    android:id="@+id/seek_encoding_start_target"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_50"
+    android:layout_marginTop="@dimen/dp_5"
+    android:progress="25"
+    android:progressDrawable="@drawable/seekbar_target"
+    android:rotation="0"
+    android:visibility="gone"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/header" />
+
+  <TextView
+    android:id="@+id/lbl_encoding_config_purpose"
+    style="@style/TextConfigBtnHeader"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/lbl_encode_config_purpose"
+    android:visibility="gone"
+    app:layout_constraintTop_toBottomOf="@id/seek_encoding_start_target" />
+
+  <LinearLayout
+    android:id="@+id/ll_encoding_config_purpose"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginLeft="@dimen/dp_10"
+    android:layout_marginRight="@dimen/dp_10"
+    android:orientation="horizontal"
+    android:visibility="gone"
+    app:layout_constraintBottom_toTopOf="@id/lbl_encoding_config_eantype"
+    app:layout_constraintTop_toBottomOf="@id/lbl_encoding_config_purpose">
+
+    <Button
+      android:id="@+id/btn_purpose_newstore"
+      style="@style/ButtonSelectable"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/dp_5"
+      android:layout_weight="1"
+      android:text="@string/btn_encode_config_newstore" />
+
+    <Button
+      android:id="@+id/btn_purpose_dsd"
+      style="@style/ButtonSelectable"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/dp_5"
+      android:layout_weight="1"
+      android:text="@string/btn_encode_config_dsd" />
+
+    <Button
+      android:id="@+id/btn_purpose_csd"
+      style="@style/ButtonSelectable"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/dp_5"
+      android:layout_weight="1"
+      android:text="@string/btn_encode_config_csd" />
+
+  </LinearLayout>
+
+  <TextView
+    android:id="@+id/lbl_encoding_config_eantype"
+    style="@style/TextConfigBtnHeader"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/lbl_encode_config_ean_type"
+    android:visibility="gone"
+    app:layout_constraintBottom_toTopOf="@id/ll_encoding_config_eantype"
+    app:layout_constraintTop_toBottomOf="@id/ll_encoding_config_purpose" />
+
+  <LinearLayout
+    android:id="@+id/ll_encoding_config_eantype"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginLeft="@dimen/dp_15"
+    android:layout_marginRight="@dimen/dp_15"
+    android:orientation="horizontal"
+    android:visibility="gone"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <Button
+      android:id="@+id/btn_config_ean"
+      style="@style/ButtonSelectable"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/dp_5"
+      android:layout_weight="1"
+      android:text="@string/btn_encode_config_ean_std" />
+
+    <Button
+      android:id="@+id/btn_config_nonstd"
+      style="@style/ButtonSelectable"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/dp_5"
+      android:layout_weight="1"
+      android:text="@string/bt_encode_config_ean_nonstd" />
+
+    <Button
+      android:id="@+id/btn_config_both"
+      style="@style/ButtonSelectable"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/dp_5"
+      android:layout_weight="1"
+      android:text="@string/btn_encode_config_ean_both" />
+  </LinearLayout>
+
+  <TextView
+    android:id="@+id/lbl_encoding_config_encodingtype"
+    style="@style/TextConfigBtnHeader"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/lbl_encode_config_type"
+    app:layout_constraintBottom_toTopOf="@id/ll_encoding_config_relation"
+    app:layout_constraintTop_toBottomOf="@id/ll_encoding_config_eantype" />
+
+  <LinearLayout
+    android:id="@+id/ll_encoding_config_relation"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginLeft="@dimen/dp_15"
+    android:layout_marginRight="@dimen/dp_15"
+    android:gravity="center_horizontal"
+    android:orientation="horizontal"
+    app:layout_constraintBottom_toTopOf="@id/ll_encoding_config_barcoderfidtype"
+    app:layout_constraintTop_toBottomOf="@id/lbl_encoding_config_encodingtype">
+
+    <Button
+      android:id="@+id/btn_config_relation_one_to_one"
+      style="@style/ButtonSelectable"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/dp_10"
+      android:tag="One-One"
+      android:text="@string/btn_encode_config_type_one_to_one" />
+
+    <Button
+      android:id="@+id/btn_config_relation_one_to_many"
+      style="@style/ButtonSelectable"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/dp_10"
+      android:tag="One-Many"
+      android:text="@string/btn_encode_config_type_one_to_many" />
+
+  </LinearLayout>
+
+  <LinearLayout
+    android:id="@+id/ll_encoding_config_barcoderfidtype"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginLeft="@dimen/dp_15"
+    android:layout_marginRight="@dimen/dp_15"
+    android:gravity="center_horizontal"
+    android:orientation="horizontal"
+    android:visibility="gone"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/ll_encoding_config_relation">
+
+    <Button
+      android:id="@+id/btn_config_type_barcode_rfid"
+      style="@style/ButtonSelectable"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/dp_10"
+      android:padding="@dimen/dp_5"
+      android:text="@string/btn_encode_config_type_b_r" />
+
+    <Button
+      android:id="@+id/btn_config_type_barcode_barcode_rfid"
+      style="@style/ButtonSelectable"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/dp_10"
+      android:padding="@dimen/dp_5"
+      android:text="@string/btn_encode_config_type_b_b_r" />
+
+  </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

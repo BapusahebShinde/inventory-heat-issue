@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:background="@color/white"
+  android:orientation="horizontal"
+  android:padding="@dimen/dp_5">
+
+  <TextView
+    android:id="@+id/txt_omnichannel_item_title"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="@dimen/dp_5"
+    android:layout_weight="1"
+    android:ellipsize="marquee"
+    android:marqueeRepeatLimit="marquee_forever"
+    android:singleLine="true"
+    android:textAppearance="@style/TextStyleRegular" />
+
+  <FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:layout_weight="1">
+
+    <ImageView
+      android:id="@+id/img_omnichannel_status_completed"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:scaleType="fitCenter"
+      android:visibility="gone"
+      app:srcCompat="@drawable/ic_completed" />
+
+    <TextView
+      android:id="@+id/txt_omnichannel_item_status"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_margin="@dimen/dp_5"
+      android:gravity="center"
+      android:marqueeRepeatLimit="marquee_forever"
+      android:maxLines="1"
+      android:singleLine="true"
+      android:text="@string/status_in_process"
+      android:textAppearance="@style/TextStyleRegular" />
+
+  </FrameLayout>
+</LinearLayout>

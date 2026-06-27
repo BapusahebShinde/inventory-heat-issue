@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <item name="act_ser" type="id" />
+  <item name="act_msg" type="id" />
+  <item name="act_compare" type="id" />
+  <item name="act_notify" type="id" />
+  <item name="nav_app_info" type="id" />
+  <item name="nav_change_pass" type="id" />
+  <item name="act_app_info" type="id" />
+  <item name="app_info" type="id" />
+  <item name="enc" type="id" />
+  <item name="enc_achieve" type="id" />
+  <item name="enc_verify" type="id" />
+  <item name="enc_start" type="id" />
+  <item name="inv" type="id" />
+  <item name="inv_add" type="id" />
+  <item name="inv_brand" type="id" />
+  <item name="inv_start" type="id" />
+  <item name="stock_correct" type="id" />
+  <item name="ser" type="id" />
+  <item name="ser_prod" type="id" />
+  <item name="ser_omni" type="id" />
+  <item name="ser_omni_achieve" type="id" />
+  <item name="ser_omni_start" type="id" />
+  <item name="inw" type="id" />
+  <item name="inw_hu" type="id" />
+  <item name="inw_grn" type="id" />
+  <item name="mov" type="id" />
+  <item name="mov_start" type="id" />
+  <item name="replenish" type="id" />
+</resources>

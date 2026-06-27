@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/title_layout"
+  android:layout_width="match_parent"
+  android:layout_height="@dimen/dp_0"
+  android:background="@drawable/border_bottom"
+  android:orientation="horizontal"
+  android:padding="@dimen/dp_10"
+  app:layout_constraintHeight_default="percent"
+  app:layout_constraintHeight_percent="0.15"
+  app:layout_constraintTop_toTopOf="parent"
+  tools:ignore="MissingConstraints">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:layout_weight="2"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <ImageView
+      android:id="@+id/img_back"
+      android:layout_width="@dimen/dp_0"
+      android:layout_height="match_parent"
+      android:layout_gravity="left|center_vertical"
+      android:gravity="center"
+      android:scaleType="fitCenter"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintHeight_default="percent"
+      app:layout_constraintHeight_percent="0.5"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:srcCompat="@drawable/ic_back_arrow" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+  <androidx.appcompat.widget.LinearLayoutCompat
+    android:id="@+id/ll_header_title"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:layout_weight="1"
+    android:gravity="center"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <ImageView
+      android:id="@+id/img_title_logo"
+      android:layout_width="@dimen/dp_30"
+      android:layout_height="match_parent"
+      android:layout_gravity="center"
+      android:layout_marginRight="@dimen/dp_8"
+      android:scaleType="fitCenter"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toLeftOf="@id/txt_title"
+      app:layout_constraintTop_toTopOf="parent"
+      app:srcCompat="@drawable/ic_app_logo" />
+
+    <TextView
+      android:id="@+id/txt_title"
+      android:layout_width="wrap_content"
+      android:layout_height="match_parent"
+      android:layout_gravity="center"
+      android:gravity="center"
+      android:text="@string/app_name"
+      android:textAppearance="@style/TextStyleHeader"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintLeft_toRightOf="@id/img_title_logo"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  </androidx.appcompat.widget.LinearLayoutCompat>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:layout_weight="2"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <ImageView
+      android:id="@+id/img_configSync"
+      android:layout_width="@dimen/dp_0"
+      android:layout_height="match_parent"
+      android:layout_gravity="center"
+      android:gravity="center"
+      android:scaleType="fitCenter"
+      android:visibility="gone"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintHeight_default="percent"
+      app:layout_constraintHeight_percent="0.5"
+      app:layout_constraintRight_toLeftOf="@id/fl_active_devices"
+      app:layout_constraintTop_toTopOf="parent"
+      app:srcCompat="@drawable/ic_sync" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/fl_active_devices"
+      android:layout_width="@dimen/dp_0"
+      android:layout_height="match_parent"
+      android:layout_gravity="center"
+      android:gravity="center"
+      android:visibility="gone"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintHeight_default="percent"
+      app:layout_constraintHeight_percent="0.5"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+      <ImageView
+        android:id="@+id/bg_active_devices"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_active_devices" />
+
+      <View
+        android:id="@+id/viewHalf"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+      <TextView
+        android:id="@+id/btn_active_devices"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
+        android:layout_gravity="right|bottom"
+        android:background="@drawable/button_round_red"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="true"
+        android:textAppearance="@style/TextStyleExtraSmallWhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent="0.40"
+        app:layout_constraintLeft_toRightOf="@id/viewHalf" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
+

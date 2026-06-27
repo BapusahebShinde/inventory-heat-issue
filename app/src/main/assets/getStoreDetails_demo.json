@@ -1,0 +1,336 @@
+{
+  "clientName": null,
+  "clientID": null,
+  "userName": null,
+  "userProfileImg": null,
+  "storeId": "102",
+  "storeName": "Bamuni Maidan",
+  "storeCode": "TW61",
+  "deviceType": "ZEBRA",
+  "deviceKeyCodes": "139, 280, 293",
+  "isEANMappingEnabled": false,
+  "replenishmentType": "both",
+  "omnichannelType": "both",
+  "unencodedSearchType": "offline",
+  "defaultTagType": "soft",
+  "eanType": "both",
+  "labelZones": "Location",
+  "zones": [
+    {
+      "zoneId": 2,
+      "zoneName": "FOH",
+      "isDefault": true,
+      "zoneType": "FOH"
+    },
+    {
+      "zoneId": 3,
+      "zoneName": "BOH",
+      "isDefault": true,
+      "zoneType": "BOH"
+    },
+    {
+      "zoneId": 4,
+      "zoneName": "Ground Floor",
+      "isDefault": false,
+      "zoneType": "FOH"
+    },
+    {
+      "zoneId": 5,
+      "zoneName": "First Floor",
+      "isDefault": false,
+      "zoneType": "FOH"
+    }
+  ],
+  "labelCategories": "Category",
+  "categories": [
+    {
+      "categoryId": 1,
+      "categoryName": "Men"
+    },
+    {
+      "categoryId": 2,
+      "categoryName": "Women"
+    },
+    {
+      "categoryId": 3,
+      "categoryName": "Kids"
+    },
+    {
+      "categoryId": 4,
+      "categoryName": "Other"
+    }
+  ],
+  "labelBrands": "Brand",
+  "brands": [
+    {
+      "brandId": 1,
+      "brandName": "Allen Solly"
+    },
+    {
+      "brandId": 2,
+      "brandName": "Levi’s"
+    },
+    {
+      "brandId": 3,
+      "brandName": "Provogue"
+    },
+    {
+      "brandId": 4,
+      "brandName": "Van Husen"
+    },
+    {
+      "brandId": 5,
+      "brandName": "Park Avenue"
+    },
+    {
+      "brandId": 6,
+      "brandName": "Mufti"
+    },
+    {
+      "brandId": 7,
+      "brandName": "Pepe Jeans"
+    },
+    {
+      "brandId": 8,
+      "brandName": "Wrangler"
+    },
+    {
+      "brandId": 9,
+      "brandName": "Numero Uno"
+    },
+    {
+      "brandId": 10,
+      "brandName": "Monte Carlo"
+    },
+    {
+      "brandId": 11,
+      "brandName": "Peter England"
+    },
+    {
+      "brandId": 12,
+      "brandName": "Louis Philippe"
+    },
+    {
+      "brandId": 13,
+      "brandName": "Fabindia"
+    },
+    {
+      "brandId": 14,
+      "brandName": "Biba"
+    },
+    {
+      "brandId": 15,
+      "brandName": "Flying Machine"
+    },
+    {
+      "brandId": 16,
+      "brandName": "Zodiac"
+    },
+    {
+      "brandId": 17,
+      "brandName": "Raymond"
+    },
+    {
+      "brandId": 18,
+      "brandName": "Adidas"
+    },
+    {
+      "brandId": 19,
+      "brandName": "Nike"
+    },
+    {
+      "brandId": 20,
+      "brandName": "GINI & JONY"
+    }
+  ],
+  "maxSelectionBrands": 5,
+  "menus": [
+    {
+      "menuId": 1,
+      "menuCode": "ENC",
+      "menuName": "Encoding",
+      "parentId": 0,
+      "imageUrl": null,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": true,
+      "isEnabledOnFavScreen": false,
+      "sequence": 1
+    },
+    {
+      "menuId": 2,
+      "menuCode": "INV",
+      "menuName": "Inventory",
+      "parentId": 0,
+      "imageUrl": null,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": true,
+      "isEnabledOnFavScreen": false,
+      "sequence": 2
+    },
+    {
+      "menuId": 3,
+      "menuCode": "SER",
+      "menuName": "Search",
+      "parentId": 0,
+      "imageUrl": null,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": true,
+      "isEnabledOnFavScreen": false,
+      "sequence": 3
+    },
+    {
+      "menuId": 5,
+      "menuCode": "MOV",
+      "menuName": "Movement",
+      "imageUrl": null,
+      "parentId": 0,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": true,
+      "isEnabledOnFavScreen": false,
+      "sequence": 5
+    },
+    {
+      "menuId": 12,
+      "menuCode": "ENC_VERIFY",
+      "menuName": "Verify Encoding",
+      "imageUrl": null,
+      "parentId": 1,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": true,
+      "sequence": 2
+    },
+    {
+      "menuId": 13,
+      "menuCode": "ENC_START",
+      "menuName": "Start",
+      "imageUrl": null,
+      "favMenuCode": "ENC_START",
+      "favMenuName": "Encoding Start",
+      "favImageUrl": null,
+      "screenMenuCode": "ENC",
+      "screenMenuName": "Encoding",
+      "screenImageUrl": null,
+      "parentId": 1,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": false,
+      "sequence": 3
+    },
+    {
+      "menuId": 21,
+      "menuCode": "INV_START",
+      "menuName": "Start",
+      "imageUrl": null,
+      "parentId": 2,
+      "sequence": 1,
+      "favMenuCode": "INV_START",
+      "favMenuName": "Inventory Start",
+      "favImageUrl": null,
+      "screenMenuCode": "INV",
+      "screenMenuName": "Inventory",
+      "screenImageUrl": null,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": false
+    },
+    {
+      "menuId": 24,
+      "menuCode": "STOCK_CORRECT",
+      "menuName": "Stock Correction",
+      "imageUrl": null,
+      "parentId": 2,
+      "sequence": 4,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": true
+    },
+    {
+      "menuId": 31,
+      "menuName": "Product Search",
+      "menuCode": "SER_PROD",
+      "imageUrl": null,
+      "parentId": 3,
+      "sequence": 1,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": true
+    },
+    {
+      "menuId": 51,
+      "menuCode": "REPLENISH",
+      "menuName": "Replenishment",
+      "imageUrl": null,
+      "parentId": 5,
+      "isEnabled": true,
+      "sequence": 1,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": true
+    },
+    {
+      "menuId": 52,
+      "menuCode": "MOV_START",
+      "menuName": "Start",
+      "imageUrl": null,
+      "parentId": 5,
+      "sequence": 2,
+      "isEnabled": true,
+      "favMenuCode": "MOV_START",
+      "favMenuName": "Movement Start",
+      "screenMenuName": "Movement",
+      "screenMenuCode": "MOV",
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": false
+    }
+  ],
+  "actionMenus": [
+    {
+      "menuId": 1001,
+      "menuCode": "ACT_SER",
+      "menuName": "Search",
+      "imageUrl": null,
+      "parentId": null,
+      "sequence": 1,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": false
+    },
+    {
+      "menuId": 1003,
+      "menuCode": "ACT_NOTIFY",
+      "menuName": "Notifications",
+      "imageUrl": "",
+      "parentId": null,
+      "sequence": 3,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": false
+    },
+    {
+      "menuId": 1004,
+      "menuCode": "ACT_COMPARE",
+      "menuName": "Product Comparison",
+      "imageUrl": "",
+      "parentId": null,
+      "sequence": 4,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": false
+    }
+  ],
+  "navMenus": [
+    {
+      "menuId": 2001,
+      "menuCode": "NAV_APP_INFO",
+      "menuName": "App Info",
+      "imageUrl": null,
+      "parentId": null,
+      "sequence": 1,
+      "isEnabled": true,
+      "screenMenuCode": "APP_LOGO",
+      "screenMenuName": "i-TEK Retail",
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": false
+    }
+  ]
+}

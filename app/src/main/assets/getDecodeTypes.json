@@ -1,0 +1,8 @@
+{
+  "decodeTypes": [
+    {"name":"Sale" ,"type": "DS"},
+    {"name":"Omnichannel Fulfillment" ,"type": "O"},
+    {"name":"GRDC/IST" ,"type": "G"},
+    {"name":"Other" ,"type": "T"}
+  ]
+}

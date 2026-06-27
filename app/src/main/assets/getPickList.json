@@ -1,0 +1,178 @@
+{
+  "listId": "123",
+  "type": "RTV",
+  "isAllowDecoding": true,
+  "isAllowDecodingOnPick": false,
+  "accessPassword": {
+    "currentAccessPassword": "12345678",
+    "oldAccessPasswords": [
+      {
+        "srno": 1,
+        "accesspwd": "88888888"
+      },
+      {
+        "srno": 2,
+        "accesspwd": "12341234"
+      }
+    ]
+  },
+  "searchProducts": [
+    {
+      "imageUrl": [],
+      "title": "T-Shirt",
+      "status": "",
+      "orderNo": "",
+      "qty": 2,
+      "remainingQuantity": "1",
+      "ean": "161823816",
+      "category": "Men",
+      "brand": "Levi's",
+      "zones": [
+        {
+          "zoneId": 2,
+          "zoneName": "FOH",
+          "isDefault": true,
+          "zoneType": "FOH",
+          "eanQty": "1"
+        },
+        {
+          "zoneId": 3,
+          "zoneName": "BOH",
+          "isDefault": true,
+          "zoneType": "BOH",
+          "eanQty": "1"
+        }
+      ],
+      "articleNo": "123451",
+      "color": "#CC0000",
+      "size": "XL"
+    },
+    {
+      "imageUrl": [],
+      "title": "T-Shirt",
+      "status": "",
+      "orderNo": "",
+      "ean": "YML30910122PEAM",
+      "category": "Men",
+      "brand": "Numero Uno",
+      "zone": "BOH",
+      "qty": "2",
+      "remainingQuantity": "3",
+      "eanQty": "2",
+      "zones": [
+        {
+          "zoneId": 2,
+          "zoneName": "FOH",
+          "isDefault": true,
+          "zoneType": "FOH",
+          "eanQty": "0"
+        },
+        {
+          "zoneId": 3,
+          "zoneName": "BOH",
+          "isDefault": true,
+          "zoneType": "BOH",
+          "eanQty": "2"
+        }
+      ],
+      "articleNo": "123454",
+      "color": "#00CCCC",
+      "size": "L"
+    },
+    {
+      "imageUrl": [],
+      "title": "T-Shirt",
+      "status": "",
+      "orderNo": "",
+      "ean": "8904279302990",
+      "category": "Kids",
+      "brand": "Biba",
+      "zone": "BOH",
+      "eanQty": "6",
+      "qty": "6",
+      "remainingQuantity": "3",
+      "zones": [
+        {
+          "zoneId": 2,
+          "zoneName": "FOH",
+          "isDefault": true,
+          "zoneType": "FOH",
+          "eanQty": "0"
+        },
+        {
+          "zoneId": 3,
+          "zoneName": "BOH",
+          "isDefault": true,
+          "zoneType": "BOH",
+          "eanQty": "6"
+        }
+      ],
+      "articleNo": "123456",
+      "color": "#CCCCCC",
+      "size": "S"
+    },
+    {
+      "imageUrl": [],
+      "title": "Top",
+      "status": "",
+      "orderNo": "",
+      "ean": "8901599161009",
+      "category": "Women",
+      "brand": "Fabindia",
+      "zones": [
+        {
+          "zoneId": 2,
+          "zoneName": "FOH",
+          "isDefault": true,
+          "zoneType": "FOH",
+          "eanQty": "1"
+        },
+        {
+          "zoneId": 3,
+          "zoneName": "BOH",
+          "isDefault": true,
+          "zoneType": "BOH",
+          "eanQty": "3"
+        }
+      ],
+      "articleNo": "123458",
+      "color": "#0000CC",
+      "size": "M",
+      "eanQty": "4",
+      "qty": "5",
+      "remainingQuantity": "2"
+    },
+    {
+      "imageUrl": [],
+      "title": "T-Shirt",
+      "status": "",
+      "orderNo": "",
+      "ean": "890126230070",
+      "category": "Kids",
+      "brand": "Levi's",
+      "zone": "FOH",
+      "qty": "1",
+      "remainingQuantity": "1",
+      "eanQty": "1",
+      "zones": [
+        {
+          "zoneId": 2,
+          "zoneName": "FOH",
+          "isDefault": true,
+          "zoneType": "FOH",
+          "eanQty": "1"
+        },
+        {
+          "zoneId": 3,
+          "zoneName": "BOH",
+          "isDefault": true,
+          "zoneType": "BOH",
+          "eanQty": "0"
+        }
+      ],
+      "articleNo": "123459",
+      "color": "#0ACCA0",
+      "size": "S"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--<data>
+      <variable
+        name="productModel"
+        type="com.itek.retail.model.ProductModel" />
+    </data>-->
+
+    <LinearLayout
+        android:id="@+id/ll_product_vals"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvValue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end" />
+    </LinearLayout>
+
+
+</layout>

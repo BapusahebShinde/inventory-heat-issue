@@ -1,0 +1,1760 @@
+{
+  "lastInventoryTakenTime": "31-May-2022 13:00:00",
+  "inventoryCounts": [
+    {
+      "categoryName": "Men",
+      "brands": [
+        {
+          "brandName": "Allen Solly",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 200,
+              "shortage": 20
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 10,
+              "shortage": 1
+            }
+          ]
+        },
+        {
+          "brandName": "Levi’s",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 190,
+              "shortage": 19
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 20,
+              "shortage": 2
+            }
+          ]
+        },
+        {
+          "brandName": "Provogue clothing brands in India",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 180,
+              "shortage": 18
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 30,
+              "shortage": 3
+            }
+          ]
+        },
+        {
+          "brandName": "Van Heusen",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 170,
+              "shortage": 17
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 40,
+              "shortage": 4
+            }
+          ]
+        },
+        {
+          "brandName": "Park Avenue",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 160,
+              "shortage": 16
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            }
+          ]
+        },
+        {
+          "brandName": "Mufti",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 150,
+              "shortage": 15
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 60,
+              "shortage": 6
+            }
+          ]
+        },
+        {
+          "brandName": "Pepe Jeans",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 140,
+              "shortage": 14
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 70,
+              "shortage": 7
+            }
+          ]
+        },
+        {
+          "brandName": "Wrangler",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 130,
+              "shortage": 13
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 80,
+              "shortage": 8
+            }
+          ]
+        },
+        {
+          "brandName": "Numero Uno",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 120,
+              "shortage": 12
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 90,
+              "shortage": 9
+            }
+          ]
+        },
+        {
+          "brandName": "Monte Carlo",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 110,
+              "shortage": 11
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            }
+          ]
+        },
+        {
+          "brandName": "Peter England",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 110,
+              "shortage": 11
+            }
+          ]
+        },
+        {
+          "brandName": "Louis Philippe",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 90,
+              "shortage": 9
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 120,
+              "shortage": 12
+            }
+          ]
+        },
+        {
+          "brandName": "Fabindia",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 80,
+              "shortage": 8
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 130,
+              "shortage": 13
+            }
+          ]
+        },
+        {
+          "brandName": "Biba",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 70,
+              "shortage": 7
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 140,
+              "shortage": 14
+            }
+          ]
+        },
+        {
+          "brandName": "Flying Machine",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 60,
+              "shortage": 6
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 150,
+              "shortage": 15
+            }
+          ]
+        },
+        {
+          "brandName": "Zodiac",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 160,
+              "shortage": 16
+            }
+          ]
+        },
+        {
+          "brandName": "Raymond clothing brands in India",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 40,
+              "shortage": 4
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 170,
+              "shortage": 17
+            }
+          ]
+        },
+        {
+          "brandName": "Adidas",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 30,
+              "shortage": 3
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 180,
+              "shortage": 18
+            }
+          ]
+        },
+        {
+          "brandName": "Nike",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 20,
+              "shortage": 2
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 190,
+              "shortage": 19
+            }
+          ]
+        },
+        {
+          "brandName": "GINI & JONY",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 10,
+              "shortage": 1
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 200,
+              "shortage": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categoryName": "Women",
+      "brands": [
+        {
+          "brandName": "Allen Solly",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 200,
+              "shortage": 20
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 10,
+              "shortage": 1
+            }
+          ]
+        },
+        {
+          "brandName": "Levi’s",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 190,
+              "shortage": 19
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 20,
+              "shortage": 2
+            }
+          ]
+        },
+        {
+          "brandName": "Provogue clothing brands in India",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 180,
+              "shortage": 18
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 30,
+              "shortage": 3
+            }
+          ]
+        },
+        {
+          "brandName": "Van Heusen",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 170,
+              "shortage": 17
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 40,
+              "shortage": 4
+            }
+          ]
+        },
+        {
+          "brandName": "Park Avenue",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 160,
+              "shortage": 16
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            }
+          ]
+        },
+        {
+          "brandName": "Mufti",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 150,
+              "shortage": 15
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 60,
+              "shortage": 6
+            }
+          ]
+        },
+        {
+          "brandName": "Pepe Jeans",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 140,
+              "shortage": 14
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 70,
+              "shortage": 7
+            }
+          ]
+        },
+        {
+          "brandName": "Wrangler",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 130,
+              "shortage": 13
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 80,
+              "shortage": 8
+            }
+          ]
+        },
+        {
+          "brandName": "Numero Uno",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 120,
+              "shortage": 12
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 90,
+              "shortage": 9
+            }
+          ]
+        },
+        {
+          "brandName": "Monte Carlo",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 110,
+              "shortage": 11
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            }
+          ]
+        },
+        {
+          "brandName": "Peter England",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 110,
+              "shortage": 11
+            }
+          ]
+        },
+        {
+          "brandName": "Louis Philippe",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 90,
+              "shortage": 9
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 120,
+              "shortage": 12
+            }
+          ]
+        },
+        {
+          "brandName": "Fabindia",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 80,
+              "shortage": 8
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 130,
+              "shortage": 13
+            }
+          ]
+        },
+        {
+          "brandName": "Biba",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 70,
+              "shortage": 7
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 140,
+              "shortage": 14
+            }
+          ]
+        },
+        {
+          "brandName": "Flying Machine",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 60,
+              "shortage": 6
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 150,
+              "shortage": 15
+            }
+          ]
+        },
+        {
+          "brandName": "Zodiac",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 160,
+              "shortage": 16
+            }
+          ]
+        },
+        {
+          "brandName": "Raymond clothing brands in India",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 40,
+              "shortage": 4
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 170,
+              "shortage": 17
+            }
+          ]
+        },
+        {
+          "brandName": "Adidas",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 30,
+              "shortage": 3
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 180,
+              "shortage": 18
+            }
+          ]
+        },
+        {
+          "brandName": "Nike",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 20,
+              "shortage": 2
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 190,
+              "shortage": 19
+            }
+          ]
+        },
+        {
+          "brandName": "GINI & JONY",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 10,
+              "shortage": 1
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 200,
+              "shortage": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "categoryName": "Kids",
+      "brands": [
+        {
+          "brandName": "Allen Solly",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 200,
+              "shortage": 20
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 10,
+              "shortage": 1
+            }
+          ]
+        },
+        {
+          "brandName": "Levi’s",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 190,
+              "shortage": 19
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 20,
+              "shortage": 2
+            }
+          ]
+        },
+        {
+          "brandName": "Provogue clothing brands in India",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 180,
+              "shortage": 18
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 30,
+              "shortage": 3
+            }
+          ]
+        },
+        {
+          "brandName": "Van Heusen",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 170,
+              "shortage": 17
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 40,
+              "shortage": 4
+            }
+          ]
+        },
+        {
+          "brandName": "Park Avenue",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 160,
+              "shortage": 16
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            }
+          ]
+        },
+        {
+          "brandName": "Mufti",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 150,
+              "shortage": 15
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 60,
+              "shortage": 6
+            }
+          ]
+        },
+        {
+          "brandName": "Pepe Jeans",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 140,
+              "shortage": 14
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 70,
+              "shortage": 7
+            }
+          ]
+        },
+        {
+          "brandName": "Wrangler",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 130,
+              "shortage": 13
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 80,
+              "shortage": 8
+            }
+          ]
+        },
+        {
+          "brandName": "Numero Uno",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 120,
+              "shortage": 12
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 90,
+              "shortage": 9
+            }
+          ]
+        },
+        {
+          "brandName": "Monte Carlo",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 110,
+              "shortage": 11
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            }
+          ]
+        },
+        {
+          "brandName": "Peter England",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 110,
+              "shortage": 11
+            }
+          ]
+        },
+        {
+          "brandName": "Louis Philippe",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 90,
+              "shortage": 9
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 120,
+              "shortage": 12
+            }
+          ]
+        },
+        {
+          "brandName": "Fabindia",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 80,
+              "shortage": 8
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 130,
+              "shortage": 13
+            }
+          ]
+        },
+        {
+          "brandName": "Biba",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 70,
+              "shortage": 7
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 140,
+              "shortage": 14
+            }
+          ]
+        },
+        {
+          "brandName": "Flying Machine",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 60,
+              "shortage": 6
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 150,
+              "shortage": 15
+            }
+          ]
+        },
+        {
+          "brandName": "Zodiac",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 50,
+              "shortage": 5
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 160,
+              "shortage": 16
+            }
+          ]
+        },
+        {
+          "brandName": "Raymond clothing brands in India",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 40,
+              "shortage": 4
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 170,
+              "shortage": 17
+            }
+          ]
+        },
+        {
+          "brandName": "Adidas",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 30,
+              "shortage": 3
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 180,
+              "shortage": 18
+            }
+          ]
+        },
+        {
+          "brandName": "Nike",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 20,
+              "shortage": 2
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 190,
+              "shortage": 19
+            }
+          ]
+        },
+        {
+          "brandName": "GINI & JONY",
+          "zones": [
+            {
+              "zoneId": 3,
+              "zoneName": "BOH",
+              "isDefault": true,
+              "zoneType": "BOH",
+              "inventoryCount": 10,
+              "shortage": 1
+            },
+            {
+              "zoneId": 4,
+              "zoneName": "Ground Floor",
+              "isDefault": true,
+              "zoneType": "FOH",
+              "inventoryCount": 100,
+              "shortage": 10
+            },
+            {
+              "zoneId": 5,
+              "zoneName": "First Floor",
+              "isDefault": false,
+              "zoneType": "FOH",
+              "inventoryCount": 200,
+              "shortage": 20
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

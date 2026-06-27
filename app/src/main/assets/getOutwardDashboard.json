@@ -1,0 +1,15 @@
+{
+  "trips": {
+    "label": "Picking List",
+    "total": "05",
+    "completed": "02",
+    "pending": "03"
+  },
+  "hus": {
+    "label": "Picking EANs",
+    "total": "35",
+    "completed": "14",
+    "pending": "21"
+  },
+  "activeUsers": 1
+}

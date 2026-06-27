@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:bind="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/white"
+  android:clickable="true"
+  android:padding="@dimen/dp_5"
+  bind:context=".ui.inward1.HuProcessStartFragment">
+
+  <include
+    android:id="@+id/header"
+    layout="@layout/header_title_layout" />
+
+  <LinearLayout
+    android:id="@+id/llTripHu"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dp_2"
+    android:background="@drawable/border_bottom"
+    android:orientation="horizontal"
+    app:layout_constraintTop_toBottomOf="@+id/header">
+
+    <TextView
+      android:id="@+id/txt_trip_number_scan"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="@dimen/dp_5"
+      android:layout_marginBottom="@dimen/dp_5"
+      android:layout_weight="1"
+      android:ellipsize="marquee"
+      android:fadingEdge="horizontal"
+      android:marqueeRepeatLimit="marquee_forever"
+      android:scrollHorizontally="true"
+      android:singleLine="true"
+      android:textAppearance="@style/TextStyleSubHeader" />
+
+    <TextView
+      android:id="@+id/txt_HU_number_scan"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="@dimen/dp_5"
+      android:layout_marginRight="@dimen/dp_5"
+      android:layout_marginBottom="@dimen/dp_5"
+      android:layout_weight="1"
+      android:ellipsize="marquee"
+      android:fadingEdge="horizontal"
+      android:marqueeRepeatLimit="marquee_forever"
+      android:scrollHorizontally="true"
+      android:singleLine="true"
+      android:textAppearance="@style/TextStyleSubHeader" />
+  </LinearLayout>
+
+  <com.itek.retail.ui.customviews.PowerView
+    android:id="@+id/llSeekbarPower"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:visibility="gone"
+    app:layout_constraintTop_toBottomOf="@id/llTripHu"
+    app:pv_max="15"
+    app:pv_min="5" />
+
+  <androidx.appcompat.widget.SwitchCompat
+    android:id="@+id/swtHuScanDetails"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dp_15"
+    android:textOn="@string/lbl_scan"
+    android:textOff="@string/lbl_details"
+    android:text="@string/lbl_show_details"
+    app:showText="false"
+    android:checked="false"
+    app:thumbTextPadding="@dimen/dp_2"
+    app:switchTextAppearance="@style/TextStyleExtraSmall"
+    android:textAppearance="@style/TextStyleSubHeader"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/llSeekbarPower"/>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/clScan"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/swtHuScanDetails">
+
+    <com.itek.retail.ui.customviews.CountTotalView
+        android:id="@+id/ctw_inward_start"
+        android:layout_width="@dimen/dp_0"
+        android:layout_height="@dimen/dp_0"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dp_15"
+        app:layout_constraintBottom_toTopOf="@id/txt_inward_scan_total"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:score="0"/>
+
+    <TextView
+      android:id="@+id/txt_inward_scan_total"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      android:text="@string/lbl_scantotal"
+      android:textAppearance="@style/TextStyleSubSubHeader"
+      app:layout_constraintBottom_toTopOf="@id/ll_hu_start_button"
+      app:layout_constraintTop_toBottomOf="@id/ctw_inward_start" />
+
+    <com.itek.retail.ui.customviews.BtnStartStopView
+      android:id="@+id/btnStartStop"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/dp_15"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/txt_inward_scan_total" />
+
+    <LinearLayout
+      android:id="@+id/ll_hu_start_button"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_marginTop="@dimen/dp_5"
+      android:gravity="center"
+      android:orientation="horizontal"
+      android:visibility="gone"
+      app:layout_constraintTop_toBottomOf="@id/txt_inward_scan_total">
+
+      <LinearLayout
+        android:id="@+id/llManualScanBarcode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <ImageView
+          android:id="@+id/btnScanBarcode"
+          android:layout_width="match_parent"
+          android:layout_height="@dimen/dp_30"
+          android:layout_gravity="center"
+          android:background="@color/white"
+          android:clickable="false"
+          android:padding="@dimen/dp_2"
+          android:scaleType="fitCenter"
+          app:srcCompat="@drawable/ic_scan_red" />
+
+        <TextView
+          android:id="@+id/textScanBarcode"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:text="@string/lbl_scan_barcode"
+          android:textAppearance="@style/TextStyleRegular" />
+
+      </LinearLayout>
+
+      <LinearLayout
+        android:id="@+id/llBtnStartStop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:orientation="vertical">
+
+        <ImageView
+          android:id="@+id/btnStartStopScan"
+          android:layout_width="match_parent"
+          android:layout_height="@dimen/dp_30"
+          android:layout_gravity="center"
+          android:background="@color/white"
+          android:clickable="false"
+          android:scaleType="fitCenter"
+          app:srcCompat="@drawable/ic_start" />
+
+        <TextView
+          android:id="@+id/textStartStop"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:clickable="false"
+          android:text="@string/lbl_start"
+          android:textAppearance="@style/TextStyleRegular" />
+      </LinearLayout>
+
+      <LinearLayout
+        android:id="@+id/llUpload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <ImageView
+          android:id="@+id/btnUpload1"
+          android:layout_width="match_parent"
+          android:layout_height="@dimen/dp_30"
+          android:layout_gravity="center"
+          android:background="@color/white"
+          android:clickable="false"
+          android:scaleType="fitCenter"
+          app:srcCompat="@drawable/ic_upload" />
+
+        <TextView
+          android:id="@+id/lblUpload"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:text="@string/btn_upload"
+          android:textAppearance="@style/TextStyleRegular" />
+      </LinearLayout>
+    </LinearLayout>
+
+    <com.itek.retail.ui.customviews.BtnSwipeUploadView
+      android:id="@+id/btnUpload"
+      android:layout_width="wrap_content"
+      android:layout_height="@dimen/dp_0"
+      android:visibility="gone"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintRight_toRightOf="parent"/>
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+  <!--<LinearLayout
+    android:id="@+id/ll_inward_list_header"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/dp_5"
+    android:layout_marginTop="@dimen/dp_2"
+    android:layout_marginRight="@dimen/dp_5"
+    android:background="@color/bgListAlternet"
+    android:orientation="horizontal"
+    android:padding="@dimen/dp_2"
+    app:layout_constraintBottom_toTopOf="@id/listTripHuScan"
+    app:layout_constraintTop_toBottomOf="@id/ll_hu_start_button">
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:text="@string/lbl_article_no"
+      android:textAppearance="@style/TextStyleSubSubHeader" />
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:text="@string/lbl_scan_qty"
+      android:textAppearance="@style/TextStyleSubSubHeader" />
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:text="@string/lbl_exp_qty"
+      android:textAppearance="@style/TextStyleSubSubHeader" />
+
+    <View
+      android:layout_width="@dimen/dp_30"
+      android:layout_height="match_parent"
+      android:layout_marginLeft="@dimen/dp_5"
+      android:layout_marginRight="@dimen/dp_5" />
+  </LinearLayout>-->
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/clScanResultAction"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:visibility="gone"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/swtHuScanDetails">
+
+    <TextView
+      android:id="@+id/txtHuScanError"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/dp_10"
+      android:gravity="center"
+      android:textAppearance="@style/TextStyleSubHeader"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+      android:id="@+id/llHuScanTotQty"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      app:layout_constraintTop_toBottomOf="@id/txtHuScanError">
+
+      <TextView
+        android:id="@+id/txtTotExpQty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textAppearance="@style/TextStyleSubSubHeader"
+        android:layout_margin="@dimen/dp_10"/>
+
+      <TextView
+        android:id="@+id/txtTotScanQty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textAppearance="@style/TextStyleSubSubHeader"
+        android:layout_margin="@dimen/dp_10"/>
+
+
+    </LinearLayout>
+
+    <include
+      android:id="@+id/ll_list_header"
+      layout="@layout/list_huscan_dtls"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="@dimen/dp_5"
+      android:layout_marginRight="@dimen/dp_5"
+      app:layout_constraintBottom_toTopOf="@id/listTripHuScan"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/llHuScanTotQty" />
+
+    <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/listTripHuScan"
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/dp_0"
+      android:layout_margin="@dimen/dp_5"
+      android:layout_weight="1"
+      app:layout_constraintBottom_toTopOf="@id/llButtons"
+      app:layout_constraintTop_toBottomOf="@id/ll_list_header" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/llButtons"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      app:layout_constraintBottom_toBottomOf="parent">
+
+      <Button
+        android:id="@+id/btnComplete"
+        style="@style/Button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_15"
+        android:layout_weight="1"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/btnRescan"
+        android:text="@string/btn_inward_alert_accept" />
+
+      <Button
+        android:id="@+id/btnRescan"
+        style="@style/ButtonInvert"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_15"
+        android:layout_weight="1"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/btnComplete"
+        app:layout_constraintRight_toLeftOf="@id/btnReject"
+        android:text="@string/btn_inward_alert_rescan" />
+
+      <Button
+        android:id="@+id/btnReject"
+        style="@style/ButtonInvert"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_15"
+        android:layout_weight="1"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/btnRescan"
+        android:text="@string/btn_inward_alert_reject" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

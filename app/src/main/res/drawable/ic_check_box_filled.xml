@@ -1,0 +1,15 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+  android:width="@dimen/dp_18"
+  android:height="@dimen/dp_18"
+  android:autoMirrored="true"
+  android:viewportWidth="18"
+  android:viewportHeight="18">
+  <path
+    android:fillColor="@color/transparent"
+    android:pathData="M0.5,0.5h17v17h-17z"
+    android:strokeWidth="1"
+    android:strokeColor="@color/icon_light_grey" />
+  <path
+    android:fillColor="?attr/colorPrimaryDark"
+    android:pathData="M3,3h12v12h-12z" />
+</vector>

@@ -1,0 +1,30 @@
+{
+  "listId": "Z217300525115054",
+  "type": "S",
+  "products": [
+    {
+      "imageUrl": "",
+      "title": "BASIC KNIT CNS SHORT, BLACK, S",
+      "status": null,
+      "orderNo": null,
+      "ean": "80000000310420",
+      "category": "MENS CASUAL",
+      "brand": "PERFORMAX",
+      "articleNo": "5476273",
+      "color": "BLACK",
+      "size": "S"
+    },
+    {
+      "imageUrl": "",
+      "title": "BASIC KNIT CNS SHORT, BLACK, S",
+      "status": null,
+      "orderNo": null,
+      "ean": "80000000308273",
+      "category": "MENS CASUAL",
+      "brand": "PERFORMAX",
+      "articleNo": "5476273",
+      "color": "BLACK",
+      "size": "S"
+    }
+  ]
+}

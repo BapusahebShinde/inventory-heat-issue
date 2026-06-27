@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:bind="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  bind:context=".ui.inward.grn.InwardGrnStartViewModel">
+
+  <include
+    android:id="@+id/header"
+    layout="@layout/header_title_layout" />
+
+  <FrameLayout
+    android:id="@+id/ll_grn_tripdetails"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/border_bottom"
+    android:orientation="horizontal"
+    android:padding="@dimen/dp_10"
+    app:layout_constraintTop_toBottomOf="@+id/header">
+
+    <TextView
+      android:id="@+id/lbltripdetails"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:gravity="center"
+      android:text="@string/lbl_grn_trip"
+      android:textAppearance="@style/TextStyleHeader" />
+
+    <ImageButton
+      android:id="@+id/imgStart"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="right|center_vertical"
+      android:layout_marginRight="@dimen/dp_10"
+      android:background="@color/white"
+      android:scaleType="fitCenter"
+      app:srcCompat="@drawable/ic_start" />
+  </FrameLayout>
+
+  <LinearLayout
+    android:id="@+id/ll_grn_trip_header_titles"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="@dimen/dp_5"
+    app:layout_constraintTop_toBottomOf="@id/ll_grn_tripdetails">
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:text="@string/lbl_grn_trip_num"
+      android:textAppearance="@style/TextStyleSubSubHeader" />
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:text="@string/lbl_grn_HUs"
+      android:textAppearance="@style/TextStyleSubSubHeader" />
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:text="@string/lbl_grn_hu_completed"
+      android:textAppearance="@style/TextStyleSubSubHeader" />
+  </LinearLayout>
+
+  <LinearLayout
+    android:id="@+id/ll_grn_trip_header_val"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    app:layout_constraintBottom_toTopOf="@id/txtTripUpload"
+    app:layout_constraintTop_toBottomOf="@id/ll_grn_trip_header_titles">
+
+    <TextView
+      android:id="@+id/txtTripCount"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:text="@string/default_no_value"
+      android:textAppearance="@style/TextStyleNumber"
+      android:textSize="@dimen/sp_14" />
+
+    <TextView
+      android:id="@+id/textTotalHu"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:text="@string/default_no_value"
+      android:textAppearance="@style/TextStyleNumber"
+      android:textSize="@dimen/sp_14" />
+
+    <TextView
+      android:id="@+id/textCompletedHu"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:text="@string/default_no_value"
+      android:textAppearance="@style/TextStyleNumber"
+      android:textSize="@dimen/sp_14" />
+
+  </LinearLayout>
+
+  <TextView
+    android:id="@+id/txtTripUpload"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:padding="@dimen/dp_5"
+    android:text="@string/trip_upload"
+    android:textAppearance="@style/TextStyleSubHeader"
+    android:visibility="visible"
+    app:layout_constraintBottom_toTopOf="@id/ll_grn_trip_header_list"
+    app:layout_constraintTop_toBottomOf="@id/ll_grn_trip_header_val" />
+
+  <LinearLayout
+    android:id="@+id/ll_grn_trip_header_list"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dp_5"
+    app:layout_constraintTop_toBottomOf="@id/txtTripUpload">
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:text="@string/lbl_grn_hu_no"
+      android:textAppearance="@style/TextStyleSubSubHeader" />
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_weight="1.5"
+      android:ellipsize="marquee"
+      android:gravity="center"
+      android:singleLine="true"
+      android:text="@string/lbl_article_qty"
+      android:textAppearance="@style/TextStyleSubSubHeader" />
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_weight="1.5"
+      android:ellipsize="marquee"
+      android:gravity="center"
+      android:singleLine="true"
+      android:text="@string/lbl_hu_status"
+      android:textAppearance="@style/TextStyleSubSubHeader" />
+  </LinearLayout>
+
+  <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/listTripDetails"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_0"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/ll_grn_trip_header_list" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

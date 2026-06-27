@@ -1,0 +1,36 @@
+{
+  "Success": "true",
+  "Error": "false",
+  "Data": {
+    "outwardTypes": [
+      {
+        "StoreOutwardTypeMasterId": 1,
+        "TypeName": "Returns to DC / Store to Store Transfer / Empty Tote outward",
+        "Remark": ""
+      },
+      {
+        "StoreOutwardTypeMasterId": 2,
+        "TypeName": "OFRNG return to DC ",
+        "Remark": ""
+      },
+      {
+        "StoreOutwardTypeMasterId": 3,
+        "TypeName": "Customer Return to DC",
+        "Remark": ""
+      },
+      {
+        "StoreOutwardTypeMasterId": 4,
+        "TypeName": "MRKDW/ JOBOFF return to DC",
+        "Remark": ""
+      },
+      {
+        "StoreOutwardTypeMasterId": 5,
+        "TypeName": "RTV to DC",
+        "Remark": ""
+      }
+    ],
+    "destinations": [
+      "TW61","TD8","ITTS","Z294"
+    ]
+  }
+}

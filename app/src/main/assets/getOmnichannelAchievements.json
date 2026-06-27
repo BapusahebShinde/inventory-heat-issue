@@ -1,0 +1,38 @@
+{
+  "omnichannelType": "ean",
+  "today": [
+    {
+      "type": "order",
+      "label": "Orders per Hr",
+      "count": "10"
+    },
+    {
+      "type": "item",
+      "label": "Items per Hr",
+      "count": "25"
+    },
+    {
+      "type": "time",
+      "label": "Fastest Completed Orders",
+      "count": "1.2 min"
+    }
+  ],
+  "total": [
+    {
+      "type": "order",
+      "label": "Orders per Hr",
+      "count": "10"
+    },
+    {
+      "type": "item",
+      "label": "Items per Hr",
+      "count": "20"
+    },
+    {
+      "type": "time",
+      "label": "Fastest Completed Orders",
+      "count": "1.2 min"
+    }
+  ]
+}
+

@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "527084422324",
+    "project_id": "i-tek-retail",
+    "storage_bucket": "i-tek-retail.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:527084422324:android:bcc308f318189fd73f43e1",
+        "android_client_info": {
+          "package_name": "com.itek.retail.diag"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "527084422324-ag2v1pjstncne73pu4dcadu8lagtaqlp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCygOhuHdueROdCO8INwUgoTfcceaZIuPs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "527084422324-ag2v1pjstncne73pu4dcadu8lagtaqlp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:527084422324:android:bcc308f318189fd73f43e1",
+        "android_client_info": {
+          "package_name": "com.itek.retail"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "527084422324-ag2v1pjstncne73pu4dcadu8lagtaqlp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCygOhuHdueROdCO8INwUgoTfcceaZIuPs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "527084422324-ag2v1pjstncne73pu4dcadu8lagtaqlp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

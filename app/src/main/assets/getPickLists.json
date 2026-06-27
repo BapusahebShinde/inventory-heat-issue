@@ -1,0 +1,46 @@
+{
+  "lists": [
+    {
+      "code": "030523110409301",
+      "priority": 1,
+      "type": "GRDC"
+    },
+    {
+      "code": "030523110409302",
+      "priority": 1,
+      "type": "IST"
+    },
+    {
+      "code": "030523110409303",
+      "priority": 1,
+      "type": "Assortment"
+    },
+    {
+      "code": "030523110409304",
+      "priority": 1,
+      "type": "Assortment",
+      "status": ""
+    },
+    {
+      "orderNo": "123456",
+      "priority": 3,
+      "type": "Omnichannel",
+      "subType" : "order",
+      "qty": 50
+    },
+    {
+      "listId": "111",
+      "type": "Replenishment",
+      "subType" : "dynamic",
+      "qty": 13
+    },
+    {
+      "listId": "128",
+      "type": "S"
+    },
+    {
+      "listId": "129",
+      "type": "S"
+    }
+  ]
+}

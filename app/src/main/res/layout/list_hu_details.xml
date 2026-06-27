@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <data>
+
+    <variable
+      name="multiQtyModel"
+      type="com.itek.retail.model.MultiQtyModel" />
+  </data>
+
+  <androidx.appcompat.widget.LinearLayoutCompat
+    android:id="@+id/ll_hu_details"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/border_top_bottom"
+    android:orientation="horizontal"
+    android:paddingTop="@dimen/dp_5"
+    android:paddingBottom="@dimen/dp_5">
+
+    <com.itek.retail.ui.customviews.SortHeaderView
+      android:id="@+id/txt_title"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_vertical"
+      android:layout_margin="@dimen/dp_2"
+      android:layout_weight="1"
+      android:ellipsize="marquee"
+      android:gravity="center"
+      android:singleLine="true"
+      android:text="@string/lbl__no"
+      android:textAppearance="@style/TextStyleRegular"
+      app:sortColumn="title" />
+
+    <com.itek.retail.ui.customviews.SortHeaderView
+      android:id="@+id/txt_exp_qty"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_vertical"
+      android:layout_margin="@dimen/dp_2"
+      android:layout_weight="1"
+      android:ellipsize="marquee"
+      android:gravity="center"
+      android:singleLine="true"
+      android:text="@string/lbl_exp_qty"
+      android:textAppearance="@style/TextStyleRegularAwesome"
+      app:sortColumn="total" />
+
+    <com.itek.retail.ui.customviews.SortHeaderView
+      android:id="@+id/txt_scan_qty"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_vertical"
+      android:layout_margin="@dimen/dp_2"
+      android:layout_weight="1"
+      android:ellipsize="marquee"
+      android:gravity="center"
+      android:singleLine="true"
+      android:text="@string/lbl_scan_qty"
+      android:textAppearance="@style/TextStyleRegular"
+      app:sortColumn="found" />
+
+    <ImageView
+      android:id="@+id/img_next"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_margin="@dimen/dp_2"
+      android:layout_weight="1"
+      android:rotation="180"
+      android:scaleType="fitCenter"
+      android:visibility="gone"
+      app:srcCompat="@drawable/ic_back_arrow" />
+
+  </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

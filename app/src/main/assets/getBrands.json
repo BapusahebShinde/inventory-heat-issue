@@ -1,0 +1,88 @@
+{
+  "activeUsers": 3,
+  "sessionValidTill": 48,
+  "label": "Brand",
+  "brands": [
+    {
+      "brandId": 1,
+      "brandName": "Allen Solly"
+    },
+    {
+      "brandId": 2,
+      "brandName": "Levi’s"
+    },
+    {
+      "brandId": 3,
+      "brandName": "Provogue"
+    },
+    {
+      "brandId": 4,
+      "brandName": "Van Husen"
+    },
+    {
+      "brandId": 5,
+      "brandName": "Park Avenue"
+    },
+    {
+      "brandId": 6,
+      "brandName": "Mufti"
+    },
+    {
+      "brandId": 7,
+      "brandName": "Pepe Jeans"
+    },
+    {
+      "brandId": 8,
+      "brandName": "Wrangler"
+    },
+    {
+      "brandId": 9,
+      "brandName": "Numero Uno"
+    },
+    {
+      "brandId": 10,
+      "brandName": "Monte Carlo"
+    },
+    {
+      "brandId": 11,
+      "brandName": "Peter England"
+    },
+    {
+      "brandId": 12,
+      "brandName": "Louis Philippe"
+    },
+    {
+      "brandId": 13,
+      "brandName": "Fabindia"
+    },
+    {
+      "brandId": 14,
+      "brandName": "Biba"
+    },
+    {
+      "brandId": 15,
+      "brandName": "Flying Machine"
+    },
+    {
+      "brandId": 16,
+      "brandName": "Zodiac"
+    },
+    {
+      "brandId": 17,
+      "brandName": "Raymond"
+    },
+    {
+      "brandId": 18,
+      "brandName": "Adidas"
+    },
+    {
+      "brandId": 19,
+      "brandName": "Nike"
+    },
+    {
+      "brandId": 20,
+      "brandName": "GINI & JONY"
+    }
+  ],
+  "maxSelectionBrands": 5
+}

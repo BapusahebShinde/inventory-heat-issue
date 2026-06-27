@@ -1,0 +1,148 @@
+{
+  "sessionId": "",
+  "activeUsers": 3,
+  "sessionTime": "",
+  "sessionValidTill": 48,
+  "target": 100,
+  "inventoryCount": 100,
+  "brandEans": [
+    {
+      "brandName": "Allen Solly",
+      "totalQty": "45",
+      "eans": [
+        "8901326038345",
+        "8907675736901"
+      ]
+    },
+    {
+      "brandName": "Levi’s",
+      "totalQty": "55",
+      "eans": [
+        "8901198204053",
+        "8901030174827"
+      ]
+    },
+    {
+      "brandName": "Provogue clothing brands in India",
+      "eans": [
+        "8907267777374",
+        "8907594636023"
+      ]
+    },
+    {
+      "brandName": "Van Heusen",
+      "eans": [
+        "8901030175305",
+        "8906049608288"
+      ]
+    },
+    {
+      "brandName": "Park Avenue",
+      "eans": [
+        "8905462103325",
+        "8901030174766"
+      ]
+    },
+    {
+      "brandName": "Mufti",
+      "eans": [
+        "9780670095414",
+        "9781474941464"
+      ]
+    },
+    {
+      "brandName": "Pepe Jeans",
+      "eans": [
+        "8901030203022",
+        "8901030323263"
+      ]
+    },
+    {
+      "brandName": "Wrangler",
+      "eans": [
+        "8907796773670"
+      ]
+    },
+    {
+      "brandName": "Numero Uno",
+      "eans": [
+        "9780008478650"
+      ]
+    },
+    {
+      "brandName": "Monte Carlo",
+      "eans": [
+        "8907073085533"
+      ]
+    },
+    {
+      "brandName": "Peter England",
+      "eans": [
+        "8906049608318",
+        "8905462103332"
+      ]
+    },
+    {
+      "brandName": "Louis Philippe",
+      "eans": [
+        "8907344001941"
+      ]
+    },
+    {
+      "brandName": "Fabindia",
+      "eans": [
+        "8906049608295"
+      ]
+    },
+    {
+      "brandName": "Biba",
+      "eans": [
+        "8907344001996",
+        "8907167838045"
+      ]
+    },
+    {
+      "brandName": "Flying Machine",
+      "eans": [
+        "9789388369183",
+        "9789390183470"
+      ]
+    },
+    {
+      "brandName": "Zodiac",
+      "eans": [
+        "8903421316168",
+        "9780143455165"
+      ]
+    },
+    {
+      "brandName": "Raymond clothing brands in India",
+      "eans": [
+        "8903973676772",
+        "9781472280848"
+      ]
+    },
+    {
+      "brandName": "Adidas",
+      "eans": [
+        "8907796297374",
+        "9789388369176"
+      ]
+    },
+    {
+      "brandName": "Nike",
+      "eans": [
+        "8907796773663",
+        "8907406477820"
+      ]
+    },
+    {
+      "brandName": "GINI & JONY",
+      "eans": [
+        "8906049608318",
+        "8907344001972"
+      ]
+    }
+  ],
+  "excludeEpcs":["30361F4B3803BE974876E801","30361F4B3803BE974876E803","30361F4B3803BE974876E804"]
+}

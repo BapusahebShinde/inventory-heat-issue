@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <data>
+
+    <variable
+      name="gridMenuViewModel"
+      type="com.itek.retail.model.MenuModel" />
+  </data>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/cl_menu_redirect"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/dp_5">
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/dp_0"
+      android:gravity="center"
+      android:orientation="vertical"
+      app:layout_constraintDimensionRatio="1:1"
+      app:layout_constraintTop_toTopOf="parent">
+
+      <ImageView
+        android:id="@+id/imgMenuLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_5"
+        android:scaleType="fitCenter" />
+
+      <TextView
+        android:id="@+id/lblMenuTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_5"
+        android:ellipsize="marquee"
+        android:gravity="center"
+        android:singleLine="true"
+        android:textAppearance="@style/TextStyleRegular" />
+
+    </LinearLayout>
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

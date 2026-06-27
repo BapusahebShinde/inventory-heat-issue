@@ -1,0 +1,25 @@
+{
+  "data": [
+    {
+      "batchId": "2255b77cea0a432fa6f38f502dcc013c",
+      "dateTime":"06-May-2025 15:10",
+      "status": "Active",
+      "totalQty": 15,
+      "pickQty": 10
+    },
+    {
+      "batchId": "2255b77cea0a432fa6f38f502dcc012b",
+      "dateTime":"06-May-2025 13:15",
+      "status": "Inactive",
+      "totalQty": 16,
+      "pickQty": 7
+    },
+    {
+      "batchId": "2255b77cea0a432fa6f38f502dcc011a",
+      "dateTime":"06-May-2025 10:07",
+      "status": "Inactive",
+      "totalQty": 20,
+      "pickQty": 8
+    }
+  ]
+}

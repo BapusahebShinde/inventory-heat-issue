@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:layout_weight="1"
+  android:gravity="center"
+  android:orientation="horizontal">
+
+  <TextView
+    android:id="@+id/lbl_inventory_config_power"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_weight="2"
+    android:gravity="center"
+    android:paddingTop="@dimen/dp_2"
+    android:paddingBottom="@dimen/dp_2"
+    android:text="@string/lbl_device_power"
+    android:textAppearance="@style/TextStyleSubSubHeader" />
+
+  <LinearLayout
+    android:id="@+id/ll_inventory_config_power"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:orientation="horizontal">
+
+    <TextView
+      android:id="@+id/lbl_inv_config_power_min"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_weight="3"
+      android:gravity="center"
+      android:text="05"
+      android:textAppearance="@style/TextStyleRegular" />
+
+    <com.itek.retail.ui.customviews.customseekbar.BubbleSeekBar
+      android:id="@+id/seek_inventory_start_power"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_vertical"
+      android:layout_weight="1"
+      android:visibility="visible"
+      app:bsb_min="5"
+      app:bsb_second_track_color="@color/seekbar_secondary_track"
+      app:bsb_show_thumb_text="true"
+      app:bsb_thumb_color="@color/gaugeviewstroke"
+      app:bsb_thumb_text_color="@color/txt_regular"
+      app:bsb_thumb_text_size="12sp"
+      app:bsb_touch_to_seek="true"
+      app:bsb_track_color="@color/seek_track"
+      app:bsb_track_size="@dimen/dp_5" />
+
+    <TextView
+      android:id="@+id/lbl_inv_config_power_max"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_weight="3"
+      android:gravity="center"
+      android:text="30"
+      android:textAppearance="@style/TextStyleRegular" />
+
+  </LinearLayout>
+</LinearLayout>

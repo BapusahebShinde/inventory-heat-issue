@@ -1,0 +1,162 @@
+{
+  "expectedQty": 0,
+  "listRefBatchId": "abc1234",
+  "products": [
+    {
+      "imageUrl": [],
+      "title": "Shirt",
+      "status": "",
+      "orderNo": "",
+      "ean": "8681389220634",
+      "category": "Men",
+      "brand": "Cotton King",
+      "articleNo": "123450",
+      "color": "#CC00CC",
+      "size": "XL"
+    },
+    {
+      "imageUrl": [],
+      "title": "T-Shirt",
+      "status": "",
+      "orderNo": "",
+      "ean": "8681364220956",
+      "category": "Men",
+      "brand": "Levi's",
+      "articleNo": "123451",
+      "color": "#CC0000",
+      "size": "XL"
+    },
+    {
+      "imageUrl": [],
+      "title": "T-Shirt",
+      "status": "",
+      "orderNo": "",
+      "ean": "8907344001972",
+      "category": "Women",
+      "brand": "Fabindia",
+      "articleNo": "123452",
+      "color": "#0000CC",
+      "size": "M"
+    },
+    {
+      "imageUrl": [],
+      "title": "T-Shirt",
+      "status": "",
+      "orderNo": "",
+      "ean": "8907924426928",
+      "category": "Kids",
+      "brand": "Levi's",
+      "articleNo": "123453",
+      "color": "#00CC00",
+      "size": "S"
+    },
+    {
+      "imageUrl": [],
+      "title": "T-Shirt",
+      "status": "",
+      "orderNo": "",
+      "ean": "8907675736901",
+      "category": "Men",
+      "brand": "Numero Uno",
+      "articleNo": "123454",
+      "color": "#00CCCC",
+      "size": "L"
+    },
+    {
+      "imageUrl": [],
+      "title": "T-Shirt",
+      "status": "",
+      "orderNo": "",
+      "ean": "8901326038345",
+      "category": "Women",
+      "brand": "Numero Uno",
+      "articleNo": "123455",
+      "color": "#CCCC00",
+      "size": "M"
+    },
+    {
+      "imageUrl": [],
+      "title": "T-Shirt",
+      "status": "",
+      "orderNo": "",
+      "ean": "8905303072438",
+      "category": "Kids",
+      "brand": "Biba",
+      "articleNo": "123456",
+      "color": "#CCCCCC",
+      "size": "S"
+    },
+    {
+      "imageUrl": [],
+      "title": "Shirt",
+      "status": "",
+      "orderNo": "",
+      "ean": "8905137950452",
+      "category": "Women",
+      "brand": "Cotton King",
+      "articleNo": "123457",
+      "color": "#CC0000",
+      "size": "XL"
+    },
+    {
+      "imageUrl": [],
+      "title": "Top",
+      "status": "",
+      "orderNo": "",
+      "ean": "8901198204053",
+      "category": "Women",
+      "brand": "Fabindia",
+      "articleNo": "123458",
+      "color": "#0000CC",
+      "size": "M"
+    },
+    {
+      "imageUrl": [],
+      "title": "T-Shirt",
+      "status": "",
+      "orderNo": "",
+      "ean": "8905264296761",
+      "category": "Kids",
+      "brand": "Levi's",
+      "articleNo": "123459",
+      "color": "#0ACCA0",
+      "size": "S"
+    },
+    {
+      "imageUrl": [],
+      "title": "Shirt",
+      "status": "",
+      "orderNo": "",
+      "ean": "8901030174827",
+      "category": "Men",
+      "brand": "Peter England",
+      "articleNo": "123460",
+      "color": "#00CCCC",
+      "size": "L"
+    },
+    {
+      "imageUrl": [],
+      "title": "Top",
+      "status": "",
+      "orderNo": "",
+      "ean": "8907924874422",
+      "category": "Women",
+      "brand": "Fabindia",
+      "articleNo": "123461",
+      "color": "#CCCC00",
+      "size": "M"
+    },
+    {
+      "imageUrl": [],
+      "title": "T-Shirt",
+      "status": "",
+      "orderNo": "",
+      "ean": "8905303046194",
+      "category": "Kids",
+      "brand": "Levi's",
+      "articleNo": "123462",
+      "color": "#FFFFFF",
+      "size": "S"
+    }
+  ]
+}

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:orientation="vertical">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/border_bottom"
+    android:orientation="horizontal">
+
+    <FrameLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="3"
+      android:background="@drawable/border_right">
+
+      <ImageView
+        android:id="@+id/img_item_logo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/dp_1"
+        android:padding="@dimen/dp_1"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/ic_no_img" />
+
+      <ImageView
+        android:id="@+id/img_item_completed"
+        android:layout_width="@dimen/dp_25"
+        android:layout_height="@dimen/dp_25"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="@dimen/dp_1"
+        android:padding="@dimen/dp_1"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/ic_completed" />
+    </FrameLayout>
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="@dimen/dp_10"
+      android:layout_weight="1"
+      android:gravity="right|center_vertical"
+      android:orientation="horizontal">
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+          android:id="@+id/txt_omnichannel_item_ean"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:layout_margin="@dimen/dp_2_half"
+          android:layout_weight="1"
+          android:ellipsize="marquee"
+          android:marqueeRepeatLimit="marquee_forever"
+          android:singleLine="true"
+          android:text="@string/txt_ean"
+          android:textAppearance="@style/TextStyleRegular" />
+
+        <TextView
+          android:id="@+id/txt_omnichannel_item_name"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:layout_margin="@dimen/dp_2_half"
+          android:layout_weight="1"
+          android:ellipsize="marquee"
+          android:marqueeRepeatLimit="marquee_forever"
+          android:singleLine="true"
+          android:text="@string/txt_name"
+          android:textAppearance="@style/TextStyleRegular" />
+
+        <TextView
+          android:id="@+id/txt_omnichannel_item_brand"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:layout_margin="@dimen/dp_2_half"
+          android:layout_weight="1"
+          android:ellipsize="marquee"
+          android:marqueeRepeatLimit="marquee_forever"
+          android:singleLine="true"
+          android:text="@string/txt_brand"
+          android:textAppearance="@style/TextStyleRegular" />
+
+        <TextView
+          android:id="@+id/txt_omnichannel_item_loc"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:layout_margin="@dimen/dp_2_half"
+          android:layout_weight="1"
+          android:ellipsize="marquee"
+          android:marqueeRepeatLimit="marquee_forever"
+          android:singleLine="true"
+          android:text="@string/txt_loc"
+          android:textAppearance="@style/TextStyleRegular" />
+
+      </LinearLayout>
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:orientation="vertical">
+
+        <TextView
+          android:id="@+id/txt_omnichannel_item_color"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:layout_margin="@dimen/dp_2_half"
+          android:layout_weight="1"
+          android:ellipsize="marquee"
+          android:marqueeRepeatLimit="marquee_forever"
+          android:singleLine="true"
+          android:text="@string/txt_lbl_color_code"
+          android:textAppearance="@style/TextStyleRegular" />
+
+        <TextView
+          android:id="@+id/txt_omnichannel_item_size"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:layout_margin="@dimen/dp_2_half"
+          android:layout_weight="1"
+          android:ellipsize="marquee"
+          android:marqueeRepeatLimit="marquee_forever"
+          android:singleLine="true"
+          android:text="@string/txt_size"
+          android:textAppearance="@style/TextStyleRegular" />
+
+        <TextView
+          android:id="@+id/txt_omnichannel_item_category"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:layout_margin="@dimen/dp_2_half"
+          android:layout_weight="1"
+          android:ellipsize="marquee"
+          android:marqueeRepeatLimit="marquee_forever"
+          android:singleLine="true"
+          android:text="@string/txt_category"
+          android:textAppearance="@style/TextStyleRegular" />
+
+        <TextView
+          android:id="@+id/txt_omnichannel_item_qty"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:layout_margin="@dimen/dp_2_half"
+          android:layout_weight="1"
+          android:ellipsize="marquee"
+          android:marqueeRepeatLimit="marquee_forever"
+          android:singleLine="true"
+          android:text="@string/txt_qty"
+          android:textAppearance="@style/TextStyleRegular" />
+
+      </LinearLayout>
+
+    </LinearLayout>
+
+  </LinearLayout>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingTop="@dimen/dp_5">
+
+    <TextView
+      android:id="@+id/txt_omnichannel_item_total_qty"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_margin="@dimen/dp_1_half"
+      android:layout_weight="1"
+      android:ellipsize="marquee"
+      android:gravity="center"
+      android:marqueeRepeatLimit="marquee_forever"
+      android:paddingTop="@dimen/dp_5"
+      android:paddingBottom="@dimen/dp_5"
+      android:singleLine="true"
+      android:text="@string/txt_total_qty"
+      android:textAppearance="@style/TextStyleRegular" />
+
+    <TextView
+      android:id="@+id/txt_omnichannel_item_found_qty"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_margin="@dimen/dp_1_half"
+      android:layout_weight="1"
+      android:ellipsize="marquee"
+      android:gravity="center"
+      android:marqueeRepeatLimit="marquee_forever"
+      android:paddingTop="@dimen/dp_5"
+      android:paddingBottom="@dimen/dp_5"
+      android:singleLine="true"
+      android:text="@string/txt_found_qty"
+      android:textAppearance="@style/TextStyleRegular" />
+
+    <TextView
+      android:id="@+id/txt_omnichannel_item_decoded_qty"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_margin="@dimen/dp_1_half"
+      android:layout_weight="0.9"
+      android:ellipsize="marquee"
+      android:gravity="center"
+      android:marqueeRepeatLimit="marquee_forever"
+      android:paddingTop="@dimen/dp_5"
+      android:paddingBottom="@dimen/dp_5"
+      android:singleLine="true"
+      android:text="@string/txt_decoded_qty"
+      android:textAppearance="@style/TextStyleRegular" />
+
+  </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,149 @@
+{
+  "clientName": null,
+  "clientID": null,
+  "userName": null,
+  "userProfileImg": null,
+  "storeId": "102",
+  "storeName": "Bamuni Maidan",
+  "storeCode": "TW61",
+  "storeType": "DC",
+  "deviceType": "ZEBRA",
+  "deviceKeyCodes": "139, 280, 293",
+  "isEANMappingEnabled": false,
+  "replenishmentType": "both",
+  "omnichannelType": "both",
+  "unencodedSearchType": "offline",
+  "alienSearchType": "offline",
+  "defaultTagType": "soft",
+  "eanType": "both",
+  "dashboardUrl": "",
+  "isTidBasedCountForEncode": false,
+  "showFIFODateForEncode": true,
+  "showFifoChart": true,
+  "isAllowBulkEncoding": true,
+  "epcHeaderValidationRegexStd": "(30|35)",
+  "epcSerialLengthValidationRegexStd":"(11|12)",
+  "epcHeaderValidationRegexNonStd": "(BC|bc)",
+  "epcSerialLengthValidationRegexNonStd":"(7|8)",
+  "isGID": false,
+  "encodeAlgorithmStd": "SGTIN",
+  "encodeAlgorithmNonStd": "BC_ALPHA_NUM",
+  "showUnencodedAndAlienCountsInInventory": true,
+  "showUnencodedCountInInv": true,
+  "showAlienCountInInv": true,
+  "useReferenceId": false,
+  "labelZones": "Location",
+  "zones": [
+    {
+      "zoneId": 2,
+      "zoneName": "FOH",
+      "isDefault": true,
+      "zoneType": "FOH"
+    },
+    {
+      "zoneId": 3,
+      "zoneName": "BOH",
+      "isDefault": true,
+      "zoneType": "BOH"
+    }
+  ],
+  "labelCategories": "Category",
+  "categories":null,
+  "labelBrands": "Brand",
+  "brands": null,
+  "maxSelectionBrands": 5,
+  "menus": [
+    {
+      "menuId": 1,
+      "menuCode": "ENC",
+      "menuName": "Encoding",
+      "parentId": 0,
+      "imageUrl": null,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": true,
+      "isEnabledOnFavScreen": false,
+      "sequence": 1
+    },
+    {
+      "menuId": 2,
+      "menuCode": "INV_START",
+      "menuName": "Inventory",
+      "parentId": 0,
+      "imageUrl": null,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": true,
+      "isEnabledOnFavScreen": false,
+      "sequence": 2
+    },
+    {
+      "menuId": 12,
+      "menuCode": "ENC_VERIFY",
+      "menuName": "Verify Encoding",
+      "imageUrl": null,
+      "parentId": 1,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": false,
+      "sequence": 1
+    },
+    {
+      "menuId": 13,
+      "menuCode": "ENC_START",
+      "menuName": "Start",
+      "imageUrl": null,
+      "favMenuCode": "ENC_START",
+      "favMenuName": "Encoding Start",
+      "favImageUrl": null,
+      "screenMenuCode": "ENC",
+      "screenMenuName": "Encoding",
+      "screenImageUrl": null,
+      "parentId": 1,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": false,
+      "sequence": 2
+    },
+
+    {
+      "menuId": 31,
+      "menuName": "Product Search",
+      "menuCode": "SER_PROD",
+      "imageUrl": null,
+      "parentId": 0,
+      "sequence": 3,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": true,
+      "isEnabledOnFavScreen": false
+    }
+
+  ],
+  "actionMenus": [
+    {
+      "menuId": 1001,
+      "menuCode": "ACT_SER",
+      "menuName": "Search",
+      "imageUrl": null,
+      "parentId": null,
+      "sequence": 1,
+      "isEnabled": true,
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": false
+    }
+
+  ],
+  "navMenus": [
+    {
+      "menuId": 2001,
+      "menuCode": "NAV_APP_INFO",
+      "menuName": "App Info",
+      "imageUrl": null,
+      "parentId": null,
+      "sequence": 1,
+      "isEnabled": true,
+      "screenMenuCode": "APP_LOGO",
+      "screenMenuName": "i-TEK Retail",
+      "isEnabledOnHomeScreen": false,
+      "isEnabledOnFavScreen": false
+    }
+  ]
+}

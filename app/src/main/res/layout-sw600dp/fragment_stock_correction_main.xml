@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <include
+    android:id="@+id/header"
+    layout="@layout/header_title_layout" />
+
+  <LinearLayout
+    android:id="@+id/ll_inventory_correction_spinners"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/dp_15"
+    android:layout_marginRight="@dimen/dp_15"
+    android:layout_marginBottom="@dimen/dp_15"
+    android:background="@drawable/border_bottom"
+    android:orientation="horizontal"
+    app:layout_constraintTop_toBottomOf="@id/header">
+
+    <com.itek.retail.ui.customviews.HeaderSpinner
+      android:id="@+id/spin_inventory_correction_category"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_weight="1"
+      android:background="@drawable/border_right"
+      app:label="@string/lbl_category" />
+
+    <com.itek.retail.ui.customviews.HeaderSpinner
+      android:id="@+id/spin_inventory_correction_brand"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:background="@drawable/border_right"
+      app:isMultiSelect="true"
+      app:label="@string/lbl_brand" />
+
+    <com.itek.retail.ui.customviews.HeaderSpinner
+      android:id="@+id/spin_inventory_correction_location"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_weight="1"
+      app:label="@string/lbl_location" />
+
+  </LinearLayout>
+
+  <TextView
+    android:id="@+id/lbl_inventory_correction_shortage_analysis"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dp_15"
+    android:gravity="center"
+    android:text="@string/lbl_shortage_analysis"
+    android:textAppearance="@style/TextStyleSubSubHeader"
+    app:layout_constraintBottom_toTopOf="@id/ll_list_header"
+    app:layout_constraintTop_toBottomOf="@id/ll_inventory_correction_spinners" />
+
+  <include
+    android:id="@+id/ll_list_header"
+    layout="@layout/list_shortage_brands"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toTopOf="@id/list_inventory_correction_shortage_analysis"
+    app:layout_constraintTop_toBottomOf="@id/lbl_inventory_correction_shortage_analysis" />
+
+  <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/list_inventory_correction_shortage_analysis"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_0"
+    android:layout_marginLeft="@dimen/dp_15"
+    android:layout_marginRight="@dimen/dp_15"
+    android:layout_marginBottom="@dimen/dp_15"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/ll_list_header" />
+
+  <com.google.android.material.floatingactionbutton.FloatingActionButton
+    android:id="@+id/btnUpload"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="@dimen/dp_5"
+    android:layout_marginBottom="@dimen/dp_5"
+    android:visibility="gone"
+    app:backgroundTint="@color/white"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="@id/btnSwipeUpload"
+    app:srcCompat="@drawable/ic_upload" />
+
+  <com.itek.retail.ui.customviews.swipeButton.ProSwipeButtonVar
+    android:id="@+id/btnSwipeUpload"
+    android:layout_width="@dimen/dp_0"
+    android:layout_height="@dimen/dp_0"
+    android:layout_marginLeft="@dimen/dp_5"
+    android:layout_marginRight="@dimen/dp_5"
+    android:layout_marginBottom="@dimen/dp_5"
+    android:background="@drawable/bg_white_red"
+    android:clickable="true"
+    android:visibility="gone"
+    app:btn_text=""
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintHeight_default="percent"
+    app:layout_constraintHeight_percent="0.25"
+    app:layout_constraintLeft_toLeftOf="@id/btnUpload"
+    app:layout_constraintRight_toRightOf="@id/btnUpload"
+    app:layout_constraintWidth_default="percent"
+    app:layout_constraintWidth_percent="0.05" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

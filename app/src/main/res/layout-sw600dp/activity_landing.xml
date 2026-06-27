@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <data>
+
+    <variable
+      name="pinViewModel"
+      type="com.itek.retail.ui.landing.PinViewModel" />
+  </data>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <ImageButton
+      android:id="@+id/popup"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/dp_15"
+      android:background="@color/white"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:srcCompat="@drawable/ic_overflow" />
+
+    <ImageView
+      android:id="@+id/img_logo"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_centerHorizontal="true"
+      android:layout_centerVertical="true"
+      android:layout_gravity="center"
+      android:layout_marginBottom="@dimen/dp_20"
+      android:scaleType="fitCenter"
+      app:layout_constraintBottom_toTopOf="@id/ll_pin"
+      app:layout_constraintHorizontal_bias="0.498"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.362"
+      app:srcCompat="@drawable/ic_logo" />
+
+    <TextView
+      android:id="@+id/txt_welcome"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/dp_20"
+      android:gravity="left"
+      android:paddingLeft="@dimen/dp_10"
+      android:text="@string/title_welcome"
+      android:textAllCaps="false"
+      android:textColor="@color/txtGray"
+      android:textSize="@dimen/sp_28"
+      android:textStyle="bold"
+      app:layout_constraintBottom_toTopOf="@id/ll_pin"
+      app:layout_constraintHorizontal_bias="0.8"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/img_logo"
+      app:layout_constraintVertical_bias="0.932" />
+
+    <LinearLayout
+      android:id="@+id/ll_pin"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_centerVertical="true"
+      android:layout_margin="@dimen/dp_0"
+      android:orientation="vertical"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+      <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilUserName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_15"
+        android:layout_marginRight="@dimen/dp_15"
+        android:hint="@string/txt_user_name"
+        android:importantForAutofill="no">
+
+        <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/edtUserName"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:importantForAutofill="no"
+          android:maxLines="1"
+          android:paddingLeft="@dimen/dp_10"
+          android:singleLine="true"
+          android:textColor="@color/txtGray" />
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_15"
+        android:layout_marginRight="@dimen/dp_15"
+        android:hint="@string/hint_password"
+        android:importantForAutofill="no"
+        app:passwordToggleDrawable="@drawable/pass_toggle"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/edtPassword"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:importantForAutofill="no"
+          android:inputType="textPassword"
+          android:maxLength="20"
+          android:maxLines="1"
+          android:paddingLeft="@dimen/dp_10"
+          android:singleLine="true"
+          android:text="@={pinViewModel.pin}"
+          android:textColor="@color/txtGray" />
+
+      </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <ImageButton
+      android:id="@+id/btn_proceed"
+      android:layout_width="@dimen/dp_0"
+      android:layout_height="@dimen/dp_0"
+      android:layout_gravity="center"
+      android:layout_margin="@dimen/dp_10"
+      android:background="@drawable/button_round_red"
+      android:padding="@dimen/dp_10"
+      android:text="@string/btn_proceed"
+      android:textColor="@color/white"
+      app:layout_constraintBottom_toTopOf="@id/txt_config_url"
+      app:layout_constraintDimensionRatio="1:1"
+      app:layout_constraintHeight_default="percent"
+      app:layout_constraintHeight_percent="0.16"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/ll_pin"
+      app:srcCompat="@drawable/ic_landing_proceed_arrow" />
+
+    <TextView
+      android:id="@+id/txt_forgot_pin"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_horizontal"
+      android:layout_marginTop="@dimen/dp_25"
+      android:gravity="center_horizontal"
+      android:linksClickable="true"
+      android:text="@string/forgot_pin"
+      android:textAppearance="@style/TextStyleRegular"
+      android:textColorLink="@color/txt_regular"
+      app:layout_constraintBottom_toTopOf="@id/img_footer"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/txt_config_url" />
+
+    <TextView
+      android:id="@+id/txt_config_url"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_horizontal"
+      android:layout_marginTop="@dimen/dp_25"
+      android:gravity="center_horizontal"
+      android:linksClickable="true"
+      android:text="@string/config_server"
+      android:textAppearance="@style/TextStyleRegular"
+      android:textColorLink="@color/txt_regular"
+      android:visibility="gone"
+      app:layout_constraintBottom_toTopOf="@id/txt_forgot_pin"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/btn_proceed" />
+
+    <FrameLayout
+      android:id="@+id/nav_host_fragment_content_main"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_marginBottom="@dimen/dp_0"
+      app:layout_constraintBottom_toTopOf="@id/footer"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <include layout="@layout/footer_layout" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

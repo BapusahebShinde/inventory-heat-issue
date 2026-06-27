@@ -1,0 +1,13 @@
+{
+  "trips": {
+    "total": "04",
+    "completed": "03",
+    "pending": "01"
+  },
+  "hus": {
+    "total": "105",
+    "completed": "100",
+    "pending": "05"
+  },
+  "activeUsers": 1
+}

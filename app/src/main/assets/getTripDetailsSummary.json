@@ -1,0 +1,22 @@
+{
+  "operationType": "IN",
+  "labelArticle": "ArticleCode",
+  "labelSkuId": "SkuId",
+  "tripNum": "",
+  "referenceTripNum": "",
+  "isHuDeviceLock":false,
+  "data": [
+    {
+      "huNum": "16488116421",
+      "huStatus": "P",
+      "expQty":4,
+      "scanQty":0
+    },
+    {
+      "huNum": "16488116422",
+      "huStatus": "P",
+      "expQty":3,
+      "scanQty":0
+    }
+  ]
+}

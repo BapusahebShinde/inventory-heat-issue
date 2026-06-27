@@ -1,0 +1,14 @@
+{
+  "succeedTrips": [
+    {
+      "tripNum": "1648811642",
+      "reason": "Already Uploaded!"
+    }
+  ],
+  "failedTrips": [
+    {
+      "tripNum": "1648811643",
+      "reason": "HU list blank."
+    }
+  ]
+}

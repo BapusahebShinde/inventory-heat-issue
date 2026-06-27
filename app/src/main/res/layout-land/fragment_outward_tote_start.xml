@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:bind="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/white"
+  android:clickable="true"
+  android:orientation="vertical"
+  bind:context=".ui.outward.tote.OutwardToteStartFragment">
+
+  <include
+    android:id="@+id/header"
+    layout="@layout/header_title_layout" />
+
+  <include
+    android:id="@+id/ll_sub_header"
+    layout="@layout/header_subtitle_layout"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/header" />
+
+  <com.itek.retail.ui.customviews.PowerView
+    android:id="@+id/llSeekbarPower"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:visibility="gone"
+    app:layout_constraintTop_toBottomOf="@id/ll_sub_header"
+    app:pv_max="30"
+    app:pv_min="5" />
+
+  <com.itek.retail.ui.customviews.CountTotalView
+    android:id="@+id/ctw_inventory_start"
+    android:layout_width="@dimen/dp_0"
+    android:layout_height="@dimen/dp_0"
+    android:layout_gravity="center"
+    android:background="@drawable/circular_shape"
+    android:orientation="vertical"
+    app:layout_constraintBottom_toTopOf="@id/ll_inventory_start_session_lbls"
+    app:layout_constraintDimensionRatio="1:1"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/llSeekbarPower"
+    app:layout_constraintHeight_default="percent"
+    app:layout_constraintHeight_percent="0.5"/>
+
+  <LinearLayout
+    android:id="@+id/ll_inventory_start_session_lbls"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:visibility="gone"
+    app:layout_constraintBottom_toTopOf="@id/llBtnStart"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/ctw_inventory_start">
+
+    <ImageView
+      android:id="@+id/img_inventory_start_info"
+      android:layout_width="@dimen/dp_20"
+      android:layout_height="@dimen/dp_20"
+      android:layout_gravity="top"
+      android:layout_marginTop="@dimen/dp_5"
+      android:layout_marginRight="@dimen/dp_5"
+      android:layout_toRightOf="@id/txt_inventory_start_session"
+      android:longClickable="false"
+      android:scaleType="fitCenter"
+      android:visibility="visible"
+      app:srcCompat="@drawable/ic_inv_date_info" />
+  </LinearLayout>
+
+  <com.itek.retail.ui.customviews.BtnStartStopView
+    android:id="@+id/llBtnStart"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/ll_inventory_start_session_lbls" />
+
+  <com.itek.retail.ui.customviews.BtnSwipeUploadView
+    android:id="@+id/btnUpload"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/dp_0"
+    android:visibility="gone"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintRight_toRightOf="parent"/>
+
+ <!-- <com.google.android.material.floatingactionbutton.FloatingActionButton
+    android:id="@+id/btnUpload"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="@dimen/dp_5"
+    android:layout_marginBottom="@dimen/dp_5"
+    android:visibility="gone"
+    app:backgroundTint="@color/white"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="@id/btnSwipeUpload"
+    app:srcCompat="@drawable/ic_upload" />
+
+  <com.itek.retail.ui.customviews.swipeButton.ProSwipeButtonVar
+    android:id="@+id/btnSwipeUpload"
+    android:layout_width="@dimen/dp_0"
+    android:layout_height="@dimen/dp_0"
+    android:layout_marginLeft="@dimen/dp_5"
+    android:layout_marginRight="@dimen/dp_5"
+    android:layout_marginBottom="@dimen/dp_5"
+    android:background="@drawable/bg_white_red"
+    android:clickable="true"
+    android:visibility="gone"
+    app:btn_text=""
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintHeight_default="percent"
+    app:layout_constraintHeight_percent="0.25"
+    app:layout_constraintLeft_toLeftOf="@id/btnUpload"
+    app:layout_constraintRight_toRightOf="@id/btnUpload"
+    app:layout_constraintWidth_default="percent"
+    app:layout_constraintWidth_percent="0.05" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

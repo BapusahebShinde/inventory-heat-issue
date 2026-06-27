@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <uses-sdk
+    android:minSdkVersion="15"
+    android:targetSdkVersion="33"
+    tools:overrideLibrary="com.zebra.rfid.api3, com.lead.device.lib" />
+
+  <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+  <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+  <uses-permission
+    android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"
+    tools:ignore="ProtectedPermissions" />
+  <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+  <uses-permission android:name="android.permission.VIBRATE" />
+  <uses-permission android:name="android.permission.INTERNET" tools:node="remove" />
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission
+    android:name="android.permission.LOCAL_MAC_ADDRESS"
+    tools:ignore="ProtectedPermissions" />
+  <uses-permission android:name="android.permission.BLUETOOTH" />
+  <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
+  <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+  <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+  <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+  <uses-permission
+    android:name="android.permission.BLUETOOTH_PRIVILEGED"
+    tools:ignore="ProtectedPermissions" />
+  <uses-permission android:name="android.permission.GET_TASKS" />
+  <uses-permission android:name="android.permission.CAMERA" />
+  <uses-permission android:name="android.permission.STORAGE" />
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32"  />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"  android:maxSdkVersion="29"/>
+  <uses-permission android:name="android.permission.LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+  <!-- permission for package install (to be commented if play store update)-->
+  <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/> <!-- tools:node="remove"/> -->
+  <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" tools:node="remove" />
+  <uses-permission android:name="com.google.android.gms.permission.AD_ID" tools:node="remove" />
+
+  <!--<uses-permission android:name="com.symbol.emdk.permission.EMDK" />-->
+
+  <uses-feature android:name="android.hardware.usb.host" />
+  <uses-feature android:name="android.hardware.camera" android:required="false" />
+  <uses-feature android:name="android.hardware.bluetooth" android:required="false"/>
+  <uses-feature android:name="android.hardware.bluetooth_le" android:required="false"/>
+
+  <application
+    android:name="com.itek.retail.common.RetailApplication"
+    android:allowBackup="false"
+    android:icon="@mipmap/itek_launcher"
+    android:label="@string/app_name"
+    android:largeHeap="true"
+    android:manageSpaceActivity=".ui.landing.LandingActivity"
+    android:roundIcon="@mipmap/itek_launcher_round"
+    android:supportsRtl="true"
+    android:theme="@style/Theme.Drawer"
+    android:usesCleartextTraffic="false"
+    tools:replace="android:allowBackup">
+
+    <!--android:networkSecurityConfig="@xml/network_security_config"-->
+
+    <!--<queries>
+      <package android:name="com.symbol.emdk.emdkservice" />
+    </queries>-->
+
+    <!--<uses-library
+       android:name="com.symbol.emdk"
+       android:required="false"
+       tools:replace="android:required" />-->
+
+    <activity
+      android:name="com.itek.retail.ui.landing.LandingActivity"
+      android:exported="true"
+      android:launchMode="singleTop"
+      android:screenOrientation="portrait"
+      android:theme="@style/Theme.Drawer.NoActionBar"
+      android:windowSoftInputMode="adjustPan">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <activity
+      android:name="com.itek.retail.ui.home.MainActivity"
+      android:exported="false"
+      android:launchMode="singleTop"
+      android:screenOrientation="portrait"
+      android:theme="@style/Theme.Drawer.NoActionBar"
+      android:windowSoftInputMode="adjustPan" />
+
+    <service
+      android:name="com.itek.retail.firebase.MyFirebaseMessagingService"
+      android:enabled="false"
+      android:exported="false">
+      <intent-filter>
+        <action android:name="com.google.firebase.MESSAGING_EVENT" />
+      </intent-filter>
+    </service>
+
+    <meta-data
+      android:name="com.google.firebase.messaging.default_notification_channel_id"
+      android:value="@string/app_name" />
+
+    <receiver
+      android:name=".receiver.AppBroadcastReceiver"
+      android:enabled="true"
+      android:exported="false">
+      <intent-filter>
+        <action android:name="android.intent.action.BATTERY_CHANGED" />
+        <action android:name="android.intent.action.BATTERY_LOW" />
+        <action android:name="android.intent.action.TIME_TICK" />
+        <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+      </intent-filter>
+    </receiver>
+
+   <provider
+      android:name="androidx.core.content.FileProvider"
+      android:authorities="${applicationId}"
+      android:exported="false"
+      android:grantUriPermissions="true">
+      <meta-data
+        android:name="android.support.FILE_PROVIDER_PATHS"
+        android:resource="@xml/file_paths" />
+    </provider>
+
+  </application>
+
+</manifest>

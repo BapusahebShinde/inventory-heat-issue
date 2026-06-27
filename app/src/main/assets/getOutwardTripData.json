@@ -1,0 +1,106 @@
+{
+  "tripsData": [
+    {
+      "tripNum": "1648811642",
+      "whNum": "1234",
+      "type": "OUT",
+      "huNums": 2,
+      "tripType": "store_to_dc",
+      "verifiedHus": 0,
+      "restrictUnverifiedHu": true,
+      "allowBarcodeScanning": true,
+      "allowMixTagType": true,
+      "lowerTolerance": 100,
+      "upperTolerance": 1000,
+      "huData": [
+        {
+          "tripNum": "1648811642",
+          "deliveryNum": "1648811642",
+          "huNum": "00000000016488116421",
+          "articleCode": "440866332016",
+          "packQty": 2,
+          "huStatus": "P",
+          "skus": "8901326038345,8907167838097,8907796773663",
+          "fromVendor": false,
+          "isHuVerified": false,
+          "isBarcodeBased": false
+        },
+        {
+          "tripNum": "1648811642",
+          "deliveryNum": "1648811642",
+          "huNum": "00000000016488116421",
+          "articleCode": "440866332017",
+          "packQty": 2,
+          "huStatus": "P",
+          "skus": "8907675736901,8907167838098,8907796773668",
+          "fromVendor": false,
+          "isHuVerified": false,
+          "isBarcodeBased": false
+        },
+        {
+          "tripNum": "1648811642",
+          "deliveryNum": "1648811642",
+          "huNum": "00000000016488116422",
+          "articleCode": "440585116039",
+          "packQty": 3,
+          "huStatus": "P",
+          "skus": "8901326038346,8907167838091,8907796773661",
+          "fromVendor": false,
+          "isHuVerified": false,
+          "isBarcodeBased": false
+        }
+      ]
+    },
+    {
+      "tripNum": "1648811643",
+      "whNum": "1234",
+      "type": "OUT",
+      "huNums": 2,
+      "tripType": "store_to_store",
+      "verifiedHus": 0,
+      "restrictUnverifiedHu": false,
+      "allowBarcodeScanning": true,
+      "allowMixTagType": true,
+      "lowerTolerance": 100,
+      "upperTolerance": 1000,
+      "huData": [
+        {
+          "tripNum": "1648811643",
+          "deliveryNum": "1648811643",
+          "huNum": "00000000016488116431",
+          "articleCode": "440866332019",
+          "packQty": 3,
+          "huStatus": "P",
+          "skus": "8901030174827,8907167838099,8907796773667",
+          "fromVendor": false,
+          "isHuVerified": false,
+          "isBarcodeBased": false
+        },
+        {
+          "tripNum": "1648811643",
+          "deliveryNum": "1648811643",
+          "huNum": "00000000016488116432",
+          "articleCode": "440585112021",
+          "packQty": 3,
+          "huStatus": "P",
+          "skus": "8901198204053,8907167838059,8907675736909",
+          "fromVendor": false,
+          "isHuVerified": false,
+          "isBarcodeBased": false
+        },
+        {
+          "tripNum": "1648811643",
+          "deliveryNum": "1648811643",
+          "huNum": "00000000016488116431",
+          "articleCode": "440866332020",
+          "packQty": 3,
+          "huStatus": "P",
+          "skus": "8901326038347,8907167838095,8907796773666",
+          "fromVendor": false,
+          "isHuVerified": false,
+          "isBarcodeBased": false
+        }
+      ]
+    }
+  ]
+}

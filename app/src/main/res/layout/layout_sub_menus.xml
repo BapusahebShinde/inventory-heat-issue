@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:gravity="center"
+  android:orientation="vertical">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dp_5">
+
+    <ImageView
+      android:id="@+id/imgMenuLogo"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:scaleType="fitCenter"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+      android:id="@+id/imgMenuSlash"
+      android:layout_width="@dimen/dp_0"
+      android:layout_height="@dimen/dp_0"
+      android:scaleType="fitCenter"
+      android:visibility="gone"
+      app:layout_constraintBottom_toBottomOf="@id/imgMenuLogo"
+      app:layout_constraintLeft_toLeftOf="@id/imgMenuLogo"
+      app:layout_constraintRight_toRightOf="@id/imgMenuLogo"
+      app:layout_constraintTop_toTopOf="@id/imgMenuLogo"
+      app:srcCompat="@drawable/ic_slash_small" />
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+  <TextView
+    android:id="@+id/lblMenuTitle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dp_5"
+    android:ellipsize="marquee"
+    android:gravity="center"
+    android:singleLine="true"
+    android:textAppearance="@style/TextStyleRegular"
+    android:visibility="gone" />
+
+</LinearLayout>

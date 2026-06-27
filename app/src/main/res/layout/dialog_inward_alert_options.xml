@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/dp_10">
+
+    <LinearLayout
+      android:id="@+id/ll_inward_alert"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@color/white"
+      android:gravity="center"
+      android:orientation="vertical"
+      android:padding="@dimen/dp_10"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+      <ImageButton
+        android:id="@+id/img_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:background="@color/transparent"
+        app:srcCompat="@drawable/ic_close" />
+
+      <ImageView
+        android:id="@+id/img_logo"
+        android:layout_width="@dimen/dp_50"
+        android:layout_height="@dimen/dp_50"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/ic_completed_broad" />
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_5">
+
+        <TextView
+          android:id="@+id/txtAlertTitle"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:gravity="center"
+          android:textColor="@color/black"
+          android:textSize="@dimen/sp_20" />
+
+        <TextView
+          android:id="@+id/txtAlertSubtitle"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:layout_marginTop="@dimen/dp_20"
+          android:textAppearance="@style/TextStyleSubHeader"
+          android:visibility="gone" />
+
+        <LinearLayout
+          android:id="@+id/llDialogQty"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_horizontal"
+          android:gravity="center_horizontal"
+          android:orientation="vertical"
+          android:padding="@dimen/dp_5"
+          android:visibility="gone">
+
+          <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_7"
+            android:orientation="horizontal">
+
+            <TextView
+              android:layout_width="@dimen/dp_0"
+              android:layout_height="wrap_content"
+              android:layout_weight="0.25"
+              android:text="" />
+
+            <TextView
+              android:id="@+id/lblTotalQty"
+              android:layout_width="@dimen/dp_0"
+              android:layout_height="wrap_content"
+              android:layout_weight="1"
+              android:text="@string/lbl_inward_alert_total_qty_" />
+
+            <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="@dimen/dp_5"
+              android:layout_marginRight="@dimen/dp_5"
+              android:text="@string/lbl_colon" />
+
+            <TextView
+              android:id="@+id/textTotalQty"
+              android:layout_width="@dimen/dp_0"
+              android:layout_height="wrap_content"
+              android:layout_marginRight="@dimen/dp_10"
+              android:layout_weight="0.4"
+              android:text="@string/default_no_value" />
+          </androidx.appcompat.widget.LinearLayoutCompat>
+
+          <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_7"
+            android:orientation="horizontal">
+
+            <TextView
+              android:layout_width="@dimen/dp_0"
+              android:layout_height="wrap_content"
+              android:layout_weight="0.25"
+              android:text="" />
+
+            <TextView
+              android:id="@+id/lblTotalScannedQty"
+              android:layout_width="@dimen/dp_0"
+              android:layout_height="wrap_content"
+              android:layout_weight="1"
+              android:text="@string/lbl_inward_alert_total_scanned_qty" />
+
+            <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="@dimen/dp_5"
+              android:layout_marginRight="@dimen/dp_5"
+              android:text="@string/lbl_colon" />
+
+            <TextView
+              android:id="@+id/textTotalScannedQty"
+              android:layout_width="@dimen/dp_0"
+              android:layout_height="wrap_content"
+              android:layout_marginRight="@dimen/dp_10"
+              android:layout_weight="0.4"
+              android:text="@string/default_no_value" />
+          </androidx.appcompat.widget.LinearLayoutCompat>
+
+          <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_7"
+            android:orientation="horizontal">
+
+            <TextView
+              android:layout_width="@dimen/dp_0"
+              android:layout_height="wrap_content"
+              android:layout_weight="0.25"
+              android:text="" />
+
+            <TextView
+              android:id="@+id/lblExpectedScannedQty"
+              android:layout_width="@dimen/dp_0"
+              android:layout_height="wrap_content"
+              android:layout_weight="1"
+              android:text="@string/lbl_inward_alert_expected_scanned_qty" />
+
+            <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="@dimen/dp_5"
+              android:layout_marginRight="@dimen/dp_5"
+              android:text="@string/lbl_colon" />
+
+            <TextView
+              android:id="@+id/textExpectedScannedQty"
+              android:layout_width="@dimen/dp_0"
+              android:layout_height="wrap_content"
+              android:layout_marginRight="@dimen/dp_10"
+              android:layout_weight="0.4"
+              android:text="@string/default_no_value" />
+          </androidx.appcompat.widget.LinearLayoutCompat>
+
+          <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llUnknown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_7"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+              android:layout_width="@dimen/dp_0"
+              android:layout_height="wrap_content"
+              android:layout_weight="0.25"
+              android:text="" />
+
+            <TextView
+              android:id="@+id/lblUnknownScannedQty"
+              android:layout_width="@dimen/dp_0"
+              android:layout_height="wrap_content"
+              android:layout_weight="1"
+              android:text="@string/lbl_inward_alert_unknown_scanned_qty" />
+
+            <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="@dimen/dp_5"
+              android:layout_marginRight="@dimen/dp_5"
+              android:text="@string/lbl_colon" />
+
+            <TextView
+              android:id="@+id/textUnknownScannedQty"
+              android:layout_width="@dimen/dp_0"
+              android:layout_height="wrap_content"
+              android:layout_marginRight="@dimen/dp_10"
+              android:layout_weight="0.4"
+              android:text="@string/default_no_value" />
+          </androidx.appcompat.widget.LinearLayoutCompat>
+
+          <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llUnencoded"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_7"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+              android:layout_width="@dimen/dp_0"
+              android:layout_height="wrap_content"
+              android:layout_weight="0.25"
+              android:text="" />
+
+            <TextView
+              android:id="@+id/lblUnencodedScannedQty"
+              android:layout_width="@dimen/dp_0"
+              android:layout_height="wrap_content"
+              android:layout_weight="1"
+              android:text="@string/lbl_inward_alert_unencoded_scanned_qty" />
+
+            <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="@dimen/dp_5"
+              android:layout_marginRight="@dimen/dp_5"
+              android:text="@string/lbl_colon" />
+
+            <TextView
+              android:id="@+id/textUnencodedScannedQty"
+              android:layout_width="@dimen/dp_0"
+              android:layout_height="wrap_content"
+              android:layout_marginRight="@dimen/dp_10"
+              android:layout_weight="0.4"
+              android:text="@string/default_no_value" />
+          </androidx.appcompat.widget.LinearLayoutCompat>
+
+          <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llExtra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_7"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+              android:layout_width="@dimen/dp_0"
+              android:layout_height="wrap_content"
+              android:layout_weight="0.25"
+              android:text="" />
+
+            <TextView
+              android:id="@+id/lblExtraScannedQty"
+              android:layout_width="@dimen/dp_0"
+              android:layout_height="wrap_content"
+              android:layout_weight="1"
+              android:text="@string/lbl_inward_alert_unknown_scanned_qty" />
+
+            <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="@dimen/dp_5"
+              android:layout_marginRight="@dimen/dp_5"
+              android:text="@string/lbl_colon" />
+
+            <TextView
+              android:id="@+id/textExtraScannedQty"
+              android:layout_width="@dimen/dp_0"
+              android:layout_height="wrap_content"
+              android:layout_marginRight="@dimen/dp_10"
+              android:layout_weight="0.4"
+              android:text="@string/default_no_value" />
+          </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </LinearLayout>
+
+        <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:layout_marginTop="@dimen/dp_30"
+          android:gravity="center"
+          android:orientation="horizontal">
+
+          <TextView
+            android:id="@+id/reject"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_7"
+            android:layout_marginRight="@dimen/dp_7"
+            android:text="@string/btn_inward_alert_reject"
+            android:textColor="@color/red"
+            android:textSize="@dimen/sp_16"
+            android:visibility="gone" />
+
+          <TextView
+            android:id="@+id/rescan"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_7"
+            android:layout_marginRight="@dimen/dp_7"
+            android:text="@string/btn_inward_alert_rescan"
+            android:textColor="@color/red"
+            android:textSize="@dimen/sp_16"
+            android:visibility="gone" />
+
+          <TextView
+            android:id="@+id/accept"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_7"
+            android:layout_marginRight="@dimen/dp_7"
+            android:text="@string/btn_inward_alert_accept"
+            android:textColor="@color/red"
+            android:textSize="@dimen/sp_16"
+            android:visibility="gone" />
+
+        </LinearLayout>
+      </LinearLayout>
+    </LinearLayout>
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

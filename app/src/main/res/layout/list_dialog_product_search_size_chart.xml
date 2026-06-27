@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <data>
+
+    <variable
+      name="productSizeViewModel"
+      type="com.itek.retail.model.ProductSizeModel" />
+  </data>
+
+  <LinearLayout
+    android:id="@+id/ll_dialog_size_chart"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingTop="@dimen/dp_5"
+    android:paddingBottom="@dimen/dp_5">
+
+    <TextView
+      android:id="@+id/txt_size_chart_size"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_vertical"
+      android:layout_margin="@dimen/dp_2"
+      android:layout_weight="1"
+      android:ellipsize="marquee"
+      android:gravity="center"
+      android:singleLine="true"
+      android:text="@string/lbl_size"
+      android:textAppearance="@style/TextStyleRegular" />
+
+    <TextView
+      android:id="@+id/txt_size_chart_qty"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_vertical"
+      android:layout_margin="@dimen/dp_2"
+      android:layout_weight="1"
+      android:ellipsize="marquee"
+      android:gravity="center"
+      android:singleLine="true"
+      android:text="@string/lbl_qty"
+      android:textAppearance="@style/TextStyleRegular" />
+
+    <TextView
+      android:id="@+id/txt_size_chart_location"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_vertical"
+      android:layout_margin="@dimen/dp_2"
+      android:layout_weight="1"
+      android:ellipsize="marquee"
+      android:gravity="center"
+      android:singleLine="true"
+      android:text="@string/lbl_location"
+      android:textAppearance="@style/TextStyleRegular" />
+
+    <ImageView
+      android:id="@+id/img_size_chart_next"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_margin="@dimen/dp_2"
+      android:layout_weight="1"
+      android:rotation="180"
+      android:scaleType="fitCenter"
+      android:visibility="invisible"
+      app:srcCompat="@drawable/ic_back_arrow" />
+
+  </LinearLayout>
+</layout>

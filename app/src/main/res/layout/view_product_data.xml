@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/llProductData"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/dp_5"
+    android:paddingTop="@dimen/dp_1"
+    android:paddingRight="@dimen/dp_5"
+    android:paddingBottom="@dimen/dp_1">
+
+    <LinearLayout
+        android:id="@+id/llProductImgData"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:background="@drawable/border_right"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_5">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clImgPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/pagerProdImages"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constrainedHeight="true"
+                app:layout_constraintHeight_percent="0.99" />
+
+            <ImageView
+                android:id="@+id/imgSold"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_0"
+                android:layout_gravity="top|left"
+                android:layout_margin="@dimen/dp_5"
+                android:padding="@dimen/dp_2"
+                android:scaleType="fitCenter"
+                android:visibility="gone"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent="0.333"
+                app:srcCompat="@drawable/ic_sold_out" />
+
+            <ImageView
+                android:id="@+id/imgStatus"
+                android:layout_width="@dimen/dp_0"
+                android:layout_height="@dimen/dp_0"
+                android:layout_gravity="bottom|right"
+                android:layout_margin="@dimen/dp_5"
+                android:padding="@dimen/dp_2"
+                android:scaleType="fitCenter"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent="0.333"
+                app:srcCompat="@drawable/ic_sold_out" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/txtProductImgCount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/dp_5"
+            android:gravity="center"
+            android:textAppearance="@style/TextStyleSmall"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtProductDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/dp_5"
+                android:gravity="center"
+                android:text="@string/icon_info"
+                android:textAppearance="@style/TextStyleSubSubHeaderAwesome"
+                android:textSize="@dimen/sp_20"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/txtProductVideo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/dp_5"
+                android:gravity="center"
+                android:text="@string/icon_video"
+                android:textAppearance="@style/TextStyleSubSubHeaderAwesome"
+                android:textSize="@dimen/sp_20"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnSimilarProducts"
+            style="@style/Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/dp_5"
+            android:padding="@dimen/dp_0"
+            android:text="@string/tab_similar_products"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llProductTxtData"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_5"
+        android:visibility="gone" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listTxtData"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_5"
+        android:visibility="gone" />
+
+</LinearLayout>

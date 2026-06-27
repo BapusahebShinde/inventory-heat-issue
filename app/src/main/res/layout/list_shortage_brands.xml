@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <data>
+
+    <variable
+      name="inventoryShortageViewModel"
+      type="com.itek.retail.model.MultiQtyModel" />
+  </data>
+
+  <LinearLayout
+    android:id="@+id/ll_inventory_shortage"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/border_top_bottom"
+    android:orientation="horizontal"
+    android:paddingTop="@dimen/dp_5"
+    android:paddingBottom="@dimen/dp_5">
+
+    <com.itek.retail.ui.customviews.SortHeaderView
+      android:id="@+id/txt_brand"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_vertical"
+      android:layout_margin="@dimen/dp_2"
+      android:layout_weight="1"
+      android:ellipsize="marquee"
+      android:gravity="center"
+      android:singleLine="true"
+      android:text="@string/lbl_brand"
+      android:textAppearance="@style/TextStyleRegular"
+      app:sortColumn="brand" />
+
+    <com.itek.retail.ui.customviews.SortHeaderView
+      android:id="@+id/txt_found"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_vertical"
+      android:layout_margin="@dimen/dp_2"
+      android:layout_weight="1"
+      android:ellipsize="marquee"
+      android:gravity="center"
+      android:singleLine="true"
+      android:text="@string/lbl_found"
+      android:textAppearance="@style/TextStyleRegular"
+      app:sortColumn="found" />
+
+    <com.itek.retail.ui.customviews.SortHeaderView
+      android:id="@+id/txt_shortage"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_vertical"
+      android:layout_margin="@dimen/dp_2"
+      android:layout_weight="1"
+      android:ellipsize="marquee"
+      android:gravity="center"
+      android:singleLine="true"
+      android:text="@string/lbl_shortage"
+      android:textAppearance="@style/TextStyleRegularAwesome"
+      app:sortColumn="total" />
+
+    <ImageView
+      android:id="@+id/img_inventory_shortage_next"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_margin="@dimen/dp_2"
+      android:layout_weight="1"
+      android:rotation="180"
+      android:scaleType="fitCenter"
+      android:visibility="invisible"
+      app:srcCompat="@drawable/ic_back_arrow" />
+
+  </LinearLayout>
+</layout>

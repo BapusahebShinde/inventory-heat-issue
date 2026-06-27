@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <data>
+
+    <variable
+      name="tripStatus"
+      type="com.itek.retail.model.TripStatus" />
+  </data>
+
+  <androidx.appcompat.widget.LinearLayoutCompat
+    android:id="@+id/llHeader"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_40"
+    android:layout_marginLeft="@dimen/dp_5"
+    android:layout_marginRight="@dimen/dp_5"
+    android:clickable="true"
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/dp_5"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <TextView
+      android:id="@+id/textListNumber"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="1.15"
+      android:gravity="left|center_vertical"
+      android:text="@string/lbl_list_no"
+      android:textAppearance="@style/TextStyleRegular" />
+
+    <TextView
+      android:id="@+id/textExpQty"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="1.25"
+      android:gravity="center"
+      android:text="@string/lbl_exp_qty"
+      android:textAppearance="@style/TextStyleRegular"
+      android:visibility="visible" />
+
+    <TextView
+      android:id="@+id/textPickQty"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="1.25"
+      android:gravity="center"
+      android:text="@string/lbl_pick_qty"
+      android:textAppearance="@style/TextStyleRegular"
+      android:visibility="visible" />
+
+    <TextView
+      android:id="@+id/textStatus"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="1.25"
+      android:clickable="true"
+      android:gravity="center"
+      android:text="@string/lbl_grn_status"
+      android:textAppearance="@style/TextStyleRegular"
+      android:textStyle="bold"
+      android:visibility="visible" />
+
+  </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

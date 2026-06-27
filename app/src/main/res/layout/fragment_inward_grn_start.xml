@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:bind="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/white"
+  android:clickable="true"
+  android:padding="@dimen/dp_5"
+  bind:context=".ui.inward.grn.InwardGrnStartViewModel">
+
+  <include
+    android:id="@+id/header"
+    layout="@layout/header_title_layout" />
+
+  <LinearLayout
+    android:id="@+id/llTripHu"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dp_2"
+    android:background="@drawable/border_bottom"
+    android:orientation="horizontal"
+    app:layout_constraintTop_toBottomOf="@+id/header">
+
+    <TextView
+      android:id="@+id/txt_trip_number_scan"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="@dimen/dp_5"
+      android:layout_marginBottom="@dimen/dp_5"
+      android:layout_weight="1"
+      android:ellipsize="marquee"
+      android:fadingEdge="horizontal"
+      android:marqueeRepeatLimit="marquee_forever"
+      android:scrollHorizontally="true"
+      android:singleLine="true"
+      android:textAppearance="@style/TextStyleSubHeader" />
+
+    <TextView
+      android:id="@+id/txt_HU_number_scan"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="@dimen/dp_5"
+      android:layout_marginRight="@dimen/dp_5"
+      android:layout_marginBottom="@dimen/dp_5"
+      android:layout_weight="1"
+      android:ellipsize="marquee"
+      android:fadingEdge="horizontal"
+      android:marqueeRepeatLimit="marquee_forever"
+      android:scrollHorizontally="true"
+      android:singleLine="true"
+      android:textAppearance="@style/TextStyleSubHeader" />
+  </LinearLayout>
+
+  <com.itek.retail.ui.customviews.PowerView
+    android:id="@+id/llSeekbarPower"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:visibility="gone"
+    app:layout_constraintBottom_toTopOf="@id/cl_inward_start"
+    app:layout_constraintTop_toBottomOf="@id/llTripHu"
+    app:pv_max="15"
+    app:pv_min="5" />
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/cl_inward_start"
+    android:layout_width="@dimen/dp_0"
+    android:layout_height="@dimen/dp_0"
+    android:layout_gravity="center"
+    android:background="@drawable/circular_shape"
+    android:orientation="vertical"
+    app:layout_constraintBottom_toTopOf="@id/txt_inward_scan_total"
+    app:layout_constraintDimensionRatio="1:1"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/llSeekbarPower"
+    app:layout_constraintWidth_default="percent"
+    app:layout_constraintWidth_percent="0.4">
+
+    <TextView
+      android:id="@+id/txtHuScanQty"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerInParent="true"
+      android:layout_gravity="center_vertical"
+      android:gravity="center"
+      android:text="0"
+      android:textAppearance="@style/TextStyleNumber"
+      app:layout_constraintBottom_toTopOf="@id/div_inv_start_score"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent" />
+
+    <View
+      android:id="@+id/div_inv_start_score"
+      android:layout_width="@dimen/dp_0"
+      android:layout_height="@dimen/dp_1"
+      android:layout_gravity="center"
+      android:background="@color/txtExtraLighterGray"
+      android:visibility="visible"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintWidth_default="percent"
+      app:layout_constraintWidth_percent="0.6" />
+
+    <TextView
+      android:id="@+id/txtHuTotalQty"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerInParent="true"
+      android:layout_gravity="center_vertical"
+      android:gravity="center"
+      android:text="@string/default_no_value"
+      android:textAppearance="@style/TextStyleNumber"
+      android:visibility="visible"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/div_inv_start_score" />
+
+    <com.itek.retail.ui.customviews.custprogress.CircularProgressBar
+      android:id="@+id/progressbarHuScore"
+      style="?android:attr/progressBarStyleHorizontal"
+      android:layout_width="@dimen/dp_0"
+      android:layout_height="@dimen/dp_0"
+      android:layout_gravity="center"
+      android:visibility="visible"
+      app:cpb_background_progressbar_color="@color/transparent"
+      app:cpb_background_progressbar_width="@dimen/progress_width"
+      app:cpb_percent_shape="@layout/custom_progress"
+      app:cpb_percent_shape_enabled="true"
+      app:cpb_percent_shape_size="@dimen/dp_25"
+      app:cpb_percent_text_view_id="@id/txt_progress"
+      app:cpb_progress="0"
+      app:cpb_progress_direction="to_right"
+      app:cpb_progressbar_color="?attr/colorAccent"
+      app:cpb_progressbar_width="@dimen/progress_width"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintVertical_bias="0.0" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+  <TextView
+    android:id="@+id/txt_inward_scan_total"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:text="@string/lbl_scantotal"
+    android:textAppearance="@style/TextStyleSubSubHeader"
+    app:layout_constraintBottom_toTopOf="@id/ll_hu_start_button"
+    app:layout_constraintTop_toBottomOf="@id/cl_inward_start" />
+
+  <LinearLayout
+    android:id="@+id/ll_hu_start_button"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginTop="@dimen/dp_5"
+    android:gravity="center"
+    android:orientation="horizontal"
+    app:layout_constraintTop_toBottomOf="@id/txt_inward_scan_total">
+
+    <LinearLayout
+      android:id="@+id/llManualScanBarcode"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:orientation="vertical">
+
+      <ImageView
+        android:id="@+id/btnScanBarcode"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_30"
+        android:layout_gravity="center"
+        android:background="@color/white"
+        android:clickable="false"
+        android:padding="@dimen/dp_2"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/ic_scan_red" />
+
+      <TextView
+        android:id="@+id/textScanBarcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/lbl_scan_barcode"
+        android:textAppearance="@style/TextStyleRegular" />
+
+    </LinearLayout>
+
+    <LinearLayout
+      android:id="@+id/llBtnStartStop"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:clickable="true"
+      android:orientation="vertical">
+
+      <ImageView
+        android:id="@+id/btnStartStopScan"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_30"
+        android:layout_gravity="center"
+        android:background="@color/white"
+        android:clickable="false"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/ic_start" />
+
+      <TextView
+        android:id="@+id/textStartStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:clickable="false"
+        android:text="@string/lbl_start"
+        android:textAppearance="@style/TextStyleRegular" />
+    </LinearLayout>
+
+    <LinearLayout
+      android:id="@+id/llUpload"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:orientation="vertical"
+      android:visibility="visible">
+
+      <ImageView
+        android:id="@+id/btnUpload"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_30"
+        android:layout_gravity="center"
+        android:background="@color/white"
+        android:clickable="false"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/ic_upload" />
+
+      <TextView
+        android:id="@+id/lblUpload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/btn_upload"
+        android:textAppearance="@style/TextStyleRegular" />
+    </LinearLayout>
+  </LinearLayout>
+
+  <LinearLayout
+    android:id="@+id/ll_inward_list_header"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/dp_5"
+    android:layout_marginTop="@dimen/dp_2"
+    android:layout_marginRight="@dimen/dp_5"
+    android:background="@color/bgListAlternet"
+    android:orientation="horizontal"
+    android:padding="@dimen/dp_2"
+    app:layout_constraintBottom_toTopOf="@id/listTripHuScan"
+    app:layout_constraintTop_toBottomOf="@id/ll_hu_start_button">
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:text="@string/lbl_article_no"
+      android:textAppearance="@style/TextStyleSubSubHeader" />
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:text="@string/lbl_scan_qty"
+      android:textAppearance="@style/TextStyleSubSubHeader" />
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:text="@string/lbl_exp_qty"
+      android:textAppearance="@style/TextStyleSubSubHeader" />
+
+    <View
+      android:layout_width="@dimen/dp_30"
+      android:layout_height="match_parent"
+      android:layout_marginLeft="@dimen/dp_5"
+      android:layout_marginRight="@dimen/dp_5" />
+  </LinearLayout>
+
+  <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/listTripHuScan"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_0"
+    android:layout_margin="@dimen/dp_5"
+    android:layout_weight="1"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/ll_inward_list_header" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/mobile_navigation"
+  app:startDestination="@+id/nav_home">
+
+  <!-- Navigation Menu -->
+  <fragment
+    android:id="@+id/nav_home"
+    android:name="com.itek.retail.ui.home.HomeFragment"
+    android:label="@string/menu_home"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/nav_home"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_home" />
+
+  <fragment
+    android:id="@+id/nav_app_info"
+    android:name="com.itek.retail.ui.navmenu.AppInfoFragment"
+    android:label="@string/menu_app_info"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/nav_home"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_app_info" />
+
+  <fragment
+    android:id="@+id/nav_change_pass"
+    android:name="com.itek.retail.ui.resetpassword.ResetPasswordFragment"
+    android:label="@string/menu_change_pass"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/nav_home"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_reset_password" />
+
+  <!--<fragment
+    android:id="@+id/nav_config"
+    android:name="com.itek.retail.ui.drawermenu.DrawerMenuConfigFragment"
+    android:label="@string/menu_config"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/nav_home"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_drawer_menu_config" />
+
+  <fragment
+    android:id="@+id/nav_setup"
+    android:name="com.itek.retail.ui.drawermenu.DrawerMenuSetupFragment"
+    android:label="@string/menu_config"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/nav_home"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_drawer_menu_setup" />-->
+
+  <!-- Action Menu -->
+  <fragment
+    android:id="@+id/action_menu_search"
+    android:name="com.itek.retail.ui.actionmenu.ActionMenuSearchFragment"
+    tools:layout="@layout/fragment_action_menu_search" />
+
+  <fragment
+    android:id="@+id/action_menu_chat"
+    android:name="com.itek.retail.ui.actionmenu.ActionMenuMsgFragment"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/mobile_navigation"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_action_menu_chat" />
+
+  <!-- menu_notify -->
+  <fragment
+    android:id="@+id/action_menu_notify"
+    android:name="com.itek.retail.ui.actionmenu.ActionMenuNotifyFragment"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/mobile_navigation"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_action_menu_notify" />
+
+  <fragment
+    android:id="@+id/action_menu_notify_process"
+    android:name="com.itek.retail.ui.actionmenu.ActionMenuNotifyTypeListFragment"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/mobile_navigation"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_action_menu_notify_type_list" />
+
+  <!-- Home -->
+  <fragment
+    android:id="@+id/home_tab_home"
+    android:name="com.itek.retail.ui.home.TabHomeFragment"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/mobile_navigation"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_tab_home" />
+
+  <fragment
+    android:id="@+id/home_tab_favourites"
+    android:name="com.itek.retail.ui.home.TabFavouritesFragment"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/mobile_navigation"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_tab_favorites" />
+
+  <fragment
+    android:id="@+id/home_tab_dashboard"
+    android:name="com.itek.retail.ui.home.TabDashboardFragment"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/mobile_navigation"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_tab_dashboard" />
+
+  <!-- Encoding -->
+  <fragment
+    android:id="@+id/encoding"
+    android:name="com.itek.retail.ui.encoding.EncodingMainFragment"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/mobile_navigation"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_encoding_main" />
+
+  <!--<fragment
+    android:id="@+id/encoding_config"
+    android:name="com.itek.retail.ui.encoding.EncodingConfigFragment"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/mobile_navigation"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_encoding_config" />-->
+
+  <fragment
+    android:id="@+id/encoding_verify"
+    android:name="com.itek.retail.ui.encoding.EncodingVerifyFragment"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/mobile_navigation"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_encoding_verify" />
+
+  <fragment
+    android:id="@+id/encoding_start"
+    android:name="com.itek.retail.ui.encoding.EncodingStartFragment"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/mobile_navigation"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_encoding_start" />
+
+  <!-- Inventory -->
+  <fragment
+    android:id="@+id/inventory"
+    android:name="com.itek.retail.ui.inventory.InventoryMainFragment"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/mobile_navigation"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_inventory_main" />
+
+  <!--<fragment
+    android:id="@+id/inventory_config"
+    android:name="com.itek.retail.ui.inventory.InventoryConfigFragment"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/mobile_navigation"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_inventory_config" />-->
+
+  <fragment
+    android:id="@+id/inventory_start"
+    android:name="com.itek.retail.ui.inventory.InventoryStartFragment"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/mobile_navigation"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_inventory_start" />
+
+  <fragment
+    android:id="@+id/inventory_brand"
+    android:name="com.itek.retail.ui.inventory.InventoryBrandFragment"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/mobile_navigation"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_inventory_brand" />
+
+  <fragment
+    android:id="@+id/stock_correction"
+    android:name="com.itek.retail.ui.inventory.stockcorrection.StockCorrectionMainFragment"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/mobile_navigation"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_stock_correction_main" />
+
+  <fragment
+    android:id="@+id/stock_correction_start"
+    android:name="com.itek.retail.ui.inventory.stockcorrection.StockCorrectionStartFragment"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/mobile_navigation"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_stock_correction_start" />
+
+  <!-- Search -->
+  <fragment
+    android:id="@+id/search_main"
+    android:name="com.itek.retail.ui.search.SearchMainFragment"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/mobile_navigation"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_search_main" />
+
+  <fragment
+    android:id="@+id/search_product"
+    android:name="com.itek.retail.ui.search.productsearch.ProductSearchFragment"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/mobile_navigation"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_product_search" />
+
+  <fragment
+    android:id="@+id/search_product_details"
+    android:name="com.itek.retail.ui.search.productsearch.ProductSearchDetailsFragment"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/mobile_navigation"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_product_search_details" />
+
+  <fragment
+    android:id="@+id/omnichannel"
+    android:name="com.itek.retail.ui.search.omnichannel.OmniChannelFragment"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/mobile_navigation"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_omnichannel" />
+
+  <fragment
+    android:id="@+id/omnichannel_list"
+    android:name="com.itek.retail.ui.search.omnichannel.OmniChannelListFragment"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/mobile_navigation"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_omnichannel_list" />
+
+  <fragment
+    android:id="@+id/omnichannel_list_details"
+    android:name="com.itek.retail.ui.search.omnichannel.OmniChannelListDetailsFragment"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/mobile_navigation"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_omnichannel_list_details" />
+
+  <fragment
+    android:id="@+id/omnichannel_start"
+    android:name="com.itek.retail.ui.search.omnichannel.OmniChannelStartFragment"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/mobile_navigation"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_omnichannel_start" />
+
+  <fragment
+    android:id="@+id/omnichannel_orderstats"
+    android:name="com.itek.retail.ui.search.omnichannel.OmniChannelOrderStatsFragment"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/mobile_navigation"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_omnichannel_order_stats" />
+
+  <fragment
+    android:id="@+id/omnichannel_orderstats_today"
+    android:name="com.itek.retail.ui.search.omnichannel.TabOmniChannelOrderStatsFragment"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/mobile_navigation"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_tab_omnichannel_order_stats" />
+
+  <!-- Movement -->
+  <fragment
+    android:id="@+id/movement"
+    android:name="com.itek.retail.ui.movement.MovementMainFragment"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/mobile_navigation"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_movement_main" />
+
+  <fragment
+    android:id="@+id/replenishment_list"
+    android:name="com.itek.retail.ui.movement.replenishment.ReplenishmentListFragment"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/mobile_navigation"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_replenishment_list" />
+
+  <fragment
+    android:id="@+id/replenishment_start"
+    android:name="com.itek.retail.ui.movement.replenishment.ReplenishmentStartFragment"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/mobile_navigation"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_replenishment_start" />
+
+  <fragment
+    android:id="@+id/movement_start"
+    android:name="com.itek.retail.ui.movement.MovementStartFragment"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/mobile_navigation"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_movement_start" />
+
+  <!-- Reset password-->
+  <fragment
+    android:id="@+id/ResetPassword"
+    android:name="com.itek.retail.ui.resetpassword.ResetPasswordFragment"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/mobile_navigation"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_reset_password" />
+
+  <!-- Inward-->
+
+  <fragment
+    android:id="@+id/inward_main"
+    android:name="com.itek.retail.ui.inward.InwardMainFragment"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/mobile_navigation"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_inward_main" />
+
+  <fragment
+    android:id="@+id/inward_trips"
+    android:name="com.itek.retail.ui.inward.grn.InwardTripsFragment"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/mobile_navigation"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_inward_trips" />
+  <fragment
+    android:id="@+id/inward_grn_start"
+    android:name="com.itek.retail.ui.inward.grn.InwardGrnStartFragment"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/mobile_navigation"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_inward_grn_start" />
+
+  <fragment
+    android:id="@+id/inward_grn_trip_details"
+    android:name="com.itek.retail.ui.inward.grn.InwardGrnTripDetailsFragment"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/mobile_navigation"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_inward_grn_trip_details" />
+
+  <fragment
+    android:id="@+id/inward_grn_trip_data"
+    android:name="com.itek.retail.ui.inward.grn.InwardGrnTripsDataFragment"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/mobile_navigation"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_inward_grn_trips_data" />
+
+  <fragment
+    android:id="@+id/inward_hu_verification"
+    android:name="com.itek.retail.ui.inward.huverification.InwardHuVerificationFragment"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/mobile_navigation"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_inward_hu_verification" />
+
+  <!-- Outward -->
+  <fragment
+    android:id="@+id/outward"
+    android:name="com.itek.retail.ui.outward.OutwardPickDataFragment"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/mobile_navigation"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_outward_pick_data" />
+
+  <fragment
+    android:id="@+id/outward_trips"
+    android:name="com.itek.retail.ui.outward.OutwardPickListsFragment"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/mobile_navigation"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_outward_pick_lists" />
+
+  <fragment
+    android:id="@+id/outward_list"
+    android:name="com.itek.retail.ui.outward.OutwardPickListDetailsFragment"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/mobile_navigation"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_outward_picklist_detalis" />
+
+  <fragment
+    android:id="@+id/pdv_outward_start"
+    android:name="com.itek.retail.ui.outward.OutwardPickStartFragment"
+    app:launchSingleTop="true"
+    app:popUpTo="@id/mobile_navigation"
+    app:popUpToInclusive="true"
+    tools:layout="@layout/fragment_outward_pick_start" />
+
+</navigation>

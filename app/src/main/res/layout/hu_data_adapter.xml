@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <data>
+    <variable
+      name="huStatus"
+      type="com.itek.retail.model.HUStatus" />
+  </data>
+
+  <androidx.appcompat.widget.LinearLayoutCompat
+    android:id="@+id/llHeader"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_40"
+    android:clickable="true"
+    android:orientation="horizontal"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <com.itek.retail.ui.customviews.SortHeaderView
+      android:id="@+id/txtHuNumber"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:textStyle="bold"
+      app:sortColumn="hu_no"
+      android:textAppearance="@style/TextStyleRegular" />
+
+    <com.itek.retail.ui.customviews.SortHeaderView
+      android:id="@+id/txtHuExpQty"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:text="@string/lbl_exp_qty"
+      android:textAppearance="@style/TextStyleRegular"
+      app:sortColumn="exp_qty"
+      android:textStyle="bold" />
+
+    <com.itek.retail.ui.customviews.SortHeaderView
+      android:id="@+id/txtHuScanQty"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:visibility="visible"
+      android:text="@string/lbl_scan_qty"
+      app:sortColumn="scan_qty"
+      android:textAppearance="@style/TextStyleRegular"
+      android:textStyle="bold" />
+
+    <com.itek.retail.ui.customviews.SortHeaderView
+      android:id="@+id/txtHuStatus"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:visibility="visible"
+      android:text="@string/lbl_grn_status"
+      app:sortColumn="status"
+      android:textAppearance="@style/TextStyleRegular"
+      android:textStyle="bold" />
+
+    <ImageButton
+      android:id="@+id/imgInfo"
+      android:layout_width="wrap_content"
+      android:layout_height="match_parent"
+      android:paddingLeft="@dimen/dp_7_half"
+      android:paddingRight="@dimen/dp_7_half"
+      android:layout_gravity="center"
+      android:background="@color/transparent"
+      android:clickable="true"
+      android:scaleType="center"
+      android:src="@drawable/ic_list_info"
+      android:visibility="visible"
+      android:gravity="center" />
+
+    <ImageButton
+      android:id="@+id/imgAction"
+      android:layout_width="wrap_content"
+      android:layout_height="match_parent"
+      android:paddingLeft="@dimen/dp_7_half"
+      android:paddingRight="@dimen/dp_7_half"
+      android:layout_gravity="center"
+      android:background="@color/transparent"
+      android:clickable="true"
+      android:rotation="180"
+      android:scaleType="center"
+      android:src="@drawable/ic_back_arrow"
+      android:visibility="visible"
+      android:gravity="center" />
+
+  </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

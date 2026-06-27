@@ -1,0 +1,65 @@
+{
+  "data": [
+    {
+      "tripID": "1",
+      "tripNum": "1648811642",
+      "isManualTrip": false,
+      "referenceTripNum": "R1642",
+      "srcLocCode": "WD29",
+      "srcLocType": "DC",
+      "destLocCode": "TW61",
+      "destLocType": "Store",
+      "totalHuCount": 3,
+      "completedHuCount": 0
+    },
+    {
+      "tripID": "2",
+      "tripNum": "1648811643",
+      "isManualTrip": false,
+      "referenceTripNum": "",
+      "srcLocCode": "WD34",
+      "srcLocType": "DC",
+      "destLocCode": "TW61",
+      "destLocType": "Store",
+      "totalHuCount": 5,
+      "completedHuCount": 0
+    },
+    {
+      "tripID": "3",
+      "tripNum": "1648811644",
+      "isManualTrip": false,
+      "referenceTripNum": "RF1644",
+      "srcLocCode": "ITTS",
+      "srcLocType": "Store",
+      "destLocCode": "TW61",
+      "destLocType": "Store",
+      "totalHuCount": 4,
+      "completedHuCount": 0
+    },
+    {
+      "tripID": "4",
+      "tripNum": "1648811645",
+      "isManualTrip": false,
+      "referenceTripNum": "RF1645",
+      "srcLocCode": "DUBS",
+      "srcLocType": "Store",
+      "destLocCode": "TW61",
+      "destLocType": "Store",
+      "totalHuCount": 3,
+      "completedHuCount": 0
+    },
+    {
+      "tripID": "5",
+      "tripNum": "1648811648",
+      "isManualTrip": false,
+      "referenceTripNum": "",
+      "srcLocCode": "V123",
+      "isEncodeTags": false,
+      "srcLocType": "Vendor",
+      "destLocCode": "TW61",
+      "destLocType": "Store",
+      "totalHuCount": 7,
+      "completedHuCount": 0
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="@dimen/dp_80"
+  android:layout_height="@dimen/dp_50"
+  android:clickable="true"
+  android:drawablePadding="@dimen/dp_2"
+  android:ellipsize="end"
+  android:focusable="true"
+  android:gravity="center"
+  android:orientation="horizontal"
+  android:padding="@dimen/dp_5"
+  android:singleLine="true"
+  android:textAppearance="@style/TextStyleQuickActionMenuItem"
+  android:textIsSelectable="false" />

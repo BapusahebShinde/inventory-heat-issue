@@ -1,0 +1,333 @@
+package com.itek.retail.model;
+
+import static com.itek.retail.common.AppCommonMethods.chkNull;
+import static com.itek.retail.common.AppCommonMethods.isNonEmpty;
+import static com.itek.retail.common.AppCommonMethods.isUse24LengthTIDForUpload;
+
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.Index;
+import androidx.room.PrimaryKey;
+
+import com.google.gson.annotations.SerializedName;
+import com.itek.retail.apis.ParamConstants;
+import com.itek.retail.common.AppCommonMethods;
+import com.itek.retail.common.AppConstants;
+import com.itek.retail.common.CommonActivity;
+import com.itek.retail.common.SharedPrefManager;
+import com.lidroid.xutils.db.annotation.NotNull;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.Serializable;
+
+/**
+ * The Inventory.
+ */
+
+@Entity(tableName = "inventory", indices = {@Index(value = {"epc", "new_epc", "session_id"}, unique = true)})
+
+public class Inventory implements Serializable, Parcelable{
+  
+  public static final Creator<Inventory> CREATOR = new Creator<Inventory>(){
+    @Override
+    public Inventory createFromParcel(Parcel in){
+      return new Inventory(in);
+    }
+    
+    @Override
+    public Inventory[] newArray(int size){
+      return new Inventory[size];
+    }
+  };
+  @PrimaryKey(autoGenerate = true)//auto increment ino
+  public Integer ino;
+  @ColumnInfo(name = "session_id")
+  @NotNull
+  public String sessionId;
+  @ColumnInfo(name = "session_type")
+  @NotNull
+  public int sessionType;
+  @ColumnInfo(name = "session_action")
+  @NotNull
+  public int sessionAction;
+  @ColumnInfo(name = "epc", defaultValue = "")
+  @NotNull
+  public String epc;
+  @ColumnInfo(name = "ean", defaultValue = "")
+  @NotNull
+  public String ean;
+  @ColumnInfo(name = "zone", defaultValue = "")
+  @NotNull
+  public String zone;
+  @ColumnInfo(name = "zone_id", defaultValue = "0")
+  @NotNull
+  public String zoneId;
+  @ColumnInfo(name = "tag_type", defaultValue = "0")//1-Standard 2-Non Standard 3-unencoded
+  public int tagtype=0;
+  @ColumnInfo(name = "tid", defaultValue = "")
+  public String tid="";
+  @ColumnInfo(name = "rssi", defaultValue = "")
+  public String rssi="";
+  @ColumnInfo(name = "is_hard_tag", defaultValue = "null")
+  public Boolean isHardTag;
+  @ColumnInfo(name = "pc_data", defaultValue = "")
+  public String pcdata;
+  @ColumnInfo(name = "new_epc", defaultValue = "")
+  @NotNull
+  public String newEpc = "";
+  @ColumnInfo(name = "is_uploaded", defaultValue = "false")
+  public boolean isUploaded = false;
+  @ColumnInfo(name = "upload_retry_count", defaultValue = "0")
+  public int retryUploadCount;
+  @ColumnInfo(name = "insert_time", defaultValue = "")
+  @NotNull
+  public String insertTime="";
+  @ColumnInfo(name = "is_found", defaultValue = "false")
+  public boolean isFound = false;
+  @ColumnInfo(name = "tag_status", defaultValue = AppConstants.NON_ENCODED)
+  public String tagStatus=AppConstants.NON_ENCODED;
+  @ColumnInfo(name = "fifo_date",defaultValue = "")
+  @SerializedName(value = "fifo_date", alternate = {"date"})
+  public String fifoDate="";
+  @ColumnInfo(name = "write_retry_count", defaultValue = "0")
+  public int retryWriteCount = 0;
+  @ColumnInfo(name = "write_fail_reason", defaultValue = "")
+  public String writeFailReason ="";
+  @ColumnInfo(name = "enc_verify_status", defaultValue = "2")
+  public Integer encVerifyStatus = 2;
+  @ColumnInfo(name = "remark", defaultValue = "")
+  public String remark = "";
+  /**
+   * Instantiates a new Inventory.
+   */
+  public Inventory(){/*Empty constructor*/}
+  
+  /**
+   * Instantiates a new Inventory.
+   *
+   * @param sessionId   the session id
+   * @param sessionType the session type
+   */
+  @Ignore
+  public Inventory(String sessionId, int sessionType){
+    
+    this.sessionId = sessionId;
+    this.sessionType = sessionType;
+  }
+  
+  /**
+   * Instantiates a new Inventory.
+   *
+   * @param sessionId     the session id
+   * @param sessionType   the session type
+   * @param sessionAction the session action
+   */
+  @Ignore
+  public Inventory(String sessionId, int sessionType, int sessionAction){
+    
+    this.sessionId = sessionId;
+    this.sessionType = sessionType;
+    this.sessionAction = sessionAction;
+  }
+  
+  /**
+   * Instantiates a new Inventory.
+   *
+   * @param sessionId     the session id
+   * @param sessionType   the session type
+   * @param sessionAction the session action
+   * @param epc           the epc
+   */
+  @Ignore
+  public Inventory(String sessionId, int sessionType, int sessionAction, String epc){
+    
+    this.sessionId = sessionId;
+    this.sessionType = sessionType;
+    this.sessionAction = sessionAction;
+    this.epc = chkNull(epc,"").toUpperCase();
+  }
+  
+  @Ignore
+  public Inventory(String sessionId, int sessionType, int sessionAction, String epc, String tid){
+    
+    this.sessionId = sessionId;
+    this.sessionType = sessionType;
+    this.sessionAction = sessionAction;
+    this.epc = chkNull(epc,"").toUpperCase();
+    this.tid = tid;
+  }
+  
+  /**
+   * Instantiates a new Inventory.
+   *
+   * @param in the in
+   */
+  protected Inventory(Parcel in){
+    if(in.readByte() == 0){ ino = null; }
+    else{ ino = in.readInt(); }
+    sessionId = in.readString();
+    sessionType = in.readInt();
+    sessionAction = in.readInt();
+    epc = in.readString();
+    tagtype = in.readInt();
+    isHardTag = in.readByte() != 0;
+    tid = in.readString();
+    rssi = in.readString();
+    pcdata = in.readString();
+    newEpc = in.readString();
+    isUploaded = in.readByte() != 0;
+    retryUploadCount = in.readInt();
+    insertTime = in.readString();
+    tagStatus = in.readString();
+    fifoDate = in.readString();
+    retryWriteCount = in.readInt();
+    writeFailReason = in.readString();
+    encVerifyStatus = in.readInt();
+    remark = in.readString();
+  }
+  
+  public boolean isDecoded(){
+    return chkNull(this.newEpc, this.epc).startsWith("0");
+  }
+  
+  public Integer getEncVerifyStatus(){
+    return chkNull(encVerifyStatus,2);
+  }
+  
+  @Override
+  public int describeContents(){
+    return 0;
+  }
+  
+  @Override
+  public void writeToParcel(Parcel parcel, int i){
+    
+    if(ino == null){ parcel.writeByte((byte) 0); }
+    else{
+      parcel.writeByte((byte) 1);
+      parcel.writeInt(ino);
+    }
+    parcel.writeString(sessionId);
+    parcel.writeInt(chkNull(sessionType, 0));
+    parcel.writeInt(chkNull(sessionAction, 0));
+    parcel.writeString(epc);
+    parcel.writeInt(chkNull(tagtype, 0));
+    parcel.writeByte((byte) (isHardTag ? 1 : 0));
+    parcel.writeString(tid);
+    parcel.writeString(rssi);
+    parcel.writeString(pcdata);
+    parcel.writeString(newEpc);
+    parcel.writeByte((byte) (isUploaded ? 1 : 0));
+    parcel.writeInt(chkNull(retryUploadCount, 0));
+    parcel.writeString(insertTime);
+    parcel.writeString(tagStatus);
+    parcel.writeString(fifoDate);
+    parcel.writeInt(chkNull(retryWriteCount, 0));
+    parcel.writeString(writeFailReason);
+    parcel.writeInt(encVerifyStatus);
+    parcel.writeString(remark);
+  }
+  
+  public JSONObject toOnlyEpcJson(){
+    JSONObject dataObject = new JSONObject();
+    try{
+      dataObject.put(ParamConstants.EPC, this.epc);
+    }
+    catch(JSONException e){ e.printStackTrace(); }
+    return dataObject;
+  }
+  
+  public JSONObject toShortJson(CommonActivity context){
+    JSONObject dataObject = new JSONObject();
+    try{
+      dataObject.put(ParamConstants.EPC, this.epc);
+      if(isUse24LengthTIDForUpload && chkNull(this.tid,"").length() > 24)
+        dataObject.put(ParamConstants.TID, this.tid.substring(0, 24));
+      else
+        dataObject.put(ParamConstants.TID, this.tid);
+      dataObject.put(ParamConstants.EAN, chkNull(this.ean, context.epcEncoderDecoder.getBarcodeFromEPC(AppCommonMethods.chkZeroStart(this.newEpc, this.epc))));
+    }
+    catch(JSONException e){ e.printStackTrace(); }
+    return dataObject;
+  }
+  
+  /**
+   * To json json object.
+   *
+   * @return the json object
+   */
+  public JSONObject toJson(CommonActivity context){
+    final boolean isReadOperation = sessionType > 0 && sessionType != 3;
+    JSONObject dataObject = new JSONObject();
+    try{
+      if(sessionType == AppCommonMethods.SessionType.OMNICHANNEL.getValue() || sessionType == AppCommonMethods.SessionType.SEARCH_FIFO.getValue() || sessionType == AppCommonMethods.SessionType.SEARCH_LIST.getValue()){
+        dataObject.put(ParamConstants.IS_DECODED, isDecoded());
+        dataObject.put(ParamConstants.PRE_EPC, this.epc);
+        dataObject.put(ParamConstants.EPC, chkNull(this.newEpc, this.epc));
+      }
+      else if(isNonEmpty(this.newEpc)){
+        dataObject.put(ParamConstants.PRE_EPC, this.epc);
+        dataObject.put(ParamConstants.EPC, this.newEpc);
+      }
+      else dataObject.put(ParamConstants.EPC, this.epc);
+      
+      if(isUse24LengthTIDForUpload && chkNull(this.tid,"").length() > 24){
+        dataObject.put(ParamConstants.TID, this.tid.substring(0, 24));
+      }
+      else{
+        dataObject.put(ParamConstants.TID, this.tid);
+      }
+      
+      dataObject.put(ParamConstants.TAG_TYPE, AppCommonMethods.TagType.get(this.tagtype).name());
+      dataObject.put(ParamConstants.IS_HARD_TAG, this.isHardTag);
+      if((sessionType == AppCommonMethods.SessionType.ENCODING.getValue() || sessionType == AppCommonMethods.SessionType.ENCODING_THAN.getValue()) && isNonEmpty(this.insertTime))
+        dataObject.put(ParamConstants.TRANSACTION_DATE, this.insertTime);
+      if(isNonEmpty(this.rssi)){
+        JSONArray rssiarray = new JSONArray();
+        JSONObject rssiObject = new JSONObject();
+        rssiObject.put(ParamConstants.ANTENNA_NO, isReadOperation ? "1" : "");
+        rssiObject.put(ParamConstants.RSSI, this.rssi);
+        rssiObject.put(ParamConstants.PHASE, isReadOperation ? null : "");
+        rssiarray.put(rssiObject);
+        dataObject.put(ParamConstants.RSSI, rssiarray);
+      }
+      dataObject.put(ParamConstants.SKU_ID, chkNull(this.ean, context.epcEncoderDecoder.getBarcodeFromEPC(AppCommonMethods.chkZeroStart(this.newEpc, this.epc))));
+      dataObject.put(ParamConstants.ZONE, chkNull(this.zone, ""));
+      if(isNonEmpty(this.zone) && !chkNull(this.zoneId, "0").equalsIgnoreCase("0"))
+        dataObject.put(ParamConstants.ZONE_ID, chkNull(this.zoneId, "0"));
+      if(isNonEmpty(this.newEpc) && sessionType == AppCommonMethods.SessionType.ENCODING.getValue() || sessionType == AppCommonMethods.SessionType.ENCODING_THAN.getValue() || sessionType == AppCommonMethods.SessionType.OMNICHANNEL.getValue()){
+        dataObject.put(ParamConstants.IS_UPLOADED, chkNull(retryUploadCount, 0));
+        dataObject.put(ParamConstants.UPLOAD_RETRY_COUNT, chkNull(retryUploadCount, 0));
+      }
+      if(isNonEmpty(this.newEpc) && (sessionType == AppCommonMethods.SessionType.ENCODING.getValue() || sessionType == AppCommonMethods.SessionType.ENCODING_THAN.getValue()) && isNonEmpty(fifoDate) && SharedPrefManager.getBoolean(ParamConstants.IS_SHOW_FIFO_DATE_FOR_ENCODING))
+        dataObject.put(ParamConstants.FIFO_DATE, fifoDate);
+    }
+    catch(JSONException e){ e.printStackTrace(); }
+    return dataObject;
+  }
+  
+  public String getTid(){
+    final String tid = chkNull(this.tid, "");
+    return tid.length() > 24 ? tid.substring(0, 24) : tid;
+  }
+  
+  @Override
+  public boolean equals(Object o){
+    if(this == o) return true;
+    if(o == null || getClass() != o.getClass()) return false;
+    Inventory inventory = (Inventory) o;
+    return sessionType == inventory.sessionType && sessionAction == inventory.sessionAction && sessionId.equals(inventory.sessionId) && ((isNonEmpty(tid) && getTid().equalsIgnoreCase(chkNull(inventory.getTid(), "_"))) || epc.equalsIgnoreCase(inventory.epc));
+  }
+  
+  @Override
+  public String toString(){
+    return "Inventory{" + ", sessionType=" + sessionType + ", sessionAction=" + sessionAction + ", epc='" + epc + '\'' + ", ean='" + ean + '\'' + ", tid='" + tid + '\'' + ", rssi='" + rssi + '\'' + ", pcdata='" + pcdata + '\'' + ", newEpc='" + newEpc + '\'' + ", isUploaded=" + isUploaded + '}';
+  }
+}

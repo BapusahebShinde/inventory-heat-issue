@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@color/white"
+  android:clickable="true"
+  tools:context=".ui.search.omnichannel.OmniChannelListDetailsFragment">
+
+  <include
+    android:id="@+id/header"
+    layout="@layout/header_title_layout" />
+
+  <TextView
+    android:id="@+id/txt_omnichannel_orderno_ean"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/border_bottom"
+    android:gravity="center"
+    android:paddingTop="@dimen/dp_5"
+    android:paddingBottom="@dimen/dp_5"
+    android:textColor="@color/txtDarkGray"
+    android:textSize="@dimen/sp_18"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/header" />
+
+  <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/list_omnichannel_search_details"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_0"
+    android:layout_gravity="center"
+    android:layout_margin="@dimen/dp_15"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/txt_omnichannel_orderno_ean" />
+
+  <com.google.android.material.floatingactionbutton.FloatingActionButton
+    android:id="@+id/btnUpload"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="@dimen/dp_5"
+    android:layout_marginBottom="@dimen/dp_5"
+    android:visibility="gone"
+    app:backgroundTint="@color/white"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="@id/btnSwipeUpload"
+    app:srcCompat="@drawable/ic_upload" />
+
+  <com.itek.retail.ui.customviews.swipeButton.ProSwipeButtonVar
+    android:id="@+id/btnSwipeUpload"
+    android:layout_width="@dimen/dp_0"
+    android:layout_height="@dimen/dp_0"
+    android:layout_marginLeft="@dimen/dp_5"
+    android:layout_marginRight="@dimen/dp_5"
+    android:layout_marginBottom="@dimen/dp_5"
+    android:background="@drawable/bg_white_red"
+    android:clickable="true"
+    android:visibility="gone"
+    app:btn_text=""
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintHeight_default="percent"
+    app:layout_constraintHeight_percent="0.25"
+    app:layout_constraintLeft_toLeftOf="@id/btnUpload"
+    app:layout_constraintRight_toRightOf="@id/btnUpload"
+    app:layout_constraintWidth_default="percent"
+    app:layout_constraintWidth_percent="0.05" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:background="@drawable/border_cust_alert"
+  android:orientation="vertical">
+
+  <ImageButton
+    android:id="@+id/btn_dialog_title_close"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_above="@id/ll_encode_achievements"
+    android:layout_alignRight="@id/ll_encode_achievements"
+    android:layout_alignParentTop="true"
+    android:layout_gravity="top|right"
+    android:background="@drawable/border_cust_alert"
+    android:padding="@dimen/dp_10"
+    android:scaleType="fitCenter"
+    app:srcCompat="@drawable/ic_popup_window_cancel" />
+
+  <androidx.appcompat.widget.LinearLayoutCompat
+    android:id="@+id/ll_encode_achievements"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:paddingBottom="@dimen/dp_5">
+
+    <ImageView
+      android:id="@+id/img_dialog_title_logo"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_marginRight="@dimen/dp_5"
+      android:scaleType="fitCenter"
+      app:srcCompat="@drawable/ic_achieve" />
+
+    <TextView
+      android:id="@+id/txt_dialog_title"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:gravity="center"
+      android:text="@string/title_achievements"
+      android:textAppearance="@style/TextStyleHeader" />
+
+  </androidx.appcompat.widget.LinearLayoutCompat>
+
+</LinearLayout>

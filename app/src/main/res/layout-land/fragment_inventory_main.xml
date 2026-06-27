@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/swipeLayout"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:background="@color/white"
+  android:clickable="true">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    tools:context=".ui.inventory.InventoryMainFragment">
+
+    <include
+      android:id="@+id/header"
+      layout="@layout/header_title_layout" />
+
+    <include
+      android:id="@+id/ll_sub_header"
+      layout="@layout/header_subtitle_layout"
+      app:layout_constraintTop_toBottomOf="@id/header" />
+
+    <LinearLayout
+      android:id="@+id/ll_inventory_stock_location_brand"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="@dimen/dp_15"
+      android:layout_marginRight="@dimen/dp_15"
+      android:background="@drawable/border_bottom"
+      android:orientation="horizontal"
+      app:layout_constraintTop_toBottomOf="@id/ll_sub_header">
+
+      <com.itek.retail.ui.customviews.HeaderSpinner
+        android:id="@+id/spin_inventory_stock_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:background="@drawable/border_right"
+        app:label="@string/lbl_location" />
+
+      <com.itek.retail.ui.customviews.HeaderSpinner
+        android:id="@+id/spin_inventory_stock_brand"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        app:isMultiSelect="true"
+        app:label="@string/lbl_brand" />
+
+      <com.itek.retail.ui.customviews.HeaderSpinner
+        android:id="@+id/spin_inventory_stock_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:background="@drawable/border_left"
+        android:visibility="gone"
+        app:isMultiSelect="true"
+        app:label="@string/lbl_category" />
+
+    </LinearLayout>
+
+    <LinearLayout
+      android:id="@+id/ll_inventory_stock_current_shortage"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="@dimen/dp_15"
+      android:layout_marginRight="@dimen/dp_15"
+      android:gravity="center"
+      android:orientation="horizontal"
+      android:visibility="visible"
+      app:layout_constraintBottom_toTopOf="@+id/txt_inventory_stock_update_date"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/ll_inventory_stock_location_brand">
+
+      <com.itek.retail.ui.customviews.DashboardDataView
+        android:id="@+id/ddv_inv_current"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/border_right"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:isShowPercent="false"
+        app:label="@string/lbl_current" />
+
+      <com.itek.retail.ui.customviews.DashboardDataView
+        android:id="@+id/ddv_inv_shortage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:isShowPercent="false"
+        app:label="@string/lbl_shortage" />
+
+    </LinearLayout>
+
+    <TextView
+      android:id="@+id/txt_inventory_stock_update_date"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/dp_15"
+      android:background="@drawable/border_bottom"
+      android:gravity="center"
+      android:paddingBottom="@dimen/dp_5"
+      android:textAppearance="@style/TextStyleRegular"
+      android:visibility="invisible"
+      app:layout_constraintBottom_toTopOf="@id/lbl_refresh"
+      app:layout_constraintTop_toBottomOf="@id/ll_inventory_stock_current_shortage" />
+
+    <TextView
+      android:id="@+id/lbl_refresh"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/dp_15"
+      android:background="@drawable/border_bottom"
+      android:gravity="center"
+      android:paddingBottom="@dimen/dp_5"
+      android:text="@string/msg_refresh_dashboard"
+      android:textAppearance="@style/TextStyleSubSubHeader"
+      android:visibility="visible"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/txt_inventory_stock_update_date" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

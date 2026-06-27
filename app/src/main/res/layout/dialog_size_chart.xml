@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/list_dialog_size_chart"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_0"
+    app:layout_constraintBottom_toTopOf="@id/txt_dialog_size_chart_colors"
+    app:layout_constraintHeight_default="percent"
+    app:layout_constraintHeight_percent="0.85"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <TextView
+    android:id="@+id/txt_dialog_size_chart_colors"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dp_10"
+    android:layout_marginBottom="@dimen/dp_5"
+    android:gravity="center"
+    android:text="@string/lbl_colors"
+    android:textAppearance="@style/TextStyleSubHeader"
+    app:layout_constraintBottom_toTopOf="@id/list_dialog_size_chart_colors"
+    app:layout_constraintTop_toBottomOf="@id/list_dialog_size_chart" />
+
+  <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/list_dialog_size_chart_colors"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/txt_dialog_size_chart_colors" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

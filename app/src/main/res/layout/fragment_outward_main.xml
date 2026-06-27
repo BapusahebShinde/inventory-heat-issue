@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:bind="http://schemas.android.com/tools"
+  android:id="@+id/swipeLayout"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:background="@color/white"
+  android:clickable="true">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    bind:context=".ui.outward.OutwardMainViewModel">
+
+    <include
+      android:id="@+id/header"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      layout="@layout/header_title_layout" />
+
+    <include
+      android:id="@+id/ll_sub_header"
+      layout="@layout/header_subtitle_layout"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/header" />
+
+    <LinearLayout
+      android:id="@+id/llDashboardOtw"
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/dp_0"
+      android:orientation="horizontal"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/ll_sub_header">
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <TextView
+          android:id="@+id/lblOtwMainTrips"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@drawable/border_bottom"
+          android:gravity="center"
+          android:padding="@dimen/dp_10"
+          android:text="@string/lbl_pick_lists"
+          android:textAppearance="@style/TextStyleSubSubHeader" />
+
+        <com.itek.retail.ui.customviews.DashboardDataView
+          android:id="@+id/dvOtwMainListTotal"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          android:background="@drawable/border_bottom"/>
+
+        <com.itek.retail.ui.customviews.DashboardDataView
+          android:id="@+id/dvOtwMainListCompleted"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          android:background="@drawable/border_bottom"/>
+
+        <com.itek.retail.ui.customviews.DashboardDataView
+          android:id="@+id/dvOtwMainListPending"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          android:background="@drawable/border_bottom"/>
+
+      </LinearLayout>
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/graywhite"
+        android:orientation="vertical">
+
+        <TextView
+          android:id="@+id/lblOtwMainHus"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@drawable/border_bottom"
+          android:gravity="center"
+          android:padding="@dimen/dp_10"
+          android:text="@string/lbl_pick_eans"
+          android:textAppearance="@style/TextStyleSubSubHeader" />
+
+        <com.itek.retail.ui.customviews.DashboardDataView
+          android:id="@+id/dvOtwMainHusTotal"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          android:background="@drawable/border_bottom"/>
+
+        <com.itek.retail.ui.customviews.DashboardDataView
+          android:id="@+id/dvOtwMainHusCompleted"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          android:background="@drawable/border_bottom"/>
+
+        <com.itek.retail.ui.customviews.DashboardDataView
+          android:id="@+id/dvOtwMainHusPending"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:layout_weight="1"
+          android:background="@drawable/border_bottom"/>
+      </LinearLayout>
+    </LinearLayout>
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

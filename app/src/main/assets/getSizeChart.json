@@ -1,0 +1,480 @@
+{
+  "sizeChartProducts": [
+    {
+      "imageUrl": [
+        "DSC_0012.JPG",
+        "DSC_0013.JPG",
+        null,
+        null
+      ],
+      "title": "women skirt",
+      "ean": "8901198204053",
+      "brand": "Lyra",
+      "category": "Women",
+      "zone": "FOH",
+      "articleNo": "2211189846",
+      "color": "Pink",
+      "size": "XLL",
+      "eanQty": "3"
+    },
+    {
+      "imageUrl": [
+        "DSC_0012.JPG",
+        "DSC_0013.JPG",
+        null,
+        null
+      ],
+      "title": "women skirt",
+      "ean": "8901198204053",
+      "brand": "Lyra",
+      "category": "Women",
+      "zone": "BOH",
+      "articleNo": "2211189846",
+      "color": "Pink",
+      "size": "XLL",
+      "eanQty": "6"
+    },
+    {
+      "imageUrl": [
+        "DSC_0012.JPG",
+        "DSC_0013.JPG",
+        null,
+        null
+      ],
+      "title": "women skirt",
+      "ean": "8901198204053",
+      "brand": "Lyra",
+      "category": "Women",
+      "zone": "FOH",
+      "articleNo": "2211189846",
+      "color": "Pink",
+      "size": "XL",
+      "eanQty": "4"
+    },
+    {
+      "imageUrl": [
+        "DSC_0012.JPG",
+        "DSC_0013.JPG",
+        null,
+        null
+      ],
+      "title": "women skirt",
+      "ean": "8901198204053",
+      "brand": "Lyra",
+      "category": "Women",
+      "zone": "BOH",
+      "articleNo": "2211189846",
+      "color": "Pink",
+      "size": "XL",
+      "eanQty": "10"
+    },
+    {
+      "imageUrl": [
+        "DSC_0012.JPG",
+        "DSC_0013.JPG",
+        null,
+        null
+      ],
+      "title": "women skirt",
+      "ean": "8901198204053",
+      "brand": "Lyra",
+      "category": "Women",
+      "zone": "FOH",
+      "articleNo": "2211189846",
+      "color": "Pink",
+      "size": "L",
+      "eanQty": "10"
+    },
+    {
+      "imageUrl": [
+        "DSC_0012.JPG",
+        "DSC_0013.JPG",
+        null,
+        null
+      ],
+      "title": "women skirt",
+      "ean": "8901198204053",
+      "brand": "Lyra",
+      "category": "Women",
+      "zone": "BOH",
+      "articleNo": "2211189846",
+      "color": "Pink",
+      "size": "L",
+      "eanQty": "26"
+    },
+    {
+      "imageUrl": [
+        "DSC_0012.JPG",
+        null,
+        null,
+        null
+      ],
+      "title": "women skirt",
+      "ean": "8901198204053",
+      "brand": "Lyra",
+      "category": "Women",
+      "zone": "FOH",
+      "articleNo": "2211189846",
+      "color": "Pink",
+      "size": "M",
+      "eanQty": "12"
+    },
+    {
+      "imageUrl": [
+        "DSC_0012.JPG",
+        null,
+        null,
+        null
+      ],
+      "title": "women skirt",
+      "ean": "8901198204053",
+      "brand": "Lyra",
+      "category": "Women",
+      "zone": "BOH",
+      "articleNo": "2211189846",
+      "color": "Pink",
+      "size": "M",
+      "eanQty": "22"
+    },
+    {
+      "imageUrl": [
+        "DSC_0012.JPG",
+        "DSC_0013.JPG",
+        null,
+        null
+      ],
+      "title": "women skirt",
+      "ean": "8901198204053",
+      "brand": "Lyra",
+      "category": "Women",
+      "zone": "FOH",
+      "articleNo": "2211189846",
+      "color": "Pink",
+      "size": "S",
+      "eanQty": "7"
+    },
+    {
+      "imageUrl": [
+        "DSC_0012.JPG",
+        "DSC_0013.JPG",
+        null,
+        null
+      ],
+      "title": "women skirt",
+      "ean": "8901198204053",
+      "brand": "Lyra",
+      "category": "Women",
+      "zone": "BOH",
+      "articleNo": "2211189846",
+      "color": "Pink",
+      "size": "S",
+      "eanQty": "12"
+    },
+    {
+      "imageUrl": [
+        "DSC_0010.JPG",
+        "DSC_0011.JPG",
+        null,
+        null
+      ],
+      "title": "women skirt",
+      "ean": "12345678901225",
+      "brand": "Lyra",
+      "category": "Women",
+      "zone": "",
+      "articleNo": "2211189846",
+      "color": "Blue",
+      "size": "XLL",
+      "eanQty": "0"
+    },
+    {
+      "imageUrl": [
+        "DSC_0011.JPG",
+        null,
+        null,
+        null
+      ],
+      "title": "women skirt",
+      "ean": "12345678901224",
+      "brand": "Lyra",
+      "category": "Women",
+      "zone": "FOH",
+      "articleNo": "2211189846",
+      "color": "Blue",
+      "size": "XL",
+      "eanQty": "4"
+    },
+    {
+      "imageUrl": [
+        "DSC_0010.JPG",
+        "DSC_0011.JPG",
+        null,
+        null
+      ],
+      "title": "women skirt",
+      "ean": "12345678901224",
+      "brand": "Lyra",
+      "category": "Women",
+      "zone": "BOH",
+      "articleNo": "2211189846",
+      "color": "Blue",
+      "size": "XL",
+      "eanQty": "10"
+    },
+    {
+      "imageUrl": [
+        "DSC_0011.JPG",
+        null,
+        null,
+        null
+      ],
+      "title": "women skirt",
+      "ean": "12345678901223",
+      "brand": "Lyra",
+      "category": "Women",
+      "zone": "FOH",
+      "articleNo": "2211189846",
+      "color": "Blue",
+      "size": "L",
+      "eanQty": "10"
+    },
+    {
+      "imageUrl": [
+        "DSC_0010.JPG",
+        "DSC_0011.JPG",
+        null,
+        null
+      ],
+      "title": "women skirt",
+      "ean": "12345678901223",
+      "brand": "Lyra",
+      "category": "Women",
+      "zone": "BOH",
+      "articleNo": "2211189846",
+      "color": "Blue",
+      "size": "L",
+      "eanQty": "26"
+    },
+    {
+      "imageUrl": [
+        "DSC_0011.JPG",
+        null,
+        null,
+        null
+      ],
+      "title": "women skirt",
+      "ean": "12345678901222",
+      "brand": "Lyra",
+      "category": "Women",
+      "zone": "FOH",
+      "articleNo": "2211189846",
+      "color": "Blue",
+      "size": "M",
+      "eanQty": "12"
+    },
+    {
+      "imageUrl": [
+        "DSC_0010.JPG",
+        "DSC_0011.JPG",
+        null,
+        null
+      ],
+      "title": "women skirt",
+      "ean": "12345678901222",
+      "brand": "Lyra",
+      "category": "Women",
+      "zone": "BOH",
+      "articleNo": "2211189846",
+      "color": "Blue",
+      "size": "M",
+      "eanQty": "22"
+    },
+    {
+      "imageUrl": [
+        "DSC_0011.JPG",
+        null,
+        null,
+        null
+      ],
+      "title": "women skirt",
+      "ean": "12345678901221",
+      "brand": "Lyra",
+      "category": "Women",
+      "zone": "FOH",
+      "articleNo": "2211189846",
+      "color": "Blue",
+      "size": "S",
+      "eanQty": "7"
+    },
+    {
+      "imageUrl": [
+        "DSC_0010.JPG",
+        "DSC_0011.JPG",
+        null,
+        null
+      ],
+      "title": "women skirt",
+      "ean": "12345678901221",
+      "brand": "Lyra",
+      "category": "Women",
+      "zone": "BOH",
+      "articleNo": "2211189846",
+      "color": "Blue",
+      "size": "S",
+      "eanQty": "12"
+    },
+    {
+      "imageUrl": [
+        "DSC_0014.JPG",
+        "DSC_0015.JPG",
+        null,
+        null
+      ],
+      "title": "women skirt",
+      "ean": "12345678901220",
+      "brand": "Lyra",
+      "category": "Women",
+      "zone": "FOH",
+      "articleNo": "2211189846",
+      "color": "Green",
+      "size": "XLL",
+      "eanQty": "3"
+    },
+    {
+      "imageUrl": [
+        "DSC_0015.JPG",
+        null,
+        null,
+        null
+      ],
+      "title": "women skirt",
+      "ean": "12345678901220",
+      "brand": "Lyra",
+      "category": "Women",
+      "zone": "BOH",
+      "articleNo": "2211189846",
+      "color": "Green",
+      "size": "XLL",
+      "eanQty": "6"
+    },
+    {
+      "imageUrl": [
+        "DSC_0014.JPG",
+        "DSC_0015.JPG",
+        null,
+        null
+      ],
+      "title": "women skirt",
+      "ean": "12345678901219",
+      "brand": "Lyra",
+      "category": "Women",
+      "zone": "FOH",
+      "articleNo": "2211189846",
+      "color": "Green",
+      "size": "XL",
+      "eanQty": "4"
+    },
+    {
+      "imageUrl": [
+        "DSC_0015.JPG",
+        null,
+        null,
+        null
+      ],
+      "title": "women skirt",
+      "ean": "12345678901219",
+      "brand": "Lyra",
+      "category": "Women",
+      "zone": "BOH",
+      "articleNo": "2211189846",
+      "color": "Green",
+      "size": "XL",
+      "eanQty": "10"
+    },
+    {
+      "imageUrl": [
+        "DSC_0014.JPG",
+        "DSC_0015.JPG",
+        null,
+        null
+      ],
+      "title": "women skirt",
+      "ean": "12345678901218",
+      "brand": "Lyra",
+      "category": "Women",
+      "zone": "FOH",
+      "articleNo": "2211189846",
+      "color": "Green",
+      "size": "L",
+      "eanQty": "10"
+    },
+    {
+      "imageUrl": [
+        "DSC_0015.JPG",
+        null,
+        null,
+        null
+      ],
+      "title": "women skirt",
+      "ean": "12345678901218",
+      "brand": "Lyra",
+      "category": "Women",
+      "zone": "BOH",
+      "articleNo": "2211189846",
+      "color": "Green",
+      "size": "L",
+      "eanQty": "26"
+    },
+    {
+      "imageUrl": [
+        "DSC_0014.JPG",
+        "DSC_0015.JPG",
+        null,
+        null
+      ],
+      "title": "women skirt",
+      "ean": "12345678901217",
+      "brand": "Lyra",
+      "category": "Women",
+      "zone": "FOH",
+      "articleNo": "2211189846",
+      "color": "Green",
+      "size": "M",
+      "eanQty": "12"
+    },
+    {
+      "imageUrl": [
+        "DSC_0015.JPG",
+        null,
+        null,
+        null
+      ],
+      "title": "women skirt",
+      "ean": "12345678901217",
+      "brand": "Lyra",
+      "category": "Women",
+      "zone": "BOH",
+      "articleNo": "2211189846",
+      "color": "Green",
+      "size": "M",
+      "eanQty": "22"
+    },
+    {
+      "imageUrl": [
+        "DSC_0014.JPG",
+        "DSC_0015.JPG",
+        null,
+        null
+      ],
+      "title": "women skirt",
+      "ean": "12345678901216",
+      "brand": "Lyra",
+      "category": "Women",
+      "zone": "",
+      "articleNo": "2211189846",
+      "color": "Green",
+      "size": "S",
+      "eanQty": "0"
+    }
+  ]
+}

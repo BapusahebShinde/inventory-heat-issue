@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <data>
+    <variable
+      name="tripStatus"
+      type="com.itek.retail.model.TripStatus" />
+  </data>
+
+  <androidx.appcompat.widget.LinearLayoutCompat
+    android:id="@+id/llHeader"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_40"
+    android:clickable="true"
+    android:orientation="horizontal"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <com.itek.retail.ui.customviews.SortHeaderView
+      android:id="@+id/textTripNumber"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:textStyle="bold"
+      app:sortColumn="trip_no"
+      android:textAppearance="@style/TextStyleRegular" />
+
+    <com.itek.retail.ui.customviews.SortHeaderView
+      android:id="@+id/textHuCount"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:textStyle="bold"
+      app:sortColumn="total_hu"
+      android:textAppearance="@style/TextStyleRegular" />
+
+    <com.itek.retail.ui.customviews.SortHeaderView
+      android:id="@+id/txtCompletedHuCount"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:textAppearance="@style/TextStyleRegular"
+      app:sortColumn="completed_hu"
+      android:textStyle="bold" />
+
+    <com.itek.retail.ui.customviews.SortHeaderView
+      android:id="@+id/txtVerifiedHuCount"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:visibility="gone"
+      app:sortColumn="verified_hu"
+      android:textAppearance="@style/TextStyleRegular"
+      android:textStyle="bold" />
+
+    <com.itek.retail.ui.customviews.SortHeaderView
+      android:id="@+id/txtTripStatus"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_weight="1"
+      android:gravity="center"
+      android:visibility="visible"
+      android:text="@string/lbl_grn_status"
+      app:sortColumn="status"
+      android:textAppearance="@style/TextStyleRegular"
+      android:textStyle="bold" />
+
+    <ImageButton
+      android:id="@+id/imgAction"
+      android:layout_width="wrap_content"
+      android:layout_height="match_parent"
+      android:paddingLeft="@dimen/dp_7_half"
+      android:paddingRight="@dimen/dp_7_half"
+      android:layout_gravity="center"
+      android:background="@color/transparent"
+      android:rotation="180"
+      android:scaleType="center"
+      android:clickable="true"
+      android:src="@drawable/ic_back_arrow"
+      android:visibility="visible"
+      android:gravity="center" />
+
+  </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

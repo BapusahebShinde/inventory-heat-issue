@@ -1,0 +1,157 @@
+{
+  "isAllowDecoding": true,
+  "isAllowDecodingOnPick": true,
+  "isAllowDecodingWithoutVerify": false,
+  "uploadType": "complete",
+  "accessPassword": {
+    "currentAccessPassword": "12345678",
+    "oldAccessPasswords": [
+      {
+        "srno": 1,
+        "accesspwd": "88888888"
+      },
+      {
+        "srno": 2,
+        "accesspwd": "12341234"
+      }
+    ]
+  },
+  "omnichannelProducts": [
+    {
+      "status": "",
+      "orderNo": "12345",
+      "ageingLabel": "< 8 Hrs",
+      "ageingHrs": 4,
+      "priority": 2,
+      "ean": "8907344001972",
+      "category": "Men",
+      "brand": "Levi's",
+      "qty": 7
+    },
+    {
+      "status": "",
+      "orderNo": "12345",
+      "ageingLabel": "< 8 Hrs",
+      "ageingHrs": 4,
+      "priority": 2,
+      "ean": "8901198204053",
+      "category": "Women",
+      "brand": "Fabindia",
+      "qty": 7
+    },
+    {
+      "status": "",
+      "orderNo": "12345",
+      "ageingLabel": "< 8 Hrs",
+      "ageingHrs": 4,
+      "priority": 2,
+      "ean": "8904279302990",
+      "category": "Kids",
+      "brand": "Levi's",
+      "qty": 1
+    },
+    {
+      "title": "T-Shirt",
+      "status": "",
+      "orderNo": "12344",
+      "ageingLabel": "< 8 Hrs",
+      "ageingHrs": 1,
+      "priority": 2,
+      "ean": "8907675736901",
+      "category": "Men",
+      "brand": "Numero Uno",
+      "qty": 5
+    },
+    {
+      "title": "T-Shirt",
+      "status": "",
+      "orderNo": "12344",
+      "ageingLabel": "< 8 Hrs",
+      "ageingHrs": 1,
+      "priority": 2,
+      "ean": "8901326038345",
+      "category": "Women",
+      "brand": "Numero Uno",
+      "qty": 5
+    },
+    {
+      "title": "T-Shirt",
+      "status": "",
+      "orderNo": "12346",
+      "ageingLabel": "8-12 Hrs",
+      "ageingHrs": 11,
+      "priority": 3,
+      "ean": "8905303072438",
+      "category": "Kids",
+      "brand": "Biba",
+      "qty": 6
+    },
+    {
+      "status": "",
+      "orderNo": "12346",
+      "ageingLabel": "8-12 Hrs",
+      "ageingHrs": 11,
+      "priority": 3,
+      "ean": "8905137950452",
+      "category": "Women",
+      "brand": "Cotton King",
+      "qty": 3
+    },
+    {
+      "status": "",
+      "orderNo": "12346",
+      "ageingLabel": "8-12 Hrs",
+      "ageingHrs": 11,
+      "priority": 3,
+      "ean": "8907924874422",
+      "category": "Women",
+      "brand": "Fabindia",
+      "qty": 3
+    },
+    {
+      "status": "",
+      "orderNo": "12346",
+      "ageingLabel": "8-12 Hrs",
+      "ageingHrs": 11,
+      "priority": 3,
+      "ean": "8905303046194",
+      "category": "Kids",
+      "brand": "Levi's",
+      "qty": 1
+    },
+    {
+      "status": "",
+      "orderNo": "12343",
+      "ageingLabel": "> 12 Hrs",
+      "ageingHrs": 20,
+      "priority": 5,
+      "ean": "161823816",
+      "category": "Men",
+      "brand": "Peter England",
+      "qty": 2
+    },
+    {
+      "status": "",
+      "orderNo": "12343",
+      "ageingLabel": "> 12 Hrs",
+      "ageingHrs": 20,
+      "priority": 5,
+      "ean": "YML30910122PEAM",
+      "category": "Women",
+      "brand": "Fabindia",
+      "qty": 2
+    },
+    {
+      "status": "",
+      "orderNo": "12342",
+      "ageingLabel": "> 12 Hrs",
+      "ageingHrs": 15,
+      "priority": 5,
+      "ean": "8907924426928",
+      "category": "Women",
+      "brand": "Provogue",
+      "qty": 6
+    }
+  ]
+}
+

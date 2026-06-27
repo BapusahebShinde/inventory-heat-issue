@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:id="@+id/swipeLayout"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:background="@color/white"
+  android:clickable="true">
+
+  <androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    tools:context=".ui.search.omnichannel.OmniChannelOrderStatsFragment">
+
+    <include
+      android:id="@+id/header"
+      layout="@layout/header_title_layout"
+      app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+      android:id="@+id/rgOmniChannelType"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      app:layout_constraintTop_toBottomOf="@id/header">
+
+      <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.3" />
+
+      <RadioButton
+        android:id="@+id/rb_order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_5"
+        android:layout_weight="1"
+        android:checked="true"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="true"
+        android:tag="@string/omni_type_order"
+        android:text="@string/omni_type_order" />
+
+      <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.1" />
+
+      <RadioButton
+        android:id="@+id/rb_ean"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_5"
+        android:layout_weight="1"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="true"
+        android:tag="@string/omni_type_ean"
+        android:text="@string/omni_type_ean" />
+
+      <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.3" />
+    </RadioGroup>
+
+    <com.google.android.material.tabs.TabLayout
+      android:id="@+id/tabLayout"
+      style="@style/TabLayout"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:layout_constraintBottom_toTopOf="@id/viewPager"
+      app:layout_constraintTop_toBottomOf="@id/rgOmniChannelType" />
+
+    <androidx.viewpager2.widget.ViewPager2
+      android:id="@+id/viewPager"
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/dp_0"
+      app:layout_behavior="@string/appbar_scrolling_view_behavior"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/tabLayout" />
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

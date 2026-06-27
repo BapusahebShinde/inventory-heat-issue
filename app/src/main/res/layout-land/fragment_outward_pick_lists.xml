@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context=".ui.outward.OutwardPickListsFragment">
+
+  <androidx.appcompat.widget.LinearLayoutCompat
+    android:id="@+id/llHeader"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_40"
+    android:layout_marginLeft="@dimen/dp_5"
+    android:layout_marginRight="@dimen/dp_5"
+    android:background="@drawable/border_bottom"
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/dp_5"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_gravity="center"
+      android:layout_weight="1.15"
+      android:gravity="left|center_vertical"
+      android:paddingLeft="@dimen/dp_10"
+      android:text="@string/lbl_list_no"
+      android:textAppearance="@style/TextStyleSubSubHeader" />
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_gravity="center"
+      android:layout_weight="1.25"
+      android:gravity="left|center_vertical"
+      android:text="@string/lbl_exp_qty"
+      android:textAppearance="@style/TextStyleSubSubHeader"
+      android:visibility="visible" />
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_gravity="left|center_vertical"
+      android:layout_weight="1.25"
+      android:gravity="center"
+      android:text="@string/lbl_pick_qty"
+      android:textAppearance="@style/TextStyleSubSubHeader"
+      android:visibility="visible" />
+
+    <TextView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_gravity="left|center_vertical"
+      android:layout_weight="1.25"
+      android:gravity="center"
+      android:text="@string/lbl_grn_status"
+      android:textAppearance="@style/TextStyleSubSubHeader"
+      android:visibility="visible" />
+
+  </androidx.appcompat.widget.LinearLayoutCompat>
+
+  <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/list"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_0"
+    android:layout_margin="@dimen/dp_2"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/llHeader"
+    app:layout_constraintVertical_weight="1" />
+
+  <TextView
+    android:id="@+id/textNoData"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:text="@string/lbl_no_trip"
+    android:visibility="gone" />
+
+  <com.google.android.material.floatingactionbutton.FloatingActionButton
+    android:id="@+id/btnUpload"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="@dimen/dp_5"
+    android:layout_marginBottom="@dimen/dp_5"
+    android:visibility="gone"
+    app:backgroundTint="@color/white"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="@id/btnSwipeUpload"
+    app:srcCompat="@drawable/ic_upload" />
+
+  <com.itek.retail.ui.customviews.swipeButton.ProSwipeButtonVar
+    android:id="@+id/btnSwipeUpload"
+    android:layout_width="@dimen/dp_0"
+    android:layout_height="@dimen/dp_0"
+    android:layout_marginLeft="@dimen/dp_5"
+    android:layout_marginRight="@dimen/dp_5"
+    android:layout_marginBottom="@dimen/dp_5"
+    android:background="@drawable/bg_white_red"
+    android:clickable="true"
+    android:visibility="gone"
+    app:btn_text=""
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintHeight_default="percent"
+    app:layout_constraintHeight_percent="0.25"
+    app:layout_constraintLeft_toLeftOf="@id/btnUpload"
+    app:layout_constraintRight_toRightOf="@id/btnUpload"
+    app:layout_constraintWidth_default="percent"
+    app:layout_constraintWidth_percent="0.05" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

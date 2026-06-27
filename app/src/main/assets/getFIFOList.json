@@ -1,0 +1,82 @@
+{
+  "isAllowDecoding": true,
+  "isAllowDecodingOnPick": false,
+  "accessPassword": {
+    "currentAccessPassword": "12345678",
+    "oldAccessPasswords": [
+      {
+        "srno": 1,
+        "accesspwd": "88888888"
+      },
+      {
+        "srno": 2,
+        "accesspwd": "12341234"
+      }
+    ]
+  },
+  "products": [
+    {
+      "ean": "8901198204053",
+      "fifoDate": "2022-10-12",
+      "epc":"30361F493813ED5748772FCCA5B0B1C0",
+      "zone": "BOH",
+      "zoneId": 3
+    },
+    {
+      "ean": "8901198204053",
+      "fifoDate": "2022-10-12",
+      "epc":"30361F493813ED574876F390",
+      "zone": "BOH",
+      "zoneId": 3
+    },
+    {
+      "ean": "8901198204053",
+      "fifoDate": "2022-10-12",
+      "epc":"30361F493813ED574876F38F",
+      "zone": "BOH",
+      "zoneId": 3
+    },
+    {
+      "ean": "161823816",
+      "epc": "BCDDC72EC000000000001D0DC343E9E4",
+      "fifoDate": "2023-05-10",
+      "zone": "FOH",
+      "zoneId": 2
+    },
+    {
+      "ean": "161823816",
+      "epc": "BCDDD2BF4000000000001D0DC343E9E4",
+      "fifoDate": "2023-05-10",
+      "zone": "FOH",
+      "zoneId": 2
+    },
+    {
+      "ean": "8907675736901",
+      "fifoDate": "2023-07-07",
+      "epc": "30361FAE6C47F6974876E93F",
+      "zone": "BOH",
+      "zoneId": 3
+    },
+    {
+      "ean": "8907675736901",
+      "fifoDate": "2023-07-07",
+      "epc": "30361FAE6C47F6974876E945",
+      "zone": "BOH",
+      "zoneId": 3
+    },
+    {
+      "ean": "YML30910122PEAM",
+      "fifoDate": "2023-07-10",
+      "epc":"BCDDE0B74005D1EC4DBA0AD08AD768DC",
+      "zone": "FOH",
+      "zoneId": 2
+    },
+    {
+      "ean": "YML30910122PEAM",
+      "fifoDate": "2023-07-10",
+      "epc":"BCDDE5F30005D1EC4DBA0AD08AD768DC",
+      "zone": "FOH",
+      "zoneId": 2
+    }
+  ]
+}

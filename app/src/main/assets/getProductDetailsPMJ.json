@@ -1,0 +1,143 @@
+{
+  "zone": null,
+  "brand": "LULU",
+  "category": "Men",
+  "color": "DARK BLUE",
+  "ean": "2280038996140",
+  "imageUrl": [
+    "",
+    null,
+    null,
+    null
+  ],
+  "articleNo": "2340547",
+  "size": "S",
+  "title": "Saree SriKrupa Silks PSS",
+  "referenceId": "2500000000000173",
+  "displayData": [
+    {
+      "label": "LINE NO",
+      "value": null
+    },
+    {
+      "label": "Image Link",
+      "value": null
+    },
+    {
+      "label": "CLASSIFICATION",
+      "value": null
+    },
+    {
+      "label": "CATEGORY",
+      "value": "Men"
+    },
+    {
+      "label": "LABOUR RATE",
+      "value": "LULU"
+    },
+    {
+      "label": "VARIANT NAME",
+      "value": "Men"
+    },
+    {
+      "label": "SKU",
+      "value": "2280038996140"
+    },
+    {
+      "label": "BARCODE",
+      "value": "2340547"
+    }
+  ],
+  "detailsDisplayData": [
+    {
+      "DetailId": 193,
+      "Sequence": 1,
+      "Fields": [
+        {
+          "label": "METAL RATE",
+          "value": "Fit"
+        },
+        {
+          "label": "STONE GROUP",
+          "value": "100% Cotton"
+        },
+        {
+          "label": "LOT NO",
+          "value": "Material"
+        }
+      ]
+    },
+    {
+      "DetailId": 194,
+      "Sequence": 2,
+      "Fields": [
+        {
+          "label": "METAL RATE",
+          "value": "M: Chest 40, Length 28"
+        },
+        {
+          "label": "STONE GROUP",
+          "value": "S: Chest 38, Length 27"
+        },
+        {
+          "label": "LOT NO",
+          "value": "Size Guide"
+        }
+      ]
+    },
+    {
+      "DetailId": 195,
+      "Sequence": 3,
+      "Fields": [
+        {
+          "label": "METAL RATE",
+          "value": "Feature 2"
+        },
+        {
+          "label": "STONE GROUP",
+          "value": "Button-down collar"
+        },
+        {
+          "label": "LOT NO",
+          "value": "Feature 1"
+        }
+      ]
+    },
+    {
+      "DetailId": 196,
+      "Sequence": 4,
+      "Fields": [
+        {
+          "label": "METAL RATE",
+          "value": "Return Policy"
+        },
+        {
+          "label": "STONE GROUP",
+          "value": "3-5 business days"
+        },
+        {
+          "label": "LOT NO",
+          "value": "Delivery Time"
+        }
+      ]
+    },
+    {
+      "DetailId": 197,
+      "Sequence": 5,
+      "Fields": [
+        {
+          "label": "METAL RATE",
+          "value": "Manufacturer"
+        },
+        {
+          "label": "STONE GROUP",
+          "value": "India"
+        },
+        {
+          "label": "LOT NO",
+          "value": "Country of Origin"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.itek.retail.ui.customviews.MaxHeightLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:layout_gravity="top"
+  android:background="@color/white"
+  android:gravity="top"
+  android:orientation="vertical">
+
+  <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/list_dialog_similar_styles"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:layout_marginTop="@dimen/dp_5"
+    android:layout_marginLeft="@dimen/dp_5"
+    android:layout_marginRight="@dimen/dp_5"
+    android:layout_marginBottom="@dimen/dp_10"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+</com.itek.retail.ui.customviews.MaxHeightLinearLayout>

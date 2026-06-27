@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:background="@color/white"
+  android:padding="@dimen/dp_5">
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_0"
+    android:gravity="center"
+    android:orientation="vertical"
+    app:layout_constraintDimensionRatio="1:1"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <ImageView
+      android:id="@+id/gridMenuLogo"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/dp_5"
+      android:scaleType="fitCenter" />
+
+    <TextView
+      android:id="@+id/gridMenuTitle"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="@dimen/dp_5"
+      android:ellipsize="marquee"
+      android:gravity="center"
+      android:singleLine="true"
+      android:textAppearance="@style/TextStyleRegular" />
+
+  </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

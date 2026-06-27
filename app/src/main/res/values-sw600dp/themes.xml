@@ -1,0 +1,381 @@
+<resources>
+  <!-- Base application theme. -->
+  <style name="Theme.Drawer" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+    <!-- Primary brand color. -->
+    <item name="colorPrimary">@color/colorPrimaryDef</item>
+    <item name="colorPrimaryDark">@color/colorPrimaryDarkDef</item>
+    <item name="colorAccent">@color/colorAccentDef</item>
+
+    <!-- Customize your theme here. -->
+    <item name="drawerArrowStyle">@style/DrawerHamburgerStyle</item>
+
+    <item name="actionOverflowButtonStyle">@style/ActionOverflowStyle</item>
+  </style>
+
+  <style name="Theme.Drawer.NoActionBar">
+    <item name="windowActionBar">false</item>
+    <item name="windowNoTitle">true</item>
+  </style>
+
+  <style name="Theme.Drawer.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+  // Base.ThemeOverlay.AppCompat.Dark
+
+  <style name="Theme.Drawer.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark" />
+
+  <style name="ActionOverflowStyle" parent="Widget.AppCompat.ActionButton.Overflow">
+    <item name="android:tint">@color/icon_grey</item>
+  </style>
+
+  <style name="ActionOverflowMenuStyle" parent="@style/Widget.AppCompat.Light.ActionButton.Overflow">
+
+  </style>
+
+  <style name="DrawerHamburgerStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
+    <item name="spinBars">true</item>
+    <item name="color">@color/icon_grey</item>
+  </style>
+
+  <style name="TabLayout" parent="Widget.Design.TabLayout">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="background">@color/white</item>
+    <item name="tabTextAppearance">@style/TextStyleSubHeader</item>
+    <item name="tabIndicatorColor">?attr/colorPrimaryDark</item>
+    <item name="tabTextColor">@color/colorDisabled</item>
+    <item name="tabSelectedTextColor">?attr/colorPrimaryDark</item>
+    <item name="tabMode">fixed</item>
+    <item name="tabGravity">fill</item>
+    <item name="tabMaxWidth">@dimen/dp_0</item>
+  </style>
+
+  <style name="TextConfigBtnHeader" parent="@android:style/Widget.TextView">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_centerHorizontal">true</item>
+    <item name="android:layout_marginLeft">15dp</item>
+    <item name="android:layout_marginRight">15dp</item>
+    <item name="android:layout_marginTop">5dp</item>
+    <item name="android:layout_marginBottom">5dp</item>
+    <item name="android:layout_gravity">center</item>
+    <item name="android:gravity">center</item>
+    <item name="android:paddingTop">5dp</item>
+    <item name="android:paddingBottom">5dp</item>
+    <item name="android:background">@drawable/bg_txt_config_btn_header</item>
+    <item name="singleLine">true</item>
+    <item name="maxLines">1</item>
+    <item name="android:textColor">@color/txt_sub_header</item>
+    <item name="android:textStyle">normal</item>
+    <item name="android:textSize">14sp</item>
+    <item name="android:textAllCaps">false</item>
+  </style>
+
+  <style name="EditText" parent="Widget.AppCompat.EditText">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_weight">1</item>
+    <item name="android:padding">5dp</item>
+    <item name="android:textAppearance">@style/TextStyleRegular</item>
+  </style>
+
+  <style name="Button" parent="@android:style/Widget.Button">
+    <item name="layout_constraintWidth_default">percent</item>
+    <item name="layout_constraintWidth_percent">0.5</item>
+    <item name="android:layout_width">0dp</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_centerHorizontal">true</item>
+    <item name="android:layout_gravity">center</item>
+    <item name="android:gravity">center</item>
+    <item name="android:paddingLeft">5dp</item>
+    <item name="android:paddingRight">5dp</item>
+    <item name="android:paddingTop">0dp</item>
+    <item name="android:paddingBottom">0dp</item>
+    <item name="android:background">@drawable/button_background</item>
+    <item name="singleLine">true</item>
+    <item name="maxLines">1</item>
+    <item name="android:fontFamily">@font/roboto_regular</item>
+    <item name="android:textColor">@color/txt_button</item>
+    <item name="android:textStyle">normal</item>
+    <item name="android:textSize">14sp</item>
+    <item name="android:textAllCaps">false</item>
+  </style>
+
+  <style name="ButtonSelectable" parent="@android:style/Widget.Button">
+    <item name="layout_constraintWidth_default">percent</item>
+    <item name="layout_constraintWidth_percent">0.5</item>
+    <item name="android:layout_width">0dp</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_centerHorizontal">true</item>
+    <item name="android:layout_gravity">center</item>
+    <item name="android:gravity">center</item>
+    <item name="android:padding">0dp</item>
+    <item name="android:background">@drawable/button_selectable_background</item>
+    <item name="singleLine">true</item>
+    <item name="maxLines">1</item>
+    <item name="android:fontFamily">@font/roboto_regular</item>
+    <item name="android:textColor">@color/button_selectable_text</item>
+    <item name="android:textStyle">normal</item>
+    <item name="android:textSize">14sp</item>
+    <item name="android:textAllCaps">false</item>
+  </style>
+
+  <style name="ButtonInvert" parent="@android:style/Widget.Button">
+    <item name="layout_constraintWidth_default">percent</item>
+    <item name="layout_constraintWidth_percent">0.5</item>
+    <item name="android:layout_width">0dp</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_centerHorizontal">true</item>
+    <item name="android:layout_gravity">center</item>
+    <item name="android:gravity">center</item>
+    <item name="android:padding">0dp</item>
+    <item name="android:background">@drawable/button_border</item>
+    <item name="singleLine">true</item>
+    <item name="maxLines">1</item>
+    <item name="android:fontFamily">@font/roboto_regular</item>
+    <!--<item name="android:textColor">@color/txt_button_invert</item>-->
+    <item name="android:textStyle">normal</item>
+    <item name="android:textSize">14sp</item>
+    <item name="android:textAllCaps">false</item>
+  </style>
+
+  <style name="TextStyleButton" parent="@android:style/TextAppearance.Small">
+    <item name="android:fontFamily">@font/roboto_regular</item>
+    <item name="android:textColor">@color/txt_button</item>
+    <item name="android:textStyle">normal</item>
+    <item name="android:textSize">14sp</item>
+    <item name="android:textAllCaps">false</item>
+  </style>
+
+  <style name="TextStyleButtonSelectable" parent="@android:style/TextAppearance.Small">
+    <item name="android:fontFamily">@font/roboto_regular</item>
+    <item name="android:textColor">@color/button_selectable_text</item>
+    <item name="android:textStyle">normal</item>
+    <item name="android:textSize">14sp</item>
+    <item name="android:textAllCaps">false</item>
+  </style>
+
+  <style name="TextStyleButtonInvert" parent="@android:style/TextAppearance.Small">
+    <item name="android:fontFamily">@font/roboto_regular</item>
+    <item name="android:textColor">@color/txt_button_invert</item>
+    <item name="android:textStyle">normal</item>
+    <item name="android:textSize">14sp</item>
+    <item name="android:textAllCaps">false</item>
+  </style>
+
+  <style name="TextStyleNumber" parent="@android:style/TextAppearance.Large">
+    <item name="textAllCaps">false</item>
+    <item name="android:textAllCaps">false</item>
+    <item name="android:fontFamily">@font/saira_semi_bold_num</item>
+    <item name="android:textColor">@color/txt_number</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:textSize">36sp</item>
+  </style>
+
+  <style name="TextStyleHeader" parent="@android:style/TextAppearance.Large">
+    <item name="textAllCaps">false</item>
+    <item name="android:textAllCaps">false</item>
+    <item name="android:fontFamily">@font/roboto_regular</item>
+    <item name="android:textColor">@color/txt_header</item>
+    <item name="android:textStyle">normal</item>
+    <item name="android:textSize">18sp</item>
+  </style>
+
+  <style name="TextStyleSubHeader" parent="@android:style/TextAppearance.Medium">
+    <item name="textAllCaps">false</item>
+    <item name="android:textAllCaps">false</item>
+    <item name="android:fontFamily">@font/roboto_regular</item>
+    <item name="android:textColor">@color/txt_sub_header</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:textSize">16sp</item>
+  </style>
+
+  <style name="TextStyleSubSubHeader" parent="@android:style/TextAppearance.Small">
+    <item name="textAllCaps">false</item>
+    <item name="android:textAllCaps">false</item>
+    <item name="android:fontFamily">@font/roboto_regular</item>
+    <item name="android:textColor">@color/txt_sub_sub_header</item>
+    <item name="android:textStyle">normal</item>
+    <item name="android:textSize">16sp</item>
+  </style>
+
+  <style name="TextStyleSubSubHeaderAwesome" parent="@android:style/TextAppearance.Small">
+    <item name="textAllCaps">false</item>
+    <item name="android:textAllCaps">false</item>
+    <item name="android:fontFamily">@font/font_awesome</item>
+    <item name="android:textColor">@color/txt_sub_sub_header</item>
+    <item name="android:textStyle">normal</item>
+    <item name="android:textSize">16sp</item>
+  </style>
+
+  <style name="TextStyleRegular" parent="@android:style/TextAppearance.Small">
+    <item name="textAllCaps">false</item>
+    <item name="android:textAllCaps">false</item>
+    <item name="android:fontFamily">@font/roboto_regular</item>
+    <item name="android:textColor">@color/txt_regular</item>
+    <item name="android:textStyle">normal</item>
+    <item name="android:textSize">14sp</item>
+  </style>
+
+  <style name="TextStyleRegularBold" parent="@android:style/TextAppearance.Small">
+    <item name="textAllCaps">false</item>
+    <item name="android:textAllCaps">false</item>
+    <item name="android:fontFamily">@font/roboto_regular</item>
+    <item name="android:textColor">@color/txt_regular</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:textSize">14sp</item>
+  </style>
+
+  <style name="TextStyleRegularSuccess" parent="@android:style/TextAppearance.Small">
+    <item name="textAllCaps">false</item>
+    <item name="android:textAllCaps">false</item>
+    <item name="android:fontFamily">@font/roboto_regular</item>
+    <item name="android:textColor">@color/green</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:textSize">14sp</item>
+  </style>
+
+  <style name="TextStyleRegularError" parent="@android:style/TextAppearance.Small">
+    <item name="textAllCaps">false</item>
+    <item name="android:textAllCaps">false</item>
+    <item name="android:fontFamily">@font/roboto_regular</item>
+    <item name="android:textColor">@color/err_red</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:textSize">14sp</item>
+  </style>
+
+  <style name="TextStyleRegularAwesome" parent="@android:style/TextAppearance.Small">
+    <item name="textAllCaps">false</item>
+    <item name="android:textAllCaps">false</item>
+    <item name="android:fontFamily">@font/font_awesome</item>
+    <item name="android:textColor">@color/txt_regular</item>
+    <item name="android:textStyle">normal</item>
+    <item name="android:textSize">14sp</item>
+  </style>
+
+  <style name="TextStyleSmall" parent="@android:style/TextAppearance.Small">
+    <item name="textAllCaps">false</item>
+    <item name="android:textAllCaps">false</item>
+    <item name="android:fontFamily">@font/roboto_regular</item>
+    <item name="android:textColor">@color/txt_small</item>
+    <item name="android:textStyle">normal</item>
+    <item name="android:textSize">12sp</item>
+  </style>
+
+  <style name="TextStyleSmallBold" parent="@android:style/TextAppearance.Small">
+    <item name="textAllCaps">false</item>
+    <item name="android:textAllCaps">false</item>
+    <item name="android:fontFamily">@font/roboto_regular</item>
+    <item name="android:textColor">@color/txt_small</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:textSize">12sp</item>
+  </style>
+
+  <style name="TextStyleSmallAwesome" parent="@android:style/TextAppearance.Small">
+    <item name="textAllCaps">false</item>
+    <item name="android:textAllCaps">false</item>
+    <item name="android:fontFamily">@font/font_awesome</item>
+    <item name="android:textColor">@color/txt_small</item>
+    <item name="android:textStyle">normal</item>
+    <item name="android:textSize">12sp</item>
+  </style>
+
+  <style name="TextStyleExtraSmallWhite" parent="@android:style/TextAppearance.Small">
+    <item name="textAllCaps">false</item>
+    <item name="android:textAllCaps">false</item>
+    <item name="android:fontFamily">@font/roboto_regular</item>
+    <item name="android:textColor">@color/white</item>
+    <item name="android:textStyle">normal</item>
+    <item name="android:textSize">@dimen/sp_10</item>
+  </style>
+
+  <style name="TextStyleQuickActionMenuItem" parent="@android:style/TextAppearance.Small">
+    <item name="textAllCaps">false</item>
+    <item name="android:textAllCaps">false</item>
+    <item name="android:fontFamily">@font/roboto_regular</item>
+    <item name="android:textColor">@color/txt_number</item>
+    <item name="android:textStyle">normal</item>
+    <item name="android:textSize">12sp</item>
+  </style>
+
+  <!--<style name="CustAlertDialog" parent="Widget.AppCompat.ButtonBar.AlertDialog">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:radius">10dp</item>
+    <item name="can"
+  </style>-->
+
+  <!--<style name="AlertDialog" parent="@android:style/AlertDialog">-->
+  <!--<style name="AlertDialog" parent="Theme.AppCompat.Dialog.Alert">-->
+  <!--<style name="AlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">-->
+  <!--<item name="android:windowBackground">@drawable/border_cust_alert</item>-->
+  <!--<item name="android:radius">25dp</item>-->
+  <!--</style>-->
+
+  <style name="ProgressDialog" parent="Theme.MaterialComponents.Light.Dialog.Alert">
+    <item name="android:windowIsTranslucent">true</item>
+    <item name="android:windowBackground">@android:color/transparent</item>
+  </style>
+
+  <style name="AlertDialog" parent="Theme.MaterialComponents.Light.Dialog.Alert">
+    <item name="android:windowBackground">@drawable/border_cust_alert</item>
+    <item name="buttonBarPositiveButtonStyle">@style/Button</item>
+    <item name="buttonBarNegativeButtonStyle">@style/ButtonInvert</item>
+    <item name="buttonBarNeutralButtonStyle">@style/ButtonInvert</item>
+  </style>
+
+  <style name="AlertDialogSelection" parent="Theme.MaterialComponents.Light.Dialog.Alert">
+    <item name="android:windowBackground">@drawable/border_cust_alert</item>
+    <item name="buttonBarPositiveButtonStyle">@style/Button</item>
+    <item name="buttonBarNegativeButtonStyle">@style/Button</item>
+    <item name="buttonBarNeutralButtonStyle">@style/Button</item>
+  </style>
+
+  <!-- QuickAction -->
+  <style name="Animation" />
+
+  <!-- PopDownMenu -->
+  <style name="Animation.PopDownMenu" />
+
+  <style name="Animation.PopDownMenu.Center">
+    <item name="android:windowEnterAnimation">@anim/grow_from_top</item>
+    <item name="android:windowExitAnimation">@anim/shrink_from_bottom</item>
+  </style>
+
+  <style name="Animation.PopDownMenu.Left">
+    <item name="android:windowEnterAnimation">@anim/grow_from_topleft_to_bottomright</item>
+    <item name="android:windowExitAnimation">@anim/shrink_from_bottomright_to_topleft</item>
+  </style>
+
+  <style name="Animation.PopDownMenu.Right">
+    <item name="android:windowEnterAnimation">@anim/grow_from_topright_to_bottomleft</item>
+    <item name="android:windowExitAnimation">@anim/shrink_from_bottomleft_to_topright</item>
+  </style>
+
+  <style name="Animation.PopDownMenu.Reflect">
+    <item name="android:windowEnterAnimation">@anim/pump_top</item>
+    <item name="android:windowExitAnimation">@anim/disappear</item>
+  </style>
+
+  <!-- PopUpMenu -->
+  <style name="Animation.PopUpMenu" />
+
+  <style name="Animation.PopUpMenu.Center">
+    <item name="android:windowEnterAnimation">@anim/grow_from_bottom</item>
+    <item name="android:windowExitAnimation">@anim/shrink_from_top</item>
+  </style>
+
+  <style name="Animation.PopUpMenu.Left">
+    <item name="android:windowEnterAnimation">@anim/grow_from_bottomleft_to_topright</item>
+    <item name="android:windowExitAnimation">@anim/shrink_from_topright_to_bottomleft</item>
+  </style>
+
+  <style name="Animation.PopUpMenu.Right">
+    <item name="android:windowEnterAnimation">@anim/grow_from_bottomright_to_topleft</item>
+    <item name="android:windowExitAnimation">@anim/shrink_from_topleft_to_bottomright</item>
+  </style>
+
+  <style name="Animation.PopUpMenu.Reflect">
+    <item name="android:windowEnterAnimation">@anim/pump_bottom</item>
+    <item name="android:windowExitAnimation">@anim/disappear</item>
+  </style>
+
+</resources>

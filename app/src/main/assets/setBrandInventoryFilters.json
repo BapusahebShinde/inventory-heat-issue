@@ -1,0 +1,20 @@
+{
+  "activeUsers": 3,
+  "inventoryCount": 100,
+  "brandEans": [
+    {
+      "brandName": "Allen Solly",
+      "eans": [
+        "8901326038345",
+        "8907675736901"
+      ]
+    },
+    {
+      "brandName": "Levi’s",
+      "eans": [
+        "8901198204053",
+        "8901030174827"
+      ]
+    }
+  ]
+}

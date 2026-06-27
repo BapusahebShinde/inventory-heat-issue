@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <data>
+
+    <variable
+      name="omniOrderModel"
+      type="com.itek.retail.model.ProductModel" />
+  </data>
+
+  <LinearLayout
+    android:id="@+id/llOmniOrder"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/border_top_bottom"
+    android:orientation="horizontal"
+    android:paddingTop="@dimen/dp_5"
+    android:paddingBottom="@dimen/dp_5">
+
+    <com.itek.retail.ui.customviews.SortHeaderView
+      android:id="@+id/txt_order_no"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_vertical"
+      android:layout_margin="@dimen/dp_2"
+      android:layout_weight="1.25"
+      android:ellipsize="marquee"
+      android:gravity="center"
+      android:singleLine="true"
+      android:text="@string/lbl_order_no"
+      android:textAppearance="@style/TextStyleRegular"
+      app:sortColumn="order_no" />
+
+    <com.itek.retail.ui.customviews.SortHeaderView
+      android:id="@+id/txt_ean_qty"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_vertical"
+      android:layout_margin="@dimen/dp_2"
+      android:layout_weight="1.75"
+      android:ellipsize="marquee"
+      android:gravity="center"
+      android:singleLine="true"
+      android:text="@string/lbl_qty"
+      android:textAppearance="@style/TextStyleRegular"
+      app:sortColumn="qty" />
+
+    <com.itek.retail.ui.customviews.SortHeaderView
+      android:id="@+id/txt_ageing"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center_vertical"
+      android:layout_margin="@dimen/dp_2"
+      android:layout_weight="1.5"
+      android:ellipsize="marquee"
+      android:gravity="center"
+      android:singleLine="true"
+      android:text="@string/lbl_ageing"
+      android:textAppearance="@style/TextStyleRegularAwesome"
+      app:sortColumn="ageing_hrs" />
+    <!--android:textColor="@color/txtDarkGray"/>-->
+
+    <ImageView
+      android:id="@+id/img_inventory_shortage_next"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_margin="@dimen/dp_2"
+      android:layout_weight="2"
+      android:rotation="180"
+      android:scaleType="fitCenter"
+      android:visibility="invisible"
+      app:srcCompat="@drawable/ic_back_arrow" />
+
+  </LinearLayout>
+</layout>

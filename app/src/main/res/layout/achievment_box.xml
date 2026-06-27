@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:bind="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:paddingBottom="@dimen/dp_10"
+  bind:context=".ui.encoding.EncodingAchieveFragment">
+
+  <LinearLayout
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <LinearLayout
+      android:id="@+id/ll_achivement"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/ll_encode_achievements"
+      android:layout_margin="@dimen/dp_5"
+      android:background="@drawable/border"
+      android:minWidth="@dimen/dp_5"
+      android:orientation="horizontal">
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/dp_0"
+        android:layout_weight="1.3"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_5">
+
+        <ImageView
+          android:id="@+id/img_encoding_day"
+          android:layout_width="wrap_content"
+          android:layout_height="@dimen/dp_30"
+          android:layout_gravity="center"
+          android:scaleType="fitCenter"
+          app:srcCompat="@drawable/ic_enc" />
+
+        <TextView
+          android:id="@+id/lbl_encoding_day"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:text="@string/lbl_encoding_per_day"
+          android:textAppearance="@style/TextStyleRegular" />
+      </LinearLayout>
+
+      <LinearLayout
+        android:layout_width="@dimen/dp_12"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/dp_0"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <View
+          android:layout_width="@dimen/dp_1"
+          android:layout_height="match_parent"
+          android:layout_gravity="center"
+          android:layout_marginBottom="@dimen/dp_neg_2"
+          android:layout_weight="1"
+          android:background="@color/viewline"
+          android:rotation="-15" />
+
+        <View
+          android:layout_width="@dimen/dp_1"
+          android:layout_height="match_parent"
+          android:layout_gravity="center"
+          android:layout_marginTop="@dimen/dp_neg_2"
+          android:layout_weight="1"
+          android:background="@color/viewline"
+          android:rotation="15" />
+      </LinearLayout>
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_weight="1.1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_5">
+
+        <TextView
+          android:id="@+id/txt_achievement_avg_tags_encoding_per_day"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:ellipsize="marquee"
+          android:gravity="center"
+          android:marqueeRepeatLimit="marquee_forever"
+          android:singleLine="true"
+          android:text="50"
+          android:textAppearance="@style/TextStyleNumber"
+          android:textSize="@dimen/sp_30" />
+
+        <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:maxLines="2"
+          android:minLines="2"
+          android:text="@string/lbl_avg_tags_encoding_per_day"
+          android:textAlignment="center"
+          android:textAppearance="@style/TextStyleRegular" />
+      </LinearLayout>
+
+      <View
+        android:layout_width="@dimen/dp_1"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dp_7"
+        android:layout_marginBottom="@dimen/dp_7"
+        android:background="@color/viewline" />
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_0"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_5">
+
+        <TextView
+          android:id="@+id/txt_achievement_max_tags_encoding_per_day"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:ellipsize="marquee"
+          android:gravity="center"
+          android:marqueeRepeatLimit="marquee_forever"
+          android:singleLine="true"
+          android:text="500"
+          android:textAppearance="@style/TextStyleNumber"
+          android:textSize="@dimen/sp_30" />
+
+        <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:maxLines="2"
+          android:minLines="2"
+          android:text="@string/lbl_max_tags_encoding_per_day"
+          android:textAlignment="center"
+          android:textAppearance="@style/TextStyleRegular" />
+      </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/ll_achivement"
+      android:layout_margin="@dimen/dp_5"
+      android:background="@drawable/border">
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/dp_0"
+        android:layout_weight="1.3"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_5">
+
+        <ImageView
+          android:id="@+id/img_encoding_time"
+          android:layout_width="wrap_content"
+          android:layout_height="@dimen/dp_30"
+          android:layout_gravity="center"
+          android:scaleType="fitCenter"
+          app:srcCompat="@drawable/ic_time" />
+
+        <TextView
+          android:id="@+id/lbl_encoding_time"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:gravity="center"
+          android:text="@string/lbl_encoding_time"
+          android:textAppearance="@style/TextStyleRegular" />
+      </LinearLayout>
+
+      <LinearLayout
+        android:layout_width="@dimen/dp_12"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/dp_0"
+        android:orientation="vertical">
+
+        <View
+          android:layout_width="@dimen/dp_1"
+          android:layout_height="match_parent"
+          android:layout_gravity="center"
+          android:layout_marginBottom="@dimen/dp_neg_2"
+          android:layout_weight="1"
+          android:background="@color/viewline"
+          android:rotation="-15" />
+
+        <View
+          android:layout_width="@dimen/dp_1"
+          android:layout_height="match_parent"
+          android:layout_gravity="center"
+          android:layout_marginTop="@dimen/dp_neg_2"
+          android:layout_weight="1"
+          android:background="@color/viewline"
+          android:rotation="15" />
+      </LinearLayout>
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_0"
+        android:layout_weight="1.1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_5">
+
+        <TextView
+          android:id="@+id/txt_achievement_avg_encoding_time_per_tag"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:ellipsize="marquee"
+          android:gravity="center"
+          android:marqueeRepeatLimit="marquee_forever"
+          android:singleLine="true"
+          android:text="8 sec"
+          android:textAppearance="@style/TextStyleNumber"
+          android:textSize="@dimen/sp_30" />
+
+        <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:maxLines="2"
+          android:minLines="2"
+          android:text="@string/lbl_avg_encoding_time_per_tag"
+          android:textAlignment="center"
+          android:textAppearance="@style/TextStyleRegular" />
+      </LinearLayout>
+
+      <View
+        android:layout_width="@dimen/dp_1"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/dp_0"
+        android:layout_marginTop="@dimen/dp_7"
+        android:layout_marginBottom="@dimen/dp_7"
+        android:background="@color/viewline" />
+
+      <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_0"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_5">
+
+        <TextView
+          android:id="@+id/txt_achievement_encoding_spent_hours"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:ellipsize="marquee"
+          android:gravity="center"
+          android:marqueeRepeatLimit="marquee_forever"
+          android:singleLine="true"
+          android:text="04:23:11"
+          android:textAppearance="@style/TextStyleNumber"
+          android:textSize="@dimen/sp_30" />
+
+        <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:gravity="center"
+          android:maxLines="2"
+          android:minLines="2"
+          android:text="@string/lbl_hours_spent"
+          android:textAlignment="center"
+          android:textAppearance="@style/TextStyleRegular" />
+      </LinearLayout>
+
+    </LinearLayout>
+
+  </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

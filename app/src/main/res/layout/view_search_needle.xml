@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:id="@+id/clSearchView"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:layout_gravity="center"
+  android:orientation="vertical"
+  android:paddingTop="@dimen/dp_10"
+  android:visibility="visible"
+  app:layout_constraintDimensionRatio="1:1"
+  app:layout_constraintLeft_toLeftOf="parent"
+  app:layout_constraintRight_toRightOf="parent"
+  app:layout_constraintWidth_default="percent"
+  app:layout_constraintWidth_percent="0.4">
+
+  <com.itek.retail.ui.customviews.GaugeView
+    android:id="@+id/needleView"
+    android:layout_width="@dimen/dp_0"
+    android:layout_height="@dimen/dp_0"
+    android:layout_margin="@dimen/dp_15"
+    app:layout_constraintBottom_toBottomOf="@id/customGuage"
+    app:layout_constraintLeft_toLeftOf="@id/customGuage"
+    app:layout_constraintRight_toRightOf="@id/customGuage"
+    app:layout_constraintTop_toTopOf="@id/customGuage" />
+
+  <TextView
+    android:id="@+id/txtPercentage"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/dp_15"
+    android:text=" 0 %"
+    android:textAppearance="@style/TextStyleSubSubHeader"
+    android:textStyle="bold"
+    app:layout_constraintBottom_toBottomOf="@id/needleView"
+    app:layout_constraintLeft_toLeftOf="@id/needleView"
+    app:layout_constraintRight_toRightOf="@id/needleView" />
+
+  <com.itek.retail.ui.customviews.CustomGauge
+    android:id="@+id/customGuage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerHorizontal="true"
+    android:layout_gravity="center"
+    android:padding="@dimen/dp_0"
+    app:gaugeEndValue="800"
+    app:gaugePointEndColor="?attr/colorPrimaryDark"
+    app:gaugePointStartColor="?attr/colorPrimaryDark"
+    app:gaugeStartAngle="135"
+    app:gaugeStartValue="200"
+    app:gaugeStrokeCap="ROUND"
+    app:gaugeStrokeColor="@color/gaugeviewstroke"
+    app:gaugeStrokeWidth="@dimen/dp_10"
+    app:gaugeSweepAngle="270"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <CheckBox
+    android:id="@+id/chkSingleTag"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/dp_10"
+    android:checked="false"
+    android:gravity="center"
+    android:text="@string/lbl_search_single_tag"
+    android:textAppearance="@style/TextStyleRegular"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/txtPercentage" />
+</androidx.constraintlayout.widget.ConstraintLayout>

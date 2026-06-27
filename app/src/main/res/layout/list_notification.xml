@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:orientation="horizontal"
+  android:paddingTop="@dimen/dp_5"
+  android:paddingBottom="@dimen/dp_5">
+
+  <ImageView
+    android:id="@+id/imgNotificationLogo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="3"
+    app:srcCompat="@drawable/ic_app_logo" />
+
+  <LinearLayout
+    android:id="@+id/llNotificationTexts"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_weight="1"
+    android:orientation="vertical"
+    android:padding="@dimen/dp_5">
+
+    <TextView
+      android:id="@+id/txtNotificationTitle"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textAppearance="@style/TextStyleHeader" />
+
+    <TextView
+      android:id="@+id/txtNotificationDatetime"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textAppearance="@style/TextStyleSmall" />
+
+    <TextView
+      android:id="@+id/txtNotificationStatus"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:ellipsize="end"
+      android:maxLines="1"
+      android:singleLine="true"
+      android:textAppearance="@style/TextStyleSubHeader" />
+  </LinearLayout>
+
+  <TextView
+    android:id="@+id/txtNotificationCount"
+    android:layout_width="@dimen/dp_30"
+    android:layout_height="@dimen/dp_30"
+    android:layout_gravity="center"
+    android:layout_marginRight="@dimen/dp_10"
+    android:background="@drawable/button_round_red"
+    android:fontFamily="@font/saira_semi_bold_num"
+    android:gravity="center"
+    android:textColor="@color/white"
+    android:textSize="@dimen/sp_16"
+    android:visibility="visible"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintLeft_toRightOf="@id/llNotificationTexts"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+</LinearLayout>
