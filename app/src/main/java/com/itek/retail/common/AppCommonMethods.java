@@ -156,8 +156,8 @@ public class AppCommonMethods{
   
   //flags for DC app configurations
   public static final boolean isSafariApp = false;
-  public static final boolean isDCApp = true;
-  public static final boolean isDCAppTataBuild = isDCApp && true;
+  public static final boolean isDCApp = false;
+  public static final boolean isDCAppTataBuild = isDCApp && false;
   
   //static internal flags (default values)
   public static final boolean isSetUserMgmt = !isDCApp && !isSafariApp;

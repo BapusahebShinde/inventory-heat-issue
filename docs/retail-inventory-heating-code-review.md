@@ -84,3 +84,6 @@ The diagnostic CSV should now include `callback_avg_ms` and `callback_max_ms` so
 ## Signed APK Stability Follow-up
 
 The Chainway/C5 callback wrapper was rolled back to match the previously working signed APK path. CPU diagnostics remain available in the CSV, while Chainway callback timing should be reintroduced only after a signed APK smoke test confirms stability.
+## Signed APK Crash Hardening
+
+The Chainway/C5 RFID callback is now wrapped with a top-level `Throwable` guard that writes reader logs and still records callback timing in `finally`. This keeps diagnostics from allowing an unexpected callback exception to terminate the signed APK during prolonged inventory testing.
