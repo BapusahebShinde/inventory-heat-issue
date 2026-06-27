@@ -160,6 +160,8 @@ public abstract class RFIDHandler {
     private long inventoryDuplicateReads = 0L;
     private final AtomicLong inventoryRawCallbacks = new AtomicLong(0L);
     private long inventoryLastDbFlushDurationMs = 0L;
+    private long inventoryCallbackTotalDurationNs = 0L;
+    private long inventoryCallbackMaxDurationNs = 0L;
     private RetailDiagnosticLogger inventoryDiagnosticLogger = null;
 
     protected boolean restrictTriggerPress = false;
@@ -824,6 +826,8 @@ public abstract class RFIDHandler {
             inventoryDuplicateReads = 0L;
             inventoryRawCallbacks.set(0L);
             inventoryLastDbFlushDurationMs = 0L;
+            inventoryCallbackTotalDurationNs = 0L;
+            inventoryCallbackMaxDurationNs = 0L;
             inventoryStartTimeMs = System.currentTimeMillis();
             inventoryLastBatchFlushMs = inventoryStartTimeMs;
             inventoryLastMetricsLogMs = inventoryStartTimeMs;
@@ -860,6 +864,14 @@ public abstract class RFIDHandler {
         inventoryRawCallbacks.incrementAndGet();
     }
 
+    protected void recordInventoryCallbackDuration(final long durationNs) {
+        if (durationNs < 0L) return;
+        synchronized (inventoryPerformanceLock) {
+            inventoryCallbackTotalDurationNs += durationNs;
+            if (durationNs > inventoryCallbackMaxDurationNs) inventoryCallbackMaxDurationNs = durationNs;
+        }
+    }
+
     private void startInventoryDiagnosticLogger() {
         stopInventoryDiagnosticLogger();
         inventoryDiagnosticLogger = RetailDiagnosticLogger.start(context, sessionId, new RetailDiagnosticLogger.SnapshotProvider() {
@@ -887,7 +899,9 @@ public abstract class RFIDHandler {
                     inventoryUniqueReads,
                     pendingInventoryWrites.size() + pendingTripInventoryWrites.size(),
                     inventoryLastDbFlushDurationMs,
-                    chkNotNullTrue(isInventoryOn.getValue()));
+                    chkNotNullTrue(isInventoryOn.getValue()),
+                    inventoryRawCallbacks.get() > 0L ? inventoryCallbackTotalDurationNs / 1000000.0d / inventoryRawCallbacks.get() : Double.NaN,
+                    inventoryCallbackMaxDurationNs / 1000000.0d);
         }
     }
 
@@ -1657,7 +1671,9 @@ public abstract class RFIDHandler {
     }
 
     protected final void handleTagInfoForInventory(final Object tagData, final String epc, final String tid, final String rssiVal) {
+        final long callbackStartNs = System.nanoTime();
         recordInventoryRawCallbackForDiagnostics();
+        try {
         if ((sessionType == AppCommonMethods.SessionType.ENCODING || (rfidSession != null && rfidSession.sessionType == AppCommonMethods.SessionType.ENCODING.getValue())) || (sessionType == AppCommonMethods.SessionType.ENCODING_THAN || (rfidSession != null && rfidSession.sessionType == AppCommonMethods.SessionType.ENCODING_THAN.getValue()))) {
             showLog("Inv_ENC", sessionId + "_" + sessionType + "_" + sessionAction);
             updateFoundWrittenTag(epc, tid);
@@ -1694,6 +1710,9 @@ public abstract class RFIDHandler {
             }
         } else if (!rejectKnownInventoryDuplicate(epc, tid) && validateTagInfoForInventory(epc))
             storeInventoryData(getDataFromTagInfo(tagData));
+        } finally {
+            recordInventoryCallbackDuration(System.nanoTime() - callbackStartNs);
+        }
     }
 
     protected abstract Inventory getDataFromTagInfo(Object object);
