@@ -3,6 +3,7 @@ package com.itek.retail.common;
 import androidx.multidex.MultiDexApplication;
 
 import com.itek.retail.BuildConfig;
+import com.itek.retail.reader.AppAnrDiagnosticLogger;
 import org.acra.config.CoreConfigurationBuilder;
 import org.acra.data.StringFormat;
 import org.acra.ACRA;
@@ -34,6 +35,10 @@ public class RetailApplication extends MultiDexApplication{
   public void onCreate(){
     super.onCreate();
     SharedPrefManager.init(this);
+    if(AppAnrDiagnosticLogger.isEnabled()){
+      AppAnrDiagnosticLogger.start(this);
+      registerActivityLifecycleCallbacks(new AppAnrDiagnosticLogger.LifecycleCallbacks());
+    }
     if(BuildConfig.IS_DIAGNOSTIC_BUILD) return;
     //ACRA.init(this);
     ACRA.init(this, new CoreConfigurationBuilder()

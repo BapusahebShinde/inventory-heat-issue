@@ -159,7 +159,27 @@ public abstract class RFIDHandler {
     private long inventoryUniqueReads = 0L;
     private long inventoryDuplicateReads = 0L;
     private final AtomicLong inventoryRawCallbacks = new AtomicLong(0L);
+    private final AtomicLong inventoryRssiTotal = new AtomicLong(0L);
+    private final AtomicLong inventoryRssiCount = new AtomicLong(0L);
+    private final AtomicLong inventoryRssiMin = new AtomicLong(Long.MAX_VALUE);
+    private final AtomicLong inventoryRssiMax = new AtomicLong(Long.MIN_VALUE);
     private long inventoryLastDbFlushDurationMs = 0L;
+    private final AtomicLong inventoryCallbackTotalDurationNs = new AtomicLong(0L);
+    private final AtomicLong inventoryCallbackMaxDurationNs = new AtomicLong(0L);
+    private final AtomicLong inventorySdkErrorCount = new AtomicLong(0L);
+    private final AtomicLong inventorySdkWarningCount = new AtomicLong(0L);
+    private volatile String inventoryLastSdkError = "";
+    private volatile String inventoryLastSdkWarning = "";
+    private final AtomicLong rfidInitCallCount = new AtomicLong(0L);
+    private final AtomicLong rfidReleaseCallCount = new AtomicLong(0L);
+    private final AtomicLong inventoryStartCallCount = new AtomicLong(0L);
+    private final AtomicLong inventoryStopCallCount = new AtomicLong(0L);
+    private volatile String rfidLifecycleState = "IDLE";
+    private volatile String lastRfidLifecycleEvent = "";
+    private volatile long lastRfidLifecycleTimestampMs = 0L;
+    private volatile String currentMainThreadOperation = "";
+    private volatile String lastMainThreadOperation = "";
+    private volatile long lastMainThreadOperationTimestampMs = 0L;
     private RetailDiagnosticLogger inventoryDiagnosticLogger = null;
 
     protected boolean restrictTriggerPress = false;
@@ -213,7 +233,10 @@ public abstract class RFIDHandler {
      * Init sdk.
      */
     public void InitSDK() {
+        recordRfidInitCallForDiagnostics("InitSDK");
+        markMainThreadOperationForDiagnostics("RFID_INIT");
         resetCommandFlags();
+        clearMainThreadOperationForDiagnostics("RFID_INIT");
     }
 
     /**
@@ -272,15 +295,25 @@ public abstract class RFIDHandler {
     }
 
     public boolean performInventory(final boolean isHideUnencodedTags, final List<String> listIgnoreEpcs) {
+        recordInventoryStartCallForDiagnostics("performInventory");
+        markMainThreadOperationForDiagnostics("INVENTORY_START");
         resetCommandFlags();
         //check session on
-        if (!chkNotNullTrue(isSessionOn.getValue())) return false;
+        if (!chkNotNullTrue(isSessionOn.getValue())) {
+            clearMainThreadOperationForDiagnostics("INVENTORY_START");
+            return false;
+        }
             //check process On
-        else if (isProcessOn()) return false;
+        else if (isProcessOn()) {
+            clearMainThreadOperationForDiagnostics("INVENTORY_START");
+            return false;
+        }
             //check reader connection
         else if (!isReaderConnected()) {
             checkAndConnectReader();
             showLog("performInventory Reader Connection", "Disconnected");
+            recordRfidLifecycleEventForDiagnostics("ERROR", "INVENTORY_START_READER_DISCONNECTED");
+            clearMainThreadOperationForDiagnostics("INVENTORY_START");
             return false;
         } else if (sessionType == AppCommonMethods.SessionType.ENCODING || sessionType == AppCommonMethods.SessionType.ENCODING_THAN || sessionType == AppCommonMethods.SessionType.DECODING || sessionType == AppCommonMethods.SessionType.SEARCH_FILE) {
             readTid = true;
@@ -293,6 +326,8 @@ public abstract class RFIDHandler {
         this.listIgnoreEpcs = isNonEmpty(listIgnoreEpcs) ? new HashSet<String>(listIgnoreEpcs) : null;
         resetInventoryPerformanceState();
         startInventoryDiagnosticLogger();
+        recordRfidLifecycleEventForDiagnostics("INVENTORY_RUNNING", "INVENTORY_START");
+        clearMainThreadOperationForDiagnostics("INVENTORY_START");
         return true;
     }
 
@@ -300,6 +335,8 @@ public abstract class RFIDHandler {
      * Stop inventory.
      */
     public void stopInventory() {
+        recordInventoryStopCallForDiagnostics("stopInventory");
+        markMainThreadOperationForDiagnostics("INVENTORY_STOP");
         showLog("stopInventory", "" + (isActionPick));
         stopInventoryPerformanceTimer();
         flushInventoryWriteBatches(true);
@@ -335,6 +372,8 @@ public abstract class RFIDHandler {
         isHideUnencodedTagsInInventory = false;
         if (isNonEmpty(listIgnoreEpcs)) listIgnoreEpcs = null;
         setProgressMessage(false);
+        recordRfidLifecycleEventForDiagnostics("IDLE", "INVENTORY_STOP");
+        clearMainThreadOperationForDiagnostics("INVENTORY_STOP");
     }
 
     /**
@@ -823,7 +862,17 @@ public abstract class RFIDHandler {
             inventoryUniqueReads = 0L;
             inventoryDuplicateReads = 0L;
             inventoryRawCallbacks.set(0L);
+            inventoryRssiTotal.set(0L);
+            inventoryRssiCount.set(0L);
+            inventoryRssiMin.set(Long.MAX_VALUE);
+            inventoryRssiMax.set(Long.MIN_VALUE);
             inventoryLastDbFlushDurationMs = 0L;
+            inventoryCallbackTotalDurationNs.set(0L);
+            inventoryCallbackMaxDurationNs.set(0L);
+            inventorySdkErrorCount.set(0L);
+            inventorySdkWarningCount.set(0L);
+            inventoryLastSdkError = "";
+            inventoryLastSdkWarning = "";
             inventoryStartTimeMs = System.currentTimeMillis();
             inventoryLastBatchFlushMs = inventoryStartTimeMs;
             inventoryLastMetricsLogMs = inventoryStartTimeMs;
@@ -860,6 +909,136 @@ public abstract class RFIDHandler {
         inventoryRawCallbacks.incrementAndGet();
     }
 
+    protected void recordInventoryCallbackDuration(final long durationNs) {
+        if (durationNs < 0L) return;
+        inventoryCallbackTotalDurationNs.addAndGet(durationNs);
+        long currentMaxNs = inventoryCallbackMaxDurationNs.get();
+        while (durationNs > currentMaxNs && !inventoryCallbackMaxDurationNs.compareAndSet(currentMaxNs, durationNs)) {
+            currentMaxNs = inventoryCallbackMaxDurationNs.get();
+        }
+    }
+
+    protected void recordInventoryRssiForDiagnostics(final String rssiValue) {
+        try {
+            if (isNullOrEmpty(rssiValue)) return;
+            final long rssi = Math.round(Double.parseDouble(rssiValue));
+            inventoryRssiTotal.addAndGet(rssi);
+            inventoryRssiCount.incrementAndGet();
+            updateAtomicMin(inventoryRssiMin, rssi);
+            updateAtomicMax(inventoryRssiMax, rssi);
+        }
+        catch (Throwable ignored) {
+            // RSSI diagnostics are optional and must not interrupt inventory.
+        }
+    }
+
+    protected void recordInventorySdkErrorForDiagnostics(final String message) {
+        inventorySdkErrorCount.incrementAndGet();
+        inventoryLastSdkError = chkNull(message, "");
+    }
+
+    protected void recordInventorySdkWarningForDiagnostics(final String message) {
+        inventorySdkWarningCount.incrementAndGet();
+        inventoryLastSdkWarning = chkNull(message, "");
+    }
+
+    protected void recordRfidInitCallForDiagnostics(final String eventName) {
+        rfidInitCallCount.incrementAndGet();
+        AppAnrDiagnosticLogger.recordRfidInitCall(eventName);
+        recordRfidLifecycleEventForDiagnostics("INITIALIZING", eventName);
+    }
+
+    protected void recordRfidReleaseCallForDiagnostics(final String eventName) {
+        rfidReleaseCallCount.incrementAndGet();
+        AppAnrDiagnosticLogger.recordRfidReleaseCall(eventName);
+        recordRfidLifecycleEventForDiagnostics("RELEASING", eventName);
+    }
+
+    protected void recordInventoryStartCallForDiagnostics(final String eventName) {
+        inventoryStartCallCount.incrementAndGet();
+        AppAnrDiagnosticLogger.recordInventoryStartCall(eventName);
+        recordRfidLifecycleEventForDiagnostics("READY", eventName);
+    }
+
+    protected void recordInventoryStopCallForDiagnostics(final String eventName) {
+        inventoryStopCallCount.incrementAndGet();
+        AppAnrDiagnosticLogger.recordInventoryStopCall(eventName);
+        recordRfidLifecycleEventForDiagnostics("STOPPING", eventName);
+    }
+
+    protected void recordRfidLifecycleEventForDiagnostics(final String state, final String eventName) {
+        rfidLifecycleState = chkNull(state, "");
+        lastRfidLifecycleEvent = chkNull(eventName, "");
+        lastRfidLifecycleTimestampMs = System.currentTimeMillis();
+        AppAnrDiagnosticLogger.recordRfidLifecycleEvent(state, eventName);
+    }
+
+    protected void markMainThreadOperationForDiagnostics(final String operation) {
+        final String safeOperation = chkNull(operation, "");
+        currentMainThreadOperation = safeOperation;
+        lastMainThreadOperation = safeOperation;
+        lastMainThreadOperationTimestampMs = System.currentTimeMillis();
+        AppAnrDiagnosticLogger.markMainThreadOperation(safeOperation);
+    }
+
+    protected void clearMainThreadOperationForDiagnostics(final String operation) {
+        final String safeOperation = chkNull(operation, "");
+        if (safeOperation.length() <= 0 || safeOperation.equals(currentMainThreadOperation)) currentMainThreadOperation = "";
+        AppAnrDiagnosticLogger.clearMainThreadOperation(safeOperation);
+    }
+
+    private String getSuspectedBlockingAreaForDiagnostics() {
+        if (currentMainThreadOperation.length() > 0) return currentMainThreadOperation;
+        return System.currentTimeMillis() - lastMainThreadOperationTimestampMs <= 10000L ? lastMainThreadOperation : "";
+    }
+
+    private void updateAtomicMin(final AtomicLong value, final long candidate) {
+        long current = value.get();
+        while (candidate < current && !value.compareAndSet(current, candidate)) current = value.get();
+    }
+
+    private void updateAtomicMax(final AtomicLong value, final long candidate) {
+        long current = value.get();
+        while (candidate > current && !value.compareAndSet(current, candidate)) current = value.get();
+    }
+
+    protected double readUhfModuleTemperatureCForDiagnostics() {
+        return Double.NaN;
+    }
+
+    protected int readRfPowerDbmForDiagnostics() {
+        final Integer power = readerPower != null ? readerPower.getValue() : null;
+        return power == null ? -1 : power;
+    }
+
+    protected String readInventorySessionForDiagnostics() {
+        return "";
+    }
+
+    protected String readInventoryTargetForDiagnostics() {
+        return "";
+    }
+
+    protected String readQValueForDiagnostics() {
+        return "";
+    }
+
+    protected String readDynamicQEnabledForDiagnostics() {
+        return "";
+    }
+
+    protected String readAntennaStateForDiagnostics() {
+        return chkNotNullTrue(isInventoryOn.getValue()) ? "ENABLED" : "DISABLED";
+    }
+
+    protected int readKnownUnreadExpectedForDiagnostics() {
+        return -1;
+    }
+
+    protected int readKnownUnreadFoundForDiagnostics() {
+        return -1;
+    }
+
     private void startInventoryDiagnosticLogger() {
         stopInventoryDiagnosticLogger();
         inventoryDiagnosticLogger = RetailDiagnosticLogger.start(context, sessionId, new RetailDiagnosticLogger.SnapshotProvider() {
@@ -877,18 +1056,53 @@ public abstract class RFIDHandler {
     }
 
     private RetailDiagnosticLogger.InventorySnapshot getInventoryDiagnosticSnapshot() {
+        final long elapsedSeconds;
+        final long duplicateReads;
+        final long uniqueReads;
+        final int callbackQueueDepth;
+        final long lastDbFlushDurationMs;
         synchronized (inventoryPerformanceLock) {
-            final long elapsedSeconds = inventoryStartTimeMs > 0L ? Math.max(0L, (System.currentTimeMillis() - inventoryStartTimeMs) / 1000L) : 0L;
-            return new RetailDiagnosticLogger.InventorySnapshot(
+            elapsedSeconds = inventoryStartTimeMs > 0L ? Math.max(0L, (System.currentTimeMillis() - inventoryStartTimeMs) / 1000L) : 0L;
+            duplicateReads = inventoryDuplicateReads;
+            uniqueReads = inventoryUniqueReads;
+            callbackQueueDepth = pendingInventoryWrites.size() + pendingTripInventoryWrites.size();
+            lastDbFlushDurationMs = inventoryLastDbFlushDurationMs;
+        }
+        final long rawCallbacks = inventoryRawCallbacks.get();
+        final long rssiCount = inventoryRssiCount.get();
+        final long minRssi = inventoryRssiMin.get();
+        final long maxRssi = inventoryRssiMax.get();
+        final boolean readerConnected = isReaderConnected();
+        AppAnrDiagnosticLogger.updateReaderConnected(readerConnected);
+        return new RetailDiagnosticLogger.InventorySnapshot(
                     chkNull(sessionId, ""),
                     elapsedSeconds,
-                    inventoryRawCallbacks.get(),
-                    inventoryDuplicateReads,
-                    inventoryUniqueReads,
-                    pendingInventoryWrites.size() + pendingTripInventoryWrites.size(),
-                    inventoryLastDbFlushDurationMs,
-                    chkNotNullTrue(isInventoryOn.getValue()));
-        }
+                    rawCallbacks,
+                    duplicateReads,
+                    uniqueReads,
+                    callbackQueueDepth,
+                    lastDbFlushDurationMs,
+                    chkNotNullTrue(isInventoryOn.getValue()),
+                    rawCallbacks > 0L ? inventoryCallbackTotalDurationNs.get() / 1000000.0d / rawCallbacks : Double.NaN,
+                    inventoryCallbackMaxDurationNs.get() / 1000000.0d,
+                    readUhfModuleTemperatureCForDiagnostics(),
+                    readRfPowerDbmForDiagnostics(),
+                    readInventorySessionForDiagnostics(),
+                    readInventoryTargetForDiagnostics(),
+                    readQValueForDiagnostics(),
+                    readDynamicQEnabledForDiagnostics(),
+                    readAntennaStateForDiagnostics(),
+                    readerConnected,
+                    inventorySdkErrorCount.get(),
+                    inventoryLastSdkError,
+                    inventorySdkWarningCount.get(),
+                    inventoryLastSdkWarning,
+                    callbackQueueDepth,
+                    rssiCount > 0L ? inventoryRssiTotal.get() / (double) rssiCount : Double.NaN,
+                    minRssi == Long.MAX_VALUE ? Double.NaN : minRssi,
+                    maxRssi == Long.MIN_VALUE ? Double.NaN : maxRssi,
+                    readKnownUnreadExpectedForDiagnostics(),
+                    readKnownUnreadFoundForDiagnostics());
     }
 
     /**
@@ -948,8 +1162,12 @@ public abstract class RFIDHandler {
     }
 
     public void onDestroy() {
+        recordRfidReleaseCallForDiagnostics("onDestroy");
+        markMainThreadOperationForDiagnostics("RFID_RELEASE");
         stopSession();
         SharedPrefManager.setString(PREF_KEY_SAVED_BLUETOOTH_READER_ADDRESS, "");
+        recordRfidLifecycleEventForDiagnostics("RELEASED", "RFID_RELEASE");
+        clearMainThreadOperationForDiagnostics("RFID_RELEASE");
     }
 
     public void showLog(final String tag, final String msg) {
@@ -1657,7 +1875,10 @@ public abstract class RFIDHandler {
     }
 
     protected final void handleTagInfoForInventory(final Object tagData, final String epc, final String tid, final String rssiVal) {
+        final long callbackStartNs = System.nanoTime();
         recordInventoryRawCallbackForDiagnostics();
+        recordInventoryRssiForDiagnostics(rssiVal);
+        try {
         if ((sessionType == AppCommonMethods.SessionType.ENCODING || (rfidSession != null && rfidSession.sessionType == AppCommonMethods.SessionType.ENCODING.getValue())) || (sessionType == AppCommonMethods.SessionType.ENCODING_THAN || (rfidSession != null && rfidSession.sessionType == AppCommonMethods.SessionType.ENCODING_THAN.getValue()))) {
             showLog("Inv_ENC", sessionId + "_" + sessionType + "_" + sessionAction);
             updateFoundWrittenTag(epc, tid);
@@ -1694,6 +1915,9 @@ public abstract class RFIDHandler {
             }
         } else if (!rejectKnownInventoryDuplicate(epc, tid) && validateTagInfoForInventory(epc))
             storeInventoryData(getDataFromTagInfo(tagData));
+        } finally {
+            recordInventoryCallbackDuration(System.nanoTime() - callbackStartNs);
+        }
     }
 
     protected abstract Inventory getDataFromTagInfo(Object object);
