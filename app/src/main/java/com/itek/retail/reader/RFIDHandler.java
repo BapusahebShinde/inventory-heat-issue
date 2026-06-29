@@ -170,6 +170,16 @@ public abstract class RFIDHandler {
     private final AtomicLong inventorySdkWarningCount = new AtomicLong(0L);
     private volatile String inventoryLastSdkError = "";
     private volatile String inventoryLastSdkWarning = "";
+    private final AtomicLong rfidInitCallCount = new AtomicLong(0L);
+    private final AtomicLong rfidReleaseCallCount = new AtomicLong(0L);
+    private final AtomicLong inventoryStartCallCount = new AtomicLong(0L);
+    private final AtomicLong inventoryStopCallCount = new AtomicLong(0L);
+    private volatile String rfidLifecycleState = "IDLE";
+    private volatile String lastRfidLifecycleEvent = "";
+    private volatile long lastRfidLifecycleTimestampMs = 0L;
+    private volatile String currentMainThreadOperation = "";
+    private volatile String lastMainThreadOperation = "";
+    private volatile long lastMainThreadOperationTimestampMs = 0L;
     private RetailDiagnosticLogger inventoryDiagnosticLogger = null;
 
     protected boolean restrictTriggerPress = false;
@@ -223,7 +233,10 @@ public abstract class RFIDHandler {
      * Init sdk.
      */
     public void InitSDK() {
+        recordRfidInitCallForDiagnostics("InitSDK");
+        markMainThreadOperationForDiagnostics("RFID_INIT");
         resetCommandFlags();
+        clearMainThreadOperationForDiagnostics("RFID_INIT");
     }
 
     /**
@@ -282,15 +295,25 @@ public abstract class RFIDHandler {
     }
 
     public boolean performInventory(final boolean isHideUnencodedTags, final List<String> listIgnoreEpcs) {
+        recordInventoryStartCallForDiagnostics("performInventory");
+        markMainThreadOperationForDiagnostics("INVENTORY_START");
         resetCommandFlags();
         //check session on
-        if (!chkNotNullTrue(isSessionOn.getValue())) return false;
+        if (!chkNotNullTrue(isSessionOn.getValue())) {
+            clearMainThreadOperationForDiagnostics("INVENTORY_START");
+            return false;
+        }
             //check process On
-        else if (isProcessOn()) return false;
+        else if (isProcessOn()) {
+            clearMainThreadOperationForDiagnostics("INVENTORY_START");
+            return false;
+        }
             //check reader connection
         else if (!isReaderConnected()) {
             checkAndConnectReader();
             showLog("performInventory Reader Connection", "Disconnected");
+            recordRfidLifecycleEventForDiagnostics("ERROR", "INVENTORY_START_READER_DISCONNECTED");
+            clearMainThreadOperationForDiagnostics("INVENTORY_START");
             return false;
         } else if (sessionType == AppCommonMethods.SessionType.ENCODING || sessionType == AppCommonMethods.SessionType.ENCODING_THAN || sessionType == AppCommonMethods.SessionType.DECODING || sessionType == AppCommonMethods.SessionType.SEARCH_FILE) {
             readTid = true;
@@ -303,6 +326,8 @@ public abstract class RFIDHandler {
         this.listIgnoreEpcs = isNonEmpty(listIgnoreEpcs) ? new HashSet<String>(listIgnoreEpcs) : null;
         resetInventoryPerformanceState();
         startInventoryDiagnosticLogger();
+        recordRfidLifecycleEventForDiagnostics("INVENTORY_RUNNING", "INVENTORY_START");
+        clearMainThreadOperationForDiagnostics("INVENTORY_START");
         return true;
     }
 
@@ -310,6 +335,8 @@ public abstract class RFIDHandler {
      * Stop inventory.
      */
     public void stopInventory() {
+        recordInventoryStopCallForDiagnostics("stopInventory");
+        markMainThreadOperationForDiagnostics("INVENTORY_STOP");
         showLog("stopInventory", "" + (isActionPick));
         stopInventoryPerformanceTimer();
         flushInventoryWriteBatches(true);
@@ -345,6 +372,8 @@ public abstract class RFIDHandler {
         isHideUnencodedTagsInInventory = false;
         if (isNonEmpty(listIgnoreEpcs)) listIgnoreEpcs = null;
         setProgressMessage(false);
+        recordRfidLifecycleEventForDiagnostics("IDLE", "INVENTORY_STOP");
+        clearMainThreadOperationForDiagnostics("INVENTORY_STOP");
     }
 
     /**
@@ -913,6 +942,49 @@ public abstract class RFIDHandler {
         inventoryLastSdkWarning = chkNull(message, "");
     }
 
+    protected void recordRfidInitCallForDiagnostics(final String eventName) {
+        rfidInitCallCount.incrementAndGet();
+        recordRfidLifecycleEventForDiagnostics("INITIALIZING", eventName);
+    }
+
+    protected void recordRfidReleaseCallForDiagnostics(final String eventName) {
+        rfidReleaseCallCount.incrementAndGet();
+        recordRfidLifecycleEventForDiagnostics("RELEASING", eventName);
+    }
+
+    protected void recordInventoryStartCallForDiagnostics(final String eventName) {
+        inventoryStartCallCount.incrementAndGet();
+        recordRfidLifecycleEventForDiagnostics("READY", eventName);
+    }
+
+    protected void recordInventoryStopCallForDiagnostics(final String eventName) {
+        inventoryStopCallCount.incrementAndGet();
+        recordRfidLifecycleEventForDiagnostics("STOPPING", eventName);
+    }
+
+    protected void recordRfidLifecycleEventForDiagnostics(final String state, final String eventName) {
+        rfidLifecycleState = chkNull(state, "");
+        lastRfidLifecycleEvent = chkNull(eventName, "");
+        lastRfidLifecycleTimestampMs = System.currentTimeMillis();
+    }
+
+    protected void markMainThreadOperationForDiagnostics(final String operation) {
+        final String safeOperation = chkNull(operation, "");
+        currentMainThreadOperation = safeOperation;
+        lastMainThreadOperation = safeOperation;
+        lastMainThreadOperationTimestampMs = System.currentTimeMillis();
+    }
+
+    protected void clearMainThreadOperationForDiagnostics(final String operation) {
+        final String safeOperation = chkNull(operation, "");
+        if (safeOperation.length() <= 0 || safeOperation.equals(currentMainThreadOperation)) currentMainThreadOperation = "";
+    }
+
+    private String getSuspectedBlockingAreaForDiagnostics() {
+        if (currentMainThreadOperation.length() > 0) return currentMainThreadOperation;
+        return System.currentTimeMillis() - lastMainThreadOperationTimestampMs <= 10000L ? lastMainThreadOperation : "";
+    }
+
     private void updateAtomicMin(final AtomicLong value, final long candidate) {
         long current = value.get();
         while (candidate < current && !value.compareAndSet(current, candidate)) current = value.get();
@@ -1021,7 +1093,16 @@ public abstract class RFIDHandler {
                     minRssi == Long.MAX_VALUE ? Double.NaN : minRssi,
                     maxRssi == Long.MIN_VALUE ? Double.NaN : maxRssi,
                     readKnownUnreadExpectedForDiagnostics(),
-                    readKnownUnreadFoundForDiagnostics());
+                    readKnownUnreadFoundForDiagnostics(),
+                    rfidInitCallCount.get(),
+                    rfidReleaseCallCount.get(),
+                    inventoryStartCallCount.get(),
+                    inventoryStopCallCount.get(),
+                    rfidLifecycleState,
+                    lastRfidLifecycleEvent,
+                    lastRfidLifecycleTimestampMs,
+                    lastMainThreadOperation,
+                    getSuspectedBlockingAreaForDiagnostics());
     }
 
     /**
@@ -1081,8 +1162,12 @@ public abstract class RFIDHandler {
     }
 
     public void onDestroy() {
+        recordRfidReleaseCallForDiagnostics("onDestroy");
+        markMainThreadOperationForDiagnostics("RFID_RELEASE");
         stopSession();
         SharedPrefManager.setString(PREF_KEY_SAVED_BLUETOOTH_READER_ADDRESS, "");
+        recordRfidLifecycleEventForDiagnostics("RELEASED", "RFID_RELEASE");
+        clearMainThreadOperationForDiagnostics("RFID_RELEASE");
     }
 
     public void showLog(final String tag, final String msg) {

@@ -94,3 +94,11 @@ Callback duration tracking now avoids the shared inventory performance lock by u
 The diagnostic CSV now separates Android OS temperature from RFID module diagnostics. `battery_temp_c` still comes from Android battery telemetry, while `uhf_module_temp_c` is sampled from the reader SDK when supported. Chainway/C5 diagnostics use the SDK `getTemperature()` API on the active UART/BLE reader instance and sample it only from the five-second diagnostic snapshot path, not from the per-tag callback.
 
 Additional five-second fields were added for RF power, reader connection/antenna state, SDK error/warning counters, callback queue depth, RSSI min/avg/max, duplicate percentage, battery voltage/current, screen brightness, and placeholders for known-unread tag test counts. The per-tag callback remains limited to counters/timing/RSSI aggregation and does not perform per-tag file I/O.
+
+## ANR Diagnostics Follow-up
+
+Version 189 diagnostics now include a lightweight main-thread heartbeat monitor for ANR investigation. A background scheduler posts a heartbeat to `Looper.getMainLooper()` every second; when the heartbeat runs more than two seconds late, the monitor records block count, max/last block duration, last block timestamp, total blocked time, and a concise warning context. The monitor does not collect continuous stack traces and does not write per-tag logs.
+
+The diagnostic CSV now appends ANR and RFID lifecycle fields after the existing Version 189 columns, including main-thread block metrics, monitor running state, RFID init/release counts, inventory start/stop counts, lifecycle state, last lifecycle event/timestamp, last ANR warning, and optional main-thread operation markers. The summary text report now contains an `ANR / Main Thread Diagnostics` section with a LOW/MEDIUM/HIGH risk assessment and recommendation.
+
+RFID lifecycle diagnostics are added around existing init, release, inventory start, and inventory stop method calls without changing EPC rules, inventory acceptance, database batching, MQTT/API behavior, or RFID business logic. Existing risky areas observed during inspection include reader init/release/free calls in reader lifecycle methods and main-thread handler usage around reader power/configuration; these are now observable before attempting any behavioral refactor.

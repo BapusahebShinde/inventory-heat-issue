@@ -103,6 +103,7 @@ public class ChainwayRFIDHandler extends RFIDHandler{
   private volatile String diagnosticInventoryTarget = "";
   private volatile String diagnosticQValue = "";
   private volatile String diagnosticDynamicQEnabled = "";
+  private boolean isOverloadedInitCountAlreadyRecorded = false;
   private boolean isConnected = false;
   private Handler handler;
   private BluetoothAdapter mBluetoothAdapter = null;
@@ -494,6 +495,7 @@ public class ChainwayRFIDHandler extends RFIDHandler{
   @Override
   public void InitSDK(){
     super.InitSDK();
+    isOverloadedInitCountAlreadyRecorded = true;
     InitSDK(false);
   }
   
@@ -503,6 +505,9 @@ public class ChainwayRFIDHandler extends RFIDHandler{
    * @param isConfigureDevice the is configure device
    */
   public void InitSDK(boolean isConfigureDevice){
+    if(isOverloadedInitCountAlreadyRecorded) isOverloadedInitCountAlreadyRecorded = false;
+    else recordRfidInitCallForDiagnostics("Chainway.InitSDK(" + isConfigureDevice + ")");
+    markMainThreadOperationForDiagnostics("RFID_INIT");
     saveSerialNo();
     setProgressMessage(true);
     
@@ -523,8 +528,10 @@ public class ChainwayRFIDHandler extends RFIDHandler{
     }
     else{
       setProgressMessage(false);
+      recordRfidLifecycleEventForDiagnostics("ERROR", "CHAINWAY_INIT_INSTANCE_MISSING");
       rfidInterface.RFIDInitializationStatus(false, "", null);
     }
+    clearMainThreadOperationForDiagnostics("RFID_INIT");
   }
   
   private void init(){
@@ -543,6 +550,7 @@ public class ChainwayRFIDHandler extends RFIDHandler{
         if(isNonEmpty(sdkVersion) && !SharedPrefManager.getReaderSDKVersion().equalsIgnoreCase(sdkVersion))
           SharedPrefManager.setReaderSDKVersion(sdkVersion);
         configureReader(sessionType);
+        recordRfidLifecycleEventForDiagnostics("READY", "CHAINWAY_INIT_SUCCESS");
       }
       else{
         setProgressMessage(false);
@@ -552,6 +560,7 @@ public class ChainwayRFIDHandler extends RFIDHandler{
         showLog("maxPower", "" + maxPower);
         showLog("power", "" + power);
         setReaderPower(power);
+        recordRfidLifecycleEventForDiagnostics("ERROR", "CHAINWAY_INIT_FAILED");
         rfidInterface.RFIDInitializationStatus(false, "RFID initialization Failed", null);
       }
       //setup handler
@@ -575,6 +584,8 @@ public class ChainwayRFIDHandler extends RFIDHandler{
       
       setKeyEventCallback();
     }catch(Exception e){e.printStackTrace();
+      recordRfidLifecycleEventForDiagnostics("ERROR", "CHAINWAY_INIT_EXCEPTION");
+      recordInventorySdkErrorForDiagnostics(e.getMessage());
       AppCommonMethods.writeReaderLog(context,"CHAINWAY","CHAINWAY_RFID",FILE_TAG_LOG,e.getMessage());
     }
   }
@@ -682,6 +693,7 @@ public class ChainwayRFIDHandler extends RFIDHandler{
    * On destroy.
    */
   public void onDestroy(){
+    markMainThreadOperationForDiagnostics("RFID_RELEASE");
     if(isInit)
    /*   new Handler(Looper.getMainLooper()).post(new Runnable(){
       @Override
@@ -702,10 +714,14 @@ public class ChainwayRFIDHandler extends RFIDHandler{
             AppCommonMethods.writeReaderLog(context,"CHAINWAY","CHAINWAY_RFID",FILE_TAG_LOG,"free -> "+result);
           }
         }catch(Exception e){e.printStackTrace();
+          recordRfidLifecycleEventForDiagnostics("ERROR", "CHAINWAY_RELEASE_EXCEPTION");
+          recordInventorySdkErrorForDiagnostics(e.getMessage());
           AppCommonMethods.writeReaderLog(context,"CHAINWAY","CHAINWAY_RFID",FILE_TAG_LOG,e.getMessage());
         }
       }
     //});
+    recordRfidLifecycleEventForDiagnostics("RELEASED", "CHAINWAY_ON_DESTROY_RELEASE");
+    clearMainThreadOperationForDiagnostics("RFID_RELEASE");
     super.onDestroy();
   }
   
@@ -1591,6 +1607,7 @@ public class ChainwayRFIDHandler extends RFIDHandler{
     AppCommonMethods.SessionType type = this.sessionType.getValue() > 0 || sessionType == null || sessionType.getValue() == 0 ? this.sessionType : sessionType != null ? sessionType : this.sessionType;
     if(!isReaderConnected()){
       showLog(TAG_LOG, "CONFIG FAIL");
+      recordRfidLifecycleEventForDiagnostics("ERROR", "CHAINWAY_CONFIG_READER_DISCONNECTED");
       isDeviceConfigured.postValue(false);
       rfidInterface.RFIDInitializationStatus(false, "RFID initialization Failed", null);
     }
@@ -1608,6 +1625,7 @@ public class ChainwayRFIDHandler extends RFIDHandler{
       setFastID(false);
       clearFilters();
       showLog(TAG_LOG, "CONFIG SUCCESS");
+      recordRfidLifecycleEventForDiagnostics("READY", "CHAINWAY_CONFIG_SUCCESS");
       isDeviceConfigured.postValue(true);
       setProgressMessage(false);
       rfidInterface.RFIDInitializationStatus(true, "", mReader);
@@ -1666,6 +1684,8 @@ public class ChainwayRFIDHandler extends RFIDHandler{
     /* new Handler(Looper.getMainLooper()).post(new Runnable(){
       @Override
       public void run()*/{
+        recordRfidReleaseCallForDiagnostics("Chainway.onPause");
+        markMainThreadOperationForDiagnostics("RFID_RELEASE");
         boolean result = false;
         try{
           if(beepTimer != null) beepTimer.cancel();
@@ -1681,9 +1701,13 @@ public class ChainwayRFIDHandler extends RFIDHandler{
             showLog("mReader", "free!");
             AppCommonMethods.writeReaderLog(context,"CHAINWAY","CHAINWAY_RFID",FILE_TAG_LOG,"free -> "+result);
           }
+          recordRfidLifecycleEventForDiagnostics("RELEASED", "CHAINWAY_ON_PAUSE_RELEASE");
         }catch(Exception e){e.printStackTrace();
+          recordRfidLifecycleEventForDiagnostics("ERROR", "CHAINWAY_RELEASE_EXCEPTION");
+          recordInventorySdkErrorForDiagnostics(e.getMessage());
           AppCommonMethods.writeReaderLog(context,"CHAINWAY","CHAINWAY_RFID",FILE_TAG_LOG,e.getMessage());
         }
+        clearMainThreadOperationForDiagnostics("RFID_RELEASE");
      }
       // });
   }
