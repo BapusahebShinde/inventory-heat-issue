@@ -46,6 +46,7 @@ import com.itek.retail.model.Inventory;
 import com.itek.retail.model.TripInventory;
 import com.itek.retail.model.TripStatus;
 import com.itek.retail.model.UploadInventory;
+import com.itek.retail.reader.AppAnrDiagnosticLogger;
 import com.itek.retail.reader.MainReaderRepository;
 import com.itek.retail.reader.RFIDHandler;
 import com.itek.retail.reader.RFIDInitInterface;
