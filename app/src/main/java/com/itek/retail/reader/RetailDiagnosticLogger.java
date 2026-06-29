@@ -45,6 +45,7 @@ public final class RetailDiagnosticLogger {
   private final String sessionId;
   private final SnapshotProvider snapshotProvider;
   private final ScheduledExecutorService executor;
+  private final MainThreadBlockMonitor mainThreadBlockMonitor;
   private final long startTimeMs;
   private final long startUiUpdateCount;
   private final String baseFileName;
@@ -239,6 +240,7 @@ public final class RetailDiagnosticLogger {
       thread.setDaemon(true);
       return thread;
     });
+    this.mainThreadBlockMonitor = new MainThreadBlockMonitor(() -> buildAnrWarningContext());
     this.startTimeMs = System.currentTimeMillis();
     this.lastSampleMs = startTimeMs;
     this.startUiUpdateCount = UI_UPDATE_COUNT.get();
@@ -254,6 +256,7 @@ public final class RetailDiagnosticLogger {
     writer.write(CSV_HEADER);
     writer.newLine();
     writer.flush();
+    mainThreadBlockMonitor.start();
     executor.scheduleAtFixedRate(() -> {
       if (!stopped) writeSampleSafe("SAMPLE");
     }, SAMPLE_INTERVAL_SECONDS, SAMPLE_INTERVAL_SECONDS, TimeUnit.SECONDS);
@@ -266,6 +269,7 @@ public final class RetailDiagnosticLogger {
       stopped = true;
       writeSampleLocked("STOP");
       writeSummaryLocked();
+      mainThreadBlockMonitor.stop();
       closeWriterLocked();
     }
     executor.shutdownNow();
@@ -290,6 +294,7 @@ public final class RetailDiagnosticLogger {
       final CpuSnapshot cpu = readCpuSnapshot();
       final GcSnapshot gc = readGcSnapshot();
       final int threadCount = readProcessThreadCount();
+      final MainThreadBlockMonitor.MainThreadBlockStats mainThreadStats = mainThreadBlockMonitor.snapshot();
       final double deltaSeconds = Math.max(1.0d, (now - lastSampleMs) / 1000.0d);
       final long rawDelta = Math.max(0L, snapshot.totalRawCallbacks - lastRawCallbacks);
       final long uniqueDelta = Math.max(0L, snapshot.totalUniqueEpcs - lastUniqueEpcs);
@@ -441,6 +446,8 @@ public final class RetailDiagnosticLogger {
       summaryWriter.newLine();
       summaryWriter.write("total_raw_callbacks=" + finalRawCallbacks);
       summaryWriter.newLine();
+      summaryWriter.write(generateAnrSummaryReport());
+      summaryWriter.newLine();
       summaryWriter.flush();
     }
     catch (Throwable t) {
@@ -456,6 +463,59 @@ public final class RetailDiagnosticLogger {
         }
       }
     }
+  }
+
+  public String generateAnrSummaryReport() {
+    try {
+      final InventorySnapshot snapshot = getSnapshot(System.currentTimeMillis());
+      final MainThreadBlockMonitor.MainThreadBlockStats mainThreadStats = mainThreadBlockMonitor.snapshot();
+      final double tagsPerSecond = snapshot.elapsedSeconds > 0L ? snapshot.totalUniqueEpcs / (double) snapshot.elapsedSeconds : Double.NaN;
+      final String risk = anrRiskAssessment(mainThreadStats);
+      final String recommendation = anrRecommendation(snapshot, mainThreadStats, risk);
+      return "\nANR / Main Thread Diagnostics\n"
+          + "-----------------------------\n"
+          + "scan_duration_seconds=" + snapshot.elapsedSeconds + "\n"
+          + "total_raw_callbacks=" + snapshot.totalRawCallbacks + "\n"
+          + "total_unique_tags=" + snapshot.totalUniqueEpcs + "\n"
+          + "total_duplicate_tags=" + snapshot.totalDuplicateCallbacks + "\n"
+          + "tags_per_second=" + formatDouble(tagsPerSecond) + "\n"
+          + "main_thread_block_count=" + mainThreadStats.blockCount + "\n"
+          + "main_thread_max_block_ms=" + mainThreadStats.maxBlockMs + "\n"
+          + "main_thread_last_block_ms=" + mainThreadStats.lastBlockMs + "\n"
+          + "main_thread_last_block_timestamp=" + MainThreadBlockMonitor.formatTimestamp(mainThreadStats.lastBlockTimestampMs) + "\n"
+          + "main_thread_total_blocked_ms=" + mainThreadStats.totalBlockedMs + "\n"
+          + "main_thread_monitor_running=" + mainThreadStats.running + "\n"
+          + "rfid_init_call_count=" + snapshot.rfidInitCallCount + "\n"
+          + "rfid_release_call_count=" + snapshot.rfidReleaseCallCount + "\n"
+          + "inventory_start_call_count=" + snapshot.inventoryStartCallCount + "\n"
+          + "inventory_stop_call_count=" + snapshot.inventoryStopCallCount + "\n"
+          + "rfid_lifecycle_state=" + safe(snapshot.rfidLifecycleState) + "\n"
+          + "last_rfid_lifecycle_event=" + safe(snapshot.lastRfidLifecycleEvent) + "\n"
+          + "last_rfid_lifecycle_timestamp=" + formatTimestampOrBlank(snapshot.lastRfidLifecycleTimestampMs) + "\n"
+          + "last_anr_warning=" + safe(mainThreadStats.lastAnrWarning) + "\n"
+          + "main_thread_last_known_operation=" + safe(snapshot.mainThreadLastKnownOperation) + "\n"
+          + "main_thread_suspected_blocking_area=" + safe(snapshot.mainThreadSuspectedBlockingArea) + "\n"
+          + "ANR Risk Assessment=" + risk + "\n"
+          + "recommendation=" + recommendation;
+    }
+    catch (Throwable ignored) {
+      return "\nANR / Main Thread Diagnostics\n-----------------------------\nANR Risk Assessment=UNKNOWN\nrecommendation=ANR diagnostics unavailable";
+    }
+  }
+
+  private static String anrRiskAssessment(final MainThreadBlockMonitor.MainThreadBlockStats stats) {
+    if (stats == null || stats.blockCount <= 0L) return "LOW";
+    if (stats.maxBlockMs > 5000L || stats.blockCount > 2L) return "HIGH";
+    return "MEDIUM";
+  }
+
+  private static String anrRecommendation(final InventorySnapshot snapshot, final MainThreadBlockMonitor.MainThreadBlockStats stats, final String risk) {
+    if ("LOW".equals(risk)) return "No ANR risk observed.";
+    final String suspectedArea = snapshot == null ? "" : safe(snapshot.mainThreadSuspectedBlockingArea);
+    if (suspectedArea.length() > 0) return "Main-thread block detected; review suspected blocking area: " + suspectedArea + ".";
+    if (snapshot != null && snapshot.rfidInitCallCount > 1L && snapshot.rfidReleaseCallCount > 0L)
+      return "Repeated RFID init/release detected; review hardware lifecycle.";
+    return stats != null && stats.blockCount > 2L ? "Repeated main-thread blocks detected; review UI-thread hardware and database operations." : "Main-thread block detected; review suspected blocking area.";
   }
 
   private BatterySnapshot readBatterySnapshot() {
