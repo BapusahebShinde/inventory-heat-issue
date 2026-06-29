@@ -7,6 +7,9 @@ import android.os.BatteryManager;
 import android.os.Build;
 import android.os.Debug;
 import android.os.PowerManager;
+import android.os.Process;
+import android.os.SystemClock;
+import android.provider.Settings;
 import android.util.Log;
 
 import com.itek.retail.BuildConfig;
@@ -36,12 +39,13 @@ public final class RetailDiagnosticLogger {
   private static final long MEMORY_LOW_MB = 64L;
   private static final AtomicLong UI_UPDATE_COUNT = new AtomicLong(0L);
   private static final AtomicLong LAST_UI_UPDATE_MS = new AtomicLong(0L);
-  public static final String CSV_HEADER = "row_type,session_id,timestamp,elapsed_seconds,battery_temp_c,battery_level,charging_status,total_raw_callbacks,total_duplicate_callbacks,total_unique_epcs,raw_callbacks_per_sec,unique_epcs_per_sec,db_pending_queue_size,last_db_batch_flush_ms,ui_update_count,last_ui_update_timestamp,app_memory_used_mb,app_memory_free_mb,reader_inventory_running,warnings,thermal_status,thermal_throttling_level,thermal_warning,cpu_usage_percent,cpu_frequency_khz,gc_count,gc_time_ms,process_thread_count";
+  public static final String CSV_HEADER = "row_type,session_id,timestamp,elapsed_seconds,battery_temp_c,battery_level,charging_status,total_raw_callbacks,total_duplicate_callbacks,total_unique_epcs,raw_callbacks_per_sec,unique_epcs_per_sec,duplicate_percent,db_pending_queue_size,last_db_batch_flush_ms,ui_update_count,last_ui_update_timestamp,app_memory_used_mb,app_memory_free_mb,reader_inventory_running,warnings,thermal_status,thermal_throttling_level,thermal_warning,cpu_usage_percent,cpu_frequency_khz,gc_count,gc_time_ms,process_thread_count,callback_avg_ms,callback_max_ms,uhf_module_temp_c,rf_power_dbm,inventory_session,inventory_target,q_value,dynamic_q_enabled,antenna_state,reader_connected,sdk_error_count,sdk_last_error,sdk_warning_count,sdk_last_warning,callback_queue_depth,avg_rssi,min_rssi,max_rssi,battery_voltage_mv,battery_current_ma,screen_brightness,known_unread_expected,known_unread_found,main_thread_block_count,main_thread_max_block_ms,main_thread_last_block_ms,main_thread_last_block_timestamp,main_thread_total_blocked_ms,main_thread_monitor_running,rfid_init_call_count,rfid_release_call_count,inventory_start_call_count,inventory_stop_call_count,rfid_lifecycle_state,last_rfid_lifecycle_event,last_rfid_lifecycle_timestamp,last_anr_warning,main_thread_last_known_operation,main_thread_suspected_blocking_area";
 
   private final Context appContext;
   private final String sessionId;
   private final SnapshotProvider snapshotProvider;
   private final ScheduledExecutorService executor;
+  private final MainThreadBlockMonitor mainThreadBlockMonitor;
   private final long startTimeMs;
   private final long startUiUpdateCount;
   private final String baseFileName;
@@ -64,6 +68,8 @@ public final class RetailDiagnosticLogger {
   private double lowestUniqueReadsPerSecondAfterFiveMinutes = Double.NaN;
   private long lastProcessCpuJiffies = -1L;
   private long lastTotalCpuJiffies = -1L;
+  private long lastElapsedCpuTimeMs = -1L;
+  private long lastElapsedCpuWallMs = -1L;
 
   public interface SnapshotProvider {
     InventorySnapshot getInventorySnapshot();
@@ -78,6 +84,35 @@ public final class RetailDiagnosticLogger {
     public final int dbPendingQueueSize;
     public final long lastDbBatchFlushDurationMs;
     public final boolean readerInventoryRunning;
+    public final double callbackAverageMs;
+    public final double callbackMaxMs;
+    public final double uhfModuleTempC;
+    public final int rfPowerDbm;
+    public final String inventorySession;
+    public final String inventoryTarget;
+    public final String qValue;
+    public final String dynamicQEnabled;
+    public final String antennaState;
+    public final boolean readerConnected;
+    public final long sdkErrorCount;
+    public final String sdkLastError;
+    public final long sdkWarningCount;
+    public final String sdkLastWarning;
+    public final int callbackQueueDepth;
+    public final double avgRssi;
+    public final double minRssi;
+    public final double maxRssi;
+    public final int knownUnreadExpected;
+    public final int knownUnreadFound;
+    public final long rfidInitCallCount;
+    public final long rfidReleaseCallCount;
+    public final long inventoryStartCallCount;
+    public final long inventoryStopCallCount;
+    public final String rfidLifecycleState;
+    public final String lastRfidLifecycleEvent;
+    public final long lastRfidLifecycleTimestampMs;
+    public final String mainThreadLastKnownOperation;
+    public final String mainThreadSuspectedBlockingArea;
 
     public InventorySnapshot(
         final String sessionId,
@@ -87,7 +122,36 @@ public final class RetailDiagnosticLogger {
         final long totalUniqueEpcs,
         final int dbPendingQueueSize,
         final long lastDbBatchFlushDurationMs,
-        final boolean readerInventoryRunning) {
+        final boolean readerInventoryRunning,
+        final double callbackAverageMs,
+        final double callbackMaxMs,
+        final double uhfModuleTempC,
+        final int rfPowerDbm,
+        final String inventorySession,
+        final String inventoryTarget,
+        final String qValue,
+        final String dynamicQEnabled,
+        final String antennaState,
+        final boolean readerConnected,
+        final long sdkErrorCount,
+        final String sdkLastError,
+        final long sdkWarningCount,
+        final String sdkLastWarning,
+        final int callbackQueueDepth,
+        final double avgRssi,
+        final double minRssi,
+        final double maxRssi,
+        final int knownUnreadExpected,
+        final int knownUnreadFound,
+        final long rfidInitCallCount,
+        final long rfidReleaseCallCount,
+        final long inventoryStartCallCount,
+        final long inventoryStopCallCount,
+        final String rfidLifecycleState,
+        final String lastRfidLifecycleEvent,
+        final long lastRfidLifecycleTimestampMs,
+        final String mainThreadLastKnownOperation,
+        final String mainThreadSuspectedBlockingArea) {
       this.sessionId = sessionId;
       this.elapsedSeconds = elapsedSeconds;
       this.totalRawCallbacks = totalRawCallbacks;
@@ -96,6 +160,35 @@ public final class RetailDiagnosticLogger {
       this.dbPendingQueueSize = dbPendingQueueSize;
       this.lastDbBatchFlushDurationMs = lastDbBatchFlushDurationMs;
       this.readerInventoryRunning = readerInventoryRunning;
+      this.callbackAverageMs = callbackAverageMs;
+      this.callbackMaxMs = callbackMaxMs;
+      this.uhfModuleTempC = uhfModuleTempC;
+      this.rfPowerDbm = rfPowerDbm;
+      this.inventorySession = inventorySession;
+      this.inventoryTarget = inventoryTarget;
+      this.qValue = qValue;
+      this.dynamicQEnabled = dynamicQEnabled;
+      this.antennaState = antennaState;
+      this.readerConnected = readerConnected;
+      this.sdkErrorCount = sdkErrorCount;
+      this.sdkLastError = sdkLastError;
+      this.sdkWarningCount = sdkWarningCount;
+      this.sdkLastWarning = sdkLastWarning;
+      this.callbackQueueDepth = callbackQueueDepth;
+      this.avgRssi = avgRssi;
+      this.minRssi = minRssi;
+      this.maxRssi = maxRssi;
+      this.knownUnreadExpected = knownUnreadExpected;
+      this.knownUnreadFound = knownUnreadFound;
+      this.rfidInitCallCount = rfidInitCallCount;
+      this.rfidReleaseCallCount = rfidReleaseCallCount;
+      this.inventoryStartCallCount = inventoryStartCallCount;
+      this.inventoryStopCallCount = inventoryStopCallCount;
+      this.rfidLifecycleState = rfidLifecycleState;
+      this.lastRfidLifecycleEvent = lastRfidLifecycleEvent;
+      this.lastRfidLifecycleTimestampMs = lastRfidLifecycleTimestampMs;
+      this.mainThreadLastKnownOperation = mainThreadLastKnownOperation;
+      this.mainThreadSuspectedBlockingArea = mainThreadSuspectedBlockingArea;
     }
   }
 
@@ -103,11 +196,15 @@ public final class RetailDiagnosticLogger {
     final double tempC;
     final int levelPercent;
     final String chargingStatus;
+    final int voltageMv;
+    final double currentMa;
 
-    BatterySnapshot(final double tempC, final int levelPercent, final String chargingStatus) {
+    BatterySnapshot(final double tempC, final int levelPercent, final String chargingStatus, final int voltageMv, final double currentMa) {
       this.tempC = tempC;
       this.levelPercent = levelPercent;
       this.chargingStatus = chargingStatus;
+      this.voltageMv = voltageMv;
+      this.currentMa = currentMa;
     }
   }
 
@@ -170,6 +267,7 @@ public final class RetailDiagnosticLogger {
       thread.setDaemon(true);
       return thread;
     });
+    this.mainThreadBlockMonitor = new MainThreadBlockMonitor(() -> buildAnrWarningContext());
     this.startTimeMs = System.currentTimeMillis();
     this.lastSampleMs = startTimeMs;
     this.startUiUpdateCount = UI_UPDATE_COUNT.get();
@@ -185,6 +283,7 @@ public final class RetailDiagnosticLogger {
     writer.write(CSV_HEADER);
     writer.newLine();
     writer.flush();
+    mainThreadBlockMonitor.start();
     executor.scheduleAtFixedRate(() -> {
       if (!stopped) writeSampleSafe("SAMPLE");
     }, SAMPLE_INTERVAL_SECONDS, SAMPLE_INTERVAL_SECONDS, TimeUnit.SECONDS);
@@ -197,6 +296,7 @@ public final class RetailDiagnosticLogger {
       stopped = true;
       writeSampleLocked("STOP");
       writeSummaryLocked();
+      mainThreadBlockMonitor.stop();
       closeWriterLocked();
     }
     executor.shutdownNow();
@@ -221,6 +321,7 @@ public final class RetailDiagnosticLogger {
       final CpuSnapshot cpu = readCpuSnapshot();
       final GcSnapshot gc = readGcSnapshot();
       final int threadCount = readProcessThreadCount();
+      final MainThreadBlockMonitor.MainThreadBlockStats mainThreadStats = mainThreadBlockMonitor.snapshot();
       final double deltaSeconds = Math.max(1.0d, (now - lastSampleMs) / 1000.0d);
       final long rawDelta = Math.max(0L, snapshot.totalRawCallbacks - lastRawCallbacks);
       final long uniqueDelta = Math.max(0L, snapshot.totalUniqueEpcs - lastUniqueEpcs);
@@ -241,6 +342,7 @@ public final class RetailDiagnosticLogger {
           String.valueOf(snapshot.totalUniqueEpcs),
           formatDouble(rawRate),
           formatDouble(uniqueRate),
+          formatDouble(snapshot.totalRawCallbacks > 0L ? (snapshot.totalDuplicateCallbacks * 100.0d) / snapshot.totalRawCallbacks : Double.NaN),
           String.valueOf(snapshot.dbPendingQueueSize),
           String.valueOf(snapshot.lastDbBatchFlushDurationMs),
           String.valueOf(Math.max(0L, UI_UPDATE_COUNT.get() - startUiUpdateCount)),
@@ -256,7 +358,46 @@ public final class RetailDiagnosticLogger {
           cpu.frequencyKhz,
           gc.count >= 0L ? String.valueOf(gc.count) : "",
           gc.timeMs >= 0L ? String.valueOf(gc.timeMs) : "",
-          threadCount >= 0 ? String.valueOf(threadCount) : ""));
+          threadCount >= 0 ? String.valueOf(threadCount) : "",
+          formatDouble(snapshot.callbackAverageMs),
+          formatDouble(snapshot.callbackMaxMs),
+          formatDouble(snapshot.uhfModuleTempC),
+          snapshot.rfPowerDbm >= 0 ? String.valueOf(snapshot.rfPowerDbm) : "",
+          snapshot.inventorySession,
+          snapshot.inventoryTarget,
+          snapshot.qValue,
+          snapshot.dynamicQEnabled,
+          snapshot.antennaState,
+          String.valueOf(snapshot.readerConnected),
+          String.valueOf(snapshot.sdkErrorCount),
+          snapshot.sdkLastError,
+          String.valueOf(snapshot.sdkWarningCount),
+          snapshot.sdkLastWarning,
+          snapshot.callbackQueueDepth >= 0 ? String.valueOf(snapshot.callbackQueueDepth) : "",
+          formatDouble(snapshot.avgRssi),
+          formatDouble(snapshot.minRssi),
+          formatDouble(snapshot.maxRssi),
+          battery.voltageMv >= 0 ? String.valueOf(battery.voltageMv) : "",
+          formatDouble(battery.currentMa),
+          readScreenBrightness(),
+          snapshot.knownUnreadExpected >= 0 ? String.valueOf(snapshot.knownUnreadExpected) : "",
+          snapshot.knownUnreadFound >= 0 ? String.valueOf(snapshot.knownUnreadFound) : "",
+          String.valueOf(mainThreadStats.blockCount),
+          String.valueOf(mainThreadStats.maxBlockMs),
+          String.valueOf(mainThreadStats.lastBlockMs),
+          MainThreadBlockMonitor.formatTimestamp(mainThreadStats.lastBlockTimestampMs),
+          String.valueOf(mainThreadStats.totalBlockedMs),
+          String.valueOf(mainThreadStats.running),
+          String.valueOf(snapshot.rfidInitCallCount),
+          String.valueOf(snapshot.rfidReleaseCallCount),
+          String.valueOf(snapshot.inventoryStartCallCount),
+          String.valueOf(snapshot.inventoryStopCallCount),
+          snapshot.rfidLifecycleState,
+          snapshot.lastRfidLifecycleEvent,
+          formatTimestampOrBlank(snapshot.lastRfidLifecycleTimestampMs),
+          mainThreadStats.lastAnrWarning,
+          snapshot.mainThreadLastKnownOperation,
+          snapshot.mainThreadSuspectedBlockingArea));
       writer.newLine();
       writer.flush();
       lastSampleMs = now;
@@ -279,7 +420,28 @@ public final class RetailDiagnosticLogger {
     catch (Throwable ignored) {
       // Keep diagnostics side-band; never interrupt inventory.
     }
-    return new InventorySnapshot(sessionId, Math.max(0L, (now - startTimeMs) / 1000L), 0L, 0L, 0L, 0, 0L, false);
+    return new InventorySnapshot(sessionId, Math.max(0L, (now - startTimeMs) / 1000L), 0L, 0L, 0L, 0, 0L, false, Double.NaN, Double.NaN,
+        Double.NaN, -1, "", "", "", "", "", false, 0L, "", 0L, "", -1, Double.NaN, Double.NaN, Double.NaN, -1, -1,
+        0L, 0L, 0L, 0L, "", "", 0L, "", "");
+  }
+
+  private String buildAnrWarningContext() {
+    try {
+      final InventorySnapshot snapshot = getSnapshot(System.currentTimeMillis());
+      final double tagsPerSecond = snapshot.elapsedSeconds > 0L ? snapshot.totalUniqueEpcs / (double) snapshot.elapsedSeconds : Double.NaN;
+      return "state=" + safe(snapshot.rfidLifecycleState)
+          + " | inventoryRunning=" + snapshot.readerInventoryRunning
+          + " | rawCallbacks=" + snapshot.totalRawCallbacks
+          + " | uniqueTags=" + snapshot.totalUniqueEpcs
+          + " | duplicateTags=" + snapshot.totalDuplicateCallbacks
+          + " | durationSec=" + snapshot.elapsedSeconds
+          + " | tagsPerSec=" + formatDouble(tagsPerSecond)
+          + " | initCalls=" + snapshot.rfidInitCallCount
+          + " | operation=" + safe(snapshot.mainThreadSuspectedBlockingArea);
+    }
+    catch (Throwable ignored) {
+      return "";
+    }
   }
 
   private void updateSummaryStats(final InventorySnapshot snapshot, final BatterySnapshot battery, final double rawRate, final double uniqueRate, final String timestamp) {
@@ -347,6 +509,8 @@ public final class RetailDiagnosticLogger {
       summaryWriter.newLine();
       summaryWriter.write("total_raw_callbacks=" + finalRawCallbacks);
       summaryWriter.newLine();
+      summaryWriter.write(generateAnrSummaryReport());
+      summaryWriter.newLine();
       summaryWriter.flush();
     }
     catch (Throwable t) {
@@ -364,20 +528,88 @@ public final class RetailDiagnosticLogger {
     }
   }
 
+  public String generateAnrSummaryReport() {
+    try {
+      final InventorySnapshot snapshot = getSnapshot(System.currentTimeMillis());
+      final MainThreadBlockMonitor.MainThreadBlockStats mainThreadStats = mainThreadBlockMonitor.snapshot();
+      final double tagsPerSecond = snapshot.elapsedSeconds > 0L ? snapshot.totalUniqueEpcs / (double) snapshot.elapsedSeconds : Double.NaN;
+      final String risk = anrRiskAssessment(mainThreadStats);
+      final String recommendation = anrRecommendation(snapshot, mainThreadStats, risk);
+      return "\nANR / Main Thread Diagnostics\n"
+          + "-----------------------------\n"
+          + "scan_duration_seconds=" + snapshot.elapsedSeconds + "\n"
+          + "total_raw_callbacks=" + snapshot.totalRawCallbacks + "\n"
+          + "total_unique_tags=" + snapshot.totalUniqueEpcs + "\n"
+          + "total_duplicate_tags=" + snapshot.totalDuplicateCallbacks + "\n"
+          + "tags_per_second=" + formatDouble(tagsPerSecond) + "\n"
+          + "main_thread_block_count=" + mainThreadStats.blockCount + "\n"
+          + "main_thread_max_block_ms=" + mainThreadStats.maxBlockMs + "\n"
+          + "main_thread_last_block_ms=" + mainThreadStats.lastBlockMs + "\n"
+          + "main_thread_last_block_timestamp=" + MainThreadBlockMonitor.formatTimestamp(mainThreadStats.lastBlockTimestampMs) + "\n"
+          + "main_thread_total_blocked_ms=" + mainThreadStats.totalBlockedMs + "\n"
+          + "main_thread_monitor_running=" + mainThreadStats.running + "\n"
+          + "rfid_init_call_count=" + snapshot.rfidInitCallCount + "\n"
+          + "rfid_release_call_count=" + snapshot.rfidReleaseCallCount + "\n"
+          + "inventory_start_call_count=" + snapshot.inventoryStartCallCount + "\n"
+          + "inventory_stop_call_count=" + snapshot.inventoryStopCallCount + "\n"
+          + "rfid_lifecycle_state=" + safe(snapshot.rfidLifecycleState) + "\n"
+          + "last_rfid_lifecycle_event=" + safe(snapshot.lastRfidLifecycleEvent) + "\n"
+          + "last_rfid_lifecycle_timestamp=" + formatTimestampOrBlank(snapshot.lastRfidLifecycleTimestampMs) + "\n"
+          + "last_anr_warning=" + safe(mainThreadStats.lastAnrWarning) + "\n"
+          + "main_thread_last_known_operation=" + safe(snapshot.mainThreadLastKnownOperation) + "\n"
+          + "main_thread_suspected_blocking_area=" + safe(snapshot.mainThreadSuspectedBlockingArea) + "\n"
+          + "ANR Risk Assessment=" + risk + "\n"
+          + "recommendation=" + recommendation;
+    }
+    catch (Throwable ignored) {
+      return "\nANR / Main Thread Diagnostics\n-----------------------------\nANR Risk Assessment=UNKNOWN\nrecommendation=ANR diagnostics unavailable";
+    }
+  }
+
+  private static String anrRiskAssessment(final MainThreadBlockMonitor.MainThreadBlockStats stats) {
+    if (stats == null || stats.blockCount <= 0L) return "LOW";
+    if (stats.maxBlockMs > 5000L || stats.blockCount > 2L) return "HIGH";
+    return "MEDIUM";
+  }
+
+  private static String anrRecommendation(final InventorySnapshot snapshot, final MainThreadBlockMonitor.MainThreadBlockStats stats, final String risk) {
+    if ("LOW".equals(risk)) return "No ANR risk observed.";
+    final String suspectedArea = snapshot == null ? "" : safe(snapshot.mainThreadSuspectedBlockingArea);
+    if (suspectedArea.length() > 0) return "Main-thread block detected; review suspected blocking area: " + suspectedArea + ".";
+    if (snapshot != null && snapshot.rfidInitCallCount > 1L && snapshot.rfidReleaseCallCount > 0L)
+      return "Repeated RFID init/release detected; review hardware lifecycle.";
+    return stats != null && stats.blockCount > 2L ? "Repeated main-thread blocks detected; review UI-thread hardware and database operations." : "Main-thread block detected; review suspected blocking area.";
+  }
+
   private BatterySnapshot readBatterySnapshot() {
     try {
       final Intent intent = appContext.registerReceiver(null, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
-      if (intent == null) return new BatterySnapshot(Double.NaN, -1, "");
+      if (intent == null) return new BatterySnapshot(Double.NaN, -1, "", -1, Double.NaN);
       final int tempTenths = intent.getIntExtra(BatteryManager.EXTRA_TEMPERATURE, Integer.MIN_VALUE);
       final double tempC = tempTenths == Integer.MIN_VALUE ? Double.NaN : tempTenths / 10.0d;
       final int level = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, -1);
       final int scale = intent.getIntExtra(BatteryManager.EXTRA_SCALE, -1);
       final int levelPercent = level >= 0 && scale > 0 ? Math.round((level * 100.0f) / scale) : -1;
       final int status = intent.getIntExtra(BatteryManager.EXTRA_STATUS, -1);
-      return new BatterySnapshot(tempC, levelPercent, chargingStatus(status));
+      final int voltageMv = intent.getIntExtra(BatteryManager.EXTRA_VOLTAGE, -1);
+      return new BatterySnapshot(tempC, levelPercent, chargingStatus(status), voltageMv, readBatteryCurrentMa());
     }
     catch (Throwable t) {
-      return new BatterySnapshot(Double.NaN, -1, "");
+      return new BatterySnapshot(Double.NaN, -1, "", -1, Double.NaN);
+    }
+  }
+
+  private double readBatteryCurrentMa() {
+    try {
+      if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) return Double.NaN;
+      final BatteryManager batteryManager = (BatteryManager) appContext.getSystemService(Context.BATTERY_SERVICE);
+      if (batteryManager == null) return Double.NaN;
+      final int currentMicroAmps = batteryManager.getIntProperty(BatteryManager.BATTERY_PROPERTY_CURRENT_NOW);
+      if (currentMicroAmps == Integer.MIN_VALUE) return Double.NaN;
+      return currentMicroAmps / 1000.0d;
+    }
+    catch (Throwable ignored) {
+      return Double.NaN;
     }
   }
 
@@ -414,6 +646,8 @@ public final class RetailDiagnosticLogger {
         lastProcessCpuJiffies = process;
         lastTotalCpuJiffies = total;
       }
+      lastElapsedCpuTimeMs = Process.getElapsedCpuTime();
+      lastElapsedCpuWallMs = SystemClock.elapsedRealtime();
     }
     catch (Throwable ignored) {
       // CPU diagnostics are optional.
@@ -436,7 +670,27 @@ public final class RetailDiagnosticLogger {
     catch (Throwable ignored) {
       // CPU diagnostics are optional.
     }
+    if (Double.isNaN(usagePercent)) usagePercent = readElapsedProcessCpuPercent();
     return new CpuSnapshot(usagePercent, readCpuFrequencyKhz());
+  }
+
+  private double readElapsedProcessCpuPercent() {
+    try {
+      final long processCpuMs = Process.getElapsedCpuTime();
+      final long wallMs = SystemClock.elapsedRealtime();
+      double usagePercent = Double.NaN;
+      if (lastElapsedCpuTimeMs >= 0L && lastElapsedCpuWallMs > 0L) {
+        final long processDeltaMs = Math.max(0L, processCpuMs - lastElapsedCpuTimeMs);
+        final long wallDeltaMs = Math.max(0L, wallMs - lastElapsedCpuWallMs);
+        if (wallDeltaMs > 0L) usagePercent = (processDeltaMs * 100.0d) / wallDeltaMs;
+      }
+      lastElapsedCpuTimeMs = processCpuMs;
+      lastElapsedCpuWallMs = wallMs;
+      return usagePercent;
+    }
+    catch (Throwable ignored) {
+      return Double.NaN;
+    }
   }
 
   private long readProcessCpuJiffies() {
@@ -527,6 +781,15 @@ public final class RetailDiagnosticLogger {
       closeQuietly(reader);
     }
     return -1;
+  }
+
+  private String readScreenBrightness() {
+    try {
+      return String.valueOf(Settings.System.getInt(appContext.getContentResolver(), Settings.System.SCREEN_BRIGHTNESS));
+    }
+    catch (Throwable ignored) {
+      return "";
+    }
   }
 
   private File getDiagnosticsDir() {
