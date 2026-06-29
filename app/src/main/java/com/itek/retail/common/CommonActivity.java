@@ -136,6 +136,7 @@ import com.itek.retail.model.PrintData;
 import com.itek.retail.model.RFIDSession;
 import com.itek.retail.model.SearchLog;
 import com.itek.retail.receiver.AppBroadcastReceiver;
+import com.itek.retail.reader.AppAnrDiagnosticLogger;
 import com.itek.retail.sgtin.EPCEncoderDecoder;
 import com.itek.retail.ui.actionmenu.ActionMenuCompareFragment;
 import com.itek.retail.ui.actionmenu.ActionMenuMsgFragment;
@@ -341,12 +342,16 @@ public class CommonActivity extends AppCompatActivity{
       final Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment_content_main);
       if(fragment != null){
         currentFragmentClassName = fragment.getClass().getSimpleName();
+        AppAnrDiagnosticLogger.updateCurrentFragment(currentFragmentClassName);
         showLog("current fragment:", currentFragmentClassName);
         if(this instanceof MainActivity){
           ((MainActivity) this).hideNavItems(fragment.getClass().equals(HomeFragment.class));
         }
       }
-      else currentFragmentClassName = "";
+      else {
+        currentFragmentClassName = "";
+        AppAnrDiagnosticLogger.updateCurrentFragment("");
+      }
     });
     
     appBroadcastReceiver = new AppBroadcastReceiver();

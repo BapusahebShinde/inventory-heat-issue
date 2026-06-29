@@ -570,6 +570,7 @@ public class ChainwayRFIDHandler extends RFIDHandler{
       setConnectionStatusCallback((connectionStatus, o) -> {
         showLog("connectionStatus", connectionStatus == null ? "Null" : connectionStatus.name());
         isConnected = connectionStatus != null && connectionStatus == ConnectionStatus.CONNECTED;
+        AppAnrDiagnosticLogger.updateReaderConnected(isConnected);
         showLog("isConnected", "" + isConnected);
         isReaderSet.postValue(connectionStatus == null ? null : isConnected);
       });

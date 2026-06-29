@@ -944,21 +944,25 @@ public abstract class RFIDHandler {
 
     protected void recordRfidInitCallForDiagnostics(final String eventName) {
         rfidInitCallCount.incrementAndGet();
+        AppAnrDiagnosticLogger.recordRfidInitCall(eventName);
         recordRfidLifecycleEventForDiagnostics("INITIALIZING", eventName);
     }
 
     protected void recordRfidReleaseCallForDiagnostics(final String eventName) {
         rfidReleaseCallCount.incrementAndGet();
+        AppAnrDiagnosticLogger.recordRfidReleaseCall(eventName);
         recordRfidLifecycleEventForDiagnostics("RELEASING", eventName);
     }
 
     protected void recordInventoryStartCallForDiagnostics(final String eventName) {
         inventoryStartCallCount.incrementAndGet();
+        AppAnrDiagnosticLogger.recordInventoryStartCall(eventName);
         recordRfidLifecycleEventForDiagnostics("READY", eventName);
     }
 
     protected void recordInventoryStopCallForDiagnostics(final String eventName) {
         inventoryStopCallCount.incrementAndGet();
+        AppAnrDiagnosticLogger.recordInventoryStopCall(eventName);
         recordRfidLifecycleEventForDiagnostics("STOPPING", eventName);
     }
 
@@ -966,6 +970,7 @@ public abstract class RFIDHandler {
         rfidLifecycleState = chkNull(state, "");
         lastRfidLifecycleEvent = chkNull(eventName, "");
         lastRfidLifecycleTimestampMs = System.currentTimeMillis();
+        AppAnrDiagnosticLogger.recordRfidLifecycleEvent(state, eventName);
     }
 
     protected void markMainThreadOperationForDiagnostics(final String operation) {
@@ -973,11 +978,13 @@ public abstract class RFIDHandler {
         currentMainThreadOperation = safeOperation;
         lastMainThreadOperation = safeOperation;
         lastMainThreadOperationTimestampMs = System.currentTimeMillis();
+        AppAnrDiagnosticLogger.markMainThreadOperation(safeOperation);
     }
 
     protected void clearMainThreadOperationForDiagnostics(final String operation) {
         final String safeOperation = chkNull(operation, "");
         if (safeOperation.length() <= 0 || safeOperation.equals(currentMainThreadOperation)) currentMainThreadOperation = "";
+        AppAnrDiagnosticLogger.clearMainThreadOperation(safeOperation);
     }
 
     private String getSuspectedBlockingAreaForDiagnostics() {
@@ -1065,6 +1072,8 @@ public abstract class RFIDHandler {
         final long rssiCount = inventoryRssiCount.get();
         final long minRssi = inventoryRssiMin.get();
         final long maxRssi = inventoryRssiMax.get();
+        final boolean readerConnected = isReaderConnected();
+        AppAnrDiagnosticLogger.updateReaderConnected(readerConnected);
         return new RetailDiagnosticLogger.InventorySnapshot(
                     chkNull(sessionId, ""),
                     elapsedSeconds,
@@ -1083,7 +1092,7 @@ public abstract class RFIDHandler {
                     readQValueForDiagnostics(),
                     readDynamicQEnabledForDiagnostics(),
                     readAntennaStateForDiagnostics(),
-                    isReaderConnected(),
+                    readerConnected,
                     inventorySdkErrorCount.get(),
                     inventoryLastSdkError,
                     inventorySdkWarningCount.get(),
@@ -1093,16 +1102,7 @@ public abstract class RFIDHandler {
                     minRssi == Long.MAX_VALUE ? Double.NaN : minRssi,
                     maxRssi == Long.MIN_VALUE ? Double.NaN : maxRssi,
                     readKnownUnreadExpectedForDiagnostics(),
-                    readKnownUnreadFoundForDiagnostics(),
-                    rfidInitCallCount.get(),
-                    rfidReleaseCallCount.get(),
-                    inventoryStartCallCount.get(),
-                    inventoryStopCallCount.get(),
-                    rfidLifecycleState,
-                    lastRfidLifecycleEvent,
-                    lastRfidLifecycleTimestampMs,
-                    lastMainThreadOperation,
-                    getSuspectedBlockingAreaForDiagnostics());
+                    readKnownUnreadFoundForDiagnostics());
     }
 
     /**
