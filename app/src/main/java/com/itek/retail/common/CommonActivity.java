@@ -136,6 +136,7 @@ import com.itek.retail.model.PrintData;
 import com.itek.retail.model.RFIDSession;
 import com.itek.retail.model.SearchLog;
 import com.itek.retail.receiver.AppBroadcastReceiver;
+import com.itek.retail.reader.AppAnrDiagnosticLogger;
 import com.itek.retail.sgtin.EPCEncoderDecoder;
 import com.itek.retail.ui.actionmenu.ActionMenuCompareFragment;
 import com.itek.retail.ui.actionmenu.ActionMenuMsgFragment;
@@ -167,6 +168,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
+import java.util.Enumeration;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.ExecutorService;
@@ -340,12 +342,16 @@ public class CommonActivity extends AppCompatActivity{
       final Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment_content_main);
       if(fragment != null){
         currentFragmentClassName = fragment.getClass().getSimpleName();
+        AppAnrDiagnosticLogger.updateCurrentFragment(currentFragmentClassName);
         showLog("current fragment:", currentFragmentClassName);
         if(this instanceof MainActivity){
           ((MainActivity) this).hideNavItems(fragment.getClass().equals(HomeFragment.class));
         }
       }
-      else currentFragmentClassName = "";
+      else {
+        currentFragmentClassName = "";
+        AppAnrDiagnosticLogger.updateCurrentFragment("");
+      }
     });
     
     appBroadcastReceiver = new AppBroadcastReceiver();
@@ -779,7 +785,9 @@ public class CommonActivity extends AppCompatActivity{
     try{
       macAddress = SharedPrefManager.getMACAddress();
       if(macAddress.length() > 0) return macAddress;
-      List<NetworkInterface> all = Collections.list(NetworkInterface.getNetworkInterfaces());
+      final Enumeration<NetworkInterface> networkInterfaces = NetworkInterface.getNetworkInterfaces();
+      if(networkInterfaces == null) return "";
+      List<NetworkInterface> all = Collections.list(networkInterfaces);
       for(NetworkInterface nif : all){
         if(!nif.getName().equalsIgnoreCase("wlan0")) continue;
         
